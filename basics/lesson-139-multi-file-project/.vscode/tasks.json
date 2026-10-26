@@ -1,0 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: Build and Run",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/bash.exe",
+            "args": [
+                "-c",
+                "/usr/bin/mkdir -p build && C:/msys64/mingw64/bin/g++.exe -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic src/*.cpp -o build/app.exe && ./build/app.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "focus": false
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "C/C++: g++.exe build active file",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/bash.exe",
+            "args": [
+                "-c",
+                "/usr/bin/mkdir -p build && C:/msys64/mingw64/bin/g++.exe -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic src/*.cpp -o build/app.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "clear": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "C/C++: Run (No Build)",
+            "type": "process",
+            "command": "${workspaceFolder}/build/app.exe",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        }
+    ]
+}
