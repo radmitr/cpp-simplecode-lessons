@@ -19,7 +19,7 @@
 
 1. Откройте в VS Code **папку нужного урока** как отдельную рабочую папку. Тогда VS Code увидит именно её `.vscode/tasks.json` и `.vscode/launch.json`.
 2. Для обычного урока откройте нужный исходный файл `.cpp` перед сборкой: задачи с `${file}` используют активную вкладку. Если активен, например, `tasks.json`, компилятор попытается собрать этот JSON-файл.
-3. Выберите **Terminal → Run Task… → C/C++: Build and Run**, чтобы собрать и сразу запустить программу.
+3. В верхнем меню VS Code выберите **Terminal (Терминал) → Run Task… → C/C++: Build and Run**, чтобы собрать и сразу запустить программу.
 
 Другие доступные действия:
 
@@ -29,7 +29,24 @@
 
 В большинстве уроков `.exe` создаётся рядом с исходным `.cpp`. В многофайловых уроках `basics/lesson-139-multi-file-project` и `basics/lesson-140-multi-file-project-include-guard` программа собирается из нескольких файлов в `build/app.exe`; их задачи настроены отдельно.
 
-Сочетания **Ctrl+F5** для `C/C++: Build and Run` и **Ctrl+Alt+F5** для `C/C++: Run (No Build)` настроены в пользовательском `keybindings.json` автора. Этот файл находится вне репозитория, поэтому у других пользователей сочетания автоматически не появятся. По умолчанию VS Code использует Ctrl+F5 для запуска без отладки через `launch.json`.
+При желании можно назначить сочетания **Ctrl+F5** для `C/C++: Build and Run` и **Ctrl+Alt+F5** для `C/C++: Run (No Build)`. В VS Code откройте **File → Preferences → Keyboard Shortcuts**, затем **Open Keyboard Shortcuts (JSON)** и добавьте эти правила в пользовательский `keybindings.json`:
+
+```jsonc
+[
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "C/C++: Build and Run"
+    },
+    {
+        "key": "ctrl+alt+f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "C/C++: Run (No Build)"
+    }
+]
+```
+
+Если в `keybindings.json` уже есть другие правила, добавьте эти два объекта в существующий массив. Сочетания хранятся в настройках пользователя, поэтому из репозитория автоматически не применяются. **Ctrl+F5** заменит стандартный запуск VS Code без отладки через `launch.json`.
 
 ## Что хранится в репозитории
 
