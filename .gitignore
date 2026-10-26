@@ -12,10 +12,8 @@
 /basics/lesson-117-serialize-objects-to-file/point.dat
 /basics/lesson-118-file-io-fstream/myFile.txt_
 
-# Editor preferences local to a lesson
-**/.vscode/settings.json
-
-# Keep reproducible build/debug tasks even if a global ignore excludes .vscode
+# Keep only shared build/debug tasks, even if a global ignore excludes .vscode
 !**/.vscode/
+**/.vscode/*
 !**/.vscode/tasks.json
 !**/.vscode/launch.json
