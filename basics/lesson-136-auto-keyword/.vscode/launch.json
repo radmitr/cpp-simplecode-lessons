@@ -5,7 +5,7 @@
             "name": "C++: Run and Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}/../../build/basics/lesson-136-auto-keyword/${fileBasenameNoExtension}.exe",
             "cwd": "${fileDirname}",
             "preLaunchTask": "C/C++: g++.exe build active file",
             "setupCommands": [
@@ -16,7 +16,12 @@
                 }
             ],
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
+            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
+            "linux": {
+                "program": "${workspaceFolder}/../../build/basics/lesson-136-auto-keyword/${fileBasenameNoExtension}",
+                "miDebuggerPath": "/usr/bin/gdb",
+                "externalConsole": false
+            }
         }
     ]
 }

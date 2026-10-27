@@ -49,7 +49,7 @@ int main(void)
     // thread t([&]() {
     //     m.doWork();
     // });
-    thread t(MyClass::doWork, m);
+    thread t(&MyClass::doWork, m);
 
     for (size_t i = 0; i < 10; i++)
     {
