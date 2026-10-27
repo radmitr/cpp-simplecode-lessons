@@ -3,18 +3,6 @@
 
 //using namespace std;
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    system("chcp 65001 > nul");
-#else
-    if (!setlocale(LC_ALL, "ru_RU.UTF-8"))
-    {
-        setlocale(LC_ALL, "");
-    }
-#endif
-}
-
 template<typename T>
 void printList(const std::list<T>& lst)
 {
@@ -26,12 +14,14 @@ void printList(const std::list<T>& lst)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    std::list<int> values{10, 20, 30};
+    auto it = values.begin(); // указывает на 10
 
-    std::list<int>::iterator it;
+    auto previous = it++;    // previous указывает на 10, it — на 20
+    auto current = ++it;     // current и it указывают на 30
 
-    ++it;
-    it++;
+    std::cout << *previous << '\n'; // 10
+    std::cout << *current << '\n';  // 30
 
     return 0;
 }

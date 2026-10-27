@@ -21,6 +21,11 @@ int main(void)
     setupConsoleEncoding();
 
     fstream fs("myFile.txt", ios::in | ios::out | ios::app);
+    if (!fs)
+    {
+        std::cerr << "Cannot open myFile.txt\n";
+        return 1;
+    }
 
     int value;
     string msg;
@@ -28,7 +33,11 @@ int main(void)
     cout << "Выберите действие:\n";
     cout << "1 - Записать сообщение\n";
     cout << "2 - Прочитать все сообщения\n";
-    cin >> value;
+    if (!(cin >> value))
+    {
+        cerr << "Invalid menu choice\n";
+        return 1;
+    }
 
     if (value == 1)
     {
@@ -41,14 +50,9 @@ int main(void)
         cout << "Сообщения из файла:" << endl;
         fs.seekg(0);
 
-        while (!fs.eof())
+        while (fs >> msg)
         {
-            msg = "";
-            fs >> msg;
-            if (!msg.empty())
-            {
-                cout << msg << endl;
-            }
+            cout << msg << endl;
         }
     }
 

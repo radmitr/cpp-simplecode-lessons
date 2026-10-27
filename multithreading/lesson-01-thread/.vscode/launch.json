@@ -5,6 +5,7 @@
             "name": "C++: Run and Debug",
             "type": "cppdbg",
             "request": "launch",
+            "externalConsole": false,
             "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             "cwd": "${fileDirname}",
             "preLaunchTask": "C/C++: g++.exe build active file",

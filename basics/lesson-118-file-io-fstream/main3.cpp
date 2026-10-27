@@ -3,55 +3,68 @@
 #include <fstream>
 #include <locale>
 #include <codecvt>
+#include <clocale>
 
-using namespace std;
+#ifdef _WIN32
+#include <cstdio>
+#include <fcntl.h>
+#include <io.h>
+#endif
 
-void setupConsoleEncoding()
+void setupWideStandardIO()
 {
 #ifdef _WIN32
-    system("chcp 65001 > nul");
+    _setmode(_fileno(stdin), _O_U8TEXT);
+    _setmode(_fileno(stdout), _O_U8TEXT);
 #else
-    if (!setlocale(LC_ALL, "ru_RU.UTF-8"))
-    {
-        setlocale(LC_ALL, "");
-    }
+    std::setlocale(LC_ALL, "");
 #endif
 }
 
 int main(void)
 {
-    setupConsoleEncoding();
+    setupWideStandardIO();
 
-    wfstream fs("myFile.txt", ios::in | ios::out | ios::app);
+    std::wfstream fs("myFile.txt", std::ios::in | std::ios::out | std::ios::app);
+    if (!fs)
+    {
+        std::cerr << "Cannot open myFile.txt\n";
+        return 1;
+    }
 
     // Устанавливаем UTF-8 для файла
-    fs.imbue(locale(fs.getloc(),
-        new codecvt_utf8<wchar_t, 0x10ffff, consume_header>()));
+    auto* translator = new std::codecvt_utf8<wchar_t, 0x10ffff, std::consume_header>();
+    std::locale settings(fs.getloc(), translator);  // прежние настройки + переводчик
+    fs.imbue(settings);                             // назначить их файлу fs
 
     int value;
-    wstring msg;
+    std::wstring msg;
 
-    wcout << L"Выберите действие:\n";
-    wcout << L"1 - Записать сообщение\n";
-    wcout << L"2 - Прочитать все сообщения\n";
-    wcin >> value;
+    std::wcout << L"Выберите действие:\n";
+    std::wcout << L"1 - Записать сообщение\n";
+    std::wcout << L"2 - Прочитать все сообщения\n";
+    if (!(std::wcin >> value))
+    {
+        std::cerr << "Invalid menu choice\n";
+        return 1;
+    }
 
-    wcin.ignore();
+    std::wcin.ignore(); // Пропускаем Enter после выбора пункта меню
 
     if (value == 1)
     {
-        wcout << L"Введите ваше сообщение!" << endl;
-        getline(wcin, msg);
+        std::wcout << L"Введите ваше сообщение!" << std::endl;
+        std::getline(std::wcin, msg);
         fs << msg << L"\n";
     }
     else if (value == 2)
     {
-        wcout << L"Сообщения из файла:" << endl;
+        std::wcout << L"Сообщения из файла:" << std::endl;
         fs.seekg(0);
 
-        while (getline(fs, msg))
+        while (std::getline(fs, msg))
         {
-            wcout << msg << endl;
+            std::wcout << msg << std::endl;
         }
     }
 
