@@ -5,9 +5,9 @@
             "name": "C++: Run and Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../../build/basics/lesson-129-structures-struct-vs-class/${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}/../../build/basics/lesson-129-structures-struct-vs-class/${fileBasenameNoExtension}",
             "cwd": "${fileDirname}",
-            "preLaunchTask": "C/C++: g++.exe build active file",
+            "preLaunchTask": "C/C++: Build",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -16,11 +16,11 @@
                 }
             ],
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
-            "linux": {
-                "program": "${workspaceFolder}/../../build/basics/lesson-129-structures-struct-vs-class/${fileBasenameNoExtension}",
-                "miDebuggerPath": "/usr/bin/gdb",
-                "externalConsole": false
+            "externalConsole": false,
+            "miDebuggerPath": "/usr/bin/gdb",
+            "windows": {
+                "program": "${workspaceFolder}/../../build/basics/lesson-129-structures-struct-vs-class/${fileBasenameNoExtension}.exe",
+                "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
             }
         }
     ]

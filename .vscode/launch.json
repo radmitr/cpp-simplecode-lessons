@@ -6,13 +6,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
-            "args": [],
             "cwd": "${fileDirname}",
-            "stopAtEntry": false,
-            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "/usr/bin/gdb",
-            "preLaunchTask": "C/C++: g++ build active file",
+            "preLaunchTask": "C/C++: Build",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -20,6 +16,8 @@
                     "ignoreFailures": true
                 }
             ],
+            "externalConsole": false,
+            "miDebuggerPath": "/usr/bin/gdb",
             "windows": {
                 "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
                 "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"

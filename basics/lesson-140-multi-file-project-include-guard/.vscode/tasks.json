@@ -2,48 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C/C++: Build and Run",
-            "type": "shell",
-            "command": "C:/msys64/usr/bin/bash.exe",
+            "label": "C/C++: Build",
+            "type": "process",
+            "command": "/bin/bash",
             "args": [
-                "-c",
-                "/usr/bin/mkdir -p \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src\" && C:/msys64/mingw64/bin/g++.exe -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic src/*.cpp -o \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main.exe\" && \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main.exe\""
+                "${workspaceFolder}/../../scripts/build-linux.sh",
+                "${file}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
-            "group": "build",
-            "presentation": {
-                "reveal": "always",
-                "focus": false
-            },
-            "problemMatcher": "$gcc",
-            "linux": {
-                "command": "/bin/bash",
-                "args": [
-                    "-c",
-                    "mkdir -p \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src\" && /usr/bin/g++ -std=c++17 -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic -pthread src/*.cpp -o \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main\" && \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main\""
-                ],
-                "options": {
-                    "cwd": "${workspaceFolder}",
-                    "shell": {
-                        "executable": "/bin/bash",
-                        "args": ["-c"]
-                    }
-                }
-            }
-        },
-        {
-            "label": "C/C++: g++.exe build active file",
-            "type": "shell",
-            "command": "C:/msys64/usr/bin/bash.exe",
-            "args": [
-                "-c",
-                "/usr/bin/mkdir -p \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src\" && C:/msys64/mingw64/bin/g++.exe -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic src/*.cpp -o \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main.exe\""
+            "problemMatcher": [
+                "$gcc"
             ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -52,37 +23,30 @@
                 "reveal": "always",
                 "clear": true
             },
-            "problemMatcher": ["$gcc"],
-            "linux": {
-                "command": "/bin/bash",
+            "windows": {
+                "command": "C:/msys64/usr/bin/bash.exe",
                 "args": [
-                    "-c",
-                    "mkdir -p \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src\" && /usr/bin/g++ -std=c++17 -I./include -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic -pthread src/*.cpp -o \"${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main\""
-                ],
-                "options": {
-                    "cwd": "${workspaceFolder}",
-                    "shell": {
-                        "executable": "/bin/bash",
-                        "args": ["-c"]
-                    }
-                }
+                    "${workspaceFolder}/../../scripts/build-windows.sh",
+                    "${file}"
+                ]
             }
         },
         {
             "label": "C/C++: Run (No Build)",
             "type": "process",
-            "command": "${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main.exe",
+            "command": "${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
+            "problemMatcher": [],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": true,
                 "panel": "shared"
             },
-            "linux": {
-                "command": "${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main"
+            "windows": {
+                "command": "${workspaceFolder}/../../build/basics/lesson-140-multi-file-project-include-guard/src/main.exe"
             }
         }
     ]

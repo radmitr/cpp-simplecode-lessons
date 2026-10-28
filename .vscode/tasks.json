@@ -2,42 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C/C++: Build and Run",
-            "type": "process",
-            "command": "/bin/bash",
-            "args": [
-                "-c",
-                "/bin/bash \"$1\" \"$2\" && exec \"$3\"",
-                "build-and-run",
-                "${workspaceFolder}/scripts/build-linux.sh",
-                "${file}",
-                "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared"
-            },
-            "problemMatcher": "$gcc",
-            "windows": {
-                "command": "C:/msys64/usr/bin/bash.exe",
-                "args": [
-                    "-c",
-                    "C:/msys64/usr/bin/bash.exe \"$1\" \"$2\" && exec \"$3\"",
-                    "build-and-run",
-                    "${workspaceFolder}/scripts/build-windows.sh",
-                    "${file}",
-                    "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
-                ]
-            }
-        },
-        {
-            "label": "C/C++: g++ build active file",
+            "label": "C/C++: Build",
             "type": "process",
             "command": "/bin/bash",
             "args": [
@@ -47,7 +12,9 @@
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -67,13 +34,13 @@
             "options": {
                 "cwd": "${fileDirname}"
             },
+            "problemMatcher": [],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": true,
                 "panel": "shared"
             },
-            "problemMatcher": [],
             "windows": {
                 "command": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
             }
