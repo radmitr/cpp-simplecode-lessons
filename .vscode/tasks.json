@@ -28,7 +28,7 @@
                 "command": "C:/msys64/usr/bin/bash.exe",
                 "args": [
                     "-c",
-                    "C:/msys64/usr/bin/bash.exe \"$1\" \"$2\" && chcp.com 65001 > /dev/null && exec \"$3\"",
+                    "C:/msys64/usr/bin/bash.exe \"$1\" \"$2\" && exec \"$3\"",
                     "build-and-run",
                     "${workspaceFolder}/scripts/build-windows.sh",
                     "${file}",
@@ -75,13 +75,7 @@
             },
             "problemMatcher": [],
             "windows": {
-                "command": "C:/msys64/usr/bin/bash.exe",
-                "args": [
-                    "-c",
-                    "chcp.com 65001 > /dev/null && exec \"$1\"",
-                    "run",
-                    "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
-                ]
+                "command": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
             }
         }
     ]
