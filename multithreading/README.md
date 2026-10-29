@@ -24,6 +24,12 @@
 4. [condition_variable](bonus/04-condition-variable/) — wait, wait_for, wait_until, notify_one и notify_all.
 5. [future и async](bonus/05-future-async/) — результат и исключение из задачи.
 6. [jthread и stop_token](bonus/06-jthread-stop-token/) — остановка потока, C++20.
+7. [semaphore](bonus/07-semaphore/) — acquire, release и ограничение числа одновременных пользователей, C++20.
+8. [shared_mutex](bonus/08-shared-mutex/) — несколько читателей и исключительный доступ писателя.
+9. [promise и future](bonus/09-promise-future/) — явная передача результата и исключения из std::thread.
+10. [producer–consumer](bonus/10-producer-consumer/) — очередь заданий и корректное завершение потребителей.
+11. [пул потоков](bonus/11-thread-pool/) — постоянные работники, очередь и future для каждой задачи.
+12. [barrier](bonus/12-barrier/) — согласование повторяющихся этапов вычисления, C++20.
 
 ## Сборка и особенности
 
@@ -32,7 +38,7 @@
 варианты — самостоятельные программы; вместе их собирать не нужно.
 Сами папки multithreading/ и bonus/ конфигураций VS Code не содержат.
 
-По умолчанию используется C++17, для бонуса jthread — C++20.
+По умолчанию используется C++17. Бонусы jthread, semaphore и barrier используют C++20.
 Подробные команды: [общий README](../README.md) и [скрипты сборки](../scripts/README.md).
 
 Урок 02 намеренно не завершается из-за бесконечного цикла; остановите его
