@@ -16,12 +16,17 @@
 #include <windows.h>
 #endif
 
-int main(void)
+void setupConsoleEncoding()
 {
 #ifdef _WIN32
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
+}
+
+int main(void)
+{
+    setupConsoleEncoding();
 
     std::cout << "---------START---------" << std::endl;
     String s1("Hello");

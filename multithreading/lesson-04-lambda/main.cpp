@@ -22,12 +22,17 @@ int sum(int a, int b)
     return a + b;
 }
 
-int main(void)
+void setupConsoleEncoding()
 {
 #ifdef _WIN32
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
+}
+
+int main(void)
+{
+    setupConsoleEncoding();
 
     // int result = sum(2, 5);
     // cout << "Result: " << result << endl;

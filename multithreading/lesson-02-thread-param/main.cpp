@@ -25,12 +25,17 @@ void doWork(int a, int b, string msg)
     cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STOPPED\t============" << endl;
 }
 
-int main(void)
+void setupConsoleEncoding()
 {
 #ifdef _WIN32
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
+}
+
+int main(void)
+{
+    setupConsoleEncoding();
 
     thread th(doWork, 2, 3, "our_message");
 
@@ -40,6 +45,7 @@ int main(void)
         this_thread::sleep_for(chrono::milliseconds(500));
     }
 
+    // Сюда выполнение не дойдёт: условие цикла выше всегда true.
     th.join();
 
     return 0;

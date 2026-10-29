@@ -67,12 +67,17 @@ void print2()
     mtx1.unlock();
 }
 
-int main(void)
+void setupConsoleEncoding()
 {
 #ifdef _WIN32
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
+}
+
+int main(void)
+{
+    setupConsoleEncoding();
 
     SimpleTimer timer;
 

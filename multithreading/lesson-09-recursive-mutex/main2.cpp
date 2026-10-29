@@ -33,12 +33,17 @@ void foo(int a)
     rm.unlock();
 }
 
-int main(void)
+void setupConsoleEncoding()
 {
 #ifdef _WIN32
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
+}
+
+int main(void)
+{
+    setupConsoleEncoding();
 
     thread t1(foo, 10);
     this_thread::sleep_for(chrono::milliseconds(200));
