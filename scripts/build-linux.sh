@@ -14,6 +14,15 @@ if [[ $source_file != "$repo_dir/"* ]]; then
     exit 2
 fi
 relative_source=${source_file#"$repo_dir/"}
+standard=c++17
+if [[ -f $source_dir/cxx-standard.txt ]]; then
+    standard=$(<"$source_dir/cxx-standard.txt")
+    standard=${standard//$'\r'/}
+    case $standard in
+        c++17|c++20) ;;
+        *) printf 'Unsupported C++ standard: %s\n' "$standard" >&2; exit 2 ;;
+    esac
+fi
 output="$repo_dir/build/${relative_source%.cpp}"
 mkdir -p -- "$(dirname -- "$output")"
 sources=("$source_file")
@@ -32,5 +41,5 @@ else
     done
 fi
 
-exec /usr/bin/g++ -std=c++17 -fdiagnostics-color=always -O0 -g \
+exec /usr/bin/g++ "-std=$standard" -fdiagnostics-color=always -O0 -g \
     -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output"

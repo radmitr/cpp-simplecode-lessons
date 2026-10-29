@@ -109,6 +109,8 @@
 
 ## Многопоточность
 
+[Порядок изучения и пояснения к примерам](multithreading/README.md).
+
 - [lesson-01-thread](multithreading/lesson-01-thread/)
 - [lesson-02-thread-param](multithreading/lesson-02-thread-param/)
 - [lesson-03-std-ref](multithreading/lesson-03-std-ref/)
@@ -119,3 +121,11 @@
 - [lesson-08-deadlock](multithreading/lesson-08-deadlock/)
 - [lesson-09-recursive-mutex](multithreading/lesson-09-recursive-mutex/)
 - [lesson-10-unique-lock](multithreading/lesson-10-unique-lock/)
+
+### Бонусы по многопоточности
+
+- [01-atomic](multithreading/bonus/01-atomic/)
+- [02-scoped-lock](multithreading/bonus/02-scoped-lock/)
+- [03-condition-variable](multithreading/bonus/03-condition-variable/)
+- [04-future-async](multithreading/bonus/04-future-async/)
+- [05-jthread-stop-token](multithreading/bonus/05-jthread-stop-token/)

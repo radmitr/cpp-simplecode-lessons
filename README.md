@@ -5,11 +5,14 @@
 ## Структура
 
 - `basics/`, `oop/`, `stl/`, `multithreading/` — уроки по разделам.
+- `multithreading/bonus/` — дополнительные темы по многопоточности после уроков 01–10.
 - `examples/` — дополнительные примеры.
 - `_template/` — заготовка урока.
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
+Пояснения к урокам многопоточности: [multithreading/README.md](multithreading/README.md).
+Устройство сборки и выбор стандарта: [scripts/README.md](scripts/README.md).
 
 ## Требования
 
@@ -18,7 +21,7 @@
 - **Windows:** MSYS2 MinGW-w64, компилятор и GDB в `C:/msys64/mingw64/bin/`, Bash и утилиты в `C:/msys64/usr/bin/`. Каталог MinGW должен быть в `PATH`, чтобы программы находили DLL. При другой установке измените пути в конфигурациях и `scripts/build-windows.sh`.
 - **Linux:** `/usr/bin/g++`, `/usr/bin/gdb`, `/bin/bash`. На Ubuntu/Debian установите `build-essential` и `gdb`. Команда `locale charmap` должна показывать `UTF-8`.
 
-На Windows и Linux используется C++17. CMake не настроен.
+На Windows и Linux по умолчанию используется C++17. Бонус про std::jthread использует C++20; скрипты выбирают стандарт из cxx-standard.txt рядом с исходником. Для него нужны компилятор и стандартная библиотека с поддержкой std::jthread и std::stop_token. CMake не настроен.
 
 ## Сборка и запуск в VS Code
 
