@@ -65,6 +65,18 @@ public:
         return result;
     }
 
+    std::size_t cancelPending()
+    {
+        std::queue<std::function<void()>> cancelled;
+        {
+            std::lock_guard<std::mutex> guard(mtx);
+            tasks.swap(cancelled);
+        }
+        // Уничтожение неисполненных packaged_task даст future ошибку
+        // broken_promise. Освобождаем их за пределами мьютекса очереди.
+        return cancelled.size();
+    }
+
 private:
     void work()
     {
