@@ -9,6 +9,8 @@
 - `_template/` — заготовка урока.
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
+Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
+
 ## Требования
 
 Нужно расширение VS Code **C/C++ от Microsoft**.
