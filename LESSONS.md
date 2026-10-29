@@ -119,4 +119,3 @@
 - [lesson-08-deadlock](multithreading/lesson-08-deadlock/)
 - [lesson-09-recursive-mutex](multithreading/lesson-09-recursive-mutex/)
 - [lesson-10-unique-lock](multithreading/lesson-10-unique-lock/)
-
