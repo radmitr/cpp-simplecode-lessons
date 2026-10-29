@@ -5,7 +5,7 @@
             "name": "C++: Run and Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../../../build/multithreading/bonus/05-jthread-stop-token/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/../../../build/multithreading/bonus/03-scoped-lock/${fileBasenameNoExtension}",
             "cwd": "${fileDirname}",
             "preLaunchTask": "C/C++: Build",
             "setupCommands": [
@@ -19,7 +19,7 @@
             "externalConsole": false,
             "miDebuggerPath": "/usr/bin/gdb",
             "windows": {
-                "program": "${workspaceFolder}/../../../build/multithreading/bonus/05-jthread-stop-token/${fileBasenameNoExtension}.exe",
+                "program": "${workspaceFolder}/../../../build/multithreading/bonus/03-scoped-lock/${fileBasenameNoExtension}.exe",
                 "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
             }
         }

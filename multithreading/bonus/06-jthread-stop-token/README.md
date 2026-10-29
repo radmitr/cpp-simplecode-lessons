@@ -1,4 +1,4 @@
-# 05. std::jthread и std::stop_token — C++20
+# 06. std::jthread и std::stop_token — C++20
 
 Этот пример собирается как C++20: cxx-standard.txt в этой папке содержит c++20.
 Общие скрипты Windows и Linux читают этот файл автоматически.

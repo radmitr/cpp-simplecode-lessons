@@ -5,7 +5,7 @@
             "name": "C++: Run and Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../../../build/multithreading/bonus/02-scoped-lock/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/../../../build/multithreading/bonus/04-condition-variable/${fileBasenameNoExtension}",
             "cwd": "${fileDirname}",
             "preLaunchTask": "C/C++: Build",
             "setupCommands": [
@@ -19,7 +19,7 @@
             "externalConsole": false,
             "miDebuggerPath": "/usr/bin/gdb",
             "windows": {
-                "program": "${workspaceFolder}/../../../build/multithreading/bonus/02-scoped-lock/${fileBasenameNoExtension}.exe",
+                "program": "${workspaceFolder}/../../../build/multithreading/bonus/04-condition-variable/${fileBasenameNoExtension}.exe",
                 "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
             }
         }

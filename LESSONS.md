@@ -125,7 +125,8 @@
 ### Бонусы по многопоточности
 
 - [01-atomic](multithreading/bonus/01-atomic/)
-- [02-scoped-lock](multithreading/bonus/02-scoped-lock/)
-- [03-condition-variable](multithreading/bonus/03-condition-variable/)
-- [04-future-async](multithreading/bonus/04-future-async/)
-- [05-jthread-stop-token](multithreading/bonus/05-jthread-stop-token/)
+- [02-try-lock](multithreading/bonus/02-try-lock/)
+- [03-scoped-lock](multithreading/bonus/03-scoped-lock/)
+- [04-condition-variable](multithreading/bonus/04-condition-variable/)
+- [05-future-async](multithreading/bonus/05-future-async/)
+- [06-jthread-stop-token](multithreading/bonus/06-jthread-stop-token/)

@@ -30,7 +30,7 @@
         {
             "label": "C/C++: Run (No Build)",
             "type": "process",
-            "command": "${workspaceFolder}/../../../build/multithreading/bonus/03-condition-variable/${fileBasenameNoExtension}",
+            "command": "${workspaceFolder}/../../../build/multithreading/bonus/06-jthread-stop-token/${fileBasenameNoExtension}",
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -42,7 +42,7 @@
                 "panel": "shared"
             },
             "windows": {
-                "command": "${workspaceFolder}/../../../build/multithreading/bonus/03-condition-variable/${fileBasenameNoExtension}.exe"
+                "command": "${workspaceFolder}/../../../build/multithreading/bonus/06-jthread-stop-token/${fileBasenameNoExtension}.exe"
             }
         }
     ]

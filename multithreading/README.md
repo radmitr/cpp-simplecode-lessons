@@ -19,10 +19,11 @@
 ## Бонусы
 
 1. [atomic](bonus/01-atomic/) — общий счётчик и гонка данных.
-2. [scoped_lock](bonus/02-scoped-lock/) — захват пары мьютексов.
-3. [condition_variable](bonus/03-condition-variable/) — wait, wait_for, wait_until, notify_one и notify_all.
-4. [future и async](bonus/04-future-async/) — результат и исключение из задачи.
-5. [jthread и stop_token](bonus/05-jthread-stop-token/) — остановка потока, C++20.
+2. [try_lock](bonus/02-try-lock/) — попытка захвата без ожидания и adopt_lock.
+3. [scoped_lock](bonus/03-scoped-lock/) — захват пары мьютексов.
+4. [condition_variable](bonus/04-condition-variable/) — wait, wait_for, wait_until, notify_one и notify_all.
+5. [future и async](bonus/05-future-async/) — результат и исключение из задачи.
+6. [jthread и stop_token](bonus/06-jthread-stop-token/) — остановка потока, C++20.
 
 ## Сборка и особенности
 

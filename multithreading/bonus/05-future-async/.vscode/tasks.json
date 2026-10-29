@@ -30,7 +30,7 @@
         {
             "label": "C/C++: Run (No Build)",
             "type": "process",
-            "command": "${workspaceFolder}/../../../build/multithreading/bonus/04-future-async/${fileBasenameNoExtension}",
+            "command": "${workspaceFolder}/../../../build/multithreading/bonus/05-future-async/${fileBasenameNoExtension}",
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -42,7 +42,7 @@
                 "panel": "shared"
             },
             "windows": {
-                "command": "${workspaceFolder}/../../../build/multithreading/bonus/04-future-async/${fileBasenameNoExtension}.exe"
+                "command": "${workspaceFolder}/../../../build/multithreading/bonus/05-future-async/${fileBasenameNoExtension}.exe"
             }
         }
     ]

@@ -35,7 +35,7 @@ main.cpp и main2.cpp собираются отдельно. Если рядом
 cxx-standard.txt, скрипт читает стандарт из него.
 Файл должен содержать одну строку c++17 или c++20 без пробелов.
 Другие значения вызывают ошибку; пример для C++20 находится в
-[бонусе про jthread](../multithreading/bonus/05-jthread-stop-token/).
+[бонусе про jthread](../multithreading/bonus/06-jthread-stop-token/).
 
 ~~~bash
 standard=c++17
