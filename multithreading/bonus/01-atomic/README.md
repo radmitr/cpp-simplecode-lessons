@@ -16,13 +16,29 @@ Atomic удобен для простого счётчика; mutex также �
 несколько связанных действий и переменных. Atomic не обязательно работает без блокировок.
 
 main2.cpp намеренно содержит гонку данных. По умолчанию он только выводит подсказку.
-Для отдельного эксперимента соберите его и передайте --unsafe:
+Для отдельного эксперимента соберите его и передайте --unsafe.
+Следующие команды предназначены для Linux и выполняются из корня репозитория
+(папки cpp-simplecode-lessons), а не из папки бонуса:
 
 ~~~bash
 bash scripts/build-linux.sh multithreading/bonus/01-atomic/main2.cpp
 ./build/multithreading/bonus/01-atomic/main2 --unsafe
 ~~~
 
-На Windows используйте build-windows.sh и main2.exe. Не считайте наблюдаемое число
+На Windows в PowerShell, из корня репозитория:
+
+~~~powershell
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/01-atomic/main2.cpp
+& .\build\multithreading\bonus\01-atomic\main2.exe --unsafe
+~~~
+
+Если main2.cpp уже собран через Ctrl+Shift+B в VS Code, запустите его из
+папки multithreading/bonus/01-atomic следующей командой PowerShell:
+
+~~~powershell
+& ..\..\..\build\multithreading\bonus\01-atomic\main2.exe --unsafe
+~~~
+
+Не считайте наблюдаемое число
 предсказуемым результатом: даже 200000 не доказывает правильность кода.
 Этот вариант нельзя использовать для измерения производительности.
