@@ -13,30 +13,28 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
-mutex mtx;
+std::mutex mtx;
 
 void print(char ch)
 {
-    this_thread::sleep_for(chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
     mtx.lock();
 
-    for (size_t i = 0; i < 5; ++i)
+    for (std::size_t i = 0; i < 5; ++i)
     {
-        for (size_t i = 0; i < 10; i++)
+        for (std::size_t i = 0; i < 10; i++)
         {
-            cout << ch;
-            this_thread::sleep_for(chrono::milliseconds(20));
+            std::cout << ch;
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 
     mtx.unlock();
 
-    this_thread::sleep_for(chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
 
 void setupConsoleEncoding()
@@ -57,9 +55,9 @@ int main(void)
     // print('#');
     // print('@');
 
-    thread t1(print, '*');
-    thread t2(print, '#');
-    thread t3(print, '@');
+    std::thread t1(print, '*');
+    std::thread t2(print, '#');
+    std::thread t3(print, '@');
 
     t1.join();
     t2.join();

@@ -11,14 +11,12 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
 int sum(int a, int b)
 {
-    this_thread::sleep_for(chrono::milliseconds(2000));
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tsum STARTED\t============" << endl;
-    this_thread::sleep_for(chrono::milliseconds(5000));
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tsum STOPPED\t============" << endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tsum STARTED\t============" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tsum STOPPED\t============" << std::endl;
     return a + b;
 }
 
@@ -35,26 +33,26 @@ int main(void)
     setupConsoleEncoding();
 
     // int result = sum(2, 5);
-    // cout << "Result: " << result << endl;
+    // std::cout << "Result: " << result << std::endl;
 
-    // thread t(sum, 2, 5);
+    // std::thread t(sum, 2, 5);
 
     // int result;
     // auto f = [&result]() { result = sum(2, 5); };
-    // thread t(f);
+    // std::thread t(f);
 
     int result;
-    thread t([&result]() { result = sum(2, 5); });
+    std::thread t([&result]() { result = sum(2, 5); });
 
-    for (size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tmain\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(500));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tmain\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
     t.join();
 
-    cout << "sum result: " << result << endl;
+    std::cout << "sum result: " << result << std::endl;
 
     return 0;
 }

@@ -11,34 +11,32 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
 class MyClass
 {
 public:
     void doWork()
     {
-        this_thread::sleep_for(chrono::milliseconds(2000));
-        cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STARTED\t============" << endl;
-        this_thread::sleep_for(chrono::milliseconds(5000));
-        cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STOPPED\t============" << endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STARTED\t============" << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STOPPED\t============" << std::endl;
     }
 
     void doWork2(int a)
     {
-        this_thread::sleep_for(chrono::milliseconds(2000));
-        cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork2 STARTED\t============" << endl;
-        this_thread::sleep_for(chrono::milliseconds(5000));
-        cout << "Thread ID: " << this_thread::get_id() << "doWork2 parameter: " << a << endl;
-        cout << " ============\tdoWork2 STOPPED\t============" << endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork2 STARTED\t============" << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "doWork2 parameter: " << a << std::endl;
+        std::cout << " ============\tdoWork2 STOPPED\t============" << std::endl;
     }
 
     int sum(int a, int b)
     {
-        this_thread::sleep_for(chrono::milliseconds(2000));
-        cout << "Thread ID: " << this_thread::get_id() << " ============\tsum STARTED\t============" << endl;
-        this_thread::sleep_for(chrono::milliseconds(5000));
-        cout << "Thread ID: " << this_thread::get_id() << " ============\tsum STOPPED\t============" << endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tsum STARTED\t============" << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tsum STOPPED\t============" << std::endl;
         return a + b;
     }
 };
@@ -57,15 +55,15 @@ int main(void)
 
     MyClass m;
 
-    // thread t([&]() {
+    // std::thread t([&]() {
     //     m.doWork();
     // });
-    thread t(&MyClass::doWork, m);
+    std::thread t(&MyClass::doWork, m);
 
-    for (size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tmain\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(500));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tmain\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
     t.join();

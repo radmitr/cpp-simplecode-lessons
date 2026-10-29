@@ -12,19 +12,17 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
-mutex m;
-recursive_mutex rm;
+std::mutex m;
+std::recursive_mutex rm;
 
 void foo(int a)
 {
-    cout << a << " ";
-    this_thread::sleep_for(chrono::milliseconds(500));
+    std::cout << a << " ";
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     if (a <= 1)
     {
-        cout << endl;
+        std::cout << std::endl;
         return;
     }
     a--;
@@ -66,7 +64,7 @@ int main(void)
     rm.unlock();
     rm.unlock();
 
-    cout << "Successfully end" << endl;
+    std::cout << "Successfully end" << std::endl;
 
     return 0;
 }

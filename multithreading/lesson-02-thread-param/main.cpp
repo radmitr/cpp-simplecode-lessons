@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <thread>
 #include <chrono>
 
@@ -12,17 +13,15 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
-void doWork(int a, int b, string msg)
+void doWork(int a, int b, std::string msg)
 {
-    cout << msg << endl;
-    this_thread::sleep_for(chrono::milliseconds(3000));
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STARTED\t============" << endl;
-    this_thread::sleep_for(chrono::milliseconds(5000));
-    cout << "a + b = " << a + b << endl;
-    this_thread::sleep_for(chrono::milliseconds(3000));
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STOPPED\t============" << endl;
+    std::cout << msg << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STARTED\t============" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+    std::cout << "a + b = " << a + b << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STOPPED\t============" << std::endl;
 }
 
 void setupConsoleEncoding()
@@ -37,12 +36,12 @@ int main(void)
 {
     setupConsoleEncoding();
 
-    thread th(doWork, 2, 3, "our_message");
+    std::thread th(doWork, 2, 3, "our_message");
 
-    for (size_t i = 0; true; i++)
+    for (std::size_t i = 0; true; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tmain\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(500));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tmain\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
     // Сюда выполнение не дойдёт: условие цикла выше всегда true.

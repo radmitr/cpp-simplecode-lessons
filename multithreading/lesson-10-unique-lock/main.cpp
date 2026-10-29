@@ -13,55 +13,53 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
-mutex mtx;
+std::mutex mtx;
 
 // void print(char ch)
 // {
-//     // this_thread::sleep_for(chrono::milliseconds(2000));
-//     // unique_lock<mutex> ul(mtx);
+//     // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+//     // std::unique_lock<std::mutex> ul(mtx);
 
-//     unique_lock<mutex> ul(mtx, std::defer_lock);
+//     std::unique_lock<std::mutex> ul(mtx, std::defer_lock);
 
-//     this_thread::sleep_for(chrono::milliseconds(2000));
+//     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
 //     ul.lock();
 
-//     for (size_t i = 0; i < 5; ++i)
+//     for (std::size_t i = 0; i < 5; ++i)
 //     {
-//         for (size_t i = 0; i < 10; i++)
+//         for (std::size_t i = 0; i < 10; i++)
 //         {
-//             cout << ch;
-//             this_thread::sleep_for(chrono::milliseconds(10));
+//             std::cout << ch;
+//             std::this_thread::sleep_for(std::chrono::milliseconds(10));
 //         }
-//         cout << endl;
+//         std::cout << std::endl;
 //     }
-//     cout << endl;
+//     std::cout << std::endl;
 
 //     ul.unlock();
 
-//     this_thread::sleep_for(chrono::milliseconds(2000));
+//     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 // }
 
 void print(char ch)
 {
-    unique_lock<mutex> ul(mtx, std::defer_lock);
+    std::unique_lock<std::mutex> ul(mtx, std::defer_lock);
 
-    this_thread::sleep_for(chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
     ul.lock();
 
-    for (size_t i = 0; i < 5; ++i)
+    for (std::size_t i = 0; i < 5; ++i)
     {
-        for (size_t i = 0; i < 10; i++)
+        for (std::size_t i = 0; i < 10; i++)
         {
-            cout << ch;
-            this_thread::sleep_for(chrono::milliseconds(10));
+            std::cout << ch;
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void setupConsoleEncoding()
@@ -78,8 +76,8 @@ int main(void)
 
     SimpleTimer timer;
 
-    thread t1(print, '*');
-    thread t2(print, '#');
+    std::thread t1(print, '*');
+    std::thread t2(print, '#');
 
     t1.join();
     t2.join();

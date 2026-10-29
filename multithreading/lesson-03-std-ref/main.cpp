@@ -12,15 +12,13 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
 void doWork(int &a)
 {
-    this_thread::sleep_for(chrono::milliseconds(2000));
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STARTED\t============" << endl;
-    this_thread::sleep_for(chrono::milliseconds(5000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STARTED\t============" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     a = a * 2;
-    cout << "Thread ID: " << this_thread::get_id() << " ============\tdoWork STOPPED\t============" << endl;
+    std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STOPPED\t============" << std::endl;
 }
 
 void setupConsoleEncoding()
@@ -37,16 +35,16 @@ int main(void)
 
     int q = 5;
 
-    thread th(doWork, std::ref(q));
+    std::thread th(doWork, std::ref(q));
 
-    for (size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tmain\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(500));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tmain\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
     th.join();
-    cout << "q=" << q << endl;
+    std::cout << "q=" << q << std::endl;
 
     return 0;
 }

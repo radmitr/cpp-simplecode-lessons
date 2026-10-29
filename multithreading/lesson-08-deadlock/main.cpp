@@ -13,31 +13,29 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
-mutex mtx1;
-mutex mtx2;
+std::mutex mtx1;
+std::mutex mtx2;
 
 void print()
 {
     // mtx2.lock();
-    // this_thread::sleep_for(chrono::milliseconds(1));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(1));
     // mtx1.lock();
 
     mtx1.lock();
-    this_thread::sleep_for(chrono::milliseconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
     mtx2.lock();
 
-    for (size_t i = 0; i < 5; ++i)
+    for (std::size_t i = 0; i < 5; ++i)
     {
-        for (size_t i = 0; i < 10; i++)
+        for (std::size_t i = 0; i < 10; i++)
         {
-            cout << '*';
-            this_thread::sleep_for(chrono::milliseconds(20));
+            std::cout << '*';
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 
     // mtx1.unlock();
     // mtx2.unlock();
@@ -49,19 +47,19 @@ void print()
 void print2()
 {
     mtx1.lock();
-    this_thread::sleep_for(chrono::milliseconds(1));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
     mtx2.lock();
 
-    for (size_t i = 0; i < 5; ++i)
+    for (std::size_t i = 0; i < 5; ++i)
     {
-        for (size_t i = 0; i < 10; i++)
+        for (std::size_t i = 0; i < 10; i++)
         {
-            cout << '#';
-            this_thread::sleep_for(chrono::milliseconds(20));
+            std::cout << '#';
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
         }
-        cout << endl;
+        std::cout << std::endl;
     }
-    cout << endl;
+    std::cout << std::endl;
 
     mtx2.unlock();
     mtx1.unlock();
@@ -81,8 +79,8 @@ int main(void)
 
     SimpleTimer timer;
 
-    thread t1(print);
-    thread t2(print2);
+    std::thread t1(print);
+    std::thread t2(print2);
 
     t1.join();
     t2.join();

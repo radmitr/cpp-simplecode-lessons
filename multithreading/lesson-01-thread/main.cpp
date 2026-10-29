@@ -12,14 +12,12 @@
 #include <windows.h>
 #endif
 
-using namespace std;
-
 void doWork()
 {
-    for (size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tdoWork\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(1000));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tdoWork\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 }
 
@@ -34,22 +32,22 @@ void setupConsoleEncoding()
 int main(void)
 {
     setupConsoleEncoding();
-    cout << "START MAIN" << endl;
+    std::cout << "START MAIN" << std::endl;
 
-    thread th(doWork);
-    thread th2(doWork);
+    std::thread th(doWork);
+    std::thread th2(doWork);
     // th.detach();
     // th2.detach();
 
-    for (size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
-        cout << "Thread ID: " << this_thread::get_id() << "\tmain\t" << i << endl;
-        this_thread::sleep_for(chrono::milliseconds(500));
+        std::cout << "Thread ID: " << std::this_thread::get_id() << "\tmain\t" << i << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 
     th.join();
     th2.join();
 
-    cout << "END MAIN" << endl;
+    std::cout << "END MAIN" << std::endl;
     return 0;
 }
