@@ -6,7 +6,8 @@ void tryIncrement(std::mutex& mtx, int& counter)
 {
     if (mtx.try_lock())
     {
-        // Мьютекс уже захвачен: с adopt_lock конструктор guard не вызывает lock() повторно.
+        // try_lock() уже захватил mtx. Повторно захватывать его не нужно.
+        // adopt_lock сообщает это guard: он только освободит mtx в конце блока.
         std::lock_guard<std::mutex> guard(mtx, std::adopt_lock);
         ++counter;
         std::cout << "try_lock: acquired; counter = " << counter << '\n';
