@@ -41,5 +41,7 @@ else
     done
 fi
 
+/bin/bash "$repo_dir/scripts/generate-compile-commands.sh"
+
 exec /usr/bin/g++ "-std=$standard" -fdiagnostics-color=always -O0 -g \
     -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output"
