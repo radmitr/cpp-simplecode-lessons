@@ -13,8 +13,9 @@
 /basics/lesson-117-serialize-objects-to-file/point.dat
 /basics/lesson-118-file-io-fstream/myFile.txt_
 
-# Keep only shared build/debug tasks, even if a global ignore excludes .vscode
+# Keep only shared build/debug and IntelliSense configs, even if a global ignore excludes .vscode
 !**/.vscode/
 **/.vscode/*
 !**/.vscode/tasks.json
 !**/.vscode/launch.json
+!/.vscode/c_cpp_properties.json
