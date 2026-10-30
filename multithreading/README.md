@@ -19,7 +19,7 @@
 ## Бонусы
 
 1. [atomic](bonus/01-atomic/) — общий счётчик и гонка данных.
-2. [try_lock](bonus/02-try-lock/) — попытка захвата без ожидания и adopt_lock.
+2. [try_lock](bonus/02-try-lock/) — попытка захвата без ожидания, adopt_lock и вариант с try_to_lock.
 3. [scoped_lock](bonus/03-scoped-lock/) — захват пары мьютексов.
 4. [condition_variable](bonus/04-condition-variable/) — wait, wait_for, wait_until, notify_one и notify_all.
 5. [future и async](bonus/05-future-async/) — результат и исключение из задачи.

@@ -1,16 +1,11 @@
 #include <iostream>
-#include <string_view>
 #include <thread>
 
-// Намеренно неверный пример: запускать отдельно с аргументом --unsafe.
+// Намеренно неверный пример: два потока меняют общий int без синхронизации.
 // Гонка данных означает неопределённое поведение, а не только потерю прибавлений.
-int main(int argc, char* argv[])
+int main()
 {
-    if (argc != 2 || std::string_view(argv[1]) != "--unsafe")
-    {
-        std::cout << "Intentional data race. Run with --unsafe to demonstrate UB.\n";
-        return 0;
-    }
+    std::cout << "Intentional data race: undefined behavior.\n";
 
     int counter = 0;
     auto increment = [&]() {

@@ -15,30 +15,27 @@
 Atomic удобен для простого счётчика; mutex также позволяет защитить
 несколько связанных действий и переменных. Atomic не обязательно работает без блокировок.
 
-main2.cpp намеренно содержит гонку данных. По умолчанию он только выводит подсказку.
-Для отдельного эксперимента соберите его и передайте --unsafe.
-Следующие команды предназначены для Linux и выполняются из корня репозитория
-(папки cpp-simplecode-lessons), а не из папки бонуса:
+`main2.cpp` намеренно содержит гонку данных: оба потока увеличивают обычный
+`int` без мьютекса и без атомарных операций. Программа сразу запускает этот
+эксперимент и выводит сообщение `Intentional data race: undefined behavior.`
+Откройте `main2.cpp` и нажмите F5 или Ctrl+F5; аргументы запуска не нужны.
+
+Для запуска из терминала на Linux выполните из корня репозитория
+(папки `cpp-simplecode-lessons`):
 
 ~~~bash
 bash scripts/build-linux.sh multithreading/bonus/01-atomic/main2.cpp
-./build/multithreading/bonus/01-atomic/main2 --unsafe
+./build/multithreading/bonus/01-atomic/main2
 ~~~
 
 На Windows в PowerShell, из корня репозитория:
 
 ~~~powershell
 & C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/01-atomic/main2.cpp
-& .\build\multithreading\bonus\01-atomic\main2.exe --unsafe
+& .\build\multithreading\bonus\01-atomic\main2.exe
 ~~~
 
-Если main2.cpp уже собран через Ctrl+Shift+B в VS Code, запустите его из
-папки multithreading/bonus/01-atomic следующей командой PowerShell:
-
-~~~powershell
-& ..\..\..\build\multithreading\bonus\01-atomic\main2.exe --unsafe
-~~~
-
-Не считайте наблюдаемое число
-предсказуемым результатом: даже 200000 не доказывает правильность кода.
+У программы нет гарантированного результата: даже число 200000
+не доказывает правильность кода. Сравните с корректными вариантами в `main.cpp`,
+где мьютекс или атомарный счётчик устраняет гонку данных.
 Этот вариант нельзя использовать для измерения производительности.
