@@ -28,6 +28,24 @@
             }
         },
         {
+            "label": "C/C++: Update IntelliSense",
+            "type": "process",
+            "command": "/bin/bash",
+            "args": [
+                "${workspaceFolder}/../../scripts/generate-compile-commands.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "windows": {
+                "command": "C:/msys64/usr/bin/bash.exe",
+                "args": [
+                    "${workspaceFolder}/../../scripts/generate-compile-commands.sh"
+                ]
+            }
+        },
+        {
             "label": "C/C++: Run (No Build)",
             "type": "process",
             "command": "${workspaceFolder}/../../build/oop/lesson-086-oop-operator-overloading-increment-decrement/${fileBasenameNoExtension}",

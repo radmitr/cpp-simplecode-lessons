@@ -30,23 +30,28 @@ load_compiler_options() {
     fi
 }
 
-json_string() {
+json_escape() {
     local value=$1
     value=${value//\\/\\\\}
     value=${value//\"/\\\"}
     value=${value//$'\n'/\\n}
     value=${value//$'\r'/\\r}
     value=${value//$'\t'/\\t}
-    printf '"%s"' "$value"
+    REPLY="\"$value\""
 }
 
-native_path() {
-    # All database paths belong to this repository; convert its prefix once.
-    printf '%s%s' "$native_repo" "${1#"$repo_dir"}"
+json_string() {
+    json_escape "$1"
+    printf '%s' "$REPLY"
 }
 
 replace_if_changed() {
-    if [[ -f $output ]] && /usr/bin/cmp -s -- "$temporary" "$output"; then
+    local previous='' replacement=''
+    if [[ -f $output ]]; then
+        IFS= read -r -d '' previous < "$output" || true
+    fi
+    IFS= read -r -d '' replacement < "$temporary" || true
+    if [[ -f $output && $previous == "$replacement" ]]; then
         # Preserve the timestamp so IntelliSense does not reload unchanged data.
         /usr/bin/rm -f -- "$temporary"
     else
@@ -57,17 +62,15 @@ replace_if_changed() {
 generate_workspace_configuration() {
     local workspace_dir=$1
     local source_dir=$workspace_dir standard
-    local first_line='' checksum='' relative_workspace database_path content
+    local first_line='' checksum='' relative_workspace database_path content=''
+    local previous='' body=''
     output="$workspace_dir/.vscode/c_cpp_properties.json"
     if [[ -e $output || -L $output ]]; then
         if [[ -f $output && ! -L $output ]]; then
-            IFS= read -r first_line < "$output" || true
-            if [[ $first_line == "$generated_header"* ]]; then
-                checksum=$(/usr/bin/tail -n +2 -- "$output" | /usr/bin/sha256sum)
-                checksum=${checksum%% *}
-            fi
+            IFS= read -r -d '' previous < "$output" || true
+            first_line=${previous%%$'\n'*}
         fi
-        if [[ -z ${checksum:-} || $first_line != "$generated_header$checksum" ]]; then
+        if [[ $first_line != "$generated_header"* ]]; then
             printf 'Keeping custom IntelliSense configuration: %s\n' "$output" >&2
             preserved_count=$((preserved_count + 1))
             return
@@ -85,8 +88,9 @@ generate_workspace_configuration() {
         database_path=../$database_path
         relative_workspace=${relative_workspace#*/}
     done
-    database_path=$(json_string "\${workspaceFolder}/$database_path")
-    content=$(/usr/bin/cat <<EOF
+    json_escape "\${workspaceFolder}/$database_path"
+    database_path=$REPLY
+    IFS= read -r -d '' content <<EOF || true
 {
     "configurations": [
         {
@@ -107,13 +111,33 @@ generate_workspace_configuration() {
     "version": 4
 }
 EOF
-    )
-    checksum=$(printf '%s\n' "$content" | /usr/bin/sha256sum)
-    checksum=${checksum%% *}
+    checksum=${configuration_checksums[$content]-}
+    if [[ -z $checksum ]]; then
+        checksum=$(printf '%s' "$content" | /usr/bin/sha256sum)
+        checksum=${checksum%% *}
+        configuration_checksums[$content]=$checksum
+    fi
+    local expected_checksum=$checksum
+    if [[ -n $previous ]]; then
+        body=${previous#*$'\n'}
+        # The expected body is already known: unchanged files need no subprocesses.
+        if [[ $body == "$content" && $first_line == "$generated_header$checksum" ]]; then
+            configurations_count=$((configurations_count + 1))
+            return
+        fi
+        checksum=$(printf '%s' "$body" | /usr/bin/sha256sum)
+        checksum=${checksum%% *}
+        if [[ $first_line != "$generated_header$checksum" ]]; then
+            printf 'Keeping custom IntelliSense configuration: %s\n' "$output" >&2
+            preserved_count=$((preserved_count + 1))
+            return
+        fi
+    fi
+    checksum=$expected_checksum
     temporary=$(/usr/bin/mktemp "$output.XXXXXX")
     {
         printf '%s%s\n' "$generated_header" "$checksum"
-        printf '%s\n' "$content"
+        printf '%s' "$content"
     } > "$temporary"
     replace_if_changed
     configurations_count=$((configurations_count + 1))
@@ -129,22 +153,22 @@ first=true
     printf '[\n'
     # Only source trees: generated files and unrelated checkouts stay out.
     while IFS= read -r -d '' source_file; do
-        source_dir=$(/usr/bin/dirname -- "$source_file")
+        source_dir=${source_file%/*}
         load_compiler_options
         if $first; then first=false; else printf ',\n'; fi
         printf '  {"directory": '
-        json_string "$(native_path "$source_dir")"
+        json_string "$native_repo${source_dir#"$repo_dir"}"
         printf ', "file": '
-        json_string "$(native_path "$source_file")"
+        json_string "$native_repo${source_file#"$repo_dir"}"
         printf ', "arguments": ['
         json_string "$compiler"
         for option in "${compiler_options[@]}"; do
             printf ', '; json_string "$option"
         done
         if [[ ${#includes[@]} -gt 0 ]]; then
-            printf ', "-I", '; json_string "$(native_path "${includes[1]}")"
+            printf ', "-I", '; json_string "$native_repo${includes[1]#"$repo_dir"}"
         fi
-        printf ', "-c", '; json_string "$(native_path "$source_file")"
+        printf ', "-c", '; json_string "$native_repo${source_file#"$repo_dir"}"
         printf ']}'
     done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/oop" "$repo_dir/stl" \
         "$repo_dir/multithreading" "$repo_dir/examples" "$repo_dir/_template" \
@@ -156,6 +180,7 @@ replace_if_changed
 # A checksum distinguishes untouched generated files from user edits.
 # VS Code accepts the leading comment in c_cpp_properties.json (JSON with comments).
 generated_header='// Generated by scripts/generate-compile-commands.sh; sha256: '
+declare -A configuration_checksums=()
 configurations_count=0
 preserved_count=0
 while IFS= read -r -d '' task_file; do
