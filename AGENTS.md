@@ -64,3 +64,10 @@ Requirements:
 - Keep the complete title at 72 characters or fewer.
 - Do not create the commit unless the user explicitly requests it.
 - Omit the title when there are no uncommitted changes.
+
+## Self-contained lesson explanations
+
+Keep lesson documentation and code comments self-contained. Do not mention
+the user's other projects, repositories, their internal class names, or local
+paths as sources of inspiration or comparisons unless explicitly requested.
+Describe reused techniques generically without references to unrelated projects.
