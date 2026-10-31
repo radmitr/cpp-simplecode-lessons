@@ -1,7 +1,7 @@
 #ifndef NETWORKING_DEMO_NET_HPP
 #define NETWORKING_DEMO_NET_HPP
 
-// Небольшой учебный слой над WinSock/POSIX. Все примеры используют IPv4.
+// Небольшой учебный слой над WinSock/POSIX. IPv4 используется по умолчанию.
 #ifdef _WIN32
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
@@ -130,9 +130,9 @@ inline void nonblocking(const Socket& socket)
 #endif
 }
 
-inline Socket makeSocket(int type)
+inline Socket makeSocket(int type, int family = AF_INET)
 {
-    Socket result(::socket(AF_INET, type, 0));
+    Socket result(::socket(family, type, 0));
     if (result.get() == invalid) fail("socket");
     nonblocking(result);
     return result;
@@ -207,25 +207,32 @@ inline void bindLoopback(const Socket& socket, std::uint16_t port)
 
 inline std::uint16_t localPort(const Socket& socket)
 {
-    sockaddr_in address{};
+    sockaddr_storage address{};
     AddressLength length = sizeof(address);
     if (getsockname(socket.get(), reinterpret_cast<sockaddr*>(&address), &length) != 0)
         fail("getsockname");
-    return ntohs(address.sin_port);
+    if (address.ss_family == AF_INET)
+        return ntohs(reinterpret_cast<const sockaddr_in*>(&address)->sin_port);
+    if (address.ss_family == AF_INET6)
+        return ntohs(reinterpret_cast<const sockaddr_in6*>(&address)->sin6_port);
+    throw std::runtime_error("unsupported socket address family");
 }
 
-inline std::uint16_t portArgument(int argc, char* argv[], std::uint16_t fallback,
-                                  bool allowZero = false)
+inline std::uint16_t parsePort(std::string_view text, bool allowZero = false)
 {
-    if (argc > 2) throw std::runtime_error("Usage: program [port]");
-    if (argc == 1) return fallback;
-    const std::string_view text(argv[1]);
     unsigned int value = 0;
     const auto parsed = std::from_chars(text.data(), text.data() + text.size(), value);
     if (parsed.ec != std::errc{} || parsed.ptr != text.data() + text.size()
         || value > 65535 || (!allowZero && value == 0))
         throw std::runtime_error("Invalid port (expected 1..65535; server also accepts 0)");
     return static_cast<std::uint16_t>(value);
+}
+
+inline std::uint16_t portArgument(int argc, char* argv[], std::uint16_t fallback,
+                                  bool allowZero = false)
+{
+    if (argc > 2) throw std::runtime_error("Usage: program [port]");
+    return argc == 1 ? fallback : parsePort(argv[1], allowZero);
 }
 
 inline Socket listenTcp(std::uint16_t port)
@@ -252,22 +259,27 @@ inline Socket accept(const Socket& listener, Deadline deadline)
     }
 }
 
-inline Socket connectLoopback(std::uint16_t port, Deadline deadline)
+inline Socket connectAddress(const sockaddr* address, AddressLength length, Deadline deadline)
 {
-    auto socket = makeSocket(SOCK_STREAM);
-    const auto address = loopback(port);
-    if (::connect(socket.get(), reinterpret_cast<const sockaddr*>(&address), sizeof(address)) == 0)
+    auto socket = makeSocket(SOCK_STREAM, address->sa_family);
+    if (::connect(socket.get(), address, length) == 0)
         return socket;
     const int error = lastError();
     if (!connecting(error)) fail("connect", error);
     waitReady(socket, true, deadline);
     int result = 0;
-    AddressLength length = sizeof(result);
+    AddressLength resultLength = sizeof(result);
     if (getsockopt(socket.get(), SOL_SOCKET, SO_ERROR,
-                   reinterpret_cast<char*>(&result), &length) != 0)
+                   reinterpret_cast<char*>(&result), &resultLength) != 0)
         fail("getsockopt");
     if (result != 0) fail("connect", result);
     return socket;
+}
+
+inline Socket connectLoopback(std::uint16_t port, Deadline deadline)
+{
+    const auto address = loopback(port);
+    return connectAddress(reinterpret_cast<const sockaddr*>(&address), sizeof(address), deadline);
 }
 
 inline void sendAll(const Socket& socket, std::string_view message, Deadline deadline,

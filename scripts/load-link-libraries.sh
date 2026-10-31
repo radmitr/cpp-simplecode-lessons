@@ -11,9 +11,9 @@ load_link_libraries() {
         library=${library%$'\r'}
         case $library in
             ''|'#'*) ;;
-            ws2_32)
+            ws2_32|mswsock)
                 if [[ $library_platform == windows ]]; then
-                    link_libraries+=(-lws2_32)
+                    link_libraries+=("-l$library")
                 fi
                 ;;
             curl) link_libraries+=(-lcurl) ;;

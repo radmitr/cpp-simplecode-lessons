@@ -11,6 +11,7 @@ import http.server
 import os
 from pathlib import Path
 import queue
+import re
 import shutil
 import socket
 import ssl
@@ -43,9 +44,12 @@ def run(lesson, name, *args, success=True):
 
 
 class Server:
-    def __init__(self, lesson, expected=0):
+    def __init__(self, lesson, expected=0, *, port=0, args=(), wait_ready=True):
         self.lesson = lesson
         self.expected = expected
+        self.port = port
+        self.args = args
+        self.wait_ready = wait_ready
         self.lines = []
         self.messages = queue.Queue()
         self.process = None
@@ -53,7 +57,7 @@ class Server:
 
     def __enter__(self):
         self.process = subprocess.Popen(
-            [executable(self.lesson, "server"), "0"],
+            [executable(self.lesson, "server"), str(self.port), *map(str, self.args)],
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             stdin=subprocess.DEVNULL, text=True, bufsize=1,
         )
@@ -67,10 +71,15 @@ class Server:
         self.reader = threading.Thread(target=collect, daemon=True)
         self.reader.start()
         try:
-            line = self.messages.get(timeout=5)
-            if line is None or not line.startswith("Listening on 127.0.0.1:"):
-                raise AssertionError((self.lesson, line))
-            self.port = int(line.rsplit(":", 1)[1])
+            if self.wait_ready:
+                while True:
+                    line = self.messages.get(timeout=5)
+                    if line is None:
+                        raise AssertionError((self.lesson, "".join(self.lines)))
+                    match = re.fullmatch(r"Listening on (?:127\.0\.0\.1|0\.0\.0\.0|\[::1\]):(\d+)\s*", line)
+                    if match:
+                        self.port = int(match[1])
+                        break
             return self
         except BaseException:
             self.process.kill()
@@ -81,7 +90,7 @@ class Server:
 
     def __exit__(self, kind, error, traceback):
         try:
-            if kind:
+            if kind and self.process.poll() is None:
                 self.process.kill()
             code = self.process.wait(timeout=6)
             self.reader.join(timeout=5)
