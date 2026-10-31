@@ -71,3 +71,28 @@ Keep lesson documentation and code comments self-contained. Do not mention
 the user's other projects, repositories, their internal class names, or local
 paths as sources of inspiration or comparisons unless explicitly requested.
 Describe reused techniques generically without references to unrelated projects.
+
+## README quality for the reference project
+
+Treat this repository as a self-contained learning and reference project.
+Write lesson explanations in clear Russian for a reader learning the topic.
+
+- Provide a README for every lesson and standalone example; section READMEs
+  should give a learning order and links, rather than replace lesson explanations.
+- Inspect the actual source and every independent main variant before documenting
+  them. Distinguish current code from additional illustrative snippets.
+- Explain the purpose, prerequisites, key syntax and execution step by step:
+  what happens, when it happens, why it is needed, and what changes if omitted
+  or replaced by a commonly confused alternative.
+- Show small concrete examples and explain their results. Cover ordering,
+  lifetimes, ownership, synchronization, errors and cleanup when relevant.
+- Explain common API variants and useful rare cases, limitations, invalid
+  operations, version requirements and typical mistakes. Define unfamiliar terms.
+- Include reproducible build/run guidance or a precise local setup link. Identify
+  interactive input, required files/services, generated data and nontermination.
+- Keep explanations concise but sufficiently complete to use without opening
+  another reference. Avoid repetitive filler and arbitrary length targets.
+  External primary-source links supplement the explanation, not replace it.
+- Preserve accurate explanations and expand genuine gaps. Check claims, local
+  links and commands against the source and current build scripts. Never claim
+  execution or platform verification that was not performed.

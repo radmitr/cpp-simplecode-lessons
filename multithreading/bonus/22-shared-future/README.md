@@ -87,3 +87,25 @@ C/C++: Update IntelliSense.
 
 [shared_future в проекте стандарта](https://eel.is/c++draft/futures.shared.future).
 [Все бонусы](../README.md).
+
+## Когда нужен shared_future вместо обычного future
+
+Один future передаёт результат одному получателю через однократный get.
+shared_future позволяет нескольким владельцам ждать и читать одно состояние.
+Он не запускает производителя повторно.
+
+~~~cpp
+auto shared = std::async(std::launch::async, sum, 2, 5).share();
+int first = shared.get();
+int second = shared.get(); // То же подготовленное значение.
+~~~
+
+Это дополнительный пример с async; текущие main.cpp/main2.cpp публикуют
+значение и исключение через promise. У обычного `shared_future<T>` get возвращает
+const T&, поэтому копирование в int здесь явно делает отдельное значение.
+Для void и ссылочных специализаций тип результата отличается.
+
+wait также может использоваться для сигнала без извлечения значения:
+практический пример gate.wait есть в бонусе 11/main2.cpp.
+Подробности get/wait/таймаутов и поведения deferred —
+в [бонусе 05](../05-future-async/README.md).

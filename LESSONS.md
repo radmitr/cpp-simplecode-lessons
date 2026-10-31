@@ -113,6 +113,8 @@
 
 ## ООП
 
+[Порядок изучения, команды и ограничения примеров](oop/README.md).
+
 - [lesson-082-oop-copy-constructor](oop/lesson-082-oop-copy-constructor/)
 - [lesson-083-oop-operator-overloading-assignment](oop/lesson-083-oop-operator-overloading-assignment/)
 - [lesson-084-oop-operator-overloading-equal-not-equal](oop/lesson-084-oop-operator-overloading-equal-not-equal/)
@@ -148,6 +150,8 @@
 - [lesson-114-oop-virtual-diamond-inheritance](oop/lesson-114-oop-virtual-diamond-inheritance/)
 
 ## STL
+
+[Карта контейнеров и алгоритмов, диапазоны и типичные ошибки](stl/README.md).
 
 - [lesson-01-stl-vector](stl/lesson-01-stl-vector/)
 - [lesson-02-stl-iterators](stl/lesson-02-stl-iterators/)

@@ -14,7 +14,7 @@ const bool received = cv.wait(lock, stop, [&]() { return ready; });
 
 Обычная std::condition_variable не имеет этой перегрузки со stop_token.
 condition_variable_any также допускает другие совместимые типы блокировок,
-но в этом уроке используется знакомый unique_lock<mutex>.
+но в этом уроке используется знакомый `unique_lock<mutex>`.
 
 ## main.cpp: данных нет, поступает запрос остановки
 
