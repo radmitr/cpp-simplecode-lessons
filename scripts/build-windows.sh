@@ -16,15 +16,10 @@ if [[ $source_file != "$repo_dir/"* ]]; then
     exit 2
 fi
 relative_source=${source_file#"$repo_dir/"}
-standard=c++17
-if [[ -f $source_dir/cxx-standard.txt ]]; then
-    standard=$(<"$source_dir/cxx-standard.txt")
-    standard=${standard//$'\r'/}
-    case $standard in
-        c++17|c++20) ;;
-        *) printf 'Unsupported C++ standard: %s\n' "$standard" >&2; exit 2 ;;
-    esac
-fi
+source "$repo_dir/scripts/load-compiler.sh"
+load_language_settings
+compiler=$(select_lesson_compiler windows)
+check_lesson_compiler
 output="$repo_dir/build/${relative_source%.cpp}.exe"
 /usr/bin/mkdir -p -- "$(/usr/bin/dirname -- "$output")"
 sources=("$source_file")
@@ -43,5 +38,5 @@ else
     done
 fi
 
-exec C:/msys64/mingw64/bin/g++.exe "-std=$standard" -fdiagnostics-color=always -O0 -g \
+exec "$compiler" "-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g \
     -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"

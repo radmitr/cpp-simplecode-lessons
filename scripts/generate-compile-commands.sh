@@ -11,18 +11,12 @@ native_repo=$repo_dir
 if [[ $platform == windows ]]; then
     native_repo=$(/usr/bin/cygpath -m -- "$repo_dir")
 fi
+source "$repo_dir/scripts/load-compiler.sh"
 
 load_compiler_options() {
-    standard=c++17
-    if [[ -f $source_dir/cxx-standard.txt ]]; then
-        standard=$(<"$source_dir/cxx-standard.txt")
-        standard=${standard//$'\r'/}
-        case $standard in
-            c++17|c++20) ;;
-            *) printf 'Unsupported C++ standard: %s\n' "$standard" >&2; return 2 ;;
-        esac
-    fi
-    compiler_options=("-std=$standard" -fdiagnostics-color=always -O0 -g
+    load_language_settings
+    compiler=$(select_lesson_compiler "$platform")
+    compiler_options=("-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g
         -Wall -Wextra -Wpedantic -pthread)
     includes=()
     if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
@@ -63,6 +57,7 @@ generate_workspace_configuration() {
     local workspace_dir=$1
     local source_dir=$workspace_dir standard
     local first_line='' checksum='' relative_workspace database_path content=''
+    local linux_compiler windows_compiler
     local previous='' body=''
     output="$workspace_dir/.vscode/c_cpp_properties.json"
     if [[ -e $output || -L $output ]]; then
@@ -82,6 +77,8 @@ generate_workspace_configuration() {
         source_dir=$workspace_dir/src
     fi
     load_compiler_options
+    json_escape "$(select_lesson_compiler linux)"; linux_compiler=$REPLY
+    json_escape "$(select_lesson_compiler windows)"; windows_compiler=$REPLY
     relative_workspace=${workspace_dir#"$repo_dir/"}
     database_path=../build/compile_commands.json
     while [[ $relative_workspace == */* ]]; do
@@ -95,14 +92,14 @@ generate_workspace_configuration() {
     "configurations": [
         {
             "name": "Linux",
-            "compilerPath": "/usr/bin/g++",
+            "compilerPath": $linux_compiler,
             "cppStandard": "$standard",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": [$database_path]
         },
         {
             "name": "Win32",
-            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "compilerPath": $windows_compiler,
             "cppStandard": "$standard",
             "intelliSenseMode": "windows-gcc-x64",
             "compileCommands": [$database_path]
@@ -170,7 +167,7 @@ first=true
         fi
         printf ', "-c", '; json_string "$native_repo${source_file#"$repo_dir"}"
         printf ']}'
-    done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/oop" "$repo_dir/stl" \
+    done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/io" "$repo_dir/oop" "$repo_dir/stl" \
         "$repo_dir/multithreading" "$repo_dir/bonus" "$repo_dir/examples" "$repo_dir/_template" \
         -type f -name '*.cpp' -print0 | /usr/bin/sort -z)
     printf '\n]\n'
@@ -185,7 +182,7 @@ configurations_count=0
 preserved_count=0
 while IFS= read -r -d '' task_file; do
     generate_workspace_configuration "${task_file%/.vscode/tasks.json}"
-done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/oop" "$repo_dir/stl" \
+done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/io" "$repo_dir/oop" "$repo_dir/stl" \
     "$repo_dir/multithreading" "$repo_dir/bonus" "$repo_dir/examples" "$repo_dir/_template" \
     -type f -path '*/.vscode/tasks.json' -print0 | /usr/bin/sort -z)
 printf 'IntelliSense database: %s (%s); lesson configs: %d; kept custom: %d\n' \

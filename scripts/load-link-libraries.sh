@@ -18,6 +18,7 @@ load_link_libraries() {
                 ;;
             curl) link_libraries+=(-lcurl) ;;
             pq) link_libraries+=(-lpq) ;;
+            stdc++exp) link_libraries+=(-lstdc++exp) ;;
             *) printf 'Unsupported link library: %s\n' "$library" >&2; return 2 ;;
         esac
     done < "$library_dir/link-libraries.txt"

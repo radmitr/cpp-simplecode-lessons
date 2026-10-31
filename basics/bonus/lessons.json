@@ -1,0 +1,235 @@
+[
+  {
+    "number": 1,
+    "folder": "basics/bonus/01-constexpr-consteval",
+    "title": "constexpr и consteval",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 2,
+    "folder": "basics/bonus/02-raii",
+    "title": "RAII и время жизни ресурсов",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 3,
+    "folder": "basics/bonus/03-references-and-lifetime",
+    "title": "Ссылки, const и время жизни",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 4,
+    "folder": "basics/bonus/04-initialization",
+    "title": "Инициализация и initializer_list",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 5,
+    "folder": "basics/bonus/05-numeric-conversions",
+    "title": "Числа, диапазоны и преобразования",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 6,
+    "folder": "basics/bonus/06-auto-and-decltype",
+    "title": "auto, ссылки и decltype(auto)",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 7,
+    "folder": "basics/bonus/07-enum-class",
+    "title": "enum class и битовые флаги",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 8,
+    "folder": "basics/bonus/08-structured-bindings",
+    "title": "Структурированные привязки и псевдонимы",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 9,
+    "folder": "basics/bonus/09-move-semantics",
+    "title": "Перемещение и std::move",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 10,
+    "folder": "basics/bonus/10-rule-of-zero-five",
+    "title": "Правило нуля, специальные функции и возврат",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 11,
+    "folder": "basics/bonus/11-unique-ptr",
+    "title": "unique_ptr: фабрики, массивы и deleter",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 12,
+    "folder": "basics/bonus/12-shared-weak-ptr",
+    "title": "shared_ptr, weak_ptr и циклы владения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 13,
+    "folder": "basics/bonus/13-rethrow-and-nested",
+    "title": "Повторное выбрасывание и вложенные исключения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 14,
+    "folder": "basics/bonus/14-noexcept",
+    "title": "noexcept, деструкторы и перемещение",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 15,
+    "folder": "basics/bonus/15-exception-guarantees",
+    "title": "Гарантии безопасности исключений",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 16,
+    "folder": "basics/bonus/16-function-templates",
+    "title": "Шаблоны функций и вывод параметров",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 17,
+    "folder": "basics/bonus/17-template-parameters",
+    "title": "Параметры шаблонов, специализация и CTAD",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 18,
+    "folder": "basics/bonus/18-traits-if-constexpr",
+    "title": "type_traits, if constexpr и enable_if",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 19,
+    "folder": "basics/bonus/19-parameter-packs",
+    "title": "Пакеты параметров и fold expressions",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 20,
+    "folder": "basics/bonus/20-perfect-forwarding",
+    "title": "Forwarding references и std::forward",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 21,
+    "folder": "basics/bonus/21-concepts",
+    "title": "Concepts и requires",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 22,
+    "folder": "basics/bonus/22-lambda-lifetime",
+    "title": "Лямбды: время жизни и захват перемещением",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 23,
+    "folder": "basics/bonus/23-callables-and-invoke",
+    "title": "Вызываемые объекты, invoke и reference_wrapper",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 24,
+    "folder": "basics/bonus/24-odr-and-linkage",
+    "title": "ODR, inline и связывание",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "source": "basics/bonus/24-odr-and-linkage/src/main.cpp"
+  },
+  {
+    "number": 25,
+    "folder": "basics/bonus/25-static-initialization",
+    "title": "Статические объекты и constinit",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 26,
+    "folder": "basics/bonus/26-bits-and-representation",
+    "title": "Биты, endian и bit_cast",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 27,
+    "folder": "basics/bonus/27-chrono",
+    "title": "chrono: длительности и монотонные часы",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 28,
+    "folder": "basics/bonus/28-random",
+    "title": "Генераторы, распределения и воспроизводимость",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 29,
+    "folder": "basics/bonus/29-diagnostics",
+    "title": "Диагностика, assert и санитайзеры",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  }
+]

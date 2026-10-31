@@ -1,0 +1,243 @@
+[
+  {
+    "number": 1,
+    "folder": "bonus/reflection/01-introspection-overview",
+    "title": "Интроспекция, метаданные и время выполнения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 2,
+    "folder": "bonus/reflection/02-typeid-type-index",
+    "title": "RTTI: typeid, type_info и type_index",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 3,
+    "folder": "bonus/reflection/03-dynamic-cast",
+    "title": "Проверяемые преобразования dynamic_cast",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 4,
+    "folder": "bonus/reflection/04-traits-and-detection",
+    "title": "decltype, type_traits и обнаружение операций",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 5,
+    "folder": "bonus/reflection/05-manual-descriptors",
+    "title": "Ручные описатели и указатели на члены",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 6,
+    "folder": "bonus/reflection/06-toolchain",
+    "title": "Компилятор, заголовок meta и проверка возможностей",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 7,
+    "folder": "bonus/reflection/07-reflection-info",
+    "title": "Оператор ^^ и std::meta::info",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 8,
+    "folder": "bonus/reflection/08-names-and-origins",
+    "title": "Имена, псевдонимы, родитель и исходник",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 9,
+    "folder": "bonus/reflection/09-splicing",
+    "title": "Splicing: переход от метаданных к программе",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 10,
+    "folder": "bonus/reflection/10-enumerators",
+    "title": "Перечисления и совпадающие значения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 11,
+    "folder": "bonus/reflection/11-data-members",
+    "title": "Поля, типы и фильтрация членов",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 12,
+    "folder": "bonus/reflection/12-access-control",
+    "title": "Контекст доступа и инкапсуляция",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 13,
+    "folder": "bonus/reflection/13-expansion-statements",
+    "title": "Развёртывание обхода и runtime-значения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 14,
+    "folder": "bonus/reflection/14-base-subobjects",
+    "title": "Базовые классы и подобъекты",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 15,
+    "folder": "bonus/reflection/15-functions-and-parameters",
+    "title": "Функции, параметры и вызовы",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 16,
+    "folder": "bonus/reflection/16-templates",
+    "title": "Отражение шаблонов и подстановка",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 17,
+    "folder": "bonus/reflection/17-layout",
+    "title": "Размеры, выравнивание и смещения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 18,
+    "folder": "bonus/reflection/18-annotations",
+    "title": "Пользовательские аннотации",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 19,
+    "folder": "bonus/reflection/19-static-storage",
+    "title": "Статическое хранение вычисленных данных",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 20,
+    "folder": "bonus/reflection/20-define-aggregate",
+    "title": "Создание агрегатного типа",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 21,
+    "folder": "bonus/reflection/21-diagnostics",
+    "title": "Защитные запросы и ошибки метафункций",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 22,
+    "folder": "bonus/reflection/22-odr-and-headers",
+    "title": "Заголовки и несколько единиц трансляции",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "source": "bonus/reflection/22-odr-and-headers/src/main.cpp"
+  },
+  {
+    "number": 23,
+    "folder": "bonus/reflection/23-enum-conversion",
+    "title": "Практика: enum в строку и обратно",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 24,
+    "folder": "bonus/reflection/24-recursive-print",
+    "title": "Практика: вывод вложенных структур",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 25,
+    "folder": "bonus/reflection/25-memberwise-operations",
+    "title": "Практика: сравнение, копирование и хеширование",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 26,
+    "folder": "bonus/reflection/26-struct-to-tuple",
+    "title": "Практика: структура и tuple ссылок",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 27,
+    "folder": "bonus/reflection/27-cli-configuration",
+    "title": "Практика: имена полей и проверка конфигурации",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 28,
+    "folder": "bonus/reflection/28-json-serialization",
+    "title": "Практика: JSON без ручного списка полей",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "nlohmann-json"
+  },
+  {
+    "number": 29,
+    "folder": "bonus/reflection/29-settings-project",
+    "title": "Итог: загрузка, проверка и сохранение настроек",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "nlohmann-json"
+  },
+  {
+    "number": 30,
+    "folder": "bonus/reflection/30-limits-and-cost",
+    "title": "Границы, переносимость и стоимость",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  }
+]

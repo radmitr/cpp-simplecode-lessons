@@ -1,0 +1,22 @@
+[
+  {
+    "name": "runtime-metadata",
+    "source": "#include <meta>\nint main(int argc,char**) { std::meta::info selected = argc > 1 ? ^^int : ^^double; return sizeof(selected); }\n",
+    "diagnostic_words": ["constant", "consteval"]
+  },
+  {
+    "name": "direct-private-reflection",
+    "source": "#include <meta>\nclass Hidden { int value=7; };\nint main() { constexpr auto member=^^Hidden::value; return std::meta::is_private(member); }\n",
+    "diagnostic_words": ["private", "inaccessible"]
+  },
+  {
+    "name": "type-splice-needs-typename",
+    "source": "#include <meta>\nint main() { constexpr auto type=^^int; [:type:] value=7; return value; }\n",
+    "diagnostic_words": ["typename", "type-only"]
+  },
+  {
+    "name": "aggregate-outside-consteval-block",
+    "source": "#include <meta>\nstruct Generated; constexpr auto done=std::meta::define_aggregate(^^Generated,{std::meta::data_member_spec(^^int,{.name=\"id\"})});\n",
+    "diagnostic_words": ["consteval", "block"]
+  }
+]

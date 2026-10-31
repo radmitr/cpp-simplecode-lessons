@@ -14,14 +14,15 @@ if [[ $source_file != "$repo_dir/"* ]]; then
     exit 2
 fi
 relative_source=${source_file#"$repo_dir/"}
-standard=c++17
-if [[ -f $source_dir/cxx-standard.txt ]]; then
-    standard=$(<"$source_dir/cxx-standard.txt")
-    standard=${standard//$'\r'/}
-    case $standard in
-        c++17|c++20) ;;
-        *) printf 'Unsupported C++ standard: %s\n' "$standard" >&2; exit 2 ;;
-    esac
+source "$repo_dir/scripts/load-compiler.sh"
+load_language_settings
+compiler=$(select_lesson_compiler linux)
+check_lesson_compiler
+runtime_options=()
+# A private GCC installation needs its matching shared library at runtime.
+library_file=$("$compiler" -print-file-name=libstdc++.so.6)
+if [[ $library_file == /* && -f $library_file ]]; then
+    runtime_options=("-Wl,-rpath,$(dirname -- "$library_file")")
 fi
 output="$repo_dir/build/${relative_source%.cpp}"
 mkdir -p -- "$(dirname -- "$output")"
@@ -43,5 +44,5 @@ else
     done
 fi
 
-exec /usr/bin/g++ "-std=$standard" -fdiagnostics-color=always -O0 -g \
-    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"
+exec "$compiler" "-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g \
+    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}" "${runtime_options[@]}"

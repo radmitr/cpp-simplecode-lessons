@@ -1,0 +1,170 @@
+[
+  {
+    "number": 1,
+    "folder": "io/bonus/01-stream-state",
+    "title": "Состояния потоков и восстановление ввода",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 2,
+    "folder": "io/bonus/02-portable-binary",
+    "title": "Явный бинарный формат",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 3,
+    "folder": "io/bonus/03-string-streams",
+    "title": "Строковые потоки и разбор записей",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 4,
+    "folder": "io/bonus/04-charconv",
+    "title": "Строгое преобразование чисел",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 5,
+    "folder": "io/bonus/05-iomanip",
+    "title": "Форматирование и состояние потока",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 6,
+    "folder": "io/bonus/06-open-modes",
+    "title": "Создание, перезапись, app, ate и binary",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 7,
+    "folder": "io/bonus/07-positions",
+    "title": "Позиции чтения и записи",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 8,
+    "folder": "io/bonus/08-block-copy",
+    "title": "Блочная обработка и неполный последний блок",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 9,
+    "folder": "io/bonus/09-filesystem-path",
+    "title": "Пути, cwd и имена Unicode",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 10,
+    "folder": "io/bonus/10-filesystem-operations",
+    "title": "Каталоги, файлы, симлинки и error_code",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 11,
+    "folder": "io/bonus/11-io-errors",
+    "title": "Ошибки записи, исключения и закрытие",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 12,
+    "folder": "io/bonus/12-buffering",
+    "title": "Буферизация, endl и flush",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 13,
+    "folder": "io/bonus/13-utf8",
+    "title": "UTF-8, BOM, переводы строк и char8_t",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 14,
+    "folder": "io/bonus/14-csv",
+    "title": "CSV с кавычками и многострочными полями",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 15,
+    "folder": "io/bonus/15-json",
+    "title": "JSON: библиотека, типы и обязательные поля",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": "nlohmann-json"
+  },
+  {
+    "number": 16,
+    "folder": "io/bonus/16-versioned-records",
+    "title": "Записи, длины, версии и контрольная сумма",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 17,
+    "folder": "io/bonus/17-temporary-save",
+    "title": "Сохранение через временный файл",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 18,
+    "folder": "io/bonus/18-stream-interfaces",
+    "title": "Общие интерфейсы istream и ostream",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 19,
+    "folder": "io/bonus/19-console-tool",
+    "title": "Аргументы, stdin/stdout/stderr и коды завершения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 20,
+    "folder": "io/bonus/20-file-logger",
+    "title": "Файловый журнал и ограничение размера",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 21,
+    "folder": "io/bonus/21-format-and-print",
+    "title": "std::format и std::print",
+    "standard": "c++23",
+    "minimum_gcc": 14,
+    "dependency": null
+  }
+]

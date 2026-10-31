@@ -1,0 +1,7 @@
+#include <memory>
+int main() {
+    auto data = std::make_unique<int[]>(2);
+    volatile int* pointer = data.get();
+    data.reset();
+    return pointer[0]; // Намеренный use-after-free для отдельной диагностики ASan.
+}

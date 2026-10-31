@@ -4,8 +4,10 @@
 
 ## Структура
 
-- `basics/`, `oop/`, `stl/`, `multithreading/` — уроки по разделам.
-- `bonus/` — дополнительные направления вне курса; [сети на Windows/Linux](bonus/networking/README.md).
+- [basics/](basics/README.md) — основы языка и [бонусы](basics/bonus/README.md).
+- [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки 115–119 и [бонусы](io/bonus/README.md).
+- `oop/`, `stl/`, `multithreading/` — уроки по разделам.
+- `bonus/` — дополнительные направления вне курса: [рефлексия](bonus/reflection/README.md), [сети на Windows/Linux](bonus/networking/README.md).
 - `bonus/databases/postgresql/` — [20 уроков PostgreSQL из C++](bonus/databases/postgresql/README.md), Windows/MinGW64 и Linux.
 - `multithreading/bonus/` — дополнительные темы по многопоточности после уроков 01–10.
 - `examples/` — дополнительные примеры.
@@ -13,6 +15,7 @@
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
+Пояснения к основам: [basics/README.md](basics/README.md); к потокам и файлам: [io/README.md](io/README.md).
 Пояснения к урокам многопоточности: [multithreading/README.md](multithreading/README.md).
 Устройство сборки и выбор стандарта: [scripts/README.md](scripts/README.md).
 
@@ -23,7 +26,15 @@
 - **Windows:** MSYS2 MinGW-w64, компилятор и GDB в `C:/msys64/mingw64/bin/`, Bash и утилиты в `C:/msys64/usr/bin/`. Каталог MinGW должен быть в `PATH`, чтобы программы находили DLL. При другой установке измените пути в конфигурациях, `scripts/build-windows.sh` и `scripts/generate-compile-commands.sh`.
 - **Linux:** `/usr/bin/g++`, `/usr/bin/gdb`, `/bin/bash`. На Ubuntu/Debian установите `build-essential` и `gdb`. Команда `locale charmap` должна показывать `UTF-8`.
 
-На Windows и Linux по умолчанию используется C++17. Бонусы про std::jthread, семафор, барьер, std::osyncstream, atomic::wait, std::latch и ожидание с stop_token используют C++20; скрипты выбирают стандарт из cxx-standard.txt рядом с исходником. Для них нужны компилятор и стандартная библиотека с поддержкой соответствующих средств C++20. CMake не настроен.
+На Windows и Linux по умолчанию используется C++17. cxx-standard.txt рядом
+с исходником выбирает C++17/20/23/26; gcc-min-version.txt при необходимости
+задаёт минимальную версию GCC. Бонусы основ и IO в основном рассчитаны на GCC 11
+и C++17/20. Современный IO-урок format/print требует GCC 14+, рефлексия C++26 —
+GCC 16+ и -freflection. Для них на Linux используется CXX_MODERN, по умолчанию
+/opt/gcc-16/bin/g++; остальные уроки используют /usr/bin/g++ (или CXX).
+Подготовка отдельного GCC в /home с установкой в /opt описана в
+[инструкции Linux](bonus/reflection/linux-setup.md). Linux-проверка новых бонусов
+ещё предстоит пользователю; настройки Windows/Linux подготовлены. CMake не настроен.
 
 В [бонусе про ThreadSanitizer](multithreading/bonus/26-thread-sanitizer/)
 диагностика гонки данных запускается отдельным скриптом на Linux/WSL
@@ -70,8 +81,8 @@
 `build/compile_commands.json` и локальные `.vscode/c_cpp_properties.json`
 в папках уроков, примеров и шаблона с `.vscode/tasks.json`.
 Корневая и локальные конфигурации подключают одну общую базу: она задаёт
-компилятор, пути заголовков и стандарт C++17 или C++20 для каждого `.cpp`
-по `cxx-standard.txt` рядом с исходником. Настройка работает при открытии
+компилятор, пути заголовков и выбранный стандарт C++ для каждого `.cpp`
+по `cxx-standard.txt` рядом с исходником. Современные уроки учитывают CXX_MODERN и дополнительные флаги из общих настроек компилятора. Настройка работает при открытии
 корня репозитория и отдельных уроков внутри него, без пользовательских
 настроек VS Code.
 
@@ -141,9 +152,13 @@ bash scripts/build-windows.sh oop/lesson-113-oop-interfaces/main.cpp
 
 Исходники и текстовые данные используют UTF-8. Обычные примеры на Windows настраивают консоль через `SetConsoleCP(CP_UTF8)` и `SetConsoleOutputCP(CP_UTF8)`. Дополнительный профиль терминала не требуется. На Linux нужен терминал с UTF-8.
 
-В `basics/lesson-118-file-io-fstream/main3.cpp` используются широкие потоки: `setupWideStandardIO()` вызывает `_setmode` на Windows и `std::setlocale(LC_ALL, "")` на Linux. Кодировка файла для `wfstream` задаётся отдельно через `imbue`.
+В `io/lesson-118-file-io-fstream/main3.cpp` используются широкие потоки: `setupWideStandardIO()` вызывает `_setmode` на Windows и `std::setlocale(LC_ALL, "")` на Linux. Кодировка файла для `wfstream` задаётся отдельно через `imbue`.
 
 ## Особенности примеров
+
+В уроке `basics/lesson-141-union/main.cpp` читаются неактивные члены union;
+такое поведение в общем случае не определено стандартом C++. Ограничения описаны
+в [README урока](basics/lesson-141-union/README.md).
 
 В некоторых учебных примерах предусмотрены ошибки или незавершающееся выполнение:
 
