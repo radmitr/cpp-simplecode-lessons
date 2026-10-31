@@ -26,7 +26,7 @@ int main(void)
     setupConsoleEncoding();
 
     // --- vector1 ---
-    std::cout << "vector<int> vector1(20) = {0, 454, 576, 620}:" << std::endl;
+    std::cout << "vector<int> vector1 = {0, 454, 576, 620}:" << std::endl;
     std::vector<int> vector1 = {0, 454, 576, 620};
     std::cout << "size = " << vector1.size() << std::endl;
     std::cout << "capacity = " << vector1.capacity() << '\n' << std::endl;

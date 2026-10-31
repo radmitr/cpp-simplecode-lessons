@@ -1,4 +1,4 @@
-# 03. std::scoped_lock
+# 03. `std::scoped_lock`
 
 Откройте `main.cpp` и запустите его через F5 или Ctrl+F5.
 
@@ -15,6 +15,8 @@ std::scoped_lock guard(from.mtx, to.mtx);
 ++to.balance;
 ~~~
 
+Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).
+
 Если один из мьютексов занят, поток ждёт. Когда оба захвачены, он уменьшает
 первый баланс и увеличивает второй. В конце итерации `guard` уничтожается
 и освобождает оба мьютекса.
@@ -28,7 +30,7 @@ std::scoped_lock guard(from.mtx, to.mtx);
 После завершения потоков программа выводит `First: 10000`, `Second: 10000`
 и `Total: 20000`. `std::scoped_lock` доступен с C++17.
 
-## main2.cpp — как можно захватить два мьютекса
+## `main2.cpp` — как можно захватить два мьютекса
 
 Откройте `main2.cpp` и запустите через F5 или Ctrl+F5. Здесь один перевод,
 а сообщения в терминале показывают каждую попытку захвата.
@@ -68,3 +70,32 @@ std::scoped_lock guard(from.mtx, to.mtx);
 Это учебный пример принципа. Для нескольких мьютексов `scoped_lock`
 использует `std::lock`, а точный алгоритм стандартная библиотека выбирает
 сама. В обычном коде используйте готовый `scoped_lock`, как в `main.cpp`.
+
+## main3.cpp: печать с разным порядком аргументов
+
+Полная программа: [main3.cpp](main3.cpp). Это дополнение к
+[уроку 08 о deadlock](../../lesson-08-deadlock/README.md).
+
+Один поток передаёт `mtx1, mtx2`, другой — `mtx2, mtx1`.
+Каждый `std::scoped_lock` захватывает всю пару, избегая взаимной блокировки
+при её захвате. Строка печатается, пока оба мьютекса принадлежат текущему потоку.
+
+Ожидаются по две строки `***` и `###`, затем `Both threads completed`.
+Порядок четырёх строк различается. Ввод не нужен; обычное завершение даёт код `0`.
+
+Откройте `main3.cpp`: **F5** — с отладчиком, **Ctrl+F5** — без отладчика.
+Из корня проекта на Linux:
+
+~~~bash
+bash scripts/build-linux.sh multithreading/bonus/03-scoped-lock/main3.cpp
+./build/multithreading/bonus/03-scoped-lock/main3
+~~~
+
+Windows, PowerShell:
+
+~~~powershell
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/03-scoped-lock/main3.cpp
+& .\build\multithreading\bonus\03-scoped-lock\main3.exe
+~~~
+
+[Все бонусы](../README.md).

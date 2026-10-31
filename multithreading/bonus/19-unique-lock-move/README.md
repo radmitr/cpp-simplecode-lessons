@@ -1,4 +1,4 @@
-# 19. Перемещение std::unique_lock
+# 19. Владение `std::unique_lock`: перемещение и освобождение
 
 C++17. Дополнение к [уроку 10 — std::unique_lock](../../lesson-10-unique-lock/).
 Перед изучением примера нужно знать захват мьютекса и освобождение через RAII
@@ -71,3 +71,65 @@ bash scripts/build-windows.sh multithreading/bonus/19-unique-lock-move/main.cpp
 ~~~
 
 [Все бонусы](../README.md). [Навигация и запуск](../../README.md).
+
+## main2.cpp: связь с мьютексом и владение
+
+Полная программа: [main2.cpp](main2.cpp). Объект `unique_lock` может быть
+связан с мьютексом, но пока не владеть захватом.
+
+1. После конструктора с `defer_lock` связь с `mtx` уже есть, захвата пока нет.
+2. `lock()` захватывает мьютекс; `owns_lock()` становится `true`.
+3. `unlock()` освобождает захват, но сохраняет связь: можно снова вызвать `lock()`.
+4. После повторного захвата `release()` удаляет связь и возвращает указатель
+   на мьютекс. Сам мьютекс при этом **остаётся захваченным**.
+5. Программа вызывает `raw->unlock()`, явно выполняя освобождение.
+
+~~~text
+Owns after defer: false
+Owns after lock: true
+Associated after unlock: true
+Detached after release: true
+~~~
+
+Если забыть последний `unlock()`, мьютекс останется занят.
+`release()` не является синонимом `unlock()`.
+Ввод не нужен; код `0` подтверждает результат, `1` означает ошибку проверки.
+
+## main3.cpp: четыре момента захвата
+
+Полная программа: [main3.cpp](main3.cpp). В каждом варианте два потока
+печатают по три строки, а программа измеряет общее время:
+
+1. `printLockImmediately()` захватывает мьютекс, затем делает паузу.
+   Второй поток ждёт захвата даже во время первой паузы.
+2. `printLockAfterPause()` сначала делает паузу и только потом захватывает
+   мьютекс. Первые паузы обоих потоков могут идти одновременно.
+3. `printDeferred()` создаёт `unique_lock` заранее с `defer_lock`,
+   делает паузу и захватывает мьютекс через `lock()` перед печатью.
+4. `printUnlockEarly()` после печати вызывает `unlock()` и выполняет
+   последнюю паузу без мьютекса. В это время другой поток может печатать.
+
+В каждом блоке будет по три строки из `*` и `#` и строка `Elapsed: N ms`.
+Порядок строк и время зависят от планирования потоков. Это иллюстрация
+границ захвата; точное значение времени не служит проверкой результата.
+Ввод не нужен, обычный код завершения — `0`.
+
+Оба варианта дополняют [урок 10](../../lesson-10-unique-lock/README.md).
+Откройте `main2.cpp` или `main3.cpp`: **F5** — с отладчиком,
+**Ctrl+F5** — без отладчика.
+
+Пример для `main2.cpp` из корня на Linux:
+
+~~~bash
+bash scripts/build-linux.sh multithreading/bonus/19-unique-lock-move/main2.cpp
+./build/multithreading/bonus/19-unique-lock-move/main2
+~~~
+
+Windows, PowerShell:
+
+~~~powershell
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/19-unique-lock-move/main2.cpp
+& .\build\multithreading\bonus\19-unique-lock-move\main2.exe
+~~~
+
+Для сравнения четырёх вариантов замените `main2.cpp`/`main2` на `main3.cpp`/`main3`.

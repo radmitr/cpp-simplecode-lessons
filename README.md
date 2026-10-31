@@ -6,8 +6,8 @@
 
 - [basics/](basics/README.md) — основы языка и [бонусы](basics/bonus/README.md).
 - [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки 115–119 и [бонусы](io/bonus/README.md).
-- [oop/](oop/README.md) — копирование, перегрузки, наследование и полиморфизм.
-- [stl/](stl/README.md) — контейнеры, итераторы и алгоритмы.
+- [oop/](oop/README.md) — копирование, перегрузки, наследование и полиморфизм; [бонусы](oop/bonus/README.md).
+- [stl/](stl/README.md) — контейнеры, итераторы и алгоритмы; [бонусы](stl/bonus/README.md).
 - [multithreading/](multithreading/README.md) — потоки, синхронизация и результаты задач.
 - `bonus/` — дополнительные направления вне курса: [рефлексия](bonus/reflection/README.md), [сети на Windows/Linux](bonus/networking/README.md).
 - `bonus/databases/postgresql/` — [20 уроков PostgreSQL из C++](bonus/databases/postgresql/README.md), Windows/MinGW64 и Linux.
@@ -17,6 +17,9 @@
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
+Каталоги исходных уроков сохраняют примеры курса SimpleCode.
+Новые учебные сценарии размещаются в `bonus` соответствующего раздела;
+в исходных уроках остаются пояснения, исправления и ссылки на дополнения.
 Пояснения к основам: [basics/README.md](basics/README.md); к потокам и файлам: [io/README.md](io/README.md).
 Пояснения к урокам многопоточности: [multithreading/README.md](multithreading/README.md).
 Устройство сборки и выбор стандарта: [scripts/README.md](scripts/README.md).
@@ -26,8 +29,9 @@
 README раздела задаёт порядок изучения, README конкретного урока объясняет
 его исходники: что делает каждый вариант, почему получаются такие значения,
 какие есть ограничения и распространённые альтернативы. `main.cpp`, `main2.cpp`
-и следующие варианты обычно запускаются отдельно; дополнительный фрагмент
-в документации не всегда имеет собственный исполняемый файл.
+и следующие варианты запускаются отдельно. Сокращённые фрагменты C++ снабжены
+ссылками на полные примеры. Для самостоятельного запуска откройте указанный
+исходник; несколько вариантов с `main()` не объединяют в одну программу.
 
 Например, [future/async](multithreading/bonus/05-future-async/README.md)
 разбирает отличие результата от потока, `get()` от `wait()`, отложенный запуск,
@@ -49,24 +53,24 @@ README раздела задаёт порядок изучения, README ко�
 - **Windows:** MSYS2 MinGW-w64, компилятор и GDB в `C:/msys64/mingw64/bin/`, Bash и утилиты в `C:/msys64/usr/bin/`. Каталог MinGW должен быть в `PATH`, чтобы программы находили DLL. При другой установке измените пути в конфигурациях, `scripts/build-windows.sh` и `scripts/generate-compile-commands.sh`.
 - **Linux:** `/usr/bin/g++`, `/usr/bin/gdb`, `/bin/bash`. На Ubuntu/Debian установите `build-essential` и `gdb`. Команда `locale charmap` должна показывать `UTF-8`.
 
-На Windows и Linux по умолчанию используется C++17. cxx-standard.txt рядом
-с исходником выбирает C++17/20/23/26; gcc-min-version.txt при необходимости
+На Windows и Linux по умолчанию используется C++17. `cxx-standard.txt` рядом
+с исходником выбирает C++17/20/23/26; `gcc-min-version.txt` при необходимости
 задаёт минимальную версию GCC. Бонусы основ и IO в основном рассчитаны на GCC 11
 и C++17/20. Современный IO-урок format/print требует GCC 14+, рефлексия C++26 —
-GCC 16+ и -freflection. Для них на Linux используется CXX_MODERN, по умолчанию
-/opt/gcc-16/bin/g++; остальные уроки используют /usr/bin/g++ (или CXX).
+GCC 16+ и `-freflection`. Для них на Linux используется `CXX_MODERN`, по умолчанию
+/opt/gcc-16/bin/g++; остальные уроки используют /usr/bin/g++ (или `CXX`).
 Подготовка отдельного GCC в /home с установкой в /opt описана в
 [инструкции Linux](bonus/reflection/linux-setup.md). Linux-проверка новых бонусов
 ещё предстоит пользователю; настройки Windows/Linux подготовлены. CMake не настроен.
 
 В [бонусе про ThreadSanitizer](multithreading/bonus/26-thread-sanitizer/)
 диагностика гонки данных запускается отдельным скриптом на Linux/WSL
-с компилятором и библиотекой TSan. Обычная сборка F5 её не включает.
+с компилятором и библиотекой TSan. Обычная сборка F5/Ctrl+F5 её не включает.
 
 [Сетевые уроки](bonus/networking/README.md) используют WinSock на Windows
 и POSIX-сокеты на Linux. Для HTTP/HTTPS нужна libcurl; зависимости и запуск
 клиента с сервером описаны в README раздела.
-Для примеров Boost.Asio и WebSocket нужны также заголовки Boost;
+Для примеров `Boost.Asio` и WebSocket нужны также заголовки Boost;
 уроки включают локальные проверки IPv6, повторов, файлов и асинхронных операций.
 
 [Уроки PostgreSQL](bonus/databases/postgresql/README.md) используют libpq и C++17.
@@ -105,7 +109,7 @@ GCC 16+ и -freflection. Для них на Linux используется CXX_M
 в папках уроков, примеров и шаблона с `.vscode/tasks.json`.
 Корневая и локальные конфигурации подключают одну общую базу: она задаёт
 компилятор, пути заголовков и выбранный стандарт C++ для каждого `.cpp`
-по `cxx-standard.txt` рядом с исходником. Современные уроки учитывают CXX_MODERN и дополнительные флаги из общих настроек компилятора. Настройка работает при открытии
+по `cxx-standard.txt` рядом с исходником. Современные уроки учитывают `CXX_MODERN` и дополнительные флаги из общих настроек компилятора. Настройка работает при открытии
 корня репозитория и отдельных уроков внутри него, без пользовательских
 настроек VS Code.
 
@@ -179,7 +183,7 @@ bash scripts/build-windows.sh oop/lesson-113-oop-interfaces/main.cpp
 
 ## Особенности примеров
 
-В уроке `basics/lesson-141-union/main.cpp` читаются неактивные члены union;
+В уроке `basics/lesson-141-union/main.cpp` читаются неактивные члены `union`;
 такое поведение в общем случае не определено стандартом C++. Ограничения описаны
 в [README урока](basics/lesson-141-union/README.md).
 

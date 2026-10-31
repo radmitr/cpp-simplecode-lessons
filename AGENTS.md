@@ -96,3 +96,45 @@ Write lesson explanations in clear Russian for a reader learning the topic.
 - Preserve accurate explanations and expand genuine gaps. Check claims, local
   links and commands against the source and current build scripts. Never claim
   execution or platform verification that was not performed.
+
+## SimpleCode course material and bonus additions
+
+- Keep SimpleCode course examples in their original lesson directories with
+  their original numbering and variants. A file name such as main2.cpp does
+  not establish whether a program belongs to the course; inspect its origin.
+- Place all new educational examples and scenarios outside the course in the
+  relevant section's bonus directory, even when they extend an existing topic.
+  This includes additional main*.cpp files and new demonstration blocks in a
+  course main.cpp. Entire new subject areas belong under the root bonus/.
+- Course lesson directories may contain documentation clarifications,
+  correctness/build/portability fixes and links to bonus examples. Do not mix
+  new teaching scenarios into their source files just to avoid a new directory.
+- Reuse an existing bonus lesson when the topic fits; otherwise create a
+  numbered bonus lesson without renumbering the original course. Add its README,
+  Windows/Linux VS Code configurations, catalog links and required build markers.
+- The bonus placement rule takes precedence over the preference for runnable
+  documentation snippets. Link to existing code before adding a duplicate.
+
+## Explanations, runnable examples and Markdown
+
+- Explain a mechanism through a small concrete example and the order of events
+  before introducing abstract terminology. Define terms such as shared state,
+  ownership and readiness; do not replace an explanation with a dense summary.
+- For every substantive API example, link to existing runnable code or provide
+  a runnable source in the appropriate bonus lesson (main2.cpp, main3.cpp, etc.).
+  Prefer a separate focused program for a distinct behavior, subject to the
+  course/bonus separation rule above.
+- Link C++ snippets to their full source. Label omitted surrounding code,
+  deliberately invalid examples and pseudocode explicitly. Keep snippets and
+  the actual source consistent; do not add duplicate programs just for renaming.
+- Document each program's input, expected output/allowed variation and exit
+  status. Demonstrations of failure must identify the expected failure clearly.
+  Test concurrent examples using synchronization, not assumed scheduling delays.
+- Format identifiers, types, functions, expressions, headers and file names in
+  prose as inline code, for example `std::thread`, `std::future<T>`, `join()`,
+  `worker.request_stop()`, `<future>` and `main.cpp`. Preserve Markdown links
+  and fenced code; apply this consistently throughout all README files.
+- For ordinary VS Code examples mention both F5 (debugging) and Ctrl+F5
+  (without debugging). Explain special launch requirements when they differ.
+- When revisiting documentation across the project, check runnable coverage,
+  explanation clarity, code formatting and launch instructions together.

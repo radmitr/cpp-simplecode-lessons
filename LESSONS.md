@@ -149,6 +149,13 @@
 - [lesson-113-oop-interfaces](oop/lesson-113-oop-interfaces/)
 - [lesson-114-oop-virtual-diamond-inheritance](oop/lesson-114-oop-virtual-diamond-inheritance/)
 
+### Бонусы по ООП
+
+[Порядок изучения и запуск](oop/bonus/README.md).
+
+- [01-decrement-operators — Префиксный и постфиксный декремент](oop/bonus/01-decrement-operators/README.md).
+- [02-composition-aggregation — Собственный компонент и внешняя ссылка](oop/bonus/02-composition-aggregation/README.md).
+
 ## STL
 
 [Карта контейнеров и алгоритмов, диапазоны и типичные ошибки](stl/README.md).
@@ -177,6 +184,14 @@
 - [lesson-22-stl-for-each-algorithm](stl/lesson-22-stl-for-each-algorithm/)
 - [lesson-23-stl-unique-algorithm](stl/lesson-23-stl-unique-algorithm/)
 - [lesson-24-stl-random-shuffle](stl/lesson-24-stl-random-shuffle/)
+
+### Бонусы по STL
+
+[Порядок изучения и запуск](stl/bonus/README.md).
+
+- [01-array-initialization — Нули, копия и пустой массив](stl/bonus/01-array-initialization/README.md).
+- [02-accumulator-type — Тип начального значения accumulate](stl/bonus/02-accumulator-type/README.md).
+- [03-vector-initialization — Круглые и фигурные скобки](stl/bonus/03-vector-initialization/README.md).
 
 ## Многопоточность
 
@@ -221,6 +236,7 @@
 - [24-compare-exchange](multithreading/bonus/24-compare-exchange/)
 - [25-false-sharing](multithreading/bonus/25-false-sharing/)
 - [26-thread-sanitizer](multithreading/bonus/26-thread-sanitizer/)
+- [27-class-method-arguments](multithreading/bonus/27-class-method-arguments/)
 
 ## Дополнительные направления вне курса
 

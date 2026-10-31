@@ -1,19 +1,19 @@
-# 01. Подключение и первый SELECT
+# 01. Подключение и первый `SELECT`
 
 C++17 · PostgreSQL · libpq · Windows/MinGW64 и Linux.
 
 Программа подключается к учебной базе cpp_lessons, выводит её имя, версию
-сервера и результат SELECT 2 + 3.
+сервера и результат `SELECT` 2 + 3.
 
 - PostgreSQL — отдельный сервер. Программа C++ обращается к нему через libpq.
-- PQconnectdbParams получает массивы имён параметров и их значений.
-  В common/db.hpp заданы адрес, порт, база, роль и путь к файлу пароля.
-- CONNECTION_OK означает успешное подключение. При ошибке читается PQerrorMessage.
-- PQexec выполняет SQL синхронно: вызывающий поток ждёт результат.
-- У SELECT проверяется PGRES_TUPLES_OK. PQntuples — число строк,
-  PQnfields — число столбцов; индексы PQgetvalue начинаются с нуля.
-- PGconn и PGresult — разные объекты. Их освобождают PQfinish и PQclear;
-  наши unique_ptr вызывают эти функции автоматически.
+- `PQconnectdbParams` получает массивы имён параметров и их значений.
+  В `common/db.hpp` заданы адрес, порт, база, роль и путь к файлу пароля.
+- CONNECTION_OK означает успешное подключение. При ошибке читается `PQerrorMessage`.
+- `PQexec` выполняет SQL синхронно: вызывающий поток ждёт результат.
+- У `SELECT` проверяется PGRES_TUPLES_OK. `PQntuples` — число строк,
+  `PQnfields` — число столбцов; индексы `PQgetvalue` начинаются с нуля.
+- `PGconn` и `PGresult` — разные объекты. Их освобождают `PQfinish` и `PQclear`;
+  наши `unique_ptr` вызывают эти функции автоматически.
 
 ~~~text
 Connected: cpp_lessons
@@ -30,7 +30,7 @@ Answer: 5
 ## Сборка и запуск
 
 Сначала [установите зависимости и запустите учебный сервер](../README.md).
-Команды из корня репозитория собирают main.cpp и запускают результат.
+Команды из корня репозитория собирают `main.cpp` и запускают результат.
 
 Linux / MSYS2 MinGW64:
 
@@ -44,5 +44,7 @@ Windows PowerShell:
 & C:\msys64\usr\bin\bash.exe bonus/databases/postgresql/scripts/run.sh 01
 ~~~
 
-В VS Code откройте main.cpp и нажмите F5. Сервер должен быть запущен заранее.
+F5 — запуск с отладчиком; Ctrl+F5 — без отладчика.
+
+В VS Code откройте `main.cpp` и нажмите F5/Ctrl+F5. Сервер должен быть запущен заранее.
 [Общий код и RAII](../common/README.md) · [Все 20 уроков](../README.md).
