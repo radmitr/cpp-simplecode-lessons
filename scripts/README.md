@@ -113,3 +113,19 @@ C/C++: Update IntelliSense.
 
 Все примеры команд сборки приведены для Bash. Сам Bash запускает компилятор,
 а C++ выполняется в собранной программе.
+
+## ThreadSanitizer
+
+В [бонусе 26](../multithreading/bonus/26-thread-sanitizer/) есть отдельный
+run-tsan.sh для диагностики гонки данных на Linux/WSL:
+
+~~~bash
+bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main.cpp
+bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
+~~~
+
+Он выбирает clang++ (либо компилятор из CXX), добавляет -fsanitize=thread,
+-O1 и -g, затем запускает результат. Нужна соответствующая библиотека TSan.
+main.cpp исправлен, main2.cpp намеренно содержит гонку: отчёт и код 66
+для него ожидаемы. Обычные build-linux.sh/build-windows.sh и F5 эти флаги
+не добавляют. Бинарники с суффиксом -tsan сохраняются отдельно в build/.

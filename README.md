@@ -21,7 +21,11 @@
 - **Windows:** MSYS2 MinGW-w64, компилятор и GDB в `C:/msys64/mingw64/bin/`, Bash и утилиты в `C:/msys64/usr/bin/`. Каталог MinGW должен быть в `PATH`, чтобы программы находили DLL. При другой установке измените пути в конфигурациях, `scripts/build-windows.sh` и `scripts/generate-compile-commands.sh`.
 - **Linux:** `/usr/bin/g++`, `/usr/bin/gdb`, `/bin/bash`. На Ubuntu/Debian установите `build-essential` и `gdb`. Команда `locale charmap` должна показывать `UTF-8`.
 
-На Windows и Linux по умолчанию используется C++17. Бонусы про std::jthread, семафор, барьер, std::osyncstream и atomic::wait используют C++20; скрипты выбирают стандарт из cxx-standard.txt рядом с исходником. Для них нужны компилятор и стандартная библиотека с поддержкой соответствующих средств C++20. CMake не настроен.
+На Windows и Linux по умолчанию используется C++17. Бонусы про std::jthread, семафор, барьер, std::osyncstream, atomic::wait, std::latch и ожидание с stop_token используют C++20; скрипты выбирают стандарт из cxx-standard.txt рядом с исходником. Для них нужны компилятор и стандартная библиотека с поддержкой соответствующих средств C++20. CMake не настроен.
+
+В [бонусе про ThreadSanitizer](multithreading/bonus/26-thread-sanitizer/)
+диагностика гонки данных запускается отдельным скриптом на Linux/WSL
+с компилятором и библиотекой TSan. Обычная сборка F5 её не включает.
 
 ## Сборка и запуск в VS Code
 

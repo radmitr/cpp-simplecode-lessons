@@ -37,6 +37,13 @@
 17. [memory_order](bonus/17-memory-order/) — relaxed и публикация данных через acquire/release.
 18. [параллельное суммирование](bonus/18-parallel-sum/) — проверка результата и сравнение времени для разного числа потоков.
 19. [перемещение unique_lock](bonus/19-unique-lock-move/) — передача владения захватом между функциями.
+20. [call_once](bonus/20-call-once/) — однократная инициализация, включая повтор после исключения.
+21. [latch](bonus/21-latch/) — одноразовый отсчёт готовности результатов, C++20.
+22. [shared_future](bonus/22-shared-future/) — общий результат или исключение для нескольких потоков.
+23. [ожидание с остановкой](bonus/23-stop-aware-wait/) — condition_variable_any и stop_token, C++20.
+24. [compare_exchange](bonus/24-compare-exchange/) — атомарная проверка и замена, strong и weak.
+25. [false sharing](bonus/25-false-sharing/) — влияние размещения счётчиков в памяти на скорость.
+26. [ThreadSanitizer](bonus/26-thread-sanitizer/) — диагностика гонки данных на Linux/WSL.
 
 ## Сборка и особенности
 
@@ -45,8 +52,12 @@
 варианты — самостоятельные программы; вместе их собирать не нужно.
 Сами папки multithreading/ и bonus/ конфигураций VS Code не содержат.
 
-По умолчанию используется C++17. Бонусы jthread, semaphore, barrier, osyncstream и atomic::wait используют C++20.
+По умолчанию используется C++17. Бонусы jthread, semaphore, barrier, osyncstream,
+atomic::wait, latch и ожидание с stop_token используют C++20.
 Подробные команды: [общий README](../README.md) и [скрипты сборки](../scripts/README.md).
+
+Для диагностики ThreadSanitizer в бонусе 26 нужен отдельный запуск на Linux/WSL;
+обычная сборка F5 инструментирование не включает.
 
 Урок 02 намеренно не завершается из-за бесконечного цикла; остановите его
 через Ctrl+C или остановку отладки. В остальных примерах порядок выполнения
