@@ -5,6 +5,7 @@
 ## Структура
 
 - `basics/`, `oop/`, `stl/`, `multithreading/` — уроки по разделам.
+- `bonus/` — дополнительные направления вне курса; [сети на Windows/Linux](bonus/networking/README.md).
 - `multithreading/bonus/` — дополнительные темы по многопоточности после уроков 01–10.
 - `examples/` — дополнительные примеры.
 - `_template/` — заготовка урока.
@@ -26,6 +27,10 @@
 В [бонусе про ThreadSanitizer](multithreading/bonus/26-thread-sanitizer/)
 диагностика гонки данных запускается отдельным скриптом на Linux/WSL
 с компилятором и библиотекой TSan. Обычная сборка F5 её не включает.
+
+[Сетевые уроки](bonus/networking/README.md) используют WinSock на Windows
+и POSIX-сокеты на Linux. Для HTTP/HTTPS нужна libcurl; зависимости и запуск
+клиента с сервером описаны в README раздела.
 
 ## Сборка и запуск в VS Code
 

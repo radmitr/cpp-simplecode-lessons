@@ -150,3 +150,23 @@
 - [24-compare-exchange](multithreading/bonus/24-compare-exchange/)
 - [25-false-sharing](multithreading/bonus/25-false-sharing/)
 - [26-thread-sanitizer](multithreading/bonus/26-thread-sanitizer/)
+
+## Дополнительные направления вне курса
+
+[Обзор бонусов](bonus/README.md).
+
+### Сети — Windows и Linux
+
+[Порядок изучения и запуск](bonus/networking/README.md).
+
+- [lesson-01-addresses](bonus/networking/lesson-01-addresses/)
+- [lesson-02-tcp-echo](bonus/networking/lesson-02-tcp-echo/)
+- [lesson-03-tcp-framing](bonus/networking/lesson-03-tcp-framing/)
+- [lesson-04-udp-echo](bonus/networking/lesson-04-udp-echo/)
+- [lesson-05-timeouts](bonus/networking/lesson-05-timeouts/)
+- [lesson-06-http-get](bonus/networking/lesson-06-http-get/)
+- [lesson-07-http-post-json](bonus/networking/lesson-07-http-post-json/)
+- [lesson-08-rest-api](bonus/networking/lesson-08-rest-api/)
+- [lesson-09-multi-client](bonus/networking/lesson-09-multi-client/)
+- [lesson-10-background-sender](bonus/networking/lesson-10-background-sender/)
+- [lesson-11-https](bonus/networking/lesson-11-https/)

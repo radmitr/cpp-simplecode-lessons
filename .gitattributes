@@ -1,0 +1,2 @@
+# Keep Bash scripts on LF even when core.autocrlf is enabled.
+*.sh text eol=lf

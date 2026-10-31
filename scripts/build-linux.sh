@@ -27,6 +27,8 @@ output="$repo_dir/build/${relative_source%.cpp}"
 mkdir -p -- "$(dirname -- "$output")"
 sources=("$source_file")
 includes=()
+source "$repo_dir/scripts/load-link-libraries.sh"
+load_link_libraries "$source_dir" linux
 
 # Lessons 139 and 140 keep their sources and headers in separate directories.
 if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
@@ -42,4 +44,4 @@ else
 fi
 
 exec /usr/bin/g++ "-std=$standard" -fdiagnostics-color=always -O0 -g \
-    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output"
+    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"

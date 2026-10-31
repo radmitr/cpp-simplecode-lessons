@@ -29,6 +29,8 @@ output="$repo_dir/build/${relative_source%.cpp}.exe"
 /usr/bin/mkdir -p -- "$(/usr/bin/dirname -- "$output")"
 sources=("$source_file")
 includes=()
+source "$repo_dir/scripts/load-link-libraries.sh"
+load_link_libraries "$source_dir" windows
 
 if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
     sources=("$source_dir"/*.cpp)
@@ -42,4 +44,4 @@ else
 fi
 
 exec C:/msys64/mingw64/bin/g++.exe "-std=$standard" -fdiagnostics-color=always -O0 -g \
-    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output"
+    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"

@@ -171,7 +171,7 @@ first=true
         printf ', "-c", '; json_string "$native_repo${source_file#"$repo_dir"}"
         printf ']}'
     done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/oop" "$repo_dir/stl" \
-        "$repo_dir/multithreading" "$repo_dir/examples" "$repo_dir/_template" \
+        "$repo_dir/multithreading" "$repo_dir/bonus" "$repo_dir/examples" "$repo_dir/_template" \
         -type f -name '*.cpp' -print0 | /usr/bin/sort -z)
     printf '\n]\n'
 } > "$temporary"
@@ -186,7 +186,7 @@ preserved_count=0
 while IFS= read -r -d '' task_file; do
     generate_workspace_configuration "${task_file%/.vscode/tasks.json}"
 done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/oop" "$repo_dir/stl" \
-    "$repo_dir/multithreading" "$repo_dir/examples" "$repo_dir/_template" \
+    "$repo_dir/multithreading" "$repo_dir/bonus" "$repo_dir/examples" "$repo_dir/_template" \
     -type f -path '*/.vscode/tasks.json' -print0 | /usr/bin/sort -z)
 printf 'IntelliSense database: %s (%s); lesson configs: %d; kept custom: %d\n' \
     "$database" "$platform" "$configurations_count" "$preserved_count"
