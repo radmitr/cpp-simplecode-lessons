@@ -6,6 +6,7 @@
 
 - `basics/`, `oop/`, `stl/`, `multithreading/` — уроки по разделам.
 - `bonus/` — дополнительные направления вне курса; [сети на Windows/Linux](bonus/networking/README.md).
+- `bonus/databases/postgresql/` — [20 уроков PostgreSQL из C++](bonus/databases/postgresql/README.md), Windows/MinGW64 и Linux.
 - `multithreading/bonus/` — дополнительные темы по многопоточности после уроков 01–10.
 - `examples/` — дополнительные примеры.
 - `_template/` — заготовка урока.
@@ -33,6 +34,10 @@
 клиента с сервером описаны в README раздела.
 Для примеров Boost.Asio и WebSocket нужны также заголовки Boost;
 уроки включают локальные проверки IPv6, повторов, файлов и асинхронных операций.
+
+[Уроки PostgreSQL](bonus/databases/postgresql/README.md) используют libpq и C++17.
+В разделе описаны зависимости для MinGW64/Linux и запуск отдельного учебного
+сервера на порту 55432; основной PostgreSQL компьютера можно оставить работающим.
 
 ## Сборка и запуск в VS Code
 

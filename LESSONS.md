@@ -178,3 +178,28 @@
 - [lesson-17-udp-discovery](bonus/networking/lesson-17-udp-discovery/)
 - [lesson-18-asio](bonus/networking/lesson-18-asio/)
 - [lesson-19-websocket](bonus/networking/lesson-19-websocket/)
+
+### Базы данных — PostgreSQL
+
+[Подготовка Windows/Linux и общие пояснения](bonus/databases/postgresql/README.md).
+
+- [lesson-01-connect — Подключение и первый SELECT](bonus/databases/postgresql/lesson-01-connect/)
+- [lesson-02-tables-types — Таблицы, столбцы и типы](bonus/databases/postgresql/lesson-02-tables-types/)
+- [lesson-03-insert — INSERT и RETURNING](bonus/databases/postgresql/lesson-03-insert/)
+- [lesson-04-select — SELECT, фильтрация и сортировка](bonus/databases/postgresql/lesson-04-select/)
+- [lesson-05-update-delete — UPDATE и DELETE](bonus/databases/postgresql/lesson-05-update-delete/)
+- [lesson-06-parameters — Параметры и защита от SQL-инъекции](bonus/databases/postgresql/lesson-06-parameters/)
+- [lesson-07-prepared-statements — Подготовленные запросы](bonus/databases/postgresql/lesson-07-prepared-statements/)
+- [lesson-08-null-values — NULL и пустая строка](bonus/databases/postgresql/lesson-08-null-values/)
+- [lesson-09-constraints — Ограничения и SQLSTATE](bonus/databases/postgresql/lesson-09-constraints/)
+- [lesson-10-joins — Связи и JOIN](bonus/databases/postgresql/lesson-10-joins/)
+- [lesson-11-aggregation — Группировка и агрегатные функции](bonus/databases/postgresql/lesson-11-aggregation/)
+- [lesson-12-transactions — Транзакции: COMMIT и ROLLBACK](bonus/databases/postgresql/lesson-12-transactions/)
+- [lesson-13-savepoints — Точки сохранения](bonus/databases/postgresql/lesson-13-savepoints/)
+- [lesson-14-upsert — INSERT ON CONFLICT](bonus/databases/postgresql/lesson-14-upsert/)
+- [lesson-15-indexes — Индексы и EXPLAIN](bonus/databases/postgresql/lesson-15-indexes/)
+- [lesson-16-jsonb — JSONB](bonus/databases/postgresql/lesson-16-jsonb/)
+- [lesson-17-isolation — Изоляция и снимки данных](bonus/databases/postgresql/lesson-17-isolation/)
+- [lesson-18-row-locks — Блокировки строк и таймаут](bonus/databases/postgresql/lesson-18-row-locks/)
+- [lesson-19-copy — Массовая загрузка и выгрузка COPY](bonus/databases/postgresql/lesson-19-copy/)
+- [lesson-20-backup-restore — Резервная копия и проверка восстановления](bonus/databases/postgresql/lesson-20-backup-restore/)

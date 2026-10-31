@@ -5,6 +5,8 @@
 уроков, своим README и настройками запуска Windows/Linux.
 
 - [Сети — networking](networking/README.md): сокеты, TCP, UDP, HTTP, API и HTTPS.
+- [Базы данных — PostgreSQL](databases/postgresql/README.md): 20 уроков от
+  подключения и CRUD до транзакций, индексов, блокировок и резервных копий.
 
 Дополнения к существующему разделу многопоточности остаются в
 [multithreading/bonus](../multithreading/bonus/README.md).
