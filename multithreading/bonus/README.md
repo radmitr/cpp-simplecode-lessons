@@ -20,6 +20,7 @@
 16. [16-atomic-wait](16-atomic-wait/) — ожидание атомарного значения и уведомления, C++20.
 17. [17-memory-order](17-memory-order/) — relaxed и публикация данных через acquire/release.
 18. [18-parallel-sum](18-parallel-sum/) — проверка результата и сравнение времени для разного числа потоков.
+19. [19-unique-lock-move](19-unique-lock-move/) — передача владения unique_lock между функциями при оформлении заказа.
 
 Дополнительные варианты существующих тем:
 main2.cpp в [10-producer-consumer](10-producer-consumer/) ограничивает размер очереди,

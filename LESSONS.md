@@ -142,3 +142,4 @@
 - [16-atomic-wait](multithreading/bonus/16-atomic-wait/)
 - [17-memory-order](multithreading/bonus/17-memory-order/)
 - [18-parallel-sum](multithreading/bonus/18-parallel-sum/)
+- [19-unique-lock-move](multithreading/bonus/19-unique-lock-move/)
