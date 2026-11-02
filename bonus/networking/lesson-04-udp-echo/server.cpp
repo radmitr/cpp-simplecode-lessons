@@ -1,3 +1,4 @@
+// C++11 — std::chrono, auto, лямбда-выражения.
 #include "../common/net.hpp"
 #include <iostream>
 

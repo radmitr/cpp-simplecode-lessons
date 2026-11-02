@@ -1,24 +1,10 @@
+// C++98 — счётчик ссылок и копирование при записи.
+#include <cstddef>
 #include <cstring>
 #include <iostream>
 #include <memory>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
+#include "../../common/console.hpp"
 
 class CowString
 {
@@ -136,7 +122,7 @@ class CowString
 // Демонстрация работы
 int main()
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::cout << "Создаём исходную строку s1: ";
     CowString s1("Hello");

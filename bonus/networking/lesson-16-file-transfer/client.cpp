@@ -1,3 +1,8 @@
+// C++11 — std::chrono, std::to_string, auto, лямбда-выражения.
+// C++17 — std::string_view, std::filesystem.
+#include <string>
+#include <algorithm>
+#include <cstddef>
 #include "../common/net.hpp"
 #include "../common/crc32.hpp"
 

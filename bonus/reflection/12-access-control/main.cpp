@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #include "../common/reflection.hpp"
 
 class Vault { public: int visible = 1; private: int secret = 2; };

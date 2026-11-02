@@ -1,9 +1,29 @@
 # 22. `std::shared_future`
 
-C++17. Продолжение [promise/future](../09-promise-future/):
+## Версия C++
+
+`std::thread`, `std::mutex`, `std::lock_guard`, `std::shared_future`, `std::promise` — **C++11**.
+`std::string`, `std::runtime_error`, `std::boolalpha` — **C++98**.
+
+Сборка примеров: **C++17**. Это режим проекта,
+а не дата появления всех использованных конструкций.
+
+## Что изучаем
+
+Продолжение [promise/future](../09-promise-future/):
 один производитель публикует результат, а три потребителя получают его.
 
-## `main.cpp`: одни настройки для всех
+## Примеры
+
+- [main.cpp](main.cpp).
+- [main2.cpp](main2.cpp).
+- [main3.cpp](main3.cpp).
+
+Выбирайте один исходник с `main()`; варианты запускаются отдельно.
+
+## Как это работает
+
+### `main.cpp`: одни настройки для всех
 
 ~~~cpp
 std::promise<Settings> promise;
@@ -49,7 +69,7 @@ Main get #2: 4
 изменение объекта результата потокобезопасным.
 `outputMtx` нужен для цельных строк консоли.
 
-## `main2.cpp`: одно исключение для всех
+### `main2.cpp`: одно исключение для всех
 
 Вместо `set_value()` производитель вызывает:
 
@@ -70,32 +90,7 @@ Workers that received the exception: 3
 Сами строки Worker могут идти в любом порядке.
 Исключение не исчезает после первого потребителя.
 
-## Сборка и запуск
-
-Откройте `main.cpp`, `main2.cpp` или `main3.cpp`: **F5** — с отладчиком,
-**Ctrl+F5** — без отладчика.
-Из корня репозитория на Linux:
-
-~~~bash
-bash scripts/build-linux.sh multithreading/bonus/22-shared-future/main.cpp
-./build/multithreading/bonus/22-shared-future/main
-~~~
-
-На Windows из MSYS2 Bash:
-
-~~~bash
-bash scripts/build-windows.sh multithreading/bonus/22-shared-future/main.cpp
-./build/multithreading/bonus/22-shared-future/main.exe
-~~~
-
-Для исключения замените `main.cpp`/`main` на `main2.cpp`/main2.
-После добавления исходников обновите IntelliSense через задачу
-C/C++: Update IntelliSense.
-
-[shared_future в проекте стандарта](https://eel.is/c++draft/futures.shared.future).
-[Все бонусы](../README.md).
-
-## `main3.cpp`: `shared_future` от `std::async`
+### `main3.cpp`: `shared_future` от `std::async`
 
 Один `future` передаёт результат одному получателю через однократный `get`.
 `shared_future` позволяет нескольким владельцам ждать и читать одно состояние.
@@ -127,4 +122,35 @@ Same stored value: true
 `wait` также может использоваться для сигнала без извлечения значения:
 практический пример `gate.wait` есть в бонусе `11/main2.cpp`.
 Подробности `get`/`wait`/таймаутов и поведения deferred —
-в [бонусе 05](../05-future-async/README.md).
+в [`std::future` и `std::async`: запуск, ожидание и исключения](../05-future-async/README.md).
+
+## Сборка и запуск
+
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
+
+Откройте `main.cpp`, `main2.cpp` или `main3.cpp`: **F5** — с отладчиком,
+**Ctrl+F5** — без отладчика.
+Из корня репозитория на Linux:
+
+~~~bash
+bash scripts/build-linux.sh multithreading/bonus/22-shared-future/main.cpp
+./build/multithreading/bonus/22-shared-future/main
+~~~
+
+На Windows из MSYS2 Bash:
+
+~~~bash
+bash scripts/build-windows.sh multithreading/bonus/22-shared-future/main.cpp
+./build/multithreading/bonus/22-shared-future/main.exe
+~~~
+
+Для исключения замените `main.cpp`/`main` на `main2.cpp`/`main2`.
+После добавления исходников обновите IntelliSense через задачу
+C/C++: Update IntelliSense.
+
+[shared_future в проекте стандарта](https://eel.is/c++draft/futures.shared.future).
+[Все бонусы](../README.md).
+
+## Связанные темы и источники
+
+[Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

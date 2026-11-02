@@ -1,3 +1,4 @@
+// C++11 — std::condition_variable и std::unique_lock.
 #include <condition_variable>
 #include <iostream>
 #include <mutex>

@@ -1,3 +1,4 @@
+// C++11 — std::future, std::async и политики std::launch; C++14 — захват лямбды с инициализацией.
 #include <chrono>
 #include <future>
 #include <iostream>

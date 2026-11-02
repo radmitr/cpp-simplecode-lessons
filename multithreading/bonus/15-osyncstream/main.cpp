@@ -1,3 +1,4 @@
+// C++20 — std::osyncstream.
 #include <chrono>
 #include <iostream>
 #include <syncstream>

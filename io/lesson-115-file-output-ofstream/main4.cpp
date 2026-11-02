@@ -1,28 +1,14 @@
+// C++98 — запись в файл через std::ofstream; C++11 — auto.
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <vector>
 #include <system_error>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 bool writeToFile(const string& filename, const vector<string>& data)
 {
@@ -49,7 +35,7 @@ bool writeToFile(const string& filename, const vector<string>& data)
 
 int main(int argc, char* argv[])
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     string filename = "myFile.txt";
 

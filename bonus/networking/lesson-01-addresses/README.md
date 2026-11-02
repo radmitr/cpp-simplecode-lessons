@@ -1,10 +1,29 @@
 # 01. Адреса, DNS и порядок байтов
 
-C++17. Windows: MinGW64; Linux: POSIX.
+## Версия C++
+
+`std::unique_ptr`, `std::to_string`, `nullptr`, `decltype`, лямбды — **C++11**.
+`std::exception`, `std::runtime_error` — **C++98**.
+
+Сборка примеров: **C++17**. Это режим проекта,
+а не дата появления всех использованных конструкций.
+WinSock/POSIX-сокеты — платформенные API, не часть стандарта C++.
+
+## Что изучаем
 
 `main.cpp` вызывает `getaddrinfo()` для localhost и службы 80.
 `AF_UNSPEC` разрешает IPv4 и IPv6; в отличие от `inet_pton()`, `getaddrinfo()`
 может разрешать имя, а не только разбирать готовую строку IP.
+
+Windows: MinGW64; Linux: POSIX.
+
+## Примеры
+
+- [main.cpp](main.cpp).
+
+Выбирайте один исходник с `main()`; варианты запускаются отдельно.
+
+## Как это работает
 
 Результат — список `addrinfo`. Он освобождается через `freeaddrinfo()`
 при уничтожении `unique_ptr`. Для каждого адреса `inet_ntop()` получает
@@ -25,6 +44,8 @@ C++17. Windows: MinGW64; Linux: POSIX.
 
 ## Сборка и запуск
 
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
+
 Из корня репозитория на Linux:
 
 ~~~bash
@@ -39,9 +60,15 @@ Windows, PowerShell:
 & .\build\bonus\networking\lesson-01-addresses\main.exe
 ~~~
 
-F5 — запуск с отладчиком; Ctrl+F5 — без отладчика.
-
 Откройте `main.cpp` для запуска через F5/Ctrl+F5.
 
 После добавления исходников выполните C/C++: Update IntelliSense.
 [Общие настройки, зависимости и общий код](../README.md).
+
+## Связанные темы и источники
+
+### Дополнительные API в коде
+
+- [Исключительное владение unique_ptr](../../../basics/bonus/11-unique-ptr/README.md): [полный пример](../../../basics/bonus/11-unique-ptr/main.cpp).
+
+[Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #include "../common/reflection.hpp"
 
 enum class State { ready = 1, alias = 1, stopped = 4 };

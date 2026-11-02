@@ -1,19 +1,34 @@
 # cpp-simplecode-lessons
 
-Упражнения и эксперименты по C++ на основе канала [#SimpleCode](https://www.youtube.com/@SimpleCodeIT) и плейлиста [«Основы C++»](https://www.youtube.com/playlist?list=PLQOaTSbfxUtCrKs0nicOg2npJQYSPGO9r). Личный учебный репозиторий, не официальный проект автора курса.
+Личный учебный и справочный проект по C++, существенно доработанный владельцем
+репозитория на основе уроков **Сергея Журавлёва (#SimpleCode)**:
+[YouTube](https://www.youtube.com/@SimpleCodeIT),
+[профиль автора на Udemy](https://www.udemy.com/user/zhuravliov-sergei/).
+Это не официальный репозиторий автора курса.
+
+Исходные темы и номера курса сохранены. В проект добавлены подробные объяснения,
+сборка и запуск на Windows/Linux, проверки результатов и самостоятельные бонусы:
+современный C++, многопоточность, сети, PostgreSQL и экспериментальная рефлексия.
+Начальные уроки адаптированы по конкретным исходникам с сохранением демонстраций;
+[источники, точные коммиты и изменения](docs/course-sources.md) перечислены отдельно.
+[Курсы и справочники](docs/references.md) помогают выбрать дальнейшее чтение.
 
 ## Структура
 
 - [basics/](basics/README.md) — основы языка и [бонусы](basics/bonus/README.md).
-- [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки 115–119 и [бонусы](io/bonus/README.md).
+- [templates/](templates/README.md) — шаблоны функций и классов, современные [бонусы](templates/bonus/README.md).
+- [exceptions/](exceptions/README.md) — исключения и [бонусы по обработке ошибок](exceptions/bonus/README.md).
+- [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки [«115. Запись в файл: `ofstream`»](io/lesson-115-file-output-ofstream/README.md) — [«119. Потоковые операторы для своего типа»](io/lesson-119-stream-io-operator-overloading/README.md) и [бонусы](io/bonus/README.md).
 - [oop/](oop/README.md) — копирование, перегрузки, наследование и полиморфизм; [бонусы](oop/bonus/README.md).
 - [stl/](stl/README.md) — контейнеры, итераторы и алгоритмы; [бонусы](stl/bonus/README.md).
 - [multithreading/](multithreading/README.md) — потоки, синхронизация и результаты задач.
 - `bonus/` — дополнительные направления вне курса: [рефлексия](bonus/reflection/README.md), [сети на Windows/Linux](bonus/networking/README.md).
 - `bonus/databases/postgresql/` — [20 уроков PostgreSQL из C++](bonus/databases/postgresql/README.md), Windows/MinGW64 и Linux.
-- `multithreading/bonus/` — дополнительные темы по многопоточности после уроков 01–10.
+- `multithreading/bonus/` — дополнительные темы по многопоточности после уроков [«Запуск потоков»](multithreading/lesson-01-thread/README.md) — [«`std::unique_lock`: отложенный и повторный захват»](multithreading/lesson-10-unique-lock/README.md).
 - [examples/](examples/README.md) — дополнительные примеры строк и владения памятью.
 - [Шаблон урока](_template/README.md) — заготовка в `_template/`.
+- [common/](common/README.md) — общая настройка кодировки консоли.
+- [docs/](docs/README.md) — версии C++, источники и результаты проверок.
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
@@ -45,6 +60,18 @@ README раздела задаёт порядок изучения, README ко�
 ожидаемом результате: некоторые программы ждут ввод, изменяют файлы или
 намеренно показывают ошибку. Ссылки на стандарт и документацию дополняют
 локальные пояснения.
+
+## Версии C++ и личные файлы
+
+В README урока раздел «Версия C++» различает появление возможности и режим
+сборки: например, `jthread` появился в C++20 и может использоваться в сборке
+C++23. [Краткий указатель версий](docs/cpp-versions.md) объясняет это подробнее.
+
+Для своих промптов, заметок, временных файлов и локальных данных служб
+используйте корневую `.local/`. Она целиком исключена из Git.
+Создайте её, когда понадобится; точка не обеспечивает шифрование или
+ограничение доступа. Готовые программы и результаты проверок находятся в `build/`.
+[`_template/`](_template/README.md) остаётся общей заготовкой урока.
 
 ## Требования
 
@@ -155,9 +182,9 @@ Linux:   build/oop/lesson-113-oop-interfaces/main
 
 Для обычных уроков рабочая папка запуска — папка исходника: относительный `myFile.txt` относится к этому уроку. Учебные `myFile.txt` хранятся в Git и могут изменяться при записи. Каталог `build/` и локальные `.vscode/settings.json` игнорируются.
 
-Общие скрипты добавляют `SimpleTimer.cpp` и `String.cpp` там, где они нужны. В уроках 139–140 собираются все `src/*.cpp` с заголовками из `include/`; результат соответствует `src/main.cpp`. Остальные `main2.cpp`, `main3.cpp` и т. п. — отдельные программы.
+Общие скрипты добавляют `SimpleTimer.cpp` и `String.cpp` там, где они нужны. В уроках [«139. Многофайловая программа»](basics/lesson-139-multi-file-project/README.md) — [«140. Защита заголовков от повторного включения»](basics/lesson-140-multi-file-project-include-guard/README.md) собираются все `src/*.cpp` с заголовками из `include/`; результат соответствует `src/main.cpp`. Остальные `main2.cpp`, `main3.cpp` и т. п. — отдельные программы.
 
-При копировании `_template` или переименовании урока обновите путь результата в его `tasks.json` и `launch.json`. Если меняется глубина вложенности, обновите также путь к `scripts/`. Конфигурации корня вычисляют путь автоматически. Для работы отдельного урока нужны общие скрипты из этого репозитория.
+При копировании `_template` или переименовании урока обновите путь результата в его `tasks.json` и `launch.json`. Если меняется глубина вложенности, обновите также путь к `scripts/` и включение `common/console.hpp` в исходнике. Конфигурации корня вычисляют путь автоматически. Для работы отдельного урока нужны общие скрипты из этого репозитория.
 
 ## Сборка из терминала
 
@@ -177,7 +204,7 @@ bash scripts/build-windows.sh oop/lesson-113-oop-interfaces/main.cpp
 
 ## Кириллица
 
-Исходники и текстовые данные используют UTF-8. Обычные примеры на Windows настраивают консоль через `SetConsoleCP(CP_UTF8)` и `SetConsoleOutputCP(CP_UTF8)`. Дополнительный профиль терминала не требуется. На Linux нужен терминал с UTF-8.
+Исходники и текстовые данные используют UTF-8. Обычные примеры вызывают `console::setupConsoleEncoding()` из общего [`common/console.hpp`](common/README.md). На Windows он выбирает UTF-8 через `SetConsoleCP(CP_UTF8)` и `SetConsoleOutputCP(CP_UTF8)`; на Linux дополнительных действий не выполняет. Дополнительный профиль терминала не требуется. На Linux нужен терминал с UTF-8.
 
 В `io/lesson-118-file-io-fstream/main3.cpp` используются широкие потоки: `setupWideStandardIO()` вызывает `_setmode` на Windows и `std::setlocale(LC_ALL, "")` на Linux. Кодировка файла для `wfstream` задаётся отдельно через `imbue`.
 
@@ -193,4 +220,4 @@ bash scripts/build-windows.sh oop/lesson-113-oop-interfaces/main.cpp
 - `basics/lesson-133-singly-linked-list-part1/main.cpp` и `basics/lesson-134-singly-linked-list-part2/main.cpp` вызывают неперехваченное `std::out_of_range` при обращении к `list[1000]`.
 - `multithreading/lesson-02-thread-param/main.cpp` содержит бесконечный цикл.
 
-В старых примерах используются устаревшие `auto_ptr`, `random_shuffle` и `codecvt`; их доступность зависит от компилятора и стандартной библиотеки. В уроке 139 остаётся предупреждение о строковом литерале в параметре `char*`.
+В старых примерах используются устаревшие `auto_ptr`, `random_shuffle` и `codecvt`; их доступность зависит от компилятора и стандартной библиотеки.

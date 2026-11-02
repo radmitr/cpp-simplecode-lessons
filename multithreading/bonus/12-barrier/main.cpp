@@ -1,3 +1,4 @@
+// C++20 — std::barrier.
 #include <array>
 #include <barrier>
 #include <chrono>

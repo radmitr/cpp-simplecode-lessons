@@ -1,18 +1,11 @@
+// C++11 — передача аргументов в std::thread.
 #include <iostream>
 #include <cstddef>
 #include <string>
 #include <thread>
 #include <chrono>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 void doWork(int a, int b, std::string msg)
 {
@@ -25,17 +18,9 @@ void doWork(int a, int b, std::string msg)
     std::cout << "Thread ID: " << std::this_thread::get_id() << " ============\tdoWork STOPPED\t============" << std::endl;
 }
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::thread th(doWork, 2, 3, "our_message");
 

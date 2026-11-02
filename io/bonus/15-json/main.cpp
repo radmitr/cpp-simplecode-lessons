@@ -1,3 +1,4 @@
+// C++11 — лямбда-выражения и auto; JSON обрабатывает внешняя библиотека; C++17 — [[maybe_unused]].
 #include <nlohmann/json.hpp>
 #include <string>
 #include <cstdint>

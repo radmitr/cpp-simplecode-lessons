@@ -1,3 +1,4 @@
+// C++11 — std::shared_ptr и std::weak_ptr; C++17 — [[maybe_unused]].
 #include <memory>
 #include "../common/check.hpp"
 

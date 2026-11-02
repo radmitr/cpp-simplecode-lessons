@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #include "../common/reflection.hpp"
 
 int shared_value = 7;

@@ -1,6 +1,8 @@
+// C++11 — std::condition_variable, std::mutex и std::chrono.
 #ifndef NETWORKING_RETRY_HPP
 #define NETWORKING_RETRY_HPP
 
+#include <algorithm>
 #include "../common/net.hpp"
 #include <condition_variable>
 #include <iostream>

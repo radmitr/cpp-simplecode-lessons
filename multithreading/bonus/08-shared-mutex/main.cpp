@@ -1,3 +1,4 @@
+// C++14 — std::shared_lock; C++17 — std::shared_mutex.
 #include <chrono>
 #include <iostream>
 #include <mutex>

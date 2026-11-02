@@ -1,3 +1,4 @@
+// C++11 — std::thread и std::mutex; C++17 — std::scoped_lock.
 #include <functional>
 #include <iostream>
 #include <mutex>

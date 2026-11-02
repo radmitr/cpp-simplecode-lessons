@@ -1,8 +1,7 @@
+// C++98 — std::istringstream и std::ostringstream; C++17 — [[maybe_unused]].
 #include <sstream>
 #include <string>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

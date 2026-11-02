@@ -1,3 +1,5 @@
+// C++17 — std::string_view; разбор CSV реализован вручную.
+#include <cstddef>
 #include <vector>
 #include <string>
 #include <string_view>

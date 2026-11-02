@@ -1,3 +1,5 @@
+// C++11 — std::future, std::async, std::launch, std::chrono.
+#include <string>
 #include "retry.hpp"
 #include <future>
 #include <iostream>

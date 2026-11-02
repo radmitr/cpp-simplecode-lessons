@@ -1,3 +1,4 @@
+// C++98 — вложенные объекты, ссылки и время жизни.
 #include <iostream>
 #include <string>
 

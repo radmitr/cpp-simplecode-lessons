@@ -1,9 +1,8 @@
+// C++98 — границы массивов и время жизни объектов; C++11 — std::array; C++17 — [[maybe_unused]].
 #include <array>
 #include <cassert>
 #include <cstddef>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

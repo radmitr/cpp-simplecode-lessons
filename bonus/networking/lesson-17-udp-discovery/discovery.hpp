@@ -1,6 +1,8 @@
+// C++11 — constexpr; C++17 — inline-переменные.
 #ifndef NETWORKING_DISCOVERY_HPP
 #define NETWORKING_DISCOVERY_HPP
 
+#include <string>
 #include "../common/net.hpp"
 #include <sstream>
 

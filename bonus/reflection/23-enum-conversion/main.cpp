@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
 #include "../common/reflection.hpp"
 
 enum class Color { red, green, blue };

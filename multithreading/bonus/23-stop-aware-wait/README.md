@@ -1,8 +1,28 @@
 # 23. Ожидание с поддержкой остановки
 
+## Версия C++
+
+`std::jthread`, `std::stop_token` — **C++20**.
+`std::mutex`, `std::unique_lock`, `std::condition_variable_any`, `std::future`, `std::promise` — **C++11**.
+`std::boolalpha` — **C++98**.
+
+Сборка примеров: **C++20**. Это режим проекта,
+а не дата появления всех использованных конструкций.
+
+## Что изучаем
+
 C++20; стандарт выбирается через `cxx-standard.txt`.
 Продолжение [condition_variable](../04-condition-variable/)
 и [jthread/stop_token](../06-jthread-stop-token/).
+
+## Примеры
+
+- [main.cpp](main.cpp).
+- [main2.cpp](main2.cpp).
+
+Выбирайте один исходник с `main()`; варианты запускаются отдельно.
+
+## Как это работает
 
 Рабочий поток может ждать данные сколько угодно долго. Нужно уметь закончить
 это ожидание по запросу остановки, даже если данные так и не появятся.
@@ -18,7 +38,7 @@ const bool received = cv.wait(lock, stop, [&]() { return ready; });
 `condition_variable_any` также допускает другие совместимые типы блокировок,
 но в этом уроке используется знакомый `unique_lock<mutex>`.
 
-## `main.cpp`: данных нет, поступает запрос остановки
+### `main.cpp`: данных нет, поступает запрос остановки
 
 1. Работник захватывает `mtx` и сообщает `started.set_value()`, что начал работу.
 2. `wait()` проверяет `ready`, освобождает `mtx` на время ожидания и ждёт.
@@ -35,7 +55,7 @@ Stop requested: true
 Worker finished without data
 ~~~
 
-started/`startSignal` нужны для согласования начала примера без `sleep_for()`.
+`started` и `startSignal` нужны для согласования начала примера без `sleep_for()`.
 Они не гарантируют, что работник уже физически заснул внутри `wait()`.
 Если `request_stop()` случится раньше входа в `wait()`, запрос всё равно
 сохранится в состоянии `stop_token`, и ждать данные поток не будет.
@@ -44,7 +64,7 @@ started/`startSignal` нужны для согласования начала п
 перегрузка с `stop_token` сама связывает ожидание с запросом остановки.
 Для обычной `condition_variable` один `request_stop()` такого эффекта не даёт.
 
-## `main2.cpp`: данные приходят обычным способом
+### `main2.cpp`: данные приходят обычным способом
 
 `main` под `mtx` записывает `message = 42`, устанавливает `ready = true`,
 освобождает `mtx` и вызывает `cv.notify_one()`. Запроса остановки в этом варианте нет:
@@ -56,7 +76,7 @@ Worker received: 42
 
 Раннее уведомление не мешает: `wait()` проверит сохранённый `ready`.
 
-## Что означает `bool` и зачем `unique_lock`
+### Что означает `bool` и зачем `unique_lock`
 
 Возвращаемый `bool` — результат предиката:
 
@@ -78,6 +98,8 @@ Worker received: 42
 
 ## Сборка и запуск
 
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
+
 Откройте `main.cpp` или `main2.cpp` и нажмите F5 либо Ctrl+F5.
 Из корня репозитория на Linux:
 
@@ -93,9 +115,17 @@ bash scripts/build-windows.sh multithreading/bonus/23-stop-aware-wait/main.cpp
 ./build/multithreading/bonus/23-stop-aware-wait/main.exe
 ~~~
 
-Для получения данных замените `main.cpp`/`main` на `main2.cpp`/main2.
+Для получения данных замените `main.cpp`/`main` на `main2.cpp`/`main2`.
 После добавления исходников обновите IntelliSense через задачу
 C/C++: Update IntelliSense.
 
 [Прерываемое ожидание в проекте стандарта](https://eel.is/c++draft/thread.condvarany.intwait).
 [Все бонусы](../README.md).
+
+## Связанные темы и источники
+
+### Дополнительные API в коде
+
+- [Автоматическая остановка jthread](../06-jthread-stop-token/README.md): [полный пример](../06-jthread-stop-token/main3.cpp).
+
+[Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

@@ -1,3 +1,4 @@
+// C++11 — auto, лямбда-выражения.
 #include "../common/db.hpp"
 
 int main() {

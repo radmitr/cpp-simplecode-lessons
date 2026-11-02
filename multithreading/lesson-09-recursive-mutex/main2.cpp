@@ -1,16 +1,9 @@
+// C++11 — std::recursive_mutex.
 #include <iostream>
 #include <mutex>
 #include <thread>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 std::recursive_mutex rm;
 
@@ -31,17 +24,9 @@ void foo(int a)
     rm.unlock();
 }
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::thread t1(foo, 10);
     std::this_thread::sleep_for(std::chrono::milliseconds(200));

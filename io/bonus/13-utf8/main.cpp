@@ -1,3 +1,5 @@
+// C++17 — std::string_view; C++20 — char8_t и std::u8string_view.
+#include <cstddef>
 #include <string>
 #include <string_view>
 #include <cstdint>

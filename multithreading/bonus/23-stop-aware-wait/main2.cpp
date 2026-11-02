@@ -1,3 +1,4 @@
+// C++11 — std::condition_variable_any; C++20 — ожидание с std::stop_token.
 #include <condition_variable>
 #include <future>
 #include <iostream>

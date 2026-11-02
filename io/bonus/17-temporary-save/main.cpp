@@ -1,3 +1,5 @@
+// C++17 — std::filesystem и сохранение через временный файл.
+#include <string>
 #include <system_error>
 #include "../common/check.hpp"
 

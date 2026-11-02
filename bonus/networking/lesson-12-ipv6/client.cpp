@@ -1,3 +1,5 @@
+// C++11 — std::chrono, auto.
+#include <string>
 #include "../common/resolved_address.hpp"
 #include <iostream>
 

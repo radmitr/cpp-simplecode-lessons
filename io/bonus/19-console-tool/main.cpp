@@ -1,3 +1,5 @@
+// C++98 — argc, argv и стандартные потоки; C++17 — std::from_chars.
+#include <string>
 #include <sstream>
 #include <charconv>
 #include <string_view>

@@ -1,3 +1,5 @@
+// C++98 — std::accumulate и тип начального значения; C++11 — auto и decltype.
+// C++17 — std::is_same_v.
 #include <iostream>
 #include <numeric>
 #include <type_traits>

@@ -1,3 +1,5 @@
+// C++11 — std::unique_ptr, std::to_string, nullptr, decltype.
+#include <string>
 #include "../common/net.hpp"
 #include <iostream>
 #include <memory>

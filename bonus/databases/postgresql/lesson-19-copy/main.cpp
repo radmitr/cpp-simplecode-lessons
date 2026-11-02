@@ -1,3 +1,5 @@
+// C++11 — std::unique_ptr, nullptr, auto, decltype.
+#include <string>
 #include "../common/db.hpp"
 #include <cstddef>
 

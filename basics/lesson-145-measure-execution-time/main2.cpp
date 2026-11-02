@@ -1,23 +1,9 @@
+// C++11 — измерение времени через std::chrono.
+#include <cstddef>
 #include <iostream>
 #include <chrono>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
+#include "../../common/console.hpp"
 
 class SimpleTimer
 {
@@ -48,7 +34,7 @@ void Foo()
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     Foo();
     return 0;

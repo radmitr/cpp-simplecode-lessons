@@ -1,3 +1,4 @@
+// C++11 — std::thread, std::condition_variable, std::packaged_task и std::future.
 #ifndef BONUS_THREAD_POOL_HPP
 #define BONUS_THREAD_POOL_HPP
 

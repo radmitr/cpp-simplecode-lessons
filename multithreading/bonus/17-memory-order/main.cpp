@@ -1,3 +1,4 @@
+// C++11 — std::atomic и порядки памяти std::memory_order.
 #include <atomic>
 #include <iostream>
 #include <thread>

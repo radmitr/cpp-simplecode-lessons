@@ -1,3 +1,4 @@
+// C++98 — статические объекты и порядок инициализации; C++20 — constinit.
 #include <string>
 #include "../common/check.hpp"
 

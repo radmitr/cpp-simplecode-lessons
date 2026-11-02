@@ -1,26 +1,11 @@
+// C++98 — предикаты и стандартные алгоритмы; C++11 — списковая инициализация.
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 bool greaterThenZero(int a)
 {
@@ -39,7 +24,7 @@ bool equalZero(int a)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::vector<int> v{5, -40, 43, -12, 6, -95, -50, 0};
 

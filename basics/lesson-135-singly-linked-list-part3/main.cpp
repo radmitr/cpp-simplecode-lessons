@@ -1,25 +1,11 @@
+// C++98 — удаление узлов односвязного списка; C++11 — noexcept.
+#include <cstddef>
 #include <iostream>
 #include <stdexcept>
 #include <string>
 #include <sstream>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
+#include "../../common/console.hpp"
 
 template<typename T>
 class List
@@ -39,7 +25,7 @@ public:
     void push_back(T data);
     void insert(T data, size_t index);
     void removeAt(size_t index);
-    ssize_t findFirst(const T& value) const;
+    std::ptrdiff_t findFirst(const T& value) const;
     void clear();
     void print() const;
 
@@ -254,10 +240,10 @@ void List<T>::removeAt(size_t index)
 }
 
 template <typename T>
-ssize_t List<T>::findFirst(const T& value) const
+std::ptrdiff_t List<T>::findFirst(const T& value) const
 {
     Node* current = head;
-    size_t index = 0;
+    std::ptrdiff_t index = 0;
     while (current)
     {
         if (current->data == value)
@@ -341,7 +327,7 @@ std::istream& operator>>(std::istream& is, List<T>& list)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     List<int> list;
     list.push_front(5);

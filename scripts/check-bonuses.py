@@ -11,7 +11,7 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SECTIONS = ("basics/bonus", "io/bonus", "bonus/reflection")
+SECTIONS = ("basics/bonus", "templates/bonus", "exceptions/bonus", "io/bonus", "bonus/reflection")
 WINDOWS = os.name == "nt"
 
 

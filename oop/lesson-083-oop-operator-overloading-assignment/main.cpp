@@ -1,24 +1,10 @@
+// C++98 — перегрузка оператора присваивания; C++11 — nullptr.
+#include <cstddef>
 #include <iostream>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 class MyClass
 {
@@ -57,19 +43,21 @@ public:
     {
         cout << "Operator = called " << this << endl;
 
-        if (this->data != nullptr)
+        if (this == &other)
         {
-            delete[] this->data;
+            return *this;
         }
 
-        this->size = other.size;
-        this->data = new int[other.size];
-
+        // Сначала готовим копию: если new[] бросит исключение, старые данные сохранятся.
+        int* newData = new int[other.size];
         for (size_t i = 0; i < other.size; i++)
         {
-            this->data[i] = other.data[i];
+            newData[i] = other.data[i];
         }
 
+        delete[] this->data;
+        this->data = newData;
+        this->size = other.size;
         return *this;
     }
 
@@ -97,7 +85,7 @@ MyClass foo2()
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     MyClass a(10);
     MyClass b(2);

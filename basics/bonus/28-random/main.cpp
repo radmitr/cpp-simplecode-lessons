@@ -1,7 +1,6 @@
+// C++11 — std::mt19937 и std::uniform_int_distribution; C++17 — [[maybe_unused]].
 #include <random>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

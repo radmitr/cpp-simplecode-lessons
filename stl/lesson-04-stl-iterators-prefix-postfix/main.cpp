@@ -1,3 +1,4 @@
+// C++98 — префиксный и постфиксный ++ итератора; C++11 — auto и cbegin().
 #include <iostream>
 #include <list>
 

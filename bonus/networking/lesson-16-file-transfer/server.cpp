@@ -1,3 +1,7 @@
+// C++11 — std::chrono, std::random_device, std::error_code, std::to_string.
+// C++17 — std::filesystem.
+#include <string>
+#include <algorithm>
 #include "../common/net.hpp"
 #include "../common/crc32.hpp"
 

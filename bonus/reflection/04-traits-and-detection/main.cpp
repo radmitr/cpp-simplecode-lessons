@@ -1,3 +1,4 @@
+// C++11 — decltype и std::declval; C++17 — std::void_t и if constexpr.
 #include <type_traits>
 #include <utility>
 #include "../common/check.hpp"

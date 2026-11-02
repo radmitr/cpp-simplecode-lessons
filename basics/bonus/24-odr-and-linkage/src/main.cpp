@@ -1,3 +1,4 @@
+// C++98 — inline-функции и несколько единиц трансляции; C++17 — [[maybe_unused]].
 #include "shared.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

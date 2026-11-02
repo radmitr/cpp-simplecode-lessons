@@ -1,3 +1,4 @@
+// C++98 — объявления и определения в нескольких файлах.
 #include "MyClass.h"
 
 namespace myNamespace
@@ -10,7 +11,7 @@ namespace myNamespace
     {
     }
 
-    void MyClass::printMessage(char str[])
+    void MyClass::printMessage(const char str[])
     {
         std::cout << str << std::endl;
     }

@@ -1,3 +1,5 @@
+// C++11 — std::chrono, std::to_string, auto; C++17 — std::from_chars.
+#include <string>
 #include "../common/http.hpp"
 #include <iostream>
 #include <map>

@@ -1,3 +1,4 @@
+// C++11 — constexpr; C++20 — consteval.
 #include <array>
 #include <iostream>
 

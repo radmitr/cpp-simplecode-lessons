@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #pragma once
 #if !defined(__cpp_impl_reflection) || __cpp_impl_reflection < 202506L
 #error "Use GCC 16+ with -std=c++26 -freflection for this lesson"

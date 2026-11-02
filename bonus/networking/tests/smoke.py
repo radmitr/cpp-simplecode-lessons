@@ -36,7 +36,7 @@ def executable(lesson, name):
 def run(lesson, name, *args, success=True):
     result = subprocess.run(
         [executable(lesson, name), *map(str, args)],
-        capture_output=True, text=True, timeout=10,
+        capture_output=True, text=True, encoding="utf-8", errors="backslashreplace", timeout=10,
     )
     if (result.returncode == 0) != success:
         raise AssertionError((lesson, name, result.returncode, result.stdout, result.stderr))
@@ -59,7 +59,10 @@ class Server:
         self.process = subprocess.Popen(
             [executable(self.lesson, "server"), str(self.port), *map(str, self.args)],
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-            stdin=subprocess.DEVNULL, text=True, bufsize=1,
+            # Ошибки ОС/Boost могут содержать байты локальной кодировки Windows.
+            # Сохраняем их как \xNN; проверяем ASCII-поля протокола и диагностики.
+            stdin=subprocess.DEVNULL, text=True, encoding="utf-8",
+            errors="backslashreplace", bufsize=1,
         )
 
         def collect():
@@ -130,7 +133,7 @@ def tls_checks():
             def handle(self):
                 try:
                     super().handle()
-                except (ConnectionResetError, BrokenPipeError):
+                except (ConnectionResetError, ConnectionAbortedError, BrokenPipeError):
                     pass  # Отрицательная проверка TLS может закрыть соединение до HTTP.
 
             def do_GET(self):

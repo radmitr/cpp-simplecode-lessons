@@ -1,25 +1,10 @@
+// C++98 — статические методы класса.
 #include <iostream>
 #include <string>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 class Human;
 class Apple;
@@ -94,7 +79,7 @@ void Human::eatApple(Apple& apple)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     Apple apple(125, "Red");
     Apple apple2(150, "Green");

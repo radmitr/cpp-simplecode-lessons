@@ -1,3 +1,6 @@
+// C++11 — std::mutex, std::lock_guard, std::future, std::async.
+// C++14 — захват лямбды с инициализацией.
+#include <utility>
 #include "../common/net.hpp"
 #include <iostream>
 #include <future>

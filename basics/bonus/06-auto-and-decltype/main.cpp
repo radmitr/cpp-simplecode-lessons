@@ -1,8 +1,7 @@
+// C++11 — auto и decltype; C++14 — decltype(auto); C++17 — [[maybe_unused]].
 #include <vector>
 #include <type_traits>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

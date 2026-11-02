@@ -1,3 +1,5 @@
+// C++11 — std::atomic и alignas.
+// C++17 — std::hardware_destructive_interference_size, если поддерживается библиотекой.
 #include <atomic>
 #include <chrono>
 #include <cstddef>

@@ -1,3 +1,4 @@
+// C++98 — владение буфером и перегрузка операторов; C++11 — rvalue-ссылки, constexpr и noexcept.
 #ifndef STRING_HPP
 #define STRING_HPP
 

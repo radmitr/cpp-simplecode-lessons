@@ -1,11 +1,33 @@
 # 18. Асинхронный TCP-сервер с `Boost.Asio`
 
-C++17. Windows: MinGW64; Linux: POSIX. Нужны заголовки Boost.
+## Версия C++
+
+захват с инициализацией — **C++14**.
+`std::future`, `std::async`, `std::launch`, `std::chrono`, `std::to_string` — **C++11**.
+`std::vector`, `std::exception`, `std::runtime_error`, `std::string`, `std::size_t` — **C++98**.
+
+Сборка примеров: **C++17**. Это режим проекта,
+а не дата появления всех использованных конструкций.
+Boost.Asio/Beast — внешние библиотеки, не часть стандарта C++.
+
+## Что изучаем
 
 Урок использует `Boost.Asio`. Это вариант Asio в составе Boost; он также
 нужен следующему уроку с `Boost.Beast`. Отдельная standalone Asio не требуется.
 
-Клиент создаёт три соединения, как в уроке 09.
+Windows: MinGW64; Linux: POSIX. Нужны заголовки Boost.
+
+## Примеры
+
+- [client.cpp](client.cpp).
+- [server.cpp](server.cpp).
+
+Сервер и клиент — две отдельные программы. Нужны обе: сначала сервер
+в одном терминале, затем клиент в другом. Каждый исходник собирается отдельно.
+
+## Как это работает
+
+Клиент создаёт три соединения, как в уроке [«09. Параллельная обработка нескольких клиентов»](../lesson-09-multi-client/README.md).
 Сервер обрабатывает их через `async_accept()`, `async_read_until()`
 и `async_write()`. `io_context::run()` выполняется только в одном потоке.
 
@@ -39,6 +61,8 @@ Async echo verified: 3 clients
 [Учебник Boost.Asio](https://www.boost.org/doc/libs/latest/doc/html/boost_asio/tutorial.html).
 
 ## Сборка и запуск
+
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
 
 Команды выполняются из корня проекта. Порт по умолчанию — 42018.
 Сначала соберите обе программы.
@@ -93,3 +117,11 @@ Windows: пакет mingw-w64-x86_64-boost; Debian/Ubuntu: libboost-dev.
 Для запуска без отладки используйте Ctrl+F5.
 
 [Зависимости, общий код и все сетевые уроки](../README.md).
+
+## Связанные темы и источники
+
+### Дополнительные API в коде
+
+- [Совместное владение и слабая ссылка](../../../basics/bonus/12-shared-weak-ptr/README.md): [полный пример](../../../basics/bonus/12-shared-weak-ptr/main.cpp).
+
+[Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

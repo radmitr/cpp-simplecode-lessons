@@ -1,26 +1,11 @@
+// C++98 — перегрузка потоковых операторов << и >>.
 #include <iostream>
 #include <string>
 #include <fstream>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 class Point
 {
@@ -66,7 +51,7 @@ istream& operator>>(istream& is, Point& p)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     Point p(487, 212, 946);
     cout << p << endl;

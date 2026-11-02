@@ -1,24 +1,11 @@
+// C++98 — динамические массивы и поэлементное копирование.
+#include <cstdlib>
+#include <cstddef>
 #include <iostream>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 void fillArray(int* const arr, const size_t size)
 {
@@ -39,7 +26,7 @@ void showArray(const int* const arr, const size_t size)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     //srand(time(NULL));
 
@@ -55,7 +42,7 @@ int main(void)
     cout << "secondArray:\t";
     showArray(secondArray, size);
 
-    // firstArray = secondArray; // некорректно: копируется ссылка, а не массив
+    // firstArray = secondArray; // некорректно: копируется указатель, а не элементы массива
 
     delete[] firstArray;
 

@@ -1,9 +1,8 @@
+// C++11 — rvalue-ссылки и std::move; C++14 — std::make_unique; C++17 — [[maybe_unused]].
 #include <memory>
 #include <utility>
 #include <string>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

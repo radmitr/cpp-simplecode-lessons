@@ -1,3 +1,7 @@
+// C++11 — std::make_shared, std::chrono, std::to_string, auto.
+// C++14 — захват лямбды с инициализацией.
+#include <string>
+#include <cstddef>
 #include "../common/boost_net.hpp"
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>

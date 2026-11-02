@@ -1,3 +1,4 @@
+// C++11 — std::call_once и std::once_flag.
 #include <iostream>
 #include <mutex>
 #include <string>

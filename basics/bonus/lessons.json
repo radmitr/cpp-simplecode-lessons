@@ -74,7 +74,7 @@
   {
     "number": 10,
     "folder": "basics/bonus/10-rule-of-zero-five",
-    "title": "Правило нуля, специальные функции и возврат",
+    "title": "Правило нуля, трёх и пяти",
     "standard": "c++17",
     "minimum_gcc": 0,
     "dependency": null
@@ -92,78 +92,6 @@
     "folder": "basics/bonus/12-shared-weak-ptr",
     "title": "shared_ptr, weak_ptr и циклы владения",
     "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 13,
-    "folder": "basics/bonus/13-rethrow-and-nested",
-    "title": "Повторное выбрасывание и вложенные исключения",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 14,
-    "folder": "basics/bonus/14-noexcept",
-    "title": "noexcept, деструкторы и перемещение",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 15,
-    "folder": "basics/bonus/15-exception-guarantees",
-    "title": "Гарантии безопасности исключений",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 16,
-    "folder": "basics/bonus/16-function-templates",
-    "title": "Шаблоны функций и вывод параметров",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 17,
-    "folder": "basics/bonus/17-template-parameters",
-    "title": "Параметры шаблонов, специализация и CTAD",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 18,
-    "folder": "basics/bonus/18-traits-if-constexpr",
-    "title": "type_traits, if constexpr и enable_if",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 19,
-    "folder": "basics/bonus/19-parameter-packs",
-    "title": "Пакеты параметров и fold expressions",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 20,
-    "folder": "basics/bonus/20-perfect-forwarding",
-    "title": "Forwarding references и std::forward",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 21,
-    "folder": "basics/bonus/21-concepts",
-    "title": "Concepts и requires",
-    "standard": "c++20",
     "minimum_gcc": 0,
     "dependency": null
   },
@@ -228,6 +156,38 @@
     "number": 29,
     "folder": "basics/bonus/29-diagnostics",
     "title": "Диагностика, assert и санитайзеры",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 31,
+    "folder": "basics/bonus/31-fundamental-types",
+    "title": "Основные типы и sizeof на практике",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 32,
+    "folder": "basics/bonus/32-call-stack-trace",
+    "title": "Трассировка стека вызовов",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 33,
+    "folder": "basics/bonus/33-c-strings-and-escapes",
+    "title": "Хранение C-строк и управляющие символы",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 34,
+    "folder": "basics/bonus/34-macro-parentheses",
+    "title": "Скобки в функциональном макросе",
     "standard": "c++17",
     "minimum_gcc": 0,
     "dependency": null

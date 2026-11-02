@@ -1,17 +1,10 @@
+// C++11 — std::thread, join() и std::chrono.
 #include <iostream>
 #include <cstddef>
 #include <thread>
 #include <chrono>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 void doWork()
 {
@@ -22,17 +15,9 @@ void doWork()
     }
 }
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
     std::cout << "START MAIN" << std::endl;
 
     std::thread th(doWork);

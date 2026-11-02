@@ -1,25 +1,11 @@
+// C++98 — std::list; C++11 — auto и cbegin().
+#include <iterator>
 #include <iostream>
 #include <list>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename T>
 void printList(const std::list<T>& lst)
@@ -32,7 +18,7 @@ void printList(const std::list<T>& lst)
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::list<int> list1 = {15, 64, 985};
     printList(list1);

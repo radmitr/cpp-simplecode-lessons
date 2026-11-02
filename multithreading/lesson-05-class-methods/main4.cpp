@@ -1,17 +1,10 @@
+// C++11 — вызов метода объекта через std::thread.
 #include <iostream>
 #include <cstddef>
 #include <thread>
 #include <functional>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 class MyClass
 {
@@ -43,17 +36,9 @@ public:
     }
 };
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     MyClass m;
 

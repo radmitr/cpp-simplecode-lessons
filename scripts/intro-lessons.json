@@ -1,0 +1,1580 @@
+[
+  {
+    "source": "basics/lesson-001-hello-world/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "\"HELLO WORLD!\"",
+          "Hello World!",
+          "HALLO WELT!",
+          "ПРИВЕТ МИР!"
+        ],
+        "stderr_contains": [
+          "ПРИВЕТ МИР!"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-002-program-structure/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Привет МИР!"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-003-escape-sequences/main.cpp",
+    "cases": [
+      {
+        "exact": " \n \"Привет!\"\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-004-data-types/main.cpp",
+    "cases": [
+      {
+        "exact": " \n Привет!\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-005-variables/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "a = 5\na = 10",
+          "10 1 2",
+          "1.551\nf\n1\n0"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-006-const/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "\t7\n"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-007-cin/main.cpp",
+    "cases": [
+      {
+        "input": "2 3\n",
+        "contains": [
+          "Число 1: 2",
+          "Число 2: 3"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "2\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-008-arithmetic-operators/main.cpp",
+    "cases": [
+      {
+        "exact": "5\n-5\n7\n10\n6\n8\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-009-increment-decrement/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "после (\\d+)",
+            "expected": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "pattern": "финал (\\d+)",
+            "expected": [
+              "2",
+              "2"
+            ]
+          },
+          {
+            "pattern": "(?m)^\\s*(\\d+)\\s*$",
+            "expected": [
+              "4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-010-compound-assignment/main.cpp",
+    "cases": [
+      {
+        "exact": ""
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-011-logical-operators/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(?m)^([01])$",
+            "expected": [
+              "0",
+              "1",
+              "0",
+              "1",
+              "0",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-012-if-else/main.cpp",
+    "cases": [
+      {
+        "input": "5\n",
+        "contains": [
+          "Дождя нет",
+          "== 5"
+        ]
+      },
+      {
+        "input": "4\n",
+        "contains": [
+          "< 5"
+        ]
+      },
+      {
+        "input": "6\n",
+        "contains": [
+          "> 5"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-013-switch/main.cpp",
+    "cases": [
+      {
+        "input": "2\n",
+        "contains": [
+          "Вы ввели 2"
+        ]
+      },
+      {
+        "input": "1\n",
+        "contains": [
+          "Вы ввели 1"
+        ]
+      },
+      {
+        "input": "9\n",
+        "contains": [
+          "Я не знаю этого числа!"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-014-while/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "a = (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-015-do-while/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "a = (\\d+)",
+            "expected": [
+              "19"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-016-for/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "i = (\\d+)",
+            "expected": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-017-for-variants/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "Переменная i: (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          },
+          {
+            "pattern": "Переменная i = (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "Переменная j = (\\d+)",
+            "expected": [
+              "10",
+              "9",
+              "8",
+              "7",
+              "6"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-018-break/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "i = (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "=== BREAK ===",
+            "count": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-019-continue/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "i: (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "3",
+              "4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-020-executable/main.cpp",
+    "cases": [
+      {
+        "exact": "Один\nДва\nТри\nЧетыре\nПять\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-021-console-pause/main.cpp",
+    "cases": [
+      {
+        "input": "\n",
+        "exact": "Один\nДва\nТри\nЧетыре\nПять\nНажмите Enter для завершения...\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-022-goto/main.cpp",
+    "cases": [
+      {
+        "exact": "Один\nЧетыре\nПять\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-023-debugging/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Hello World!",
+          "Result: 11"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-024-nested-loops/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "итерация i =\\s*(\\d+)",
+            "expected": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "итерация j =\\s*(\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-025-array/main.cpp",
+    "cases": [
+      {
+        "exact": "5\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-026-array-initialization/main.cpp",
+    "cases": [
+      {
+        "exact": "2\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-027-array-loops/main.cpp",
+    "cases": [
+      {
+        "random": {
+          "count": 5,
+          "min": 0,
+          "max": 99,
+          "pattern": "(?m)^\\s*(\\d+)\\s*$"
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-028-sizeof/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "INT: [1-9]\\d* bytes",
+            "count": 1
+          },
+          {
+            "pattern": "DOUBLE: [1-9]\\d* bytes",
+            "count": 1
+          }
+        ],
+        "equal_groups": [
+          "(?s)INT: (\\d+) bytes.*DOUBLE: \\d+ bytes\\s+(\\d+)"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-031-2d-array-initialization/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "arr\\[[01]\\]\\[[01]\\] = (\\d+)",
+            "expected": [
+              "0",
+              "0",
+              "111",
+              "999"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-032-2d-array-loops/main.cpp",
+    "cases": [
+      {
+        "random": {
+          "count": 40,
+          "min": 0,
+          "max": 9,
+          "pattern": "\\d+"
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-033-functions/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "SUM: RESULT = 3",
+          "C = 3"
+        ],
+        "matches": [
+          {
+            "pattern": "(?m)^foo\\(\\):.* - (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "foo2\\(\\):.* - (\\d+)",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          },
+          {
+            "pattern": "RAND = \\d+",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-034-function-value-parameters/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "SUM = 34.03"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-035-array-function-parameters/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "index: \\[(\\d+)\\]",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          }
+        ],
+        "random": {
+          "count": 10,
+          "min": 0,
+          "max": 9,
+          "pattern": "random-number: (\\d+)"
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-036-function-prototypes/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "\"foo\"",
+          "\"foo2\"",
+          "MAIN: RES = 3"
+        ],
+        "matches": [
+          {
+            "pattern": "(?s)\"foo\".*RESULT = 3.*\"foo2\".*MAIN: RES = 3",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-037-variable-scope/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "(if) local a = 0",
+          "(if) local b = 1",
+          "(main) local a = 123",
+          "(main) local b = 2"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-038-default-arguments/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(?m)^(\\*+)$",
+            "expected": [
+              "*****",
+              "************************",
+              "**********",
+              "*****"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-039-inline-functions/main.cpp",
+    "cases": [
+      {
+        "exact": ""
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-040-function-overloading/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": ": ([\\d.]+)",
+            "expected": [
+              "3",
+              "15.6",
+              "12"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "templates/lesson-041-function-templates/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "SumT (1): 3",
+          "SumT (2): 15.25",
+          "SumT_t (1): 15",
+          "SumT_t (2): 17.5",
+          "Ft_t: 10"
+        ],
+        "matches": [
+          {
+            "pattern": "(?m)^Ft: ([\\d.]+)",
+            "expected": [
+              "2.5",
+              "3.5",
+              "10",
+              "5.4",
+              "2",
+              "3",
+              "10.5",
+              "7"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-042-call-stack/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "a = (\\d+)",
+            "expected": [
+              "4",
+              "3",
+              "2",
+              "1",
+              "0"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-043-recursion/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "a = (\\d+)",
+            "expected": [
+              "4",
+              "3",
+              "2",
+              "1",
+              "0"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-044-recursive-factorial/main.cpp",
+    "cases": [
+      {
+        "input": "5\n",
+        "contains": [
+          "Result: 120"
+        ],
+        "matches": [
+          {
+            "pattern": "a = (\\d+)",
+            "expected": [
+              "4",
+              "3",
+              "2",
+              "1",
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "input": "0\n",
+        "contains": [
+          "Result: 1"
+        ]
+      },
+      {
+        "input": "1\n",
+        "contains": [
+          "Result: 1"
+        ]
+      },
+      {
+        "input": "12\n",
+        "contains": [
+          "Result: 479001600"
+        ]
+      },
+      {
+        "input": "-1\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Expected integer"
+        ]
+      },
+      {
+        "input": "13\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Expected integer"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Expected integer"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Expected integer"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-046-pointers/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(?m)^ a = (\\d+)",
+            "expected": [
+              "5",
+              "5",
+              "2"
+            ]
+          }
+        ],
+        "addresses": {
+          "count": 4,
+          "equal": [
+            [
+              0,
+              2,
+              3
+            ]
+          ],
+          "distinct": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-047-pointer-arithmetic/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "arr\\[\\d\\]\\s+(\\d+)",
+            "expected": [
+              "4",
+              "55",
+              "79",
+              "1",
+              "4"
+            ]
+          },
+          {
+            "pattern": "pArr\\[\\d\\] =\\s+(\\d+)",
+            "expected": [
+              "4",
+              "55",
+              "79",
+              "1",
+              "4"
+            ]
+          }
+        ],
+        "addresses": {
+          "count": 12,
+          "equal": [
+            [
+              0,
+              1,
+              2,
+              7
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-048-pointer-parameters/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(?m)^(\\d+)$",
+            "expected": [
+              "0",
+              "0",
+              "0",
+              "1",
+              "555"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-049-multiple-results-pointers/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(?m)^ a = (-?\\d+)",
+            "expected": [
+              "0",
+              "555"
+            ]
+          },
+          {
+            "pattern": "(?m)^ b = (-?\\d+)",
+            "expected": [
+              "0",
+              "1"
+            ]
+          },
+          {
+            "pattern": "(?m)^ c = (-?\\d+)",
+            "expected": [
+              "1",
+              "-20"
+            ]
+          },
+          {
+            "pattern": "(?m)^ a2 = (-?\\d+)",
+            "expected": [
+              "0",
+              "10"
+            ]
+          },
+          {
+            "pattern": "(?m)^ b2 = (-?\\d+)",
+            "expected": [
+              "4",
+              "8"
+            ]
+          },
+          {
+            "pattern": "(?m)^ c2 = (-?\\d+)",
+            "expected": [
+              "34",
+              "-66"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-050-references/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "*pa = \t5",
+          "aref = \t5"
+        ],
+        "addresses": {
+          "count": 2,
+          "equal": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-051-reference-parameters/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "value = (\\d+)",
+            "expected": [
+              "5",
+              "5",
+              "2",
+              "3",
+              "3"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-052-multiple-results-references/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "foo: a = 10",
+          "foo: b = 8",
+          "foo: c = -66"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-053-new-delete/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "NEW: 0x[0-9a-fA-F]+: 10",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-054-nullptr/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "До delete: 10"
+        ],
+        "addresses": {
+          "count": 0
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-055-dynamic-array/main.cpp",
+    "cases": [
+      {
+        "input": "5\n",
+        "random": {
+          "count": 5,
+          "min": 0,
+          "max": 99,
+          "pattern": "(?m)^0x[0-9a-fA-F]+: (\\d+) - \\d+"
+        },
+        "equal_groups": [
+          "(?m)^0x[0-9a-fA-F]+: (\\d+) - (\\d+)"
+        ],
+        "addresses": {
+          "count": 5
+        }
+      },
+      {
+        "input": "0\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "-1\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "101\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-056-2d-dynamic-array/main.cpp",
+    "cases": [
+      {
+        "input": "2 3\n",
+        "random": {
+          "count": 6,
+          "min": 0,
+          "max": 19,
+          "pattern": "\\d+"
+        }
+      },
+      {
+        "input": "0 2\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "2 0\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "101 2\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "2 101\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "2 bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-057-const-pointer-parameters/main.cpp",
+    "cases": [
+      {
+        "random": {
+          "count": 5,
+          "min": 0,
+          "max": 99,
+          "pattern": "\\d+"
+        }
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-060-c-strings/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Hello \tLEN1 = 6",
+          "World!\tLEN2 = 6"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-061-type-conversions/main.cpp",
+    "cases": [
+      {
+        "byte_table": true
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-063-c-string-functions/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "LEN1 = 6",
+          "LEN2 = 6",
+          "RESULT1 = Hello World!"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-066-define/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "3.14",
+          "text\ttext (code)",
+          "text\ttext (tab)"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-067-function-like-macros/main.cpp",
+    "cases": [
+      {
+        "exact": "30\n"
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-068-conditional-compilation/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "DEBUG ON",
+          "DEBUG > 4",
+          "DEBUG == 5"
+        ],
+        "matches": [
+          {
+            "pattern": "(?m)^\\t(\\d+)$",
+            "expected": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-069-conditional-operator/main.cpp",
+    "cases": [
+      {
+        "input": "10\n",
+        "contains": [
+          "a равно 10"
+        ]
+      },
+      {
+        "input": "9\n",
+        "contains": [
+          "a меньше 10"
+        ]
+      },
+      {
+        "input": "11\n",
+        "contains": [
+          "a больше 10"
+        ]
+      },
+      {
+        "input": "bad\n",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      },
+      {
+        "input": "",
+        "exit": 1,
+        "stderr_contains": [
+          "Invalid input"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "basics/lesson-070-argc-argv/main.cpp",
+    "cases": [
+      {
+        "args": [
+          "alpha",
+          "two words"
+        ],
+        "contains": [
+          "1\talpha",
+          "2\ttwo words"
+        ],
+        "matches": [
+          {
+            "pattern": "(?m)^  (\\d+)\\t",
+            "expected": [
+              "0",
+              "1",
+              "2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-073-oop-class-object/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Ivanov Ivan Ivanovich",
+          "Noname"
+        ],
+        "matches": [
+          {
+            "pattern": "(?m)^(\\d+)$",
+            "expected": [
+              "30",
+              "100",
+              "19",
+              "60"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-074-oop-class-methods/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Имя: Иванов Иван",
+          "Имя: Петр Петров"
+        ],
+        "matches": [
+          {
+            "pattern": "Вес: (\\d+)",
+            "expected": [
+              "100",
+              "60"
+            ]
+          },
+          {
+            "pattern": "Возраст: (\\d+)",
+            "expected": [
+              "30",
+              "19"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-075-oop-access-modifiers/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "Y = 5",
+          "X = 2",
+          "Z = 7",
+          "PrintY(): 5"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-076-oop-getters-setters/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "X = (\\d+)",
+            "expected": [
+              "5",
+              "5"
+            ]
+          },
+          {
+            "pattern": "Y =\\s+(\\d+)",
+            "expected": [
+              "22",
+              "22"
+            ]
+          },
+          {
+            "pattern": "px = (\\d+)",
+            "expected": [
+              "0",
+              "100"
+            ]
+          },
+          {
+            "pattern": "py=\\s*(\\d+)",
+            "expected": [
+              "0",
+              "200"
+            ]
+          }
+        ],
+        "contains": [
+          "a.GetY() = 22"
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-077-oop-encapsulation/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "(WORKS!|STOP!)",
+            "expected": [
+              "WORKS!",
+              "STOP!",
+              "WORKS!"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-078-oop-constructor/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "X = (\\d+)\\s+Y =\\s+(\\d+)",
+            "expected": [
+              [
+                "5",
+                "44"
+              ],
+              [
+                "77",
+                "9"
+              ],
+              [
+                "10",
+                "20"
+              ],
+              [
+                "111",
+                "222"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-079-oop-constructor-overloading/main.cpp",
+    "cases": [
+      {
+        "matches": [
+          {
+            "pattern": "X = (\\d+)\\s+Y =\\s+(-?\\d+)",
+            "expected": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "77",
+                "9"
+              ],
+              [
+                "22",
+                "-1"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-080-oop-destructor/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "0 1 2 3 4 5 6 7 8 9"
+        ],
+        "matches": [
+          {
+            "pattern": "(?s)НАЧАЛО.*конструктор.*КОНЕЦ.*деструктор",
+            "count": 1
+          }
+        ],
+        "addresses": {
+          "count": 2,
+          "equal": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source": "oop/lesson-081-oop-this-pointer/main.cpp",
+    "cases": [
+      {
+        "contains": [
+          "constructor 1",
+          "constructor 2"
+        ],
+        "addresses": {
+          "count": 2,
+          "distinct": [
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  }
+]

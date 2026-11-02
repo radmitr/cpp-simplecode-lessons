@@ -1,25 +1,10 @@
+// C++11 — std::forward_list и цикл for по диапазону.
 #include <iostream>
 #include <forward_list>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename T>
 void printForwardList(const std::forward_list<T>& fwdList, const char* separator = "\n")
@@ -32,7 +17,7 @@ void printForwardList(const std::forward_list<T>& fwdList, const char* separator
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     // push_front(..), pop_front()
     std::forward_list<int> fl{5, 1, 33};

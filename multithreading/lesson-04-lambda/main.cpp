@@ -1,16 +1,9 @@
+// C++11 — запуск лямбда-выражения в std::thread.
 #include <iostream>
 #include <cstddef>
 #include <thread>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 int sum(int a, int b)
 {
@@ -21,17 +14,9 @@ int sum(int a, int b)
     return a + b;
 }
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     // int result = sum(2, 5);
     // std::cout << "Result: " << result << std::endl;

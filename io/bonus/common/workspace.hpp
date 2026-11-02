@@ -1,3 +1,4 @@
+// C++11 — std::chrono; C++17 — std::filesystem.
 #pragma once
 #include <chrono>
 #include <cstdlib>

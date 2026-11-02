@@ -1,3 +1,4 @@
+// C++98 — чтение и запись через std::fstream; C++11 — std::codecvt_utf8 (устаревший интерфейс).
 #include <iostream>
 #include <string>
 #include <fstream>

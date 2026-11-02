@@ -1,3 +1,6 @@
+// C++11 — std::thread, std::mutex, std::lock_guard, std::unique_lock.
+#include <string>
+#include <utility>
 #include "../common/net.hpp"
 
 #include <condition_variable>

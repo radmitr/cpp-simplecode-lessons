@@ -1,25 +1,10 @@
+// C++11 — std::array и сравнение контейнеров.
 #include <iostream>
 #include <array>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename Container>
 void printContainer(const Container& container, const char* separator = "\n")
@@ -33,7 +18,7 @@ void printContainer(const Container& container, const char* separator = "\n")
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::array<int, 5> arr{4, 33, 96, 11, 73};
     std::array<int, 5> arr2{4, 33, 96, 11, 73};

@@ -1,3 +1,4 @@
+// C++11 — std::array и списковая инициализация.
 #include <array>
 #include <iostream>
 

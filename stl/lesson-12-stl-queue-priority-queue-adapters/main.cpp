@@ -1,3 +1,6 @@
+// C++98 — std::queue и std::priority_queue; C++11 — auto и std::begin().
+#include <utility>
+#include <iterator>
 #include <iostream>
 #include <vector>
 #include <list>
@@ -5,25 +8,9 @@
 #include <stack>
 #include <queue>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 // using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename T1, typename T2>
 std::ostream &operator<<(std::ostream &os, const std::pair<T1, T2> &p)
@@ -129,7 +116,7 @@ void printPriorityQueue(
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     //--------------------------------------------------
 

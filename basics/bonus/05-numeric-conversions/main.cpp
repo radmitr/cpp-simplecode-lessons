@@ -1,3 +1,4 @@
+// C++98 — числовые преобразования, static_cast и std::numeric_limits; C++17 — [[maybe_unused]].
 #include <limits>
 #include <cstddef>
 #include "../common/check.hpp"

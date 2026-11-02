@@ -1,3 +1,5 @@
+// C++98 — бинарный ввод-вывод; C++11 — целые типы из <cstdint> и псевдонимы using.
+// C++17 — [[maybe_unused]].
 #include <vector>
 #include <string>
 #include <cstdint>

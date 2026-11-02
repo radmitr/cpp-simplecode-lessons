@@ -1,3 +1,4 @@
+// C++11 — std::uint32_t; C++17 — std::string_view.
 #ifndef NETWORKING_CRC32_HPP
 #define NETWORKING_CRC32_HPP
 

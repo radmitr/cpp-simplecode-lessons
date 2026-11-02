@@ -1,3 +1,4 @@
+// C++98 — std::stringbuf, std::endl и std::flush; C++17 — [[maybe_unused]].
 #include <sstream>
 #include <ostream>
 #include "../common/check.hpp"

@@ -1,25 +1,11 @@
+// C++98 — std::multiset; C++11 — auto и std::begin().
+#include <iterator>
 #include <iostream>
 #include <set>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 // using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename Container>
 void printContainer(
@@ -42,7 +28,7 @@ void printContainer(
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     // std::multiset<int>
     std::multiset<int> multiset1{0, 1, 1, 1, 45, 45, 23, 83, 77, 1, 30, 16};

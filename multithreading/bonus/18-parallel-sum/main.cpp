@@ -1,3 +1,4 @@
+// C++98 — std::accumulate; C++11 — std::thread и std::chrono; C++14 — обобщённые лямбда-выражения.
 #include <chrono>
 #include <cstddef>
 #include <cstdint>

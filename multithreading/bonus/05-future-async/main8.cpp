@@ -1,3 +1,4 @@
+// C++98 — std::terminate и std::set_terminate; C++11 — std::thread; C++17 — std::string_view.
 #include <cstdio>
 #include <cstdlib>
 #include <exception>

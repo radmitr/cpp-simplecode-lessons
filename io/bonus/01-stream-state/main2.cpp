@@ -1,3 +1,4 @@
+// C++98 — состояния потока, clear() и ignore().
 #include <iostream>
 #include <limits>
 #include <string>

@@ -1,3 +1,5 @@
+// C++98 — read(), write() и gcount(); C++17 — std::filesystem.
+#include <string>
 #include <array>
 #include "../common/check.hpp"
 

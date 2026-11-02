@@ -1,3 +1,5 @@
+// C++17 — операции std::filesystem.
+#include <string>
 #include <vector>
 #include <algorithm>
 #include "../common/check.hpp"

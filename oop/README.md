@@ -1,12 +1,13 @@
 # Объектно-ориентированное программирование
 
-Нужны классы, поля, функции, ссылки, `new`/`delete`. Уроки сохраняют нумерацию исходного курса;
-пропуски номеров не означают потерю файлов.
+Для начала нужны переменные, функции, ссылки и указатели из [основ C++](../basics/README.md).
+Уроки [«073. Класс и объект»](lesson-073-oop-class-object/README.md) — [«081. Указатель this»](lesson-081-oop-this-pointer/README.md) вводят классы, объекты, методы, доступ, конструкторы и деструкторы.
+Уроки сохраняют нумерацию исходного курса; [границы сверки источников](../docs/course-sources.md).
 
-Уроки 82–97 объясняют копирование, перегрузки, доступ, `static` и состав объектов.
-Уроки 98–108 переходят к наследованию и виртуальным операциям;
+Уроки [«082. Конструктор копирования»](lesson-082-oop-copy-constructor/README.md) — [«097. Композиция и агрегация»](lesson-097-oop-aggregation-composition/README.md) объясняют копирование, перегрузки, доступ, `static` и состав объектов.
+Уроки [«098. Наследование»](lesson-098-oop-inheritance/README.md) — [«108. Явный вызов базовой виртуальной функции»](lesson-108-oop-call-base-virtual-method/README.md) переходят к наследованию и виртуальным операциям;
 109–114 — к нескольким базам и ромбу.
-Каждый README разбирает именно исходник, включая различия `main*`.cpp.
+Каждый README разбирает именно исходник, включая различия `main*.cpp`.
 
 ## На что обратить внимание
 
@@ -17,21 +18,31 @@
 - Порядок создания баз/полей задаётся определением класса, не списком в конструкторе.
 - Полиморфному удалению через базовый указатель нужен корректный виртуальный деструктор.
 
-В учебном `operator=` урока 83 есть ограничения самоприсваивания и исключений.
+В учебном `operator=` урока [«083. Копирующее присваивание»](lesson-083-oop-operator-overloading-assignment/README.md) есть ограничения самоприсваивания и исключений.
 В 97 Cap по значению тоже является композицией. Комментарии 99 не везде
 соответствуют фактическому `private`-наследованию. Эти нюансы разобраны
 в локальных README; исходные варианты сохранены.
 Продолжение владения ресурсами — [RAII](../basics/bonus/02-raii/README.md),
-[правило нуля/пяти](../basics/bonus/10-rule-of-zero-five/README.md)
-и [гарантии исключений](../basics/bonus/15-exception-guarantees/README.md).
+[правило нуля, трёх и пяти](../basics/bonus/10-rule-of-zero-five/README.md)
+и [гарантии исключений](../exceptions/bonus/15-exception-guarantees/README.md).
 
 ## Дополнения вне курса
 
-[Бонусы по ООП](bonus/README.md): декремент после урока 86,
-композиция и агрегация со ссылкой на внешний объект после урока 97.
+[Бонусы по ООП](bonus/README.md): декремент после урока [«086. Префиксный и постфиксный ++»](lesson-086-oop-operator-overloading-increment-decrement/README.md),
+композиция и агрегация со ссылкой на внешний объект после урока [«097. Композиция и агрегация»](lesson-097-oop-aggregation-composition/README.md).
 Новые самостоятельные примеры находятся в `oop/bonus/`.
 
 ## Карта уроков
+
+- [073. Класс и объект](lesson-073-oop-class-object/README.md).
+- [074. Методы класса](lesson-074-oop-class-methods/README.md).
+- [075. public, private и protected](lesson-075-oop-access-modifiers/README.md).
+- [076. Геттеры и сеттеры](lesson-076-oop-getters-setters/README.md).
+- [077. Инкапсуляция и закрытые методы](lesson-077-oop-encapsulation/README.md).
+- [078. Конструктор](lesson-078-oop-constructor/README.md).
+- [079. Перегрузка конструкторов](lesson-079-oop-constructor-overloading/README.md).
+- [080. Деструктор и выход из блока](lesson-080-oop-destructor/README.md).
+- [081. Указатель this](lesson-081-oop-this-pointer/README.md).
 
 - [082. Конструктор копирования](lesson-082-oop-copy-constructor/README.md).
 - [083. Копирующее присваивание](lesson-083-oop-operator-overloading-assignment/README.md).
@@ -91,3 +102,8 @@ Windows, PowerShell:
 Заменяйте путь на нужный исходник. Папки со скобками и имена с пробелами
 передавайте в кавычках. [Компиляторы и GDB](../README.md#требования) ·
 [Устройство сборки](../scripts/README.md) · [Все уроки](../LESSONS.md).
+
+## Курс и источники
+
+[Введение в ООП, урок 72 и плейлист](https://www.youtube.com/watch?v=rZcTaRU7AAw&list=PLQOaTSbfxUtBm7DxblJZShqBQnBAVzlXX).
+[Версии C++](../docs/cpp-versions.md) · [Справочники](../docs/references.md).

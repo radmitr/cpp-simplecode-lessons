@@ -1,3 +1,4 @@
+// C++11 — std::function и std::ref; C++17 — std::invoke.
 #include <functional>
 #include "../common/check.hpp"
 

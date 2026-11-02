@@ -1,3 +1,4 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #include <cstddef>
 #include "../common/reflection.hpp"
 

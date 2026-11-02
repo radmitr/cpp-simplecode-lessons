@@ -1,3 +1,6 @@
+// C++98 — std::equal и std::mismatch; C++14 — перегрузки с концами обоих диапазонов.
+#include <utility>
+#include <iterator>
 #include <iostream>
 #include <vector>
 #include <list>
@@ -8,23 +11,7 @@
 #include <numeric>
 #include <string>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
+#include "../../common/console.hpp"
 
 template<typename T1, typename T2>
 std::ostream &operator<<(std::ostream& os, const std::pair<T1, T2>& p)
@@ -130,7 +117,7 @@ void printPriorityQueue(
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     int arr[]{10, 3, 4, 5, 7, 11};
     printContainer(arr);

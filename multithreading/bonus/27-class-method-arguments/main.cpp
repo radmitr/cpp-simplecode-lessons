@@ -1,3 +1,4 @@
+// C++11 — std::thread, std::ref и захваты лямбда-выражений.
 #include <functional>
 #include <iostream>
 #include <thread>

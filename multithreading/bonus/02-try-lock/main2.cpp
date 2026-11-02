@@ -1,3 +1,4 @@
+// C++11 — std::unique_lock и std::try_to_lock.
 #include <iostream>
 #include <mutex>
 #include <thread>

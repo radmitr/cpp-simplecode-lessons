@@ -1,18 +1,11 @@
+// C++11 — std::lock_guard и автоматическое освобождение мьютекса.
 #include <iostream>
 #include <cstddef>
 #include <mutex>
 #include <thread>
 #include "SimpleTimer.hpp"
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 std::mutex mtx;
 
@@ -37,17 +30,9 @@ void print(char ch)
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     SimpleTimer timer;
 

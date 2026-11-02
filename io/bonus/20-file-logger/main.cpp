@@ -1,3 +1,5 @@
+// C++98 — файловые потоки; C++17 — std::filesystem.
+#include <string>
 #include <chrono>
 #include <cstdint>
 #include <utility>

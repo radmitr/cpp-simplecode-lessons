@@ -1,3 +1,4 @@
+// C++11 — std::unique_ptr; C++14 — std::make_unique; C++17 — [[maybe_unused]].
 #include <memory>
 #include <utility>
 #include "../common/check.hpp"

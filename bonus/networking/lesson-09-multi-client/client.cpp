@@ -1,3 +1,5 @@
+// C++11 — std::mutex, std::lock_guard, std::future, std::async.
+#include <string>
 #include "../common/net.hpp"
 #include <iostream>
 #include <future>

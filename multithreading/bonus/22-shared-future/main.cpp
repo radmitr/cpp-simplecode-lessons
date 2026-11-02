@@ -1,3 +1,4 @@
+// C++11 — std::shared_future.
 #include <future>
 #include <iostream>
 #include <mutex>

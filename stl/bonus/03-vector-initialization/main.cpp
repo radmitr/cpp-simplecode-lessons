@@ -1,3 +1,4 @@
+// C++98 — конструкторы std::vector; C++11 — конструктор со std::initializer_list.
 #include <iostream>
 #include <vector>
 

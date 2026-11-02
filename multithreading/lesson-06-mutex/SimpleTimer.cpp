@@ -1,3 +1,4 @@
+// C++11 — измерение времени через std::chrono.
 #include "SimpleTimer.hpp"
 
 SimpleTimer::SimpleTimer()

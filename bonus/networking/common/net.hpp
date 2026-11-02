@@ -1,3 +1,4 @@
+// C++11 — std::chrono; C++14 — std::exchange; C++17 — std::string_view и std::from_chars.
 #ifndef NETWORKING_DEMO_NET_HPP
 #define NETWORKING_DEMO_NET_HPP
 

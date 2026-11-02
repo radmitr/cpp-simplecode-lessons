@@ -1,3 +1,4 @@
+// C++98 — состояния файловых потоков и exceptions(); C++17 — [[maybe_unused]].
 #include <ostream>
 #include <streambuf>
 #include <ios>

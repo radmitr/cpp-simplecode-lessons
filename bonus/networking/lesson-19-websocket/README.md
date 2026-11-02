@@ -1,10 +1,32 @@
 # 19. WebSocket: сообщения от сервера
 
-C++17. Windows: MinGW64; Linux: POSIX. Нужны заголовки Boost.
+## Версия C++
+
+захват с инициализацией — **C++14**.
+`std::make_shared`, `std::chrono`, `std::to_string`, `auto`, лямбды — **C++11**.
+`std::string`, `std::exception`, `std::size_t` — **C++98**.
+
+Сборка примеров: **C++17**. Это режим проекта,
+а не дата появления всех использованных конструкций.
+Boost.Asio/Beast — внешние библиотеки, не часть стандарта C++.
+
+## Что изучаем
 
 Используются `Boost.Asio` и `Boost.Beast`.
 WebSocket начинается с HTTP Upgrade handshake, затем использует своё
 кадрирование сообщений поверх TCP. Это не просто строки с \n.
+
+Windows: MinGW64; Linux: POSIX. Нужны заголовки Boost.
+
+## Примеры
+
+- [client.cpp](client.cpp).
+- [server.cpp](server.cpp).
+
+Сервер и клиент — две отдельные программы. Нужны обе: сначала сервер
+в одном терминале, затем клиент в другом. Каждый исходник собирается отдельно.
+
+## Как это работает
 
 Сервер после handshake сам отправляет tick 1, tick 2 и tick 3
 с интервалом около 100 мс. Для каждого сообщения новый HTTP-запрос не нужен.
@@ -42,6 +64,8 @@ Beast выполняет handshake, собирает сообщения из к�
 [WebSocket в Boost.Beast](https://www.boost.org/doc/libs/latest/libs/beast/doc/html/beast/quick_start/websocket_client.html).
 
 ## Сборка и запуск
+
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
 
 Команды выполняются из корня проекта. Порт по умолчанию — 42019.
 Сначала соберите обе программы.
@@ -96,3 +120,11 @@ Windows: пакет mingw-w64-x86_64-boost; Debian/Ubuntu: libboost-dev.
 Для запуска без отладки используйте Ctrl+F5.
 
 [Зависимости, общий код и все сетевые уроки](../README.md).
+
+## Связанные темы и источники
+
+### Дополнительные API в коде
+
+- [Совместное владение и слабая ссылка](../../../basics/bonus/12-shared-weak-ptr/README.md): [полный пример](../../../basics/bonus/12-shared-weak-ptr/main.cpp).
+
+[Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

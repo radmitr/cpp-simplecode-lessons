@@ -1,3 +1,4 @@
+// C++17 — структурированные привязки.
 #include <map>
 #include <string>
 #include "../common/check.hpp"

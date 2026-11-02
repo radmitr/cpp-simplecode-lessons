@@ -1,3 +1,4 @@
+// C++11 — std::atomic; C++20 — std::atomic::wait(), notify_one() и notify_all().
 #include <atomic>
 #include <iostream>
 #include <thread>

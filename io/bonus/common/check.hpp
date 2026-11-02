@@ -1,3 +1,4 @@
+// C++98 — throw и std::runtime_error.
 #pragma once
 #include <iostream>
 #include <stdexcept>

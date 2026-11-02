@@ -1,3 +1,4 @@
+// C++98 — указатели на члены класса; C++11 — constexpr; C++17 — std::is_standard_layout_v.
 #include <type_traits>
 #include "../common/check.hpp"
 

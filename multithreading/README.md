@@ -1,6 +1,6 @@
 # Многопоточность
 
-Начните с уроков 01–10, затем переходите к [бонусам](bonus/README.md).
+Начните с уроков [«01. Запуск потоков»](lesson-01-thread/README.md) — [«10. `std::unique_lock`: отложенный и повторный захват»](lesson-10-unique-lock/README.md), затем переходите к [бонусам](bonus/README.md).
 В каждой папке есть README с пояснением текущего кода.
 
 ## Основные уроки
@@ -44,7 +44,7 @@
 24. [compare_exchange](bonus/24-compare-exchange/) — атомарная проверка и замена, strong и weak.
 25. [false sharing](bonus/25-false-sharing/) — влияние размещения счётчиков в памяти на скорость.
 26. [ThreadSanitizer](bonus/26-thread-sanitizer/) — диагностика гонки данных на Linux/WSL.
-27. [Объект в потоке](bonus/27-class-method-arguments/) — сравнение копии, `std::ref` и лямбды; после урока 05.
+27. [Объект в потоке](bonus/27-class-method-arguments/) — сравнение копии, `std::ref`/`std::cref`, лямбды и `shared_ptr`; после урока [«05. Методы класса в потоке»](lesson-05-class-methods/README.md).
 
 ## Сборка и особенности
 
@@ -58,11 +58,16 @@
 `atomic::wait`, latch и ожидание с `stop_token` используют C++20.
 Подробные команды: [общий README](../README.md) и [скрипты сборки](../scripts/README.md).
 
-Для диагностики ThreadSanitizer в бонусе 26 нужен отдельный запуск на Linux/WSL;
+Для диагностики ThreadSanitizer в [Поиск гонки данных с ThreadSanitizer](bonus/26-thread-sanitizer/README.md) нужен отдельный запуск на Linux/WSL;
 обычная сборка F5/Ctrl+F5 инструментирование не включает.
 
-Урок 02 намеренно не завершается из-за бесконечного цикла; остановите его
+Урок [«02. Аргументы потока»](lesson-02-thread-param/README.md) намеренно не завершается из-за бесконечного цикла; остановите его
 через Ctrl+C или остановку отладки. В остальных примерах порядок выполнения
 потоков и время работы могут различаться между запусками. sleep_for изображает
 работу и не гарантирует порядок выполнения. `join` ожидает поток, а `mutex` защищает
 совместный доступ к данным — это разные задачи.
+
+## Курс и источники
+
+[Многопоточность, урок 1 и плейлист](https://www.youtube.com/watch?v=NawpxG81RRk&list=PLQOaTSbfxUtAc_RpyDiWCHq0YTzLtVSD0).
+[Версии C++](../docs/cpp-versions.md) · [Справочники](../docs/references.md).

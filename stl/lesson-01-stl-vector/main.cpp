@@ -1,29 +1,15 @@
+// C++98 — std::vector, size(), capacity(), reserve() и resize().
+#include <cstddef>
 #include <iostream>
 #include <vector>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
 
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
-
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     // --- vector1 ---
     std::cout << "vector<int> vector1 = {0, 454, 576, 620}:" << std::endl;

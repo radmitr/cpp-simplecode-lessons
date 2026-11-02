@@ -1,3 +1,4 @@
+// C++11 — std::unique_ptr и = delete; HTTP-клиент использует libcurl.
 #ifndef NETWORKING_DEMO_CURL_CLIENT_HPP
 #define NETWORKING_DEMO_CURL_CLIENT_HPP
 

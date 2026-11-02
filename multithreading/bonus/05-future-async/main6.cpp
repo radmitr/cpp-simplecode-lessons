@@ -1,3 +1,4 @@
+// C++11 — std::async без явной политики и std::future_status.
 #include <chrono>
 #include <future>
 #include <iostream>

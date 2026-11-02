@@ -1,10 +1,9 @@
+// C++17 — std::byte; C++20 — std::bit_cast и std::endian.
 #include <bit>
 #include <cstdint>
 #include <array>
 #include <cstddef>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

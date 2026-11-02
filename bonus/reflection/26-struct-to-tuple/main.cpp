@@ -1,3 +1,6 @@
+// C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <string>
+#include <cstddef>
 #include <tuple>
 #include "../common/reflection.hpp"
 

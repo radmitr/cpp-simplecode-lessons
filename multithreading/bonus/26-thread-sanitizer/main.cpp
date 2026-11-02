@@ -1,3 +1,4 @@
+// C++11 — std::thread; ThreadSanitizer — инструмент компилятора.
 #include <iostream>
 #include <mutex>
 #include <thread>

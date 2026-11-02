@@ -1,3 +1,4 @@
+// C++11 — std::shared_future.
 #include <exception>
 #include <future>
 #include <iostream>

@@ -1,3 +1,4 @@
+// C++11 — std::unique_ptr и std::initializer_list; C++17 — std::filesystem и __has_include.
 #pragma once
 
 // Debian/Ubuntu размещают заголовки libpq в подкаталоге postgresql.
@@ -151,5 +152,4 @@ int run(Function function) {
     }
     return 1;
 }
-
 } // namespace db

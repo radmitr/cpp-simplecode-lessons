@@ -1,3 +1,4 @@
+// C++11 — std::promise и std::future.
 #include <atomic>
 #include <future>
 #include <iostream>

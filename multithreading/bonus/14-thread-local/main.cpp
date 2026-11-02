@@ -1,3 +1,4 @@
+// C++11 — thread_local.
 #include <atomic>
 #include <iostream>
 #include <mutex>

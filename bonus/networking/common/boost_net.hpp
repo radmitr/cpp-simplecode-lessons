@@ -1,3 +1,4 @@
+// C++11 — псевдонимы using; сетевые операции предоставляет Boost.Asio.
 #ifndef NETWORKING_BOOST_NET_HPP
 #define NETWORKING_BOOST_NET_HPP
 

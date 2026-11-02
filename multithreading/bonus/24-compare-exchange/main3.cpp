@@ -1,3 +1,4 @@
+// C++11 — std::atomic::compare_exchange_weak() и compare_exchange_strong().
 #include <atomic>
 #include <future>
 #include <iostream>

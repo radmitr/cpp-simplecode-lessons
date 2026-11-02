@@ -1,3 +1,4 @@
+// C++11 — перемещение std::unique_lock.
 #include <iostream>
 #include <mutex>
 

@@ -1,3 +1,5 @@
+// C++98 — std::string, std::runtime_error; C++11 — auto.
+#include <string>
 #include "../common/curl_client.hpp"
 #include <iostream>
 

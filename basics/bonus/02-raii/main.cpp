@@ -1,3 +1,5 @@
+// C++98 — конструкторы, деструкторы и освобождение ресурсов.
+// C++11 — std::unique_ptr, noexcept и enum class.
 #include <iostream>
 #include <memory>
 #include <stdexcept>

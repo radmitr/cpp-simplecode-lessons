@@ -1,3 +1,5 @@
+// C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
+#include <string>
 #include <nlohmann/json.hpp>
 #include "../common/reflection.hpp"
 

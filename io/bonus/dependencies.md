@@ -1,12 +1,12 @@
 # Зависимости бонусов по вводу-выводу
 
-Уроки 01–20, кроме JSON-урока 15, используют только стандартную библиотеку.
+Уроки [«001. Первая программа»](../../basics/lesson-001-hello-world/README.md) — [«020. Исходник и исполняемый файл»](../../basics/lesson-020-executable/README.md), кроме JSON-урока [«015. Цикл do-while»](../../basics/lesson-015-do-while/README.md), используют только стандартную библиотеку.
 Большинство — C++17, UTF-8/char8_t в 13 — C++20. Примеры рассчитаны на GCC 11+
 с отдельной проверкой конкретной среды. Linux ещё предстоит проверить пользователю.
 
 ## JSON
 
-Уроку 15 нужен nlohmann/json. Ubuntu: sudo apt install nlohmann-json3-dev.
+Уроку [«015. Цикл do-while»](../../basics/lesson-015-do-while/README.md) нужен nlohmann/json. Ubuntu: sudo apt install nlohmann-json3-dev.
 MSYS2 MinGW64: pacman -S mingw-w64-x86_64-nlohmann-json.
 Для проверки без системной установки можно использовать официальный одиночный
 заголовок в build/dependencies/include. Версия, URL, SHA-256 и правила выбора
@@ -14,7 +14,7 @@ MSYS2 MinGW64: pacman -S mingw-w64-x86_64-nlohmann-json.
 
 ## Современные format/print
 
-Объединённый урок 21 собирается как C++23 с GCC 14+, потому что std::print
+Объединённый урок [«021. Почему закрывается консоль»](../../basics/lesson-021-console-pause/README.md) собирается как C++23 с GCC 14+, потому что std::print
 в libstdc++ появился позже std::format. На Windows установленный MinGW GCC 16
 подходит. На Linux общий скрипт использует CXX_MODERN, по умолчанию
 /opt/gcc-16/bin/g++. Обычные уроки продолжают использовать системный g++.
@@ -28,7 +28,7 @@ MSYS2 MinGW64: pacman -S mingw-w64-x86_64-nlohmann-json.
 Новые файловые примеры создают уникальную папку через LessonWorkspace и удаляют
 только принадлежащую этому объекту папку. Для проверок CPP_LESSON_WORK_DIR задаёт
 каталог внутри build/. Не подставляйте в упражнениях реальные документы вместо
-контрольных файлов. Симлинки в уроке 10 могут быть недоступны на Windows без
+контрольных файлов. Симлинки в уроке [«010. Составное присваивание»](../../basics/lesson-010-compound-assignment/README.md) могут быть недоступны на Windows без
 соответствующих прав: пример явно сообщает это, остальные операции проверяются.
 
 [К урокам](README.md)

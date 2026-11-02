@@ -1,25 +1,11 @@
+// C++11 — std::array и цикл for по диапазону.
+#include <cstddef>
 #include <iostream>
 #include <array>
 
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
-#endif
+#include "../../common/console.hpp"
 
 //using namespace std;
-
-void setupConsoleEncoding()
-{
-#ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-}
 
 template<typename T, std::size_t N>
 void printArray(const std::array<T, N>& arr, const char* sep = "\n")
@@ -43,7 +29,7 @@ void printContainer(const Container& container, const char* separator = "\n")
 
 int main(void)
 {
-    setupConsoleEncoding();
+    console::setupConsoleEncoding();
 
     std::array<int, 5> arr{4, 33, 96, 11, 73};
 

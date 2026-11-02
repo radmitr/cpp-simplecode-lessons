@@ -1,3 +1,4 @@
+// C++11 — std::chrono, auto.
 #include "../common/net.hpp"
 #include <iostream>
 #include <thread>

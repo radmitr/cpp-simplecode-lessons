@@ -1,3 +1,4 @@
+// C++20 — std::jthread и совместная остановка через std::stop_token.
 #include <chrono>
 #include <iostream>
 #include <stop_token>
@@ -11,15 +12,15 @@ int main()
             while (!stop.stop_requested())
             {
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
-                ++completed; // completed изменяет только рабочий поток.
+                // Здесь пишет только worker. main прочитает после его завершения.
+                ++completed;
             }
-        });
+        }); // Конструктор запускает поток; main продолжает работу параллельно.
 
         std::this_thread::sleep_for(std::chrono::milliseconds(350));
-        worker.request_stop(); // Запрос, а не принудительное прерывание.
-        // Выход из блока: деструктор jthread запросит остановку и выполнит join().
-    }
+        worker.request_stop(); // Устанавливает признак остановки, не прерывает сон.
+    } // ~jthread(): если joinable(), request_stop(), затем join(); main ждёт здесь.
 
-    // Автоматический join() уже завершился: теперь результат можно читать.
+    // Автоматический join уже закончился: worker больше не меняет completed.
     std::cout << "Worker stopped; completed iterations: " << completed << '\n';
 }

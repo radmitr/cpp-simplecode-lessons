@@ -99,8 +99,10 @@ Write lesson explanations in clear Russian for a reader learning the topic.
 
 ## SimpleCode course material and bonus additions
 
-- Keep SimpleCode course examples in their original lesson directories with
-  their original numbering and variants. A file name such as main2.cpp does
+- Keep SimpleCode course examples with their original lesson directory names,
+  numbering and variants. An explicitly requested thematic reorganization may
+  move a whole lesson to another section; update all links and build metadata.
+  A file name such as main2.cpp does
   not establish whether a program belongs to the course; inspect its origin.
 - Place all new educational examples and scenarios outside the course in the
   relevant section's bonus directory, even when they extend an existing topic.
@@ -109,11 +111,35 @@ Write lesson explanations in clear Russian for a reader learning the topic.
 - Course lesson directories may contain documentation clarifications,
   correctness/build/portability fixes and links to bonus examples. Do not mix
   new teaching scenarios into their source files just to avoid a new directory.
+- When importing missing course examples, inspect the actual referenced code
+  and pin its commit. Preserve its demonstrations, values and call order; do
+  not present an independently written implementation of a topic as restored
+  source material. Document concrete correctness/portability changes in each
+  README and keep a reviewable comparison with the source. If extracting a
+  combined file, state which fragment is used and which parts are omitted.
 - Reuse an existing bonus lesson when the topic fits; otherwise create a
   numbered bonus lesson without renumbering the original course. Add its README,
   Windows/Linux VS Code configurations, catalog links and required build markers.
 - The bonus placement rule takes precedence over the preference for runnable
   documentation snippets. Link to existing code before adding a duplicate.
+
+## Proofreading and shared console setup
+
+- Review imported comments, headings and displayed text; do not copy spelling
+  mistakes, misleading explanations, empty topic headings or decorative end
+  markers. Keep educational explanations in Russian and translate Ukrainian
+  messages in the adapted programs. Preserve the exact external source only
+  in provenance records used to compare adaptations.
+- Use at most one consecutive blank line in ordinary source code. Do not leave
+  an empty line before a closing brace or print a final empty line merely to
+  accompany an end marker. Preserve significant whitespace in string literals,
+  embedded data and multiline macros.
+- Share ordinary Windows UTF-8 console setup through `common/console.hpp` and
+  keep the function in `namespace console`. Call `console::setupConsoleEncoding()`
+  explicitly; do not add `using namespace console`. Do not duplicate its Windows
+  API implementation in lesson files. Use a relative include appropriate to
+  the source location.
+  Keep specialized demonstrations of wide streams or console modes separate.
 
 ## Explanations, runnable examples and Markdown
 
@@ -134,7 +160,68 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   prose as inline code, for example `std::thread`, `std::future<T>`, `join()`,
   `worker.request_stop()`, `<future>` and `main.cpp`. Preserve Markdown links
   and fenced code; apply this consistently throughout all README files.
-- For ordinary VS Code examples mention both F5 (debugging) and Ctrl+F5
-  (without debugging). Explain special launch requirements when they differ.
+- Explain F5 (debugging) and Ctrl+F5 (without debugging) in the root setup guide.
+  Ordinary lesson READMEs may link directly to that guide without repeating the
+  same sentence. Keep lesson-specific source, arguments, input, services,
+  expected output and nontermination instructions in the lesson itself.
 - When revisiting documentation across the project, check runnable coverage,
   explanation clarity, code formatting and launch instructions together.
+
+## Runnable API coverage and meaningful links
+
+- A substantive explanation of an API or behavior needs a linked runnable
+  example. Merely naming an API in a README does not demonstrate it in code.
+  Audit prose as well as fenced snippets, and inspect all main variants and
+  relevant helper headers before claiming coverage.
+- For a distinct mechanism, add main2.cpp/main3.cpp in the appropriate bonus,
+  or link to an existing example. A short cross-reference may point to another
+  lesson without duplicating its program. Deliberately invalid operations must
+  be labelled; never execute UB just to tick a coverage box.
+- During whole-project audits record uncovered behaviors and resolve genuine
+  teaching gaps. Automated token matching supplies candidates for review, not
+  proof of semantic coverage. Do not claim that all of C++ is covered.
+- Refer to lessons by descriptive title and a link. A number may supplement
+  the title but must not be the only navigation clue (including prose such as
+  "lesson 10"). Link to the section that actually answers the stated question:
+  requirements, terminal commands and VS Code launch are different targets.
+- Resolve numbers within the current topic. Networking, PostgreSQL, reflection,
+  STL and multithreading have independent numbering; never map their "lesson 10"
+  to basics solely by its number. Qualify intentional cross-topic references.
+- Store portable relative Markdown links in repository files. Do not copy
+  file+.vscode-resource/vscode-cdn webview URLs into source documentation.
+
+## Consistent reference layout and language versions
+
+- Root READMEs describe the project's purpose, authorship, setup and navigation.
+  Section READMEs give prerequisites, learning order and links. Lesson READMEs
+  use: title; Language version; Purpose and prerequisites; Examples; Explanation;
+  Build and run; Common mistakes; Related lessons and sources. Omit an empty
+  section or combine closely related sections; do not pad a short lesson.
+- Use Russian section names consistently: «Версия C++», «Что изучаем»,
+  «Примеры», «Как это работает», «Сборка и запуск», «Типичные ошибки»,
+  «Связанные темы и источники». Keep the title free of version suffixes.
+- Separate feature introduction from the project's build mode. For example,
+  jthread was introduced in C++20; a program built with C++23 still uses that
+  C++20 feature. Identify different versions for different APIs in one lesson.
+  Design guidelines such as the rule of three are not language features with
+  a standardization date. Mark experimental and compiler-specific facilities.
+- Start each teaching C++ source and helper header, before includes or include
+  guards, with feature-version comments in the form
+  `// C++98 — шаблоны функций; C++17 — std::string_view.`
+  Split a long list into lines using the same `// C++NN — ...` format. Name the
+  main mechanisms demonstrated and features that raise the required standard;
+  do not replace them with generic wording or a catalog of incidental APIs.
+  Keep build mode, source links and concrete portability changes in the README.
+  A nearby version comment may clarify an individual API using the same format.
+  Mark experimental or compiler-specific features explicitly. Do not imply
+  that every feature in a C++17 build is C++17.
+- Explain concurrency with an order of events and concrete variables before
+  terms such as ownership, readiness or synchronization. Explain automatic
+  destructor actions, blocking, joinable state and scope boundaries explicitly.
+- Link related lessons by descriptive title and path, never by number alone.
+  Use primary sources for exact contracts; explain that eel.is/c++draft is an
+  HTML working draft, not a beginner tutorial or the published ISO standard.
+- Keep _template/ as the visible lesson scaffold. Use root .local/ for private
+  notes, prompts and local service data; ignore the whole directory. Use build/
+  for generated executables and verification output. Never inspect or modify
+  private service data merely while auditing teaching material.

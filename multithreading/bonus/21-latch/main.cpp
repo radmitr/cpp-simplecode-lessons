@@ -1,3 +1,4 @@
+// C++20 — std::latch.
 #include <array>
 #include <cstddef>
 #include <iostream>

@@ -1,3 +1,4 @@
+// C++11 — std::future, std::async и политики std::launch.
 #include <functional>
 #include <future>
 #include <iostream>

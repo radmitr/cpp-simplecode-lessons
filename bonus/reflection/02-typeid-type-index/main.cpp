@@ -1,3 +1,4 @@
+// C++98 — typeid; C++11 — std::type_index; C++17 — [[maybe_unused]].
 #include <typeinfo>
 #include <typeindex>
 #include <map>

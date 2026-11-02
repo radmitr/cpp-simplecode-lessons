@@ -1,3 +1,4 @@
+// C++11 — std::thread и лямбда-выражения; намеренная гонка данных.
 #include <iostream>
 #include <thread>
 

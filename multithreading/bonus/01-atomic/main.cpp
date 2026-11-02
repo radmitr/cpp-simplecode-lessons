@@ -1,3 +1,4 @@
+// C++11 — std::atomic и увеличение общего счётчика.
 #include <atomic>
 #include <iostream>
 #include <mutex>

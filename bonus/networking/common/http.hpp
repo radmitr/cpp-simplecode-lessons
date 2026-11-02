@@ -1,6 +1,9 @@
+// C++11 — std::regex; C++17 — std::string_view и std::from_chars.
 #ifndef NETWORKING_DEMO_HTTP_HPP
 #define NETWORKING_DEMO_HTTP_HPP
 
+#include <string>
+#include <cstddef>
 #include "net.hpp"
 
 #include <cctype>

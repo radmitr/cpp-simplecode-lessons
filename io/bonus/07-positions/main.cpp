@@ -1,3 +1,5 @@
+// C++98 — tellg(), tellp(), seekg() и seekp(); C++17 — [[maybe_unused]].
+#include <string>
 #include "../common/check.hpp"
 
 #include "../common/workspace.hpp"

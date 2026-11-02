@@ -1,3 +1,4 @@
+// C++17 — std::scoped_lock с одним мьютексом и без мьютексов.
 #include <iostream>
 #include <mutex>
 #include <thread>

@@ -1,7 +1,7 @@
+// C++98 — инициализация через круглые скобки.
+// C++11 — списковая инициализация и std::initializer_list; C++17 — [[maybe_unused]].
 #include <vector>
 #include "../common/check.hpp"
-
-
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {

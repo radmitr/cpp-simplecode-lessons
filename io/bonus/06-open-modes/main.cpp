@@ -1,3 +1,4 @@
+// C++98 — режимы открытия файлов app, ate, trunc и binary; C++17 — [[maybe_unused]].
 #include "../common/check.hpp"
 
 #include "../common/workspace.hpp"

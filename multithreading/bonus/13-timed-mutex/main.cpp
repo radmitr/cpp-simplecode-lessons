@@ -1,3 +1,4 @@
+// C++11 — std::timed_mutex и захват с таймаутом.
 #include <chrono>
 #include <iostream>
 #include <mutex>

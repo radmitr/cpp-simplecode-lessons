@@ -1,6 +1,8 @@
+// C++11 — std::unique_ptr и пользовательский deleter.
 #ifndef NETWORKING_RESOLVED_ADDRESS_HPP
 #define NETWORKING_RESOLVED_ADDRESS_HPP
 
+#include <string>
 #include "net.hpp"
 #include <memory>
 
