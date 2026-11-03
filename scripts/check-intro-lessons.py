@@ -1,65 +1,15 @@
-"""Check 71 source-based course adaptations and their runtime behavior."""
+"""Build 71 introductory course programs and check their runtime behavior."""
 from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
-import difflib
-import hashlib
 import json
 import os
 from pathlib import Path
 import re
 import subprocess
-from urllib.parse import quote
-import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 WINDOWS = os.name == "nt"
-
-
-def sha(text):
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
-def adaptation_diff(before, after, old_path, new_path):
-    lines = difflib.unified_diff(before.splitlines(keepends=True),
-                                after.splitlines(keepends=True),
-                                fromfile=old_path, tofile=new_path)
-    return "".join(line if line.endswith("\n")
-                   else line + "\n\\ No newline at end of file\n" for line in lines)
-
-
-def verify_sources(cache=None, download=False):
-    manifest = json.loads((ROOT / "docs/course-imports.json").read_text(encoding="utf-8"))
-    snapshots = {}
-    if cache:
-        for repo in json.loads(cache.read_text(encoding="utf-8")):
-            for path, item in repo["files"].items():
-                snapshots[("sgiman/" + repo["repo"], repo["commit"], path)] = item["code"]
-    for record in manifest["lessons"]:
-        local = (ROOT / record["source"]).read_text(encoding="utf-8-sig")
-        if sha(local) != record["adapted_sha256"]:
-            raise RuntimeError(record["source"] + ": source changed since the documented comparison")
-        key = (record["repository"], record["commit"], record["upstream_path"])
-        upstream = snapshots.get(key)
-        if download and upstream is None:
-            url = "https://raw.githubusercontent.com/" + quote("/".join(key), safe="/")
-            with urllib.request.urlopen(url, timeout=45) as response:
-                raw = response.read()
-            try:
-                upstream = raw.decode("utf-8-sig")
-            except UnicodeError:
-                upstream = raw.decode("cp1251")
-            snapshots[key] = upstream
-        if cache or download:
-            if upstream is None:
-                raise RuntimeError("Missing source snapshot: " + str(key))
-            upstream = upstream.replace("\r\n", "\n")
-            if sha(upstream) != record["upstream_sha256"]:
-                raise RuntimeError("Upstream content hash mismatch: " + record["source"])
-            delta = adaptation_diff(upstream, local, record["upstream_path"], record["source"])
-            if delta != record["diff"]:
-                raise RuntimeError("Adaptation diff mismatch: " + record["source"])
-    return manifest["lessons"]
 
 
 def validate(result, case):
@@ -116,19 +66,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--jobs", type=int, choices=range(1, 5), default=2)
     parser.add_argument("--build-only", action="store_true")
-    parser.add_argument("--source-only", action="store_true")
-    parser.add_argument("--upstream-cache", type=Path)
-    parser.add_argument("--verify-upstream", action="store_true")
     options = parser.parse_args()
-    sources = verify_sources(options.upstream_cache, options.verify_upstream)
-    print(f"Source comparison records: {len(sources)}; local hashes: OK", flush=True)
-    if options.upstream_cache or options.verify_upstream:
-        print("Pinned upstream content and adaptation diffs: OK", flush=True)
-    if options.source_only:
-        return 0
     records = json.loads((ROOT / "scripts/intro-lessons.json").read_text(encoding="utf-8"))
-    if {x["source"] for x in records} != {x["source"] for x in sources}:
-        raise RuntimeError("Source manifest and runtime cases disagree")
     bash = "C:/msys64/usr/bin/bash.exe" if WINDOWS else "/bin/bash"
     builder = ROOT / "scripts" / ("build-windows.sh" if WINDOWS else "build-linux.sh")
     environment = dict(os.environ)

@@ -47,4 +47,4 @@
 [Функциональные макросы курса](../../lesson-067-function-like-macros/README.md) ·
 [inline-функции](../../lesson-039-inline-functions/README.md).
 
-[Происхождение и разделение примеров](../../../docs/course-sources.md).
+[Уроки курса и бонусы](../../../docs/course-sources.md).

@@ -50,4 +50,4 @@
 [sizeof типов и переменной](../../lesson-028-sizeof/README.md) ·
 [std::span](../../../stl/bonus/05-span/README.md).
 
-[Происхождение и разделение примеров](../../../docs/course-sources.md).
+[Уроки курса и бонусы](../../../docs/course-sources.md).

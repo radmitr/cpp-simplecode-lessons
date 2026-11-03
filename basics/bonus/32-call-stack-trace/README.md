@@ -50,4 +50,4 @@
 [Рекурсивный вызов](../../lesson-043-recursion/README.md) ·
 [Рекурсивный факториал](../../lesson-044-recursive-factorial/README.md).
 
-[Происхождение и разделение примеров](../../../docs/course-sources.md).
+[Уроки курса и бонусы](../../../docs/course-sources.md).

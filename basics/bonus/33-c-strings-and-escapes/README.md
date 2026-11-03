@@ -51,4 +51,4 @@
 [Управляющие последовательности](../../lesson-003-escape-sequences/README.md) ·
 [Функции C-строк](../../lesson-063-c-string-functions/README.md).
 
-[Происхождение и разделение примеров](../../../docs/course-sources.md).
+[Уроки курса и бонусы](../../../docs/course-sources.md).
