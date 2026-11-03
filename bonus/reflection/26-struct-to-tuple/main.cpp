@@ -1,7 +1,12 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
-#include <string>
 #include <cstddef>
+#include <exception>
+#include <iostream>
+#include <meta>
+#include <string>
 #include <tuple>
+#include <utility>
+
 #include "../common/reflection.hpp"
 
 struct Data { int id; std::string name; };

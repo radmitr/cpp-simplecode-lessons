@@ -1,9 +1,14 @@
 // C++11 — std::async, std::future, std::launch и лямбды.
-#include "../common/net.hpp"
-#include "../../../common/console.hpp"
+#include <chrono>
+#include <exception>
 #include <future>
 #include <iostream>
+#include <stdexcept>
+#include <string>
 #include <vector>
+
+#include "../../../common/console.hpp"
+#include "../common/net.hpp"
 
 int main(int argc, char* argv[])
 {

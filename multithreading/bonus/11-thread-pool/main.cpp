@@ -1,6 +1,4 @@
 // C++11 — std::thread, std::packaged_task и std::future.
-#include "ThreadPool.hpp"
-
 #include <chrono>
 #include <exception>
 #include <future>
@@ -8,6 +6,8 @@
 #include <stdexcept>
 #include <thread>
 #include <vector>
+
+#include "ThreadPool.hpp"
 
 int main()
 {

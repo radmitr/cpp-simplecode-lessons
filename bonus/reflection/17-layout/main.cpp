@@ -1,5 +1,9 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #include <cstddef>
+#include <exception>
+#include <iostream>
+#include <meta>
+
 #include "../common/reflection.hpp"
 
 struct Layout { char tag; int value; };

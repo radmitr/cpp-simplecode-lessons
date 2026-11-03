@@ -1,5 +1,6 @@
 // C++11 — thread_local и повторное использование потока в пуле.
 #include <iostream>
+
 #include "../11-thread-pool/ThreadPool.hpp"
 
 int nextTaskNumber()

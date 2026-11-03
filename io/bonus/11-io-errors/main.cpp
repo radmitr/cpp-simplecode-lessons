@@ -1,7 +1,10 @@
 // C++98 — состояния файловых потоков и exceptions(); C++17 — [[maybe_unused]].
+#include <exception>
+#include <ios>
+#include <iostream>
 #include <ostream>
 #include <streambuf>
-#include <ios>
+
 #include "../common/check.hpp"
 
 class FailingBuffer : public std::streambuf {

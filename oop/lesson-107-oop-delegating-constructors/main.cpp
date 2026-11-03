@@ -1,6 +1,6 @@
 // C++11 — делегирующие конструкторы.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

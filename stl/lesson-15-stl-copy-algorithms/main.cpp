@@ -1,14 +1,14 @@
 // C++98 — std::copy; C++11 — std::copy_if и лямбда-выражения.
-#include <utility>
-#include <iterator>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <stack>
-#include <queue>
 #include <algorithm>
+#include <deque>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <queue>
+#include <stack>
 #include <string>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

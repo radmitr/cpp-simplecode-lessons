@@ -1,6 +1,6 @@
 // C++98 — конкатенация строк; C++11 — списковая инициализация.
-#include <iostream>
 #include <cstring>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

@@ -1,7 +1,12 @@
 // C++11 — std::unique_ptr; HTTP/2 и HTTP/3 предоставляет libcurl.
-#include "../common/curl_client.hpp"
-#include "../../../common/console.hpp"
+#include <exception>
 #include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <string>
+
+#include "../../../common/console.hpp"
+#include "../common/curl_client.hpp"
 
 #if LIBCURL_VERSION_NUM < 0x075800
 #error This lesson requires libcurl headers 7.88.0 or newer

@@ -1,10 +1,14 @@
 // C++11 — std::stoi и std::bad_function_call; C++17 — std::optional, std::variant и std::any.
 #include <any>
+#include <exception>
 #include <functional>
+#include <iostream>
 #include <optional>
+#include <stdexcept>
 #include <string>
 #include <variant>
 #include <vector>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 template<class Exception, class Function>

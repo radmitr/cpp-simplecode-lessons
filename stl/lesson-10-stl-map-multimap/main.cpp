@@ -1,9 +1,10 @@
 // C++98 — std::map; C++11 — auto и std::begin().
-#include <utility>
-#include <iterator>
+#include <exception>
 #include <iostream>
+#include <iterator>
 #include <map>
 #include <string>
+#include <utility>
 
 #include "../../common/console.hpp"
 

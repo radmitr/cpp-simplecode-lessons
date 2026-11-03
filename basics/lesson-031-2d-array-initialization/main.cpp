@@ -1,7 +1,8 @@
 // C++98 — двумерные массивы и вложенные списки инициализации.
 // C++11 — списковая инициализация без =.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

@@ -1,4 +1,5 @@
 // C++98 — конструкторы и деструкторы; C++11 — инициализаторы полей внутри класса.
+#include <exception>
 #include <iostream>
 #include <stdexcept>
 

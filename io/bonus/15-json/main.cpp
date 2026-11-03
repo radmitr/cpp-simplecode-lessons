@@ -1,7 +1,12 @@
 // C++11 — лямбда-выражения и auto; JSON обрабатывает внешняя библиотека; C++17 — [[maybe_unused]].
-#include <nlohmann/json.hpp>
-#include <string>
 #include <cstdint>
+#include <exception>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+
+#include <nlohmann/json.hpp>
+
 #include "../common/check.hpp"
 
 struct Config {std::string name; int count;};

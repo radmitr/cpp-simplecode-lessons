@@ -1,8 +1,9 @@
 // C++11 — std::ref и передача ссылки в std::thread.
-#include <iostream>
-#include <cstddef>
-#include <thread>
 #include <chrono>
+#include <cstddef>
+#include <functional>
+#include <iostream>
+#include <thread>
 
 #include "../../common/console.hpp"
 

@@ -1,9 +1,13 @@
 // C++11 — std::chrono, std::to_string, auto.
-#include <string>
-#include "../common/net.hpp"
+#include <chrono>
+#include <exception>
 #include <iostream>
 #include <map>
 #include <sstream>
+#include <stdexcept>
+#include <string>
+
+#include "../common/net.hpp"
 
 int main(int argc, char* argv[])
 {

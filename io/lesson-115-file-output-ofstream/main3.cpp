@@ -1,8 +1,8 @@
 // C++98 — запись в файл через std::ofstream; C++11 — = delete и = default.
 #include <cstdlib>
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <system_error>
 
 #include "../../common/console.hpp"

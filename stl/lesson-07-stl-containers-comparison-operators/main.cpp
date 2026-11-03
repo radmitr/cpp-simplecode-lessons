@@ -1,6 +1,6 @@
 // C++11 — std::array и сравнение контейнеров.
-#include <iostream>
 #include <array>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

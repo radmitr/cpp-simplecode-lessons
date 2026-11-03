@@ -1,6 +1,6 @@
 // C++98 — вложенные объекты и указатели на другие объекты.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

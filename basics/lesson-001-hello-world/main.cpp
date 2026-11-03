@@ -1,11 +1,12 @@
 // C++98 — std::cout и функции вывода из <cstdio>.
-#include "../../common/console.hpp"
+#include <clocale>
 #include <cstdio>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <clocale>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

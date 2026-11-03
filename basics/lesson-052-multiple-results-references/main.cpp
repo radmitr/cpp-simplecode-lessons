@@ -1,6 +1,7 @@
 // C++98 — возврат нескольких результатов через ссылки.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 // C++98 — шаблоны классов и односвязный список; C++11 — nullptr.
 #include <iostream>
 #include <memory>
+#include <stdexcept>
 
 #include "../../common/console.hpp"
 

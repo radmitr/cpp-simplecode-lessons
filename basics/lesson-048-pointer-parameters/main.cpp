@@ -1,6 +1,7 @@
 // C++98 — передача указателя в функцию.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

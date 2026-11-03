@@ -1,6 +1,7 @@
 // C++98 — ожидание ввода через std::cin.get().
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

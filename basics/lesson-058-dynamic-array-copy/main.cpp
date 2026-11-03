@@ -1,6 +1,6 @@
 // C++98 — динамические массивы и поэлементное копирование.
-#include <cstdlib>
 #include <cstddef>
+#include <cstdlib>
 #include <iostream>
 
 #include "../../common/console.hpp"

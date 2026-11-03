@@ -1,8 +1,8 @@
 // C++11 — std::thread, join() и std::chrono.
-#include <iostream>
-#include <cstddef>
-#include <thread>
 #include <chrono>
+#include <cstddef>
+#include <iostream>
+#include <thread>
 
 #include "../../common/console.hpp"
 

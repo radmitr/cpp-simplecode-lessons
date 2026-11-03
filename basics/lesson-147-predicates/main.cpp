@@ -1,7 +1,7 @@
 // C++98 — предикаты и стандартные алгоритмы; C++11 — списковая инициализация.
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 #include "../../common/console.hpp"
 

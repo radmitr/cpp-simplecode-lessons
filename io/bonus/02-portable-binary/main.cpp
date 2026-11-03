@@ -1,7 +1,8 @@
 // C++98 — бинарные read() и write(); C++11 — std::array и целые типы из <cstdint>.
-#include <cstddef>
 #include <array>
+#include <cstddef>
 #include <cstdint>
+#include <exception>
 #include <fstream>
 #include <iostream>
 #include <limits>

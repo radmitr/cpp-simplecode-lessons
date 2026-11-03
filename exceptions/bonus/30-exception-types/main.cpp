@@ -1,5 +1,7 @@
 // C++98 — семейства std::logic_error и std::runtime_error.
+#include <iostream>
 #include <stdexcept>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 int main()

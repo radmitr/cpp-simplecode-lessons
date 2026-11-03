@@ -1,7 +1,10 @@
 // C++11 — std::chrono, auto.
-#include "../common/net.hpp"
+#include <chrono>
+#include <exception>
 #include <iostream>
 #include <thread>
+
+#include "../common/net.hpp"
 
 int main(int argc, char* argv[])
 {

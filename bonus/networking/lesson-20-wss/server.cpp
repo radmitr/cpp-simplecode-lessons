@@ -1,14 +1,23 @@
 // C++11 — std::make_shared, std::move, std::chrono, std::to_string.
 // C++14 — захват лямбды с инициализацией.
+// Платформенный пролог: настройки Windows/WinSock до Boost и console.hpp.
+#include "../common/boost_net.hpp"
+
+#include <chrono>
+#include <cstddef>
+#include <exception>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
 #include <string>
 #include <utility>
-#include <cstddef>
-#include "../common/boost_net.hpp"
-#include "../../../common/console.hpp"
+
 #include <boost/asio/ssl.hpp>
-#include <boost/beast/ssl.hpp>
 #include <boost/beast/core.hpp>
+#include <boost/beast/ssl.hpp>
 #include <boost/beast/websocket.hpp>
+
+#include "../../../common/console.hpp"
 
 namespace asio = boost::asio;
 namespace beast = boost::beast;

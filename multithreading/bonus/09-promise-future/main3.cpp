@@ -1,6 +1,7 @@
 // C++11 — std::promise и std::future.
 #include <future>
 #include <iostream>
+#include <system_error>
 
 int main()
 {

@@ -1,11 +1,12 @@
 // C++11 — std::mutex и взаимная блокировка потоков.
-#include <iostream>
+#include <chrono>
 #include <cstddef>
+#include <iostream>
 #include <mutex>
 #include <thread>
-#include "SimpleTimer.hpp"
 
 #include "../../common/console.hpp"
+#include "SimpleTimer.hpp"
 
 std::mutex mtx1;
 std::mutex mtx2;

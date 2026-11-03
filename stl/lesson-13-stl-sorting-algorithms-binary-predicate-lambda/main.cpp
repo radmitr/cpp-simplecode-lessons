@@ -1,13 +1,14 @@
 // C++98 — std::sort и предикаты сравнения; C++11 — лямбда-выражения.
-#include <utility>
-#include <iterator>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <stack>
-#include <queue>
 #include <algorithm>
+#include <deque>
+#include <functional>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

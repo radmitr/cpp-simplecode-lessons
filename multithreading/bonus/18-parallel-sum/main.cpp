@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <numeric>
+#include <ratio>
 #include <stdexcept>
 #include <thread>
 #include <vector>

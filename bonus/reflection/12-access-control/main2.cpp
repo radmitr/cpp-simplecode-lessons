@@ -1,4 +1,7 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <iostream>
+#include <meta>
+
 #include "../common/reflection.hpp"
 
 class Vault

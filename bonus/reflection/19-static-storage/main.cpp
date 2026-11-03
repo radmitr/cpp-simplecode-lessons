@@ -1,6 +1,11 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <exception>
+#include <iostream>
+#include <meta>
 #include <string>
+#include <string_view>
 #include <vector>
+
 #include "../common/reflection.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

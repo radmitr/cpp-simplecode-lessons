@@ -1,7 +1,10 @@
 // C++11 — noexcept; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <type_traits>
 #include <utility>
 #include <vector>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 struct Safe { Safe() = default; Safe(Safe&&) noexcept = default; ~Safe() noexcept = default; };

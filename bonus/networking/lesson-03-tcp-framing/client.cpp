@@ -1,8 +1,12 @@
 // C++11 — std::array, std::chrono, auto.
-#include <string>
-#include "../common/net.hpp"
-#include <iostream>
 #include <array>
+#include <chrono>
+#include <exception>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+
+#include "../common/net.hpp"
 
 int main(int argc, char* argv[])
 {

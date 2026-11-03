@@ -1,7 +1,10 @@
 // C++98 — tellg(), tellp(), seekg() и seekp(); C++17 — [[maybe_unused]].
+#include <exception>
+#include <fstream>
+#include <iostream>
 #include <string>
-#include "../common/check.hpp"
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

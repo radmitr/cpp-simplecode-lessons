@@ -1,6 +1,6 @@
 // C++98 — явный вызов метода базового класса; C++11 — override.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

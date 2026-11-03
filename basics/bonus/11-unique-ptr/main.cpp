@@ -1,6 +1,9 @@
 // C++11 — std::unique_ptr; C++14 — std::make_unique; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <memory>
 #include <utility>
+
 #include "../common/check.hpp"
 
 std::unique_ptr<int> make_number() { return std::make_unique<int>(7); }

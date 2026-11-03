@@ -1,11 +1,13 @@
 // C++98 — владение буфером и перегрузка операторов; C++11 — перемещение и noexcept.
-#include <string>
 #include "String.hpp"
-#include <cstring>
-#include <cstddef>
+
 #include <cctype>
+#include <cstddef>
+#include <cstring>
+#include <iostream>
 #include <new>
 #include <stdexcept>
+#include <string>
 
 #define STRING_ENABLE_LOGGING false // comment for production
 

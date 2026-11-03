@@ -141,6 +141,32 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   the source location.
   Keep specialized demonstrations of wide streams or console modes separate.
 
+## C++ include order and direct dependencies
+
+- Apply this convention to all teaching `.cpp` files and helper headers,
+  including `_template/`. Keep feature-version comments first and preserve
+  header guards, conditional branches and comments explaining dependencies.
+- Order ordinary include groups as follows: the implementation's matching
+  header (when present, such as `SimpleTimer.hpp` in `SimpleTimer.cpp`);
+  standard C/C++ headers; third-party and platform headers; other project headers.
+  A helper included by `main.cpp` is not its matching implementation header.
+- Separate nonempty groups with exactly one blank line. Within a group sort
+  case-sensitively by the complete header path, without the quotes or brackets.
+  Keep `common/console.hpp` with other project headers, not in a separate group.
+- Include the header declaring each standard-library facility used by the file
+  directly. For example, include `<chrono>` for `std::chrono`, `<utility>` for
+  `std::move`, and `<string>` for `std::string`; do not depend on incidental
+  includes of another lesson's helper. Headers must include their own dependencies.
+- Correct platform setup takes precedence over sorting. Keep required feature
+  macros and Windows/WinSock setup before the headers they configure. In Asio
+  examples keep `common/boost_net.hpp` as an explicitly commented platform
+  preamble before Boost and `common/console.hpp`; inside `boost_net.hpp` keep
+  `net.hpp` before Boost. Preserve the WinSock/POSIX conditional preamble in
+  `net.hpp`. Separate such a preamble from ordinary includes by one blank line.
+- Never move includes across conditional branches or configuration macros just
+  to obtain alphabetical order. Document any required ordering exception beside
+  the affected block. These are project conventions, not language requirements.
+
 ## Explanations, runnable examples and Markdown
 
 - Explain a mechanism through a small concrete example and the order of events

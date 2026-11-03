@@ -2,8 +2,15 @@
 #ifndef NETWORKING_MQTT_HPP
 #define NETWORKING_MQTT_HPP
 
-#include "../common/net.hpp"
+#include <chrono>
+#include <cstddef>
+#include <cstdint>
 #include <iostream>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+
+#include "../common/net.hpp"
 
 namespace mqtt
 {

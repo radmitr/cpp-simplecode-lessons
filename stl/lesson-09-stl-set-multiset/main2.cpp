@@ -1,6 +1,6 @@
 // C++98 — std::multiset; C++11 — auto и std::begin().
-#include <iterator>
 #include <iostream>
+#include <iterator>
 #include <set>
 
 #include "../../common/console.hpp"

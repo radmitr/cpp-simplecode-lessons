@@ -1,6 +1,6 @@
 // C++98 — чисто виртуальный деструктор с определением; C++11 — override.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

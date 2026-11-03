@@ -1,8 +1,11 @@
 // C++11 — std::unique_ptr, std::to_string, nullptr, decltype.
-#include <string>
-#include "../common/net.hpp"
+#include <exception>
 #include <iostream>
 #include <memory>
+#include <stdexcept>
+#include <string>
+
+#include "../common/net.hpp"
 
 int main(int argc, char* argv[])
 {

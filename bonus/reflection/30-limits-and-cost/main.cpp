@@ -1,4 +1,7 @@
 // C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
+#include <exception>
+#include <iostream>
+
 #include "../common/reflection.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

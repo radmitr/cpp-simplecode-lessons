@@ -1,6 +1,9 @@
 // C++20 — концепты и requires.
 #include <concepts>
+#include <exception>
+#include <iostream>
 #include <vector>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 struct NoAdd {};

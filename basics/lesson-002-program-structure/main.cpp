@@ -1,8 +1,9 @@
 // C++98 — структура программы, main() и return.
-#include "../../common/console.hpp"
+#include <clocale>
 #include <iostream>
 #include <string>
-#include <clocale>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

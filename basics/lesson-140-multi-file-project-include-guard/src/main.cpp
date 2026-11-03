@@ -1,9 +1,9 @@
 // C++98 — защита заголовков от повторного включения.
 #include <iostream>
-#include "foo.h"
-#include "bar.h"
 
 #include "../../../common/console.hpp"
+#include "bar.h"
+#include "foo.h"
 
 using namespace std;
 

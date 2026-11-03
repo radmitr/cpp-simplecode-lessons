@@ -1,6 +1,9 @@
 // C++98 — указатели на члены класса; C++11 — std::array и constexpr; C++17 — std::string_view.
 #include <array>
+#include <exception>
+#include <iostream>
 #include <string_view>
+
 #include "../common/check.hpp"
 
 struct Person { int id; int age; };

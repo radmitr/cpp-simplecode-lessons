@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <iostream>
 #include <new>
+#include <ratio>
 #include <thread>
 
 namespace

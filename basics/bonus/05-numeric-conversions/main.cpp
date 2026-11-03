@@ -1,6 +1,9 @@
 // C++98 — числовые преобразования, static_cast и std::numeric_limits; C++17 — [[maybe_unused]].
-#include <limits>
 #include <cstddef>
+#include <exception>
+#include <iostream>
+#include <limits>
+
 #include "../common/check.hpp"
 
 bool can_add_one(int value) { return value < std::numeric_limits<int>::max(); }

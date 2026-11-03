@@ -1,7 +1,10 @@
 // C++11 — пробрасывающие ссылки, std::forward и std::move; C++17 — std::string_view.
+#include <exception>
+#include <iostream>
 #include <string>
 #include <string_view>
 #include <utility>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 std::string_view select(const std::string&) { return "lvalue"; }

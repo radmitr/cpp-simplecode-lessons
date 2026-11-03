@@ -1,8 +1,11 @@
 // C++98 — typeid; C++11 — std::type_index; C++17 — [[maybe_unused]].
-#include <typeinfo>
-#include <typeindex>
+#include <exception>
+#include <iostream>
 #include <map>
 #include <string>
+#include <typeindex>
+#include <typeinfo>
+
 #include "../common/check.hpp"
 
 struct Base { virtual ~Base() = default; };

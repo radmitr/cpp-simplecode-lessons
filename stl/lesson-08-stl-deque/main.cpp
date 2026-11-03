@@ -1,6 +1,7 @@
 // C++98 — std::deque; C++11 — auto.
-#include <iostream>
 #include <deque>
+#include <exception>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

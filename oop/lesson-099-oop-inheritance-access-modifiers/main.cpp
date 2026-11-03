@@ -1,6 +1,6 @@
 // C++98 — спецификаторы доступа при наследовании.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

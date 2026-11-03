@@ -1,5 +1,8 @@
 // C++98 — пользовательские исключения, порядок catch и catch (...); C++11 — noexcept.
+#include <exception>
+#include <iostream>
 #include <stdexcept>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 class ParseError : public std::runtime_error

@@ -1,7 +1,7 @@
 // C++98 — чтение и запись через std::fstream.
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

@@ -1,9 +1,12 @@
 // C++98 — параметры шаблонов и частичная специализация; C++11 — шаблоны псевдонимов и std::array.
 // C++17 — вывод аргументов шаблона класса и направляющие вывода.
 #include <array>
-#include <vector>
-#include <type_traits>
 #include <cstddef>
+#include <exception>
+#include <iostream>
+#include <type_traits>
+#include <vector>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 template<class T, std::size_t N = 4> struct Buffer { std::array<T, N> values; };

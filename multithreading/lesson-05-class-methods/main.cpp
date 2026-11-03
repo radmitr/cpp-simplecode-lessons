@@ -1,6 +1,7 @@
 // C++11 — вызов метода объекта через std::thread.
-#include <iostream>
+#include <chrono>
 #include <cstddef>
+#include <iostream>
 #include <thread>
 
 #include "../../common/console.hpp"

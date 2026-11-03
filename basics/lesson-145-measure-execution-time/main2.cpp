@@ -1,7 +1,7 @@
 // C++11 — измерение времени через std::chrono.
+#include <chrono>
 #include <cstddef>
 #include <iostream>
-#include <chrono>
 
 #include "../../common/console.hpp"
 

@@ -1,6 +1,16 @@
 // C++11 — std::unique_ptr и std::initializer_list; C++17 — std::filesystem и __has_include.
 #pragma once
 
+#include <cstdlib>
+#include <exception>
+#include <filesystem>
+#include <initializer_list>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <utility>
+
 // Debian/Ubuntu размещают заголовки libpq в подкаталоге postgresql.
 #if __has_include(<libpq-fe.h>)
 #include <libpq-fe.h>
@@ -9,15 +19,6 @@
 #else
 #error "Install the PostgreSQL development package (libpq headers)."
 #endif
-
-#include <cstdlib>
-#include <filesystem>
-#include <initializer_list>
-#include <iostream>
-#include <memory>
-#include <stdexcept>
-#include <string>
-#include <utility>
 
 namespace db {
 

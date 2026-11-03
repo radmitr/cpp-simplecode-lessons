@@ -1,6 +1,7 @@
 // C++98 — switch, case, default и break.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

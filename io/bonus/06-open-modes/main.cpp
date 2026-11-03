@@ -1,6 +1,9 @@
 // C++98 — режимы открытия файлов app, ate, trunc и binary; C++17 — [[maybe_unused]].
-#include "../common/check.hpp"
+#include <exception>
+#include <fstream>
+#include <iostream>
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

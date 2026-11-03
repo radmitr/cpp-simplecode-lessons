@@ -1,5 +1,8 @@
 // C++98 — шаблоны функций; C++17 — std::string_view.
+#include <exception>
+#include <iostream>
 #include <string_view>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 template<class T> T larger(T a, T b) { return a < b ? b : a; }

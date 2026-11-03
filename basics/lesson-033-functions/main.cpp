@@ -1,8 +1,9 @@
 // C++98 — объявление, определение и вызов функции.
-#include "../../common/console.hpp"
 #include <cstdlib>
-#include <iostream>
 #include <ctime>
+#include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

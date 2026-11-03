@@ -1,5 +1,8 @@
 // C++98 — dynamic_cast и std::bad_cast; C++11 — nullptr; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <typeinfo>
+
 #include "../common/check.hpp"
 
 struct Base { virtual ~Base() = default; };

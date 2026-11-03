@@ -1,6 +1,8 @@
 // C++98 — объявления и определения в нескольких файлах.
 #include "MyClass.h"
 
+#include <iostream>
+
 namespace myNamespace
 {
     MyClass::MyClass()

@@ -1,7 +1,13 @@
 // C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
-#include <string>
-#include <nlohmann/json.hpp>
 #include <cstdint>
+#include <exception>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+
+#include <nlohmann/json.hpp>
+
 #include "../common/reflection.hpp"
 
 struct Settings { int port; int workers; };

@@ -1,10 +1,16 @@
 // C++98 — файловые потоки; C++17 — std::filesystem.
-#include <string>
 #include <chrono>
 #include <cstdint>
+#include <exception>
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <system_error>
 #include <utility>
-#include "../common/check.hpp"
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 class Logger {
 public:

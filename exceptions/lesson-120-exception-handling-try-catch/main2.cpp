@@ -1,7 +1,7 @@
 // C++98 — try / catch и исключения файловых потоков.
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

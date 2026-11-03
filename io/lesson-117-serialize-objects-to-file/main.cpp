@@ -1,7 +1,7 @@
 // C++98 — бинарный ввод-вывод через read() и write().
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

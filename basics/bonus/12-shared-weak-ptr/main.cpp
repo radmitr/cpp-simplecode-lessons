@@ -1,5 +1,8 @@
 // C++11 — std::shared_ptr и std::weak_ptr; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <memory>
+
 #include "../common/check.hpp"
 
 struct Node { std::shared_ptr<Node> child; std::weak_ptr<Node> parent; };

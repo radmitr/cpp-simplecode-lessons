@@ -1,7 +1,12 @@
 // C++11 — std::chrono, auto.
-#include <string>
-#include "../common/resolved_address.hpp"
+#include <chrono>
+#include <cstdint>
+#include <exception>
 #include <iostream>
+#include <stdexcept>
+#include <string>
+
+#include "../common/resolved_address.hpp"
 
 int main(int argc, char* argv[])
 {

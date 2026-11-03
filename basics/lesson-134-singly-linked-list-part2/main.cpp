@@ -1,6 +1,7 @@
 // C++98 — операции односвязного списка; C++11 — nullptr.
 #include <iostream>
 #include <memory>
+#include <stdexcept>
 
 #include "../../common/console.hpp"
 

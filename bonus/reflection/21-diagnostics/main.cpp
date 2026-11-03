@@ -1,4 +1,8 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <exception>
+#include <iostream>
+#include <meta>
+
 #include "../common/reflection.hpp"
 
 consteval bool guarded_identifier_request()

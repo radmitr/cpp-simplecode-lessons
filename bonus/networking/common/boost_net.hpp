@@ -6,10 +6,13 @@
 #if defined(_WIN32) && !defined(_WIN32_WINNT)
 #define _WIN32_WINNT 0x0601
 #endif
+// Платформенный пролог: настройки Windows/WinSock до Boost и console.hpp.
 #include "net.hpp"
-#include <boost/asio.hpp>
+
 #include <iostream>
 #include <memory>
+
+#include <boost/asio.hpp>
 
 namespace async_net
 {

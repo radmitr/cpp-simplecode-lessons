@@ -1,9 +1,12 @@
 // C++98 — std::bad_alloc, std::bad_cast и std::bad_typeid.
 // C++11 — std::bad_weak_ptr и std::regex_error.
+#include <exception>
+#include <iostream>
 #include <memory>
 #include <new>
 #include <regex>
 #include <typeinfo>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 struct Base { virtual ~Base() = default; };

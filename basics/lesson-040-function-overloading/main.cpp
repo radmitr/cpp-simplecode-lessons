@@ -1,6 +1,7 @@
 // C++98 — перегрузка функций.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 using namespace std;
 
 int Sum(int a, int b)

@@ -1,6 +1,9 @@
 // C++11 — измерение времени через std::chrono.
 #include "SimpleTimer.hpp"
 
+#include <chrono>
+#include <iostream>
+
 SimpleTimer::SimpleTimer()
 {
     start = std::chrono::high_resolution_clock::now();

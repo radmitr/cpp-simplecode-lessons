@@ -1,7 +1,10 @@
 // C++11 — std::unique_ptr, nullptr, auto, decltype.
-#include <string>
-#include "../common/db.hpp"
 #include <cstddef>
+#include <iostream>
+#include <memory>
+#include <string>
+
+#include "../common/db.hpp"
 
 int main() {
     return db::run([] {

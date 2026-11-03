@@ -1,6 +1,7 @@
 // C++98 — условная компиляция: #if, #ifdef и #ifndef.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 #define DEBUG 5
 

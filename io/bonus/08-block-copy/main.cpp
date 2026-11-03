@@ -1,8 +1,13 @@
 // C++98 — read(), write() и gcount(); C++17 — std::filesystem.
-#include <string>
 #include <array>
-#include "../common/check.hpp"
+#include <exception>
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <stdexcept>
+#include <string>
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 void copy_blocks(const std::filesystem::path& source,const std::filesystem::path& target) {
     std::ifstream input(source,std::ios::binary);

@@ -1,11 +1,17 @@
 // C++11 — std::make_shared, std::function, std::move, std::chrono.
 // C++14 — захват лямбды с инициализацией.
+// Платформенный пролог: настройки Windows/WinSock до Boost и console.hpp.
+#include "../common/boost_net.hpp"
+
+#include <chrono>
+#include <cstddef>
+#include <exception>
+#include <functional>
+#include <iostream>
+#include <istream>
+#include <memory>
 #include <string>
 #include <utility>
-#include <cstddef>
-#include "../common/boost_net.hpp"
-#include <functional>
-#include <istream>
 
 namespace asio = boost::asio;
 using Tcp = asio::ip::tcp;

@@ -1,6 +1,6 @@
 // C++11 — захваты лямбда-выражений.
-#include <iostream>
 #include <functional>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

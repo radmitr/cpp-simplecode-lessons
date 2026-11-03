@@ -1,9 +1,9 @@
 // C++98 — объявления и определения в нескольких файлах.
 #include <iostream>
-#include "sum.h"
-#include "MyClass.h"
 
 #include "../../../common/console.hpp"
+#include "MyClass.h"
+#include "sum.h"
 
 using namespace std;
 

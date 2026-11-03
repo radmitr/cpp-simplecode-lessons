@@ -2,9 +2,13 @@
 #ifndef NETWORKING_RESOLVED_ADDRESS_HPP
 #define NETWORKING_RESOLVED_ADDRESS_HPP
 
-#include <string>
-#include "net.hpp"
+#include <cstdint>
+#include <exception>
 #include <memory>
+#include <stdexcept>
+#include <string>
+
+#include "net.hpp"
 
 namespace net
 {

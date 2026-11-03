@@ -1,18 +1,18 @@
 // C++11 — std::shuffle и генераторы из <random>; C++14 — std::make_unique.
-#include <utility>
-#include <iterator>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <stack>
-#include <queue>
 #include <algorithm>
-#include <numeric>
-#include <string>
 #include <ctime>
-#include <random>
+#include <deque>
+#include <iostream>
+#include <iterator>
+#include <list>
 #include <memory>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <stack>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

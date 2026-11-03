@@ -1,8 +1,15 @@
 // C++11 — std::shared_ptr, std::enable_shared_from_this, std::chrono и лямбды.
 // C++14 — захват лямбды с инициализацией; ввод-вывод предоставляет Boost.Asio.
-#include "chat.hpp"
+#include <cstdint>
+#include <exception>
+#include <iostream>
+#include <memory>
 #include <set>
+#include <string>
+#include <utility>
 #include <vector>
+
+#include "chat.hpp"
 
 using namespace chat;
 

@@ -1,6 +1,7 @@
 // C++98 — std::vector, size(), capacity(), reserve() и resize().
 #include <cstddef>
 #include <iostream>
+#include <stdexcept>
 #include <vector>
 
 #include "../../common/console.hpp"

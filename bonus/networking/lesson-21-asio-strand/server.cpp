@@ -1,11 +1,23 @@
 // C++11 — std::thread, std::atomic, std::mutex и std::shared_ptr.
 // C++14 — захват лямбды с инициализацией; strand предоставляет Boost.Asio.
+// Платформенный пролог: настройки Windows/WinSock до Boost и console.hpp.
 #include "../common/boost_net.hpp"
-#include "../../../common/console.hpp"
+
 #include <atomic>
+#include <chrono>
+#include <cstddef>
+#include <cstdint>
+#include <exception>
+#include <functional>
+#include <iostream>
+#include <memory>
 #include <mutex>
+#include <string>
 #include <thread>
+#include <utility>
 #include <vector>
+
+#include "../../../common/console.hpp"
 
 namespace asio = boost::asio;
 using Tcp = asio::ip::tcp;

@@ -1,5 +1,8 @@
 // C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
+#include <exception>
+#include <iostream>
 #include <sstream>
+
 #include "../common/reflection.hpp"
 
 struct Address { int zip; };

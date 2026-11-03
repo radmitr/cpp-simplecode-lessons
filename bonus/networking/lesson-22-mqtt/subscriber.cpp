@@ -1,6 +1,12 @@
 // C++17 — std::string_view; MQTT 3.1.1 — внешний сетевой протокол.
-#include "mqtt.hpp"
+#include <chrono>
+#include <exception>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+
 #include "../../../common/console.hpp"
+#include "mqtt.hpp"
 
 int main(int argc, char* argv[])
 {

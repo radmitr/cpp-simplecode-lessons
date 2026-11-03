@@ -1,7 +1,10 @@
 // C++98 — std::ios_base::failure; C++11 — std::system_error и std::future_error.
+#include <exception>
 #include <future>
+#include <iostream>
 #include <sstream>
 #include <system_error>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 int main()

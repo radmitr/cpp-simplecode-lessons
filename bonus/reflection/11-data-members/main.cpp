@@ -1,5 +1,9 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <exception>
+#include <iostream>
+#include <meta>
 #include <string>
+
 #include "../common/reflection.hpp"
 
 struct Record { int id; std::string name; inline static int count = 0; };

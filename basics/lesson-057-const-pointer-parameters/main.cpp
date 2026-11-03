@@ -1,8 +1,9 @@
 // C++98 — const в параметрах-указателях.
-#include "../../common/console.hpp"
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

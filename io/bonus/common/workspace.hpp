@@ -7,6 +7,7 @@
 #include <iterator>
 #include <stdexcept>
 #include <string>
+#include <system_error>
 
 // Только этот объект владеет созданной им временной папкой.
 class LessonWorkspace

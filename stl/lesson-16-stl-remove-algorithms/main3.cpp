@@ -1,6 +1,6 @@
 // C++98 — std::remove и удаление хвоста строки.
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

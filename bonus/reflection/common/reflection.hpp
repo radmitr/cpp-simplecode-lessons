@@ -4,11 +4,12 @@
 #error "Use GCC 16+ with -std=c++26 -freflection for this lesson"
 #endif
 #include <meta>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <type_traits>
-#include <optional>
 #include <utility>
+
 #include "check.hpp"
 
 namespace reflection_demo

@@ -1,7 +1,7 @@
 // C++98 — чтение файла через std::ifstream.
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

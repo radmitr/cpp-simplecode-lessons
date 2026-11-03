@@ -1,10 +1,10 @@
 // C++98 — запись в файл через std::ofstream; C++11 — auto.
 #include <cstdlib>
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <vector>
 #include <system_error>
+#include <vector>
 
 #include "../../common/console.hpp"
 

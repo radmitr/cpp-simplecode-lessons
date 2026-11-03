@@ -1,6 +1,7 @@
 // C++98 — переход goto и метки.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

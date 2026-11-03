@@ -1,6 +1,6 @@
 // C++98 — вызов конструктора базового класса.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

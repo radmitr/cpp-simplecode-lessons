@@ -1,9 +1,9 @@
 // C++11 — передача аргументов в std::thread.
-#include <iostream>
+#include <chrono>
 #include <cstddef>
+#include <iostream>
 #include <string>
 #include <thread>
-#include <chrono>
 
 #include "../../common/console.hpp"
 

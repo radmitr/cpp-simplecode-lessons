@@ -1,18 +1,18 @@
 // C++11 — std::shuffle и генераторы из <random>.
-#include <utility>
-#include <iterator>
-#include <cstdlib>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <stack>
-#include <queue>
 #include <algorithm>
-#include <numeric>
-#include <string>
+#include <cstdlib>
 #include <ctime>
+#include <deque>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <numeric>
+#include <queue>
 #include <random>
+#include <stack>
+#include <string>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

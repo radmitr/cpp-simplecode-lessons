@@ -1,9 +1,13 @@
 // C++17 — операции std::filesystem.
-#include <string>
-#include <vector>
 #include <algorithm>
-#include "../common/check.hpp"
+#include <exception>
+#include <filesystem>
+#include <iostream>
+#include <string>
+#include <system_error>
+#include <vector>
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

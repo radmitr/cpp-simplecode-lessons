@@ -1,10 +1,13 @@
 // C++11 — std::weak_ptr::lock().
 // C++17 — проверяемый доступ к std::optional, std::variant и std::any.
 #include <any>
+#include <exception>
+#include <iostream>
 #include <memory>
 #include <optional>
 #include <string>
 #include <variant>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 int main()

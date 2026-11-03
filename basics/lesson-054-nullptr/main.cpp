@@ -1,6 +1,7 @@
 // C++11 — nullptr.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

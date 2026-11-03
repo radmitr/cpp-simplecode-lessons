@@ -1,5 +1,8 @@
 // C++11 — std::unique_ptr::release() и reset(); C++14 — std::make_unique.
+#include <exception>
+#include <iostream>
 #include <memory>
+
 #include "../common/check.hpp"
 
 int main()

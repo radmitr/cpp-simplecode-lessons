@@ -1,8 +1,11 @@
 // C++17 — std::string_view; C++20 — char8_t и std::u8string_view.
 #include <cstddef>
+#include <cstdint>
+#include <exception>
+#include <iostream>
 #include <string>
 #include <string_view>
-#include <cstdint>
+
 #include "../common/check.hpp"
 
 bool valid_utf8(std::string_view text) {

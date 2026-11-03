@@ -1,6 +1,6 @@
 // C++98 — std::list; C++11 — auto и cbegin().
-#include <iterator>
 #include <iostream>
+#include <iterator>
 #include <list>
 
 #include "../../common/console.hpp"

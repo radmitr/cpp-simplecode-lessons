@@ -1,6 +1,6 @@
 // C++98 — наследование классов.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

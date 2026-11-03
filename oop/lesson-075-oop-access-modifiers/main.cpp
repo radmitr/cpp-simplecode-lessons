@@ -1,8 +1,9 @@
 // C++98 — спецификаторы доступа public, protected и private.
 // C++11 — инициализаторы полей внутри класса.
-#include "../../common/console.hpp"
-#include <iostream>
 #include <clocale>
+#include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

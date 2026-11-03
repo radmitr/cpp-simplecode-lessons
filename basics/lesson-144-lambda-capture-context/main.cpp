@@ -1,6 +1,6 @@
 // C++11 — захваты лямбда-выражений; C++17 — вывод аргументов шаблона класса std::function.
-#include <iostream>
 #include <functional>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

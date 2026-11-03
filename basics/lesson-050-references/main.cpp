@@ -1,6 +1,7 @@
 // C++98 — ссылки на переменные.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

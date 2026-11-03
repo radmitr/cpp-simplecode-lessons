@@ -1,9 +1,9 @@
 // C++98 — запись в файл через std::ofstream.
-#include <iostream>
-#include <string>
-#include <fstream>
 #include <cstdlib>
 #include <cstring>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 #include "../../common/console.hpp"
 

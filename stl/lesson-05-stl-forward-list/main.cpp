@@ -1,6 +1,6 @@
 // C++11 — std::forward_list и цикл for по диапазону.
-#include <iostream>
 #include <forward_list>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

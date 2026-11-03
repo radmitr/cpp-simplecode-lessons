@@ -1,7 +1,7 @@
 // C++98 — перегрузка потоковых операторов << и >>.
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

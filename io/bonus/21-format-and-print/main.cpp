@@ -1,6 +1,9 @@
 // C++20 — std::format и std::vformat; C++23 — std::println.
+#include <exception>
 #include <format>
+#include <iostream>
 #include <print>
+
 #include "../common/check.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

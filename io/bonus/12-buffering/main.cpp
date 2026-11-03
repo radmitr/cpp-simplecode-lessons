@@ -1,6 +1,9 @@
 // C++98 — std::stringbuf, std::endl и std::flush; C++17 — [[maybe_unused]].
-#include <sstream>
+#include <exception>
+#include <iostream>
 #include <ostream>
+#include <sstream>
+
 #include "../common/check.hpp"
 
 struct CountingBuffer : std::stringbuf { int flushes=0; int sync() override { ++flushes; return 0; } };

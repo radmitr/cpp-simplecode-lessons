@@ -1,5 +1,8 @@
 // C++11 — std::chrono; C++17 — [[maybe_unused]].
 #include <chrono>
+#include <exception>
+#include <iostream>
+
 #include "../common/check.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

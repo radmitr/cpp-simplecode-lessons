@@ -1,7 +1,8 @@
 // C++98 — strlen() и strcat(); C++11 — пустой список инициализации.
-#include "../../common/console.hpp"
 #include <cstring>
 #include <iostream>
+
+#include "../../common/console.hpp"
 using namespace std;
 
 int main()

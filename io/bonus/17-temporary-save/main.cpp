@@ -1,15 +1,21 @@
 // C++17 — std::filesystem и сохранение через временный файл.
+#include <exception>
+#include <filesystem>
+#include <iostream>
+#include <stdexcept>
 #include <string>
 #include <system_error>
-#include "../common/check.hpp"
 
-#include "../common/workspace.hpp"
 #ifdef _WIN32
 #ifndef NOMINMAX
 #define NOMINMAX
 #endif
 #include <windows.h>
 #endif
+
+#include "../common/check.hpp"
+#include "../common/workspace.hpp"
+
 void save_checked(const std::filesystem::path& target,const std::string& text,bool valid) {
     const auto temporary=target.parent_path()/"prepared.tmp";
     if(std::filesystem::exists(temporary)) throw std::runtime_error("temporary already exists");

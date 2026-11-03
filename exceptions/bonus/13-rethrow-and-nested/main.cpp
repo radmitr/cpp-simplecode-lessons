@@ -1,7 +1,9 @@
 // C++98 — повторный проброс через throw; C++11 — std::throw_with_nested и std::rethrow_if_nested.
 // C++17 — [[maybe_unused]].
 #include <exception>
+#include <iostream>
 #include <stdexcept>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 struct Detail : std::runtime_error { int code = 7; Detail() : std::runtime_error("detail") {} };

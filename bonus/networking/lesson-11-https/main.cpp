@@ -1,7 +1,10 @@
 // C++11 — auto.
-#include <string>
-#include "../common/curl_client.hpp"
+#include <exception>
 #include <iostream>
+#include <stdexcept>
+#include <string>
+
+#include "../common/curl_client.hpp"
 
 int main(int argc, char* argv[])
 {

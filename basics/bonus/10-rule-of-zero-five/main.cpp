@@ -1,8 +1,11 @@
 // C++98 — копирование и деструкторы; C++11 — перемещение, noexcept, = delete и = default.
 // C++14 — std::make_unique; C++17 — [[maybe_unused]].
-#include <vector>
+#include <exception>
+#include <iostream>
 #include <memory>
 #include <utility>
+#include <vector>
+
 #include "../common/check.hpp"
 
 struct Value { std::vector<int> values; }; // Правило нуля.

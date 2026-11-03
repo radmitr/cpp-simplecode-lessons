@@ -1,8 +1,9 @@
 // C++98 — обход двумерного массива вложенными циклами.
 // C++11 — списковая инициализация без =.
-#include "../../common/console.hpp"
 #include <cstdlib>
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

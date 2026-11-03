@@ -1,6 +1,6 @@
 // C++98 — порядок вызова деструкторов при наследовании.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

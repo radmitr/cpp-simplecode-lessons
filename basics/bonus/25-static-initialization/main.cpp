@@ -1,5 +1,8 @@
 // C++98 — статические объекты и порядок инициализации; C++20 — constinit.
+#include <exception>
+#include <iostream>
 #include <string>
+
 #include "../common/check.hpp"
 
 constinit int global_count = 7;

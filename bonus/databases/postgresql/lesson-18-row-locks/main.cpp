@@ -1,5 +1,8 @@
 // C++11 — auto, лямбда-выражения.
+#include <iostream>
+#include <stdexcept>
 #include <string>
+
 #include "../common/db.hpp"
 
 int main() {

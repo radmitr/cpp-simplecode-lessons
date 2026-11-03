@@ -2,9 +2,12 @@
 #ifndef NETWORKING_DISCOVERY_HPP
 #define NETWORKING_DISCOVERY_HPP
 
-#include <string>
-#include "../common/net.hpp"
+#include <cstdint>
 #include <sstream>
+#include <stdexcept>
+#include <string>
+
+#include "../common/net.hpp"
 
 namespace discovery
 {

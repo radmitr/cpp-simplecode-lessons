@@ -1,6 +1,7 @@
 // C++98 — массивы; C++11 — инициализация пустым списком.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

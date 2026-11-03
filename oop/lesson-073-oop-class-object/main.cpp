@@ -1,7 +1,8 @@
 // C++98 — классы, объекты и поля.
-#include "../../common/console.hpp"
 #include <iostream>
 #include <string>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

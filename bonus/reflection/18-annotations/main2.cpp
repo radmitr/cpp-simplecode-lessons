@@ -1,4 +1,8 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
+#include <iostream>
+#include <meta>
+#include <string_view>
+
 #include "../common/reflection.hpp"
 
 struct Label { char text[16]; };

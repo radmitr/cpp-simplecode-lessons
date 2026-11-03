@@ -1,6 +1,7 @@
 // C++98 — ввод через std::cin и проверка состояния потока.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

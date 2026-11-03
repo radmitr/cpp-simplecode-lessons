@@ -1,15 +1,15 @@
 // C++98 — std::equal с предикатом; C++11 — лямбда-выражения.
-#include <utility>
-#include <iterator>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <deque>
-#include <stack>
-#include <queue>
 #include <algorithm>
+#include <deque>
+#include <iostream>
+#include <iterator>
+#include <list>
 #include <numeric>
+#include <queue>
+#include <stack>
 #include <string>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

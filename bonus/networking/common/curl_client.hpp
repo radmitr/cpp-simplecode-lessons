@@ -2,13 +2,13 @@
 #ifndef NETWORKING_DEMO_CURL_CLIENT_HPP
 #define NETWORKING_DEMO_CURL_CLIENT_HPP
 
-#include <curl/curl.h>
-
 #include <cstddef>
 #include <memory>
 #include <stdexcept>
 #include <string>
 #include <utility>
+
+#include <curl/curl.h>
 
 namespace web
 {

@@ -1,7 +1,8 @@
 // C++98 — указатель this.
-#include "../../common/console.hpp"
 #include <iostream>
 #include <string>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

@@ -1,12 +1,13 @@
 // C++98 — std::queue и std::priority_queue; C++11 — auto и std::begin().
-#include <utility>
-#include <iterator>
-#include <iostream>
-#include <vector>
-#include <list>
 #include <deque>
-#include <stack>
+#include <functional>
+#include <iostream>
+#include <iterator>
+#include <list>
 #include <queue>
+#include <stack>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
 

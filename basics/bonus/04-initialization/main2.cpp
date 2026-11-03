@@ -1,7 +1,10 @@
 // C++98 — инициализация через круглые скобки.
 // C++11 — списковая инициализация и std::initializer_list.
+#include <exception>
 #include <initializer_list>
+#include <iostream>
 #include <type_traits>
+
 #include "../common/check.hpp"
 
 int sum(std::initializer_list<int> values)

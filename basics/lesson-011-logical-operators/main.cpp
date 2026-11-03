@@ -1,6 +1,7 @@
 // C++98 — сравнения, логические операторы и сокращённое вычисление.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 // C++98 — интерфейсы через абстрактные классы; C++11 — override и = default.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

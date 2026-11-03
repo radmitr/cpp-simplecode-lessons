@@ -1,6 +1,8 @@
 // C++26 — статическая рефлексия и std::meta (экспериментально, GCC).
 #pragma once
 #include <cstddef>
+#include <meta>
+
 #include "../../common/reflection.hpp"
 struct Shared { int id; int age; };
 template<class T> consteval std::size_t public_field_count()

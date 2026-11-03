@@ -1,9 +1,9 @@
 // C++98 — std::multimap; C++11 — auto и std::begin().
-#include <utility>
-#include <iterator>
 #include <iostream>
+#include <iterator>
 #include <map>
 #include <string>
+#include <utility>
 
 #include "../../common/console.hpp"
 

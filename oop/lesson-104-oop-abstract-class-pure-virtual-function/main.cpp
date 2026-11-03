@@ -1,6 +1,6 @@
 // C++98 — абстрактные классы и чисто виртуальные методы; C++11 — override.
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include <string>
 
 #include "../../common/console.hpp"

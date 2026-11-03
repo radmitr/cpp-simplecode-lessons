@@ -1,8 +1,8 @@
 // C++98 — предикаты и стандартные алгоритмы; C++11 — constexpr.
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm>
 
 #include "../../common/console.hpp"
 

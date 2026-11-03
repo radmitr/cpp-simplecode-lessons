@@ -1,7 +1,8 @@
 // C++98 — рекурсивный факториал и проверка границ.
-#include "../../common/console.hpp"
 #include <cstdio>
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

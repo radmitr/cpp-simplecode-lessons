@@ -1,14 +1,14 @@
 // C++98 — собственный строковый класс и перегрузка операторов.
 // C++11 — перемещение и noexcept в String.hpp.
-#include "String.hpp"
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <algorithm>
 #include <cassert>
+#include <fstream>
+#include <iostream>
 #include <sstream>
+#include <vector>
 
 #include "../../common/console.hpp"
+#include "String.hpp"
 
 int main(void)
 {

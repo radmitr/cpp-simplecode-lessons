@@ -1,6 +1,6 @@
 // C++11 — лямбда-выражения.
-#include <iostream>
 #include <functional>
+#include <iostream>
 #include <vector>
 
 #include "../../common/console.hpp"

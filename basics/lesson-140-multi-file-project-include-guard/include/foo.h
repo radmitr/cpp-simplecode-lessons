@@ -5,6 +5,7 @@
 #define _FOO_H_
 
 #include <iostream>
+
 #include "bar.h"
 
 void foo();

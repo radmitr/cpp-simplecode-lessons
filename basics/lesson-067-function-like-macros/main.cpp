@@ -1,6 +1,7 @@
 // C++98 — функциональные макросы.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 // МАКРОС
 #define FOO(x,y) ((x)*(y))

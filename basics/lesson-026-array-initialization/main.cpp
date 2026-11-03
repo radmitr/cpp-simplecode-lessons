@@ -1,6 +1,7 @@
 // C++98 — инициализация массивов списком после =.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

@@ -1,7 +1,8 @@
 // C++98 — динамический массив указателей на строки.
-#include "../../common/console.hpp"
 #include <cstdlib>
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

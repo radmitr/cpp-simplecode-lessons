@@ -1,6 +1,11 @@
 // C++26 — статическая рефлексия через общий заголовок (экспериментально, GCC).
 #include <charconv>
+#include <exception>
+#include <iostream>
+#include <stdexcept>
+#include <string_view>
 #include <system_error>
+
 #include "../common/reflection.hpp"
 
 struct Settings { int port; int workers; };

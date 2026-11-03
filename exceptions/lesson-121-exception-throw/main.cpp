@@ -1,7 +1,7 @@
 // C++98 — throw и передача исключения обработчику.
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../../common/console.hpp"
 

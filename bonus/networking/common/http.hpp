@@ -2,13 +2,17 @@
 #ifndef NETWORKING_DEMO_HTTP_HPP
 #define NETWORKING_DEMO_HTTP_HPP
 
-#include <string>
-#include <cstddef>
-#include "net.hpp"
-
 #include <cctype>
+#include <charconv>
+#include <cstddef>
 #include <regex>
 #include <sstream>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+#include <system_error>
+
+#include "net.hpp"
 
 // Ограниченный HTTP/1.x для локальных учебных серверов:
 // один запрос на соединение, Content-Length, заголовки до 8 КиБ, тело до 4 КиБ.

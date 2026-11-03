@@ -1,6 +1,9 @@
 // C++11 — decltype и std::declval; C++17 — std::void_t и if constexpr.
+#include <exception>
+#include <iostream>
 #include <type_traits>
 #include <utility>
+
 #include "../common/check.hpp"
 
 struct Item { int id; };

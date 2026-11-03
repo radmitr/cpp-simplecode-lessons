@@ -1,6 +1,7 @@
 // C++98 — указатели, взятие адреса и разыменование.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

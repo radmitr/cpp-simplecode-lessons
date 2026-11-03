@@ -1,7 +1,8 @@
 // C++98 — геттеры и сеттеры; C++11 — инициализаторы полей внутри класса.
-#include "../../common/console.hpp"
 #include <iostream>
 #include <string>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

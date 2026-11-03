@@ -4,12 +4,26 @@
 #ifndef NETWORKING_CHAT_HPP
 #define NETWORKING_CHAT_HPP
 
+// Платформенный пролог: настройки Windows/WinSock до Boost и console.hpp.
 #include "../common/boost_net.hpp"
-#include "../../../common/console.hpp"
+
+#include <algorithm>
+#include <charconv>
+#include <chrono>
+#include <cstddef>
+#include <cstdint>
 #include <deque>
 #include <exception>
 #include <functional>
+#include <iostream>
+#include <memory>
+#include <string>
+#include <string_view>
+#include <system_error>
 #include <thread>
+#include <utility>
+
+#include "../../../common/console.hpp"
 
 namespace chat
 {

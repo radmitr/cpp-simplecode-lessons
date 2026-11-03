@@ -1,6 +1,9 @@
 // C++11 — захваты лямбда-выражений; C++14 — захват с инициализацией и обобщённые лямбды.
 // C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <memory>
+
 #include "../common/check.hpp"
 
 auto make_counter(int initial) { return [value = initial]() mutable { return ++value; }; }

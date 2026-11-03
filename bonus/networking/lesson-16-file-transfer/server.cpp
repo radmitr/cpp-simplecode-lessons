@@ -1,14 +1,20 @@
 // C++11 — std::chrono, std::random_device, std::error_code, std::to_string.
 // C++17 — std::filesystem.
-#include <string>
 #include <algorithm>
-#include "../common/net.hpp"
-#include "../common/crc32.hpp"
-
+#include <chrono>
+#include <cstdint>
+#include <cstring>
+#include <exception>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <random>
+#include <stdexcept>
+#include <string>
+#include <system_error>
+
+#include "../common/crc32.hpp"
+#include "../common/net.hpp"
 
 namespace fs = std::filesystem;
 

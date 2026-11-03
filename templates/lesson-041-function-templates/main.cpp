@@ -1,6 +1,7 @@
 // C++98 — шаблоны функций.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 using namespace std;
 
 template <typename T>

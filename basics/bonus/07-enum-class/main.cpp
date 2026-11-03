@@ -1,4 +1,7 @@
 // C++11 — enum class; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
+
 #include "../common/check.hpp"
 
 enum class Mode : unsigned { none = 0, read = 1, write = 2, execute = 4 };

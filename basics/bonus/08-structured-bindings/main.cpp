@@ -1,6 +1,9 @@
 // C++17 — структурированные привязки.
+#include <exception>
+#include <iostream>
 #include <map>
 #include <string>
+
 #include "../common/check.hpp"
 
 struct Point { int x; int y; };

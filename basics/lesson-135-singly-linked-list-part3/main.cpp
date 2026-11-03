@@ -1,9 +1,9 @@
 // C++98 — удаление узлов односвязного списка; C++11 — noexcept.
 #include <cstddef>
 #include <iostream>
+#include <sstream>
 #include <stdexcept>
 #include <string>
-#include <sstream>
 
 #include "../../common/console.hpp"
 

@@ -2,8 +2,8 @@
 #ifndef STRING_HPP
 #define STRING_HPP
 
-#include <iostream>
 #include <cstddef>
+#include <iostream>
 
 class String
 {

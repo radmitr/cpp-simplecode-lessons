@@ -1,5 +1,8 @@
 // C++11 — std::function и std::ref; C++17 — std::invoke.
+#include <exception>
 #include <functional>
+#include <iostream>
+
 #include "../common/check.hpp"
 
 struct Counter { int value = 0; void add(int n) { value += n; } void operator()(int n) { add(n); } };

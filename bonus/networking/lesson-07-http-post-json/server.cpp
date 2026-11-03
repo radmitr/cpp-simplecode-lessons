@@ -1,7 +1,10 @@
 // C++11 — std::chrono, std::to_string, auto.
-#include <string>
-#include "../common/http.hpp"
+#include <chrono>
+#include <exception>
 #include <iostream>
+#include <string>
+
+#include "../common/http.hpp"
 
 int main(int argc, char* argv[])
 {

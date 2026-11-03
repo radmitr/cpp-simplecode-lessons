@@ -1,9 +1,10 @@
 // C++98 — изменение динамического массива с перевыделением памяти; C++11 — nullptr.
 #include <cstddef>
+#include <cstdlib>
+#include <ctime>
+#include <exception>
 #include <iostream>
 #include <stdexcept>
-#include <ctime>
-#include <cstdlib>
 
 #include "../../common/console.hpp"
 

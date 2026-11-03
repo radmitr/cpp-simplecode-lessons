@@ -1,8 +1,9 @@
 // C++98 — параметры-массивы и явная передача размера.
-#include "../../common/console.hpp"
-#include <cstdlib>
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

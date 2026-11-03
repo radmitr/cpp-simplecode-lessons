@@ -1,6 +1,7 @@
 // C++98 — объектоподобные макросы #define.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 #define PI 3.14
 #define tab "\t"

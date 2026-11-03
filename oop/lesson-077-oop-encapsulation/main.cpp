@@ -1,6 +1,7 @@
 // C++98 — инкапсуляция и закрытые методы; C++11 — инициализаторы полей внутри класса.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

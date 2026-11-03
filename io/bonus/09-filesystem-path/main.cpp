@@ -1,6 +1,9 @@
 // C++17 — std::filesystem::path.
-#include "../common/check.hpp"
+#include <exception>
+#include <filesystem>
+#include <iostream>
 
+#include "../common/check.hpp"
 #include "../common/workspace.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

@@ -1,6 +1,7 @@
 // C++98 — стек вызовов рекурсивной функции.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 using namespace std;
 
 int Foo(int a)

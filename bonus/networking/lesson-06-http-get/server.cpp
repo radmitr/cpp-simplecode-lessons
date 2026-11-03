@@ -1,6 +1,9 @@
 // C++11 — std::chrono, auto.
-#include "../common/http.hpp"
+#include <chrono>
+#include <exception>
 #include <iostream>
+
+#include "../common/http.hpp"
 
 int main(int argc, char* argv[])
 {

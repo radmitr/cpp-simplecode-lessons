@@ -1,4 +1,6 @@
 // C++11 — nullptr, auto, лямбда-выражения.
+#include <iostream>
+
 #include "../common/db.hpp"
 
 int main() {

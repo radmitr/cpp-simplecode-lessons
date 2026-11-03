@@ -1,14 +1,15 @@
 // C++11 — std::move.
-#include <utility>
-#include "String.hpp"
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <algorithm>
 #include <cassert>
+#include <exception>
+#include <fstream>
+#include <iostream>
 #include <sstream>
+#include <utility>
+#include <vector>
 
 #include "../../common/console.hpp"
+#include "String.hpp"
 
 void runComprehensiveTests()
 {

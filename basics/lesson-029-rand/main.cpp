@@ -1,8 +1,8 @@
 // C++98 — rand(), srand() и time().
-#include <cstdlib>
 #include <cstddef>
-#include <iostream>
+#include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

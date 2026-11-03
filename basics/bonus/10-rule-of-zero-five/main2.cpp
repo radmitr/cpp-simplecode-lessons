@@ -1,8 +1,11 @@
 // C++98 — копирование, присваивание и деструктор.
 // Само правило — рекомендация проектирования, а не отдельная фича стандарта.
-#include <utility>
 #include <algorithm>
 #include <cstddef>
+#include <exception>
+#include <iostream>
+#include <utility>
+
 #include "../common/check.hpp"
 
 class Buffer

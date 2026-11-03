@@ -1,5 +1,8 @@
 // C++98 — ссылки, временные объекты и время жизни; C++17 — [[maybe_unused]].
+#include <exception>
+#include <iostream>
 #include <string>
+
 #include "../common/check.hpp"
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])

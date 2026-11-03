@@ -1,7 +1,8 @@
 // C++98 — символьные массивы и строки с завершающим нулём.
-#include "../../common/console.hpp"
 #include <cstring>
 #include <iostream>
+
+#include "../../common/console.hpp"
 using namespace std;
 
 int main()

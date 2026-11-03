@@ -1,6 +1,7 @@
 // C++98 — переход к следующей итерации через continue.
-#include "../../common/console.hpp"
 #include <iostream>
+
+#include "../../common/console.hpp"
 
 using namespace std;
 

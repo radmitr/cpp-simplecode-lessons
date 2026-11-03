@@ -1,7 +1,8 @@
 // C++11 — std::array и цикл for по диапазону.
-#include <cstddef>
-#include <iostream>
 #include <array>
+#include <cstddef>
+#include <exception>
+#include <iostream>
 
 #include "../../common/console.hpp"
 

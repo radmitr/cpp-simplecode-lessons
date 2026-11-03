@@ -1,6 +1,9 @@
 // C++98 — исключения, копирование и обмен состояния; C++17 — [[maybe_unused]].
-#include <vector>
+#include <exception>
+#include <iostream>
 #include <stdexcept>
+#include <vector>
+
 #include "../../../basics/bonus/common/check.hpp"
 
 void append_checked(std::vector<int>& data, int value)
