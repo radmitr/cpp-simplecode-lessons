@@ -1,4 +1,4 @@
-"""Local integration checks for lessons 12-19. Build the sources first.
+"""Local integration checks for lessons 12-24. Build the sources first.
 
 python bonus/networking/tests/smoke_extended.py [--multicast]
 The optional multicast check explicitly uses the loopback interface.
@@ -16,6 +16,8 @@ import zlib
 
 sys.dont_write_bytecode = True
 from smoke import BIN, Server, run
+from smoke_chat import main as chat_checks
+from smoke_advanced import main as advanced_checks
 
 
 def pair(lesson, expected, *, server_args=(), client_args=()):
@@ -149,6 +151,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--multicast", action="store_true",
                         help="also check multicast through 127.0.0.1")
+    parser.add_argument("--skip-services", action="store_true",
+                        help="explicitly skip MQTT and successful HTTP/2 + HTTP/3 transfers")
     args = parser.parse_args()
     pair("lesson-12-ipv6", "IPv6 echo: Hello over IPv6")
     pair("lesson-12-ipv6", "IPv6 echo: Hello over IPv6", client_args=("::1",))
@@ -194,6 +198,8 @@ def main():
         with socket.create_connection(("127.0.0.1", server.port), timeout=3):
             server.process.wait(timeout=4)  # Нет HTTP Upgrade: истечёт handshake timeout.
     print("PASS: WebSocket handshake timeout", flush=True)
+    advanced_checks(args.skip_services)
+    chat_checks()
     print("All extended networking checks passed.", flush=True)
 
 

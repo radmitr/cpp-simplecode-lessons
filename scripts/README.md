@@ -28,7 +28,8 @@ bash scripts/build-windows.sh multithreading/lesson-10-unique-lock/main.cpp
 
 Если рядом с исходником есть `link-libraries.txt`, сборка читает имена библиотек
 через `load-link-libraries.sh`. Поддерживаются ws2_32 и mswsock (только Windows,
-Linux пропускает эти строки), curl, pq и stdc++exp (обе системы). Пустые строки и строки,
+Linux пропускает эти строки), `curl`, `ssl`, `crypto`, `pq` и `stdc++exp`
+(обе системы). Пустые строки и строки,
 начинающиеся с #, пропускаются; другое имя вызывает ошибку.
 Файл содержит по одному имени на строку, без дополнительных флагов:
 

@@ -17,6 +17,7 @@ load_link_libraries() {
                 fi
                 ;;
             curl) link_libraries+=(-lcurl) ;;
+            ssl|crypto) link_libraries+=("-l$library") ;;
             pq) link_libraries+=(-lpq) ;;
             stdc++exp) link_libraries+=(-lstdc++exp) ;;
             *) printf 'Unsupported link library: %s\n' "$library" >&2; return 2 ;;

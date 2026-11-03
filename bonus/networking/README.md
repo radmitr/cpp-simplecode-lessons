@@ -25,9 +25,15 @@
 17. [UDP discovery](lesson-17-udp-discovery/) — unicast, broadcast, multicast и фильтрация повторов.
 18. [Boost.Asio](lesson-18-asio/) — асинхронные операции, буферы и таймеры сессий.
 19. [WebSocket](lesson-19-websocket/) — серверные события и двусторонний обмен с `Boost.Beast`.
+20. [WSS](lesson-20-wss/) — WebSocket поверх TLS, сертификат и проверка имени.
+21. [Многопоточный Asio и `strand`](lesson-21-asio-strand/) — пул потоков и согласованная работа сессий.
+22. [MQTT](lesson-22-mqtt/) — публикация и подписка на сообщения через брокер.
+23. [HTTP/2 и HTTP/3](lesson-23-http-versions/) — выбор версии и проверка результата через `libcurl`.
+24. [Итоговый чат](lesson-24-chat/) — несколько клиентов, heartbeat, восстановление соединения и выход.
 
 Уроки используют самостоятельные примеры: echo, передачу сообщений,
-HTTP API и фоновую отправку данных.
+HTTP API и фоновую отправку данных. Чат завершает маршрут; MQTT и HTTP/2–3
+изучаются как отдельные модели и протоколы и не добавляются в чат механически.
 
 ## Что относится к какому уровню
 
@@ -64,14 +70,26 @@ C:/msys64/mingw64/bin должен быть в `PATH` для загрузки DL
 Не смешивайте библиотеки MinGW64 и UCRT64.
 [Пакет libcurl в MSYS2](https://packages.msys2.org/packages/mingw-w64-x86_64-curl).
 
-Уроки [«18. Асинхронный TCP-сервер с `Boost.Asio`»](lesson-18-asio/README.md) — [«19. WebSocket: сообщения от сервера»](lesson-19-websocket/README.md) дополнительно требуют заголовки `Boost.Asio` и `Boost.Beast`:
+Уроки [«Асинхронный TCP-сервер»](lesson-18-asio/README.md),
+[«WebSocket»](lesson-19-websocket/README.md), [«WSS»](lesson-20-wss/README.md),
+[«Asio и strand»](lesson-21-asio-strand/README.md) и [«Итоговый чат»](lesson-24-chat/README.md)
+дополнительно требуют заголовки Boost (`Boost.Asio`, а для WebSocket — `Boost.Beast`):
 
 ~~~bash
 pacman -S --needed mingw-w64-x86_64-boost
 ~~~
 
 [Пакет Boost в MSYS2](https://packages.msys2.org/packages/mingw-w64-x86_64-boost).
-Отдельная standalone Asio не нужна: оба урока используют `Boost.Asio`.
+Отдельная standalone Asio не нужна: эти уроки используют `Boost.Asio`.
+
+[WSS](lesson-20-wss/README.md) дополнительно использует OpenSSL напрямую:
+
+~~~bash
+pacman -S --needed mingw-w64-x86_64-openssl
+~~~
+
+[HTTP/2–3](lesson-23-http-versions/README.md) требует `libcurl >= 7.88`;
+программа с `--features` показывает доступные протоколы загруженной библиотеки.
 
 ## Linux
 
@@ -84,11 +102,20 @@ sudo apt-get install g++ gdb libcurl4-openssl-dev python3 openssl
 
 libcurl требуется для HTTP/HTTPS-клиентов. Python и OpenSSL нужны
 для локальных интеграционных проверок, но не для обычного запуска TCP/UDP.
-Для уроков [«18. Асинхронный TCP-сервер с `Boost.Asio`»](lesson-18-asio/README.md) — [«19. WebSocket: сообщения от сервера»](lesson-19-websocket/README.md) установите также libboost-dev:
+Для [асинхронного сервера](lesson-18-asio/README.md),
+[WebSocket](lesson-19-websocket/README.md), [WSS](lesson-20-wss/README.md),
+[пула Asio](lesson-21-asio-strand/README.md) и [чата](lesson-24-chat/README.md)
+установите также `libboost-dev`:
 
 ~~~bash
 sudo apt-get install libboost-dev
 ~~~
+
+Для [WSS](lesson-20-wss/README.md) нужен также пакет `libssl-dev`.
+[HTTP/2–3](lesson-23-http-versions/README.md) требует `libcurl >= 7.88` с
+соответствующими транспортами; обычная системная сборка может не иметь HTTP/3.
+Полные проверки новых протоколов требуют дополнительного
+[Python-окружения](tests/README.md#зависимости-python) на обеих системах.
 
 ## Сборка и запуск
 
@@ -133,10 +160,17 @@ Windows, PowerShell:
 ~~~
 
 В README каждого урока приведены его команды.
-Серверы конечны: обычно один клиент/запрос; у API пять запросов,
+Серверы уроков от [TCP echo](lesson-02-tcp-echo/README.md) до
+[WebSocket](lesson-19-websocket/README.md) конечны: обычно один клиент/запрос; у API пять запросов,
 у многопользовательского примера и Asio три клиента. Ожидание подключения
 ограничено 15 секундами: при таймауте перезапустите сервер.
 Урок [«13. Переподключение, backoff и отмена»](lesson-13-reconnect/README.md) дополнительно показывает запуск клиента раньше готовности сервера.
+[Итоговый чат](lesson-24-chat/README.md) работает до `/quit` или EOF консоли;
+его клиенты восстанавливают соединение после перезапуска сервера.
+[WSS](lesson-20-wss/README.md) принимает одного клиента и требует сертификат
+и ключ в аргументах; [пул Asio](lesson-21-asio-strand/README.md) — три клиента.
+[MQTT](lesson-22-mqtt/README.md) требует заранее запущенный локальный брокер,
+а [HTTP/2–3](lesson-23-http-versions/README.md) — совместимую службу для выбранного режима.
 
 Для TCP/UDP можно передать порт первым аргументом обеим программам.
 Порт 0 у сервера выбирает свободный порт автоматически и печатает его.
@@ -182,7 +216,8 @@ JSON-парсер понимает только объект с одним це�
 Для произвольного JSON и полноценного HTTP-сервера нужны соответствующие библиотеки.
 
 `link-libraries.txt` рядом с исходниками задаёт нужные библиотеки:
-ws2_32/mswsock на Windows и curl для HTTP/HTTPS. Общие скрипты читают этот файл.
+`ws2_32`/`mswsock` на Windows, `curl` для HTTP/HTTPS, `ssl`/`crypto` для WSS.
+Общие скрипты читают этот файл.
 Для компиляции без линковки IntelliSense эти -l-флаги не нужны.
 
 ## Локальная проверка
@@ -210,22 +245,37 @@ python bonus/networking/tests/smoke.py
 отсутствие доверия и несовпадение имени. Нужен openssl в `PATH`.
 Явный параметр --skip-tls пропускает только эти проверки.
 
-После сборки уроков [«12. IPv6-клиент и сервер»](lesson-12-ipv6/README.md) — [«19. WebSocket: сообщения от сервера»](lesson-19-websocket/README.md) выполните расширенную проверку:
+После сборки уроков от [IPv6](lesson-12-ipv6/README.md) до
+[итогового чата](lesson-24-chat/README.md) выполните расширенную проверку:
 
 ~~~bash
-python3 bonus/networking/tests/smoke_extended.py
+build/networking-checks-venv/bin/python -B bonus/networking/tests/smoke_extended.py
 ~~~
 
-На Windows используйте python вместо python3. Она проверяет IPv6 loopback,
-переподключение и отмену, heartbeat, потерю ACK, файлы, discovery, Asio и WebSocket.
+Сначала подготовьте [окружение проверок](tests/README.md#зависимости-python).
+На Windows используйте `build\networking-checks-venv\Scripts\python.exe`.
+Она проверяет IPv6 loopback,
+переподключение и отмену, heartbeat, потерю ACK, файлы, discovery, Asio, WebSocket,
+WSS, многопоточный Asio, MQTT, HTTP/2–3 и итоговый чат.
+Для чата проверяются также рассылка, перезапуск сервера,
+восстановление после отсутствующего `PONG` и управляемый выход.
 Данные передачи файлов создаются во временном каталоге внутри build/.
 Файловые проверки включают пустой файл, известную CRC32, ошибочную сумму,
 недопустимое имя и предел размера.
 
+Только итоговый чат можно проверить отдельно после сборки его двух программ:
+
+~~~bash
+python3 bonus/networking/tests/smoke_chat.py
+~~~
+
+На Windows используйте `python` вместо `python3`. Проверка сама подаёт консольный
+ввод и останавливает процессы; открывать дополнительные терминалы не требуется.
+
 Дополнительно можно проверить multicast именно через loopback:
 
 ~~~bash
-python3 bonus/networking/tests/smoke_extended.py --multicast
+build/networking-checks-venv/bin/python -B bonus/networking/tests/smoke_extended.py --multicast
 ~~~
 
 LAN broadcast эти тесты не отправляют. Он проверяется вручную

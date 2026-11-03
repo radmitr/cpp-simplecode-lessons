@@ -5,7 +5,9 @@
 уроков, своим README и настройками запуска Windows/Linux.
 
 - [Рефлексия — reflection](reflection/README.md): 30 уроков от RTTI и traits до C++26 и практических применений; Windows/Linux.
-- [Сети — networking](networking/README.md): сокеты, TCP, UDP, HTTP, API и HTTPS.
+- [Сети — networking](networking/README.md): сокеты, TCP, UDP, HTTP, HTTPS, Asio,
+  WebSocket/WSS, многопоточный Asio, MQTT, HTTP/2–3 и итоговый чат
+  с heartbeat и переподключением.
 - [Базы данных — PostgreSQL](databases/postgresql/README.md): 20 уроков от
   подключения и CRUD до транзакций, индексов, блокировок и резервных копий.
 

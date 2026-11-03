@@ -396,6 +396,11 @@
 - [«17. Обнаружение устройств через UDP»](bonus/networking/lesson-17-udp-discovery/)
 - [«18. Асинхронный TCP-сервер с `Boost.Asio`»](bonus/networking/lesson-18-asio/)
 - [«19. WebSocket: сообщения от сервера»](bonus/networking/lesson-19-websocket/)
+- [«20. WSS: WebSocket поверх TLS»](bonus/networking/lesson-20-wss/)
+- [«21. Многопоточный Asio и strand»](bonus/networking/lesson-21-asio-strand/)
+- [«22. MQTT: публикация и подписка»](bonus/networking/lesson-22-mqtt/)
+- [«23. HTTP/2 и HTTP/3 через libcurl»](bonus/networking/lesson-23-http-versions/)
+- [«24. Итоговый чат с переподключением и heartbeat»](bonus/networking/lesson-24-chat/)
 
 ### Базы данных — PostgreSQL
 
