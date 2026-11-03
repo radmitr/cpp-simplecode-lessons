@@ -15,10 +15,10 @@ void transfer(Account& from, Account& to)
     for (int i = 0; i < 1000; ++i)
     {
         // Захват обоих мьютексов с предотвращением deadlock при их захвате.
-        std::scoped_lock guard(from.mtx, to.mtx);
+        std::scoped_lock lock(from.mtx, to.mtx);
         --from.balance;
         ++to.balance;
-    } // guard освобождает оба мьютекса на каждой итерации.
+    } // lock освобождает оба мьютекса на каждой итерации.
 }
 
 int main()

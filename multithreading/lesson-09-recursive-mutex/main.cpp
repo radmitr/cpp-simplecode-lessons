@@ -7,7 +7,7 @@
 #include "../../common/console.hpp"
 
 std::mutex m;
-std::recursive_mutex rm;
+std::recursive_mutex mtx;
 
 void foo(int a)
 {
@@ -43,12 +43,12 @@ int main(void)
     // m.unlock();
     // m.unlock();
 
-    rm.lock();
-    rm.lock();
-    rm.lock();
-    rm.unlock();
-    rm.unlock();
-    rm.unlock();
+    mtx.lock();
+    mtx.lock();
+    mtx.lock();
+    mtx.unlock();
+    mtx.unlock();
+    mtx.unlock();
 
     std::cout << "Successfully end" << std::endl;
 

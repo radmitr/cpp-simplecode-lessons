@@ -12,8 +12,9 @@ int main()
     {
         std::jthread worker([&](std::stop_token stop) {
             started.set_value();
+            // Ожидание события без активного цикла: ../23-stop-aware-wait/README.md.
             while (!stop.stop_requested())
-                std::this_thread::yield(); // Короткая демонстрация; для работы см. бонус 23.
+                std::this_thread::yield();
             noticedStop = true;
         });
         ready.wait(); // Поток действительно начал функцию; длительность сна не угадываем.

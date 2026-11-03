@@ -13,13 +13,13 @@ std::mutex mtx;
 // void print(char ch)
 // {
 //     // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-//     // std::unique_lock<std::mutex> ul(mtx);
+//     // std::unique_lock<std::mutex> lock(mtx);
 
-//     std::unique_lock<std::mutex> ul(mtx, std::defer_lock);
+//     std::unique_lock<std::mutex> lock(mtx, std::defer_lock);
 
 //     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-//     ul.lock();
+//     lock.lock();
 
 //     for (std::size_t i = 0; i < 5; ++i)
 //     {
@@ -32,18 +32,18 @@ std::mutex mtx;
 //     }
 //     std::cout << std::endl;
 
-//     ul.unlock();
+//     lock.unlock();
 
 //     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 // }
 
 void print(char ch)
 {
-    std::unique_lock<std::mutex> ul(mtx, std::defer_lock);
+    std::unique_lock<std::mutex> lock(mtx, std::defer_lock);
 
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-    ul.lock();
+    lock.lock();
 
     for (std::size_t i = 0; i < 5; ++i)
     {

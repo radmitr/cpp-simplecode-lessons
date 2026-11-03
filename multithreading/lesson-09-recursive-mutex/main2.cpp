@@ -6,23 +6,23 @@
 
 #include "../../common/console.hpp"
 
-std::recursive_mutex rm;
+std::recursive_mutex mtx;
 
 void foo(int a)
 {
-    rm.lock();
+    mtx.lock();
     std::cout << a << " ";
     std::this_thread::sleep_for(std::chrono::milliseconds(300));
 
     if (a <= 1)
     {
         std::cout << std::endl;
-        rm.unlock();
+        mtx.unlock();
         return;
     }
     a--;
     foo(a);
-    rm.unlock();
+    mtx.unlock();
 }
 
 int main(void)

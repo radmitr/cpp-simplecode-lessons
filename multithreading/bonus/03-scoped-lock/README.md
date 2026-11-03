@@ -10,13 +10,14 @@
 
 ## Что изучаем
 
-Откройте `main.cpp` и запустите его через F5 или Ctrl+F5.
+Захват двух мьютексов через `std::scoped_lock` и автоматическое освобождение
+при выходе из блока. Пример переводов между счетами показывает, почему
+при разном порядке аргументов потоки не блокируют друг друга навсегда.
 
 ## Примеры
 
-- [main.cpp](main.cpp).
-- [main2.cpp](main2.cpp).
-- [main3.cpp](main3.cpp).
+- [main.cpp](main.cpp) — переводы между двумя счетами с `std::scoped_lock`.
+- [main2.cpp](main2.cpp) — попытка захвата второго мьютекса и повтор при неудаче.
 
 Выбирайте один исходник с `main()`; варианты запускаются отдельно.
 
@@ -30,7 +31,7 @@
 оба мьютекса до изменения балансов:
 
 ~~~cpp
-std::scoped_lock guard(from.mtx, to.mtx);
+std::scoped_lock lock(from.mtx, to.mtx);
 --from.balance;
 ++to.balance;
 ~~~
@@ -38,7 +39,7 @@ std::scoped_lock guard(from.mtx, to.mtx);
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).
 
 Если один из мьютексов занят, поток ждёт. Когда оба захвачены, он уменьшает
-первый баланс и увеличивает второй. В конце итерации `guard` уничтожается
+первый баланс и увеличивает второй. В конце итерации `lock` уничтожается
 и освобождает оба мьютекса.
 
 Первый поток передаёт в `scoped_lock` мьютексы в порядке «первый, второй»,
@@ -91,41 +92,35 @@ std::scoped_lock guard(from.mtx, to.mtx);
 использует `std::lock`, а точный алгоритм стандартная библиотека выбирает
 сама. В обычном коде используйте готовый `scoped_lock`, как в `main.cpp`.
 
-### `main3.cpp`: печать с разным порядком аргументов
+## Сборка и запуск
 
-Полная программа: [main3.cpp](main3.cpp). Это дополнение к
-[«08. Взаимная блокировка — deadlock»](../../lesson-08-deadlock/README.md).
+[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
 
-Один поток передаёт `mtx1, mtx2`, другой — `mtx2, mtx1`.
-Каждый `std::scoped_lock` захватывает всю пару, избегая взаимной блокировки
-при её захвате. Строка печатается, пока оба мьютекса принадлежат текущему потоку.
+Настройки используют активный исходник. Каждый вариант запускается отдельно.
+Ввод, файлы и внешние службы не нужны. Оба варианта возвращают `0`
+при ожидаемых балансах и `1`, если итоговые значения не совпали.
 
-Ожидаются по две строки `***` и `###`, затем `Both threads completed`.
-Порядок четырёх строк различается. Ввод не нужен; обычное завершение даёт код `0`.
-
-Откройте `main3.cpp`: **F5** — с отладчиком, **Ctrl+F5** — без отладчика.
 Из корня проекта на Linux:
 
 ~~~bash
-bash scripts/build-linux.sh multithreading/bonus/03-scoped-lock/main3.cpp
-./build/multithreading/bonus/03-scoped-lock/main3
+bash scripts/build-linux.sh multithreading/bonus/03-scoped-lock/main.cpp
+./build/multithreading/bonus/03-scoped-lock/main
 ~~~
 
 Windows, PowerShell:
 
 ~~~powershell
-& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/03-scoped-lock/main3.cpp
-& .\build\multithreading\bonus\03-scoped-lock\main3.exe
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh multithreading/bonus/03-scoped-lock/main.cpp
+& .\build\multithreading\bonus\03-scoped-lock\main.exe
 ~~~
 
-[Все бонусы](../README.md).
-
-## Сборка и запуск
-
-[Запуск в VS Code](../../../README.md#сборка-и-запуск-в-vs-code).
+Для второго варианта замените `main` на `main2` в команде сборки и запуска.
 
 [Требования Windows/Linux](../../../README.md#требования) · [Команды терминала](../../../README.md#сборка-из-терминала).
 
 ## Связанные темы и источники
+
+- [Взаимная блокировка — deadlock](../../lesson-08-deadlock/README.md).
+- [Все бонусы](../README.md).
 
 [Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).
