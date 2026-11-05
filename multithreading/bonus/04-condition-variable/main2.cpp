@@ -13,7 +13,9 @@ int main()
 
     {
         std::unique_lock<std::mutex> lock(mtx);
-        // Производителя пока нет: условие останется false и наступит таймаут.
+        // Производителя ещё нет, поэтому ready останется false.
+        // Главный поток ждёт до истечения таймаута 100 мс;
+        // wait_for вернёт false.
         const bool received = cv.wait_for(
             lock, std::chrono::milliseconds(100), [&]() { return ready; });
         // После возврата wait_for мьютекс mtx снова захвачен.
