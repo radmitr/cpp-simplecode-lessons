@@ -6,8 +6,15 @@ case $(uname -s) in Linux*) ;; *) printf 'Run this check on Linux/WSL with ASan 
 compiler=${CXX:-/usr/bin/g++}
 output_dir="$repo_dir/build/basics/bonus/29-diagnostics/sanitizers"
 mkdir -p -- "$output_dir"
+runtime_options=()
+runtime_library=$("$compiler" -print-file-name=libasan.so)
+if [[ $runtime_library == /* && -f $runtime_library ]]; then
+    # Pin the runtime to the installed release even when the compiler uses a symlink.
+    runtime_library=$(readlink -f -- "$runtime_library")
+    runtime_options=("-Wl,-rpath,$(dirname -- "$runtime_library")")
+fi
 "$compiler" -std=c++17 -x c++ -O1 -g -fno-omit-frame-pointer -fsanitize=address,undefined \
-    "$source_dir/invalid-access.txt" -o "$output_dir/invalid-access"
+    "$source_dir/invalid-access.txt" -o "$output_dir/invalid-access" "${runtime_options[@]}"
 set +e
 "$output_dir/invalid-access" >"$output_dir/output.txt" 2>"$output_dir/diagnostic.txt"
 status=$?

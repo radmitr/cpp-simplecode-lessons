@@ -24,8 +24,15 @@ lesson_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 repo_dir=$(cd -- "$lesson_dir/../../.." && pwd)
 output="$repo_dir/build/multithreading/bonus/26-thread-sanitizer/${source_name%.cpp}-tsan"
 mkdir -p -- "$(dirname -- "$output")"
+runtime_options=()
+runtime_library=$("$compiler" -print-file-name=libtsan.so)
+if [[ $runtime_library == /* && -f $runtime_library ]]; then
+    # Pin the runtime to the installed release even when the compiler uses a symlink.
+    runtime_library=$(readlink -f -- "$runtime_library")
+    runtime_options=("-Wl,-rpath,$(dirname -- "$runtime_library")")
+fi
 "$compiler" -std=c++17 -O1 -g -fsanitize=thread -fno-omit-frame-pointer \
-    -Wall -Wextra -Wpedantic -pthread "$lesson_dir/$source_name" -o "$output"
+    -Wall -Wextra -Wpedantic -pthread "$lesson_dir/$source_name" -o "$output" "${runtime_options[@]}"
 
 # При найденной гонке прекращаем выполнение с кодом 66.
 TSAN_OPTIONS="${TSAN_OPTIONS:+$TSAN_OPTIONS:}halt_on_error=1:exitcode=66" "$output"

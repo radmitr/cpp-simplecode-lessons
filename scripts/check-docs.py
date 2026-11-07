@@ -11,6 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", ".local", ".agents", ".codex", ".aws", "build", ".vscode", "__pycache__"}
 ORDER = ["Версия C++", "Что изучаем", "Примеры", "Как это работает",
          "Сборка и запуск", "Типичные ошибки", "Связанные темы и источники"]
+LESSON_DIRECTORY = re.compile(r"(?:lesson-)?(\d+)-", re.I)
+LINK_OR_CODE = re.compile(
+    r"`+[^`\n]*`+|!?\[((?:`+[^`\n]*`+|[^\]`\n])+)\]\(([^\n]+?)\)")
 
 
 def files():
@@ -49,40 +52,92 @@ def anchors(text):
     return found
 
 
+def links(text):
+    # Match links before their inner code spans, but skip links quoted as code.
+    for match in LINK_OR_CODE.finditer(text):
+        if match[1] is not None:
+            yield match[1], match[2].strip().strip("<>")
+
+
+def numbered_title(text):
+    quoted = re.search(r"«([^»]+)»", text)
+    title = (quoted[1] if quoted else text).replace("`", "")
+    match = re.match(r"(?:(?:урок|бонус)\s+)?(\d+)\.\s*(.+)", title, re.I)
+    if not match:
+        return None
+    qualifier = text[:quoted.start()].strip(" :—-").casefold() if quoted else ""
+    qualified = qualifier not in ("", "урок", "уроки", "бонус", "бонусы")
+    normalized = re.sub(r"\s+", " ", match[2]).strip().casefold()
+    return int(match[1]), normalized, qualified
+
+
+def lesson_catalog(markdown):
+    lessons = {}
+    topics = {}
+    for path in markdown:
+        match = LESSON_DIRECTORY.match(path.parent.name)
+        if path.name != "README.md" or not match:
+            continue
+        scope = path.parent.parent
+        # Course lessons and their bonuses share a topic; each topic has its own numbers.
+        topic = scope.parent if scope.name == "bonus" else scope
+        number = int(match[1])
+        text = path.read_text(encoding="utf-8-sig")
+        heading = re.search(r"^#\s+(.+)$", prose(text), re.M)
+        title = numbered_title(heading[1]) if heading else None
+        lessons[path.parent] = topic, number, title
+        topics.setdefault(topic, set()).add(number)
+    return lessons, topics
+
+
+def lesson_link_errors(path, label, destination, catalog, topics):
+    numbered = numbered_title(label)
+    if not numbered:
+        return []
+    lesson = next((catalog[parent] for parent in (destination, *destination.parents)
+                   if parent in catalog), None)
+    if lesson is None:
+        return []
+    topic, number, title = lesson
+    errors = []
+    if numbered[0] != number:
+        errors.append(f"lesson number {numbered[0]} does not match target {number}: {label}")
+    if title and numbered[1] != title[1]:
+        errors.append(f"numbered lesson title does not match target heading: {label}")
+    source_topic = next((parent for parent in path.parents if parent in topics), None)
+    if (source_topic is not None and source_topic != topic
+            and numbered[0] in topics[source_topic] and not numbered[2]):
+        errors.append(f"lesson {numbered[0]} also exists in {source_topic.relative_to(ROOT)}; "
+                      f"qualify the cross-topic link: {label}")
+    return errors
+
+
 def main():
     paths = list(files())
     markdown = [p for p in paths if p.suffix == ".md"]
+    catalog, topics = lesson_catalog(markdown)
     errors = []
+    for folder, (_, number, title) in catalog.items():
+        if title and title[0] != number:
+            errors.append(f"{(folder / 'README.md').relative_to(ROOT)}: "
+                          f"lesson heading number {title[0]} does not match directory {number}")
     lessons = 0
     for path in markdown:
         text = path.read_text(encoding="utf-8-sig")
         visible = prose(text)
-        link_text = re.sub(r"[\x60]+[^\x60\n]*[\x60]+", "code", visible)
-        for match in re.finditer(r"!?\[([^\]\n]+)\]\(([^\n]+?)\)", link_text):
-            label = match[1]
-            target = match[2].strip().strip("<>")
+        for label, target in links(visible):
             parsed = urlsplit(target)
             if "vscode-resource" in target or "vscode-cdn.net" in target:
                 errors.append(f"{path.relative_to(ROOT)}: nonportable webview URL {target}")
             if "команды" in label.lower() and unquote(parsed.fragment) == "требования":
                 errors.append(f"{path.relative_to(ROOT)}: commands link points at requirements")
-            if re.fullmatch(r"(?:урок|бонус)[а-я]*\s+\d+", label, re.I):
+            if re.fullmatch(r"(?:урок|бонус)[а-я]*\s+\d+", label.replace("`", ""), re.I):
                 errors.append(f"{path.relative_to(ROOT)}: use a descriptive lesson title")
             if parsed.scheme or target.startswith("//"):
                 continue
             destination = (path.parent / unquote(parsed.path)).resolve()
-            context = path.relative_to(ROOT).as_posix()
-            topic = next((prefix for prefix in (
-                "bonus/networking", "bonus/databases/postgresql", "bonus/reflection"
-            ) if context.startswith(prefix + "/")), None)
-            numbered = re.match(r"«(?:Урок\s+)?(\d+)[.]", label)
-            if topic and numbered and destination.is_relative_to(ROOT / "basics"):
-                number = int(numbered[1])
-                own_lesson = list((ROOT / topic).glob(f"lesson-{number:02d}-*/README.md"))
-                own_lesson += list((ROOT / topic).glob(f"{number:02d}-*/README.md"))
-                if own_lesson:
-                    errors.append(f"{path.relative_to(ROOT)}: numbered lesson links outside its topic; "
-                                  "qualify a deliberate reference to basics in its label")
+            for error in lesson_link_errors(path, label, destination, catalog, topics):
+                errors.append(f"{path.relative_to(ROOT)}: {error}")
             if not destination.exists():
                 errors.append(f"{path.relative_to(ROOT)}: missing {target}")
             elif parsed.fragment and destination.is_file() and destination.suffix == ".md":
@@ -111,8 +166,8 @@ def main():
             target = source.relative_to(path.parent).as_posix()
             if target not in text:
                 errors.append(f"{path.relative_to(ROOT)}: undocumented source {target}")
-            local_targets = [unquote(link.split("#", 1)[0]) for link in re.findall(
-                r"\]\(([^\n]+?)\)", visible) if not urlsplit(link).scheme]
+            local_targets = [unquote(urlsplit(target).path) for _, target in links(visible)
+                             if not urlsplit(target).scheme]
             if not any((path.parent / item).resolve() == source.resolve() for item in local_targets):
                 errors.append(f"{path.relative_to(ROOT)}: missing full-source link {target}")
         for name in ("tasks.json", "launch.json"):

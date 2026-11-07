@@ -15,7 +15,8 @@ WINDOWS = os.name == "nt"
 def validate(result, case):
     if result.returncode != case.get("exit", 0):
         raise RuntimeError(f"exit={result.returncode}, stderr={result.stderr!r}")
-    raw = result.stdout.replace(b"\r\n", b"\n")
+    # Only Windows text streams insert CRLF; on Linux, CR can be table data.
+    raw = result.stdout.replace(b"\r\n", b"\n") if WINDOWS else result.stdout
     if case.get("byte_table"):
         expected = b"\n CHAR = 1 byte\n\n" + b"".join(
             f"code = {i}\tchar = ".encode() + bytes([i]) + b"\n" for i in range(256))

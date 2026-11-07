@@ -114,6 +114,8 @@ sudo apt-get install libboost-dev
 Для [WSS](lesson-20-wss/README.md) нужен также пакет `libssl-dev`.
 [HTTP/2–3](lesson-23-http-versions/README.md) требует `libcurl >= 7.88` с
 соответствующими транспортами; обычная системная сборка может не иметь HTTP/3.
+[Отдельная установка curl с HTTP/2 и HTTP/3](linux-curl.md) описывает сборку
+в `/home`, размещение выпусков в `/opt/curl`, переключение ссылок и `CURL_PREFIX`.
 Полные проверки новых протоколов требуют дополнительного
 [Python-окружения](tests/README.md#зависимости-python) на обеих системах.
 

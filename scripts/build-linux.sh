@@ -22,6 +22,8 @@ runtime_options=()
 # A private GCC installation needs its matching shared library at runtime.
 library_file=$("$compiler" -print-file-name=libstdc++.so.6)
 if [[ $library_file == /* && -f $library_file ]]; then
+    # Pin the runtime to the installed release even when the compiler uses a symlink.
+    library_file=$(readlink -f -- "$library_file")
     runtime_options=("-Wl,-rpath,$(dirname -- "$library_file")")
 fi
 output="$repo_dir/build/${relative_source%.cpp}"
@@ -45,4 +47,4 @@ else
 fi
 
 exec "$compiler" "-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g \
-    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}" "${runtime_options[@]}"
+    -Wall -Wextra -Wpedantic -pthread "${library_options[@]}" "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}" "${runtime_options[@]}"

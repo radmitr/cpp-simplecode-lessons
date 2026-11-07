@@ -1,34 +1,50 @@
 # Зависимости бонусов по вводу-выводу
 
-Уроки [«001. Первая программа»](../../basics/lesson-001-hello-world/README.md) — [«020. Исходник и исполняемый файл»](../../basics/lesson-020-executable/README.md), кроме JSON-урока [«015. Цикл do-while»](../../basics/lesson-015-do-while/README.md), используют только стандартную библиотеку.
-Большинство — C++17, UTF-8/char8_t в 13 — C++20. Примеры рассчитаны на GCC 11+
-с отдельной проверкой конкретной среды. Linux ещё предстоит проверить пользователю.
+Большинство уроков используют стандартную библиотеку C++17 и требуют GCC 11+.
+В [работе с UTF-8 и `char8_t`](13-utf8/README.md) используется C++20.
+Дополнительные требования есть у [JSON](15-json/README.md) и
+[форматирования и печати](21-format-and-print/README.md).
 
 ## JSON
 
-Уроку [«015. Цикл do-while»](../../basics/lesson-015-do-while/README.md) нужен nlohmann/json. Ubuntu: sudo apt install nlohmann-json3-dev.
-MSYS2 MinGW64: pacman -S mingw-w64-x86_64-nlohmann-json.
-Для проверки без системной установки можно использовать официальный одиночный
-заголовок в build/dependencies/include. Версия, URL, SHA-256 и правила выбора
-описаны в [инструкции](../../bonus/reflection/dependencies.md).
+Уроку [JSON: библиотека, типы и обязательные поля](15-json/README.md)
+нужен `nlohmann/json`.
+
+Ubuntu:
+
+```bash
+sudo apt install nlohmann-json3-dev
+```
+
+MSYS2 MinGW64:
+
+```bash
+pacman -S mingw-w64-x86_64-nlohmann-json
+```
+
+Без системной установки можно использовать официальный одиночный заголовок
+в `build/dependencies/include`. Версия, URL, SHA-256 и правила выбора описаны
+в [инструкции JSON](../../bonus/reflection/dependencies.md#nlohmannjson).
 
 ## Современные format/print
 
-Объединённый урок [«021. Почему закрывается консоль»](../../basics/lesson-021-console-pause/README.md) собирается как C++23 с GCC 14+, потому что std::print
-в libstdc++ появился позже std::format. На Windows установленный MinGW GCC 16
-подходит. На Linux общий скрипт использует CXX_MODERN, по умолчанию
-/opt/gcc-16/bin/g++. Обычные уроки продолжают использовать системный g++.
+Урок [`std::format` и `std::print`](21-format-and-print/README.md)
+собирается как C++23 и требует GCC/libstdc++ 14+.
+На Linux общий скрипт использует `CXX_MODERN`, по умолчанию
+`/opt/gcc/16/bin/g++`. Обычные уроки продолжают использовать системный `g++`.
 
-Инструкция последующей установки: [GCC в /home и /opt](../../bonus/reflection/linux-setup.md).
-Из каталога io/bonus эти ссылки ведут через корень репозитория; раздел reflection
-содержит общий справочник установки, а не является зависимостью самого IO-кода.
+[Сборка отдельного GCC на Ubuntu](../../bonus/reflection/linux-setup.md).
 
 ## Временные файлы
 
-Новые файловые примеры создают уникальную папку через LessonWorkspace и удаляют
-только принадлежащую этому объекту папку. Для проверок CPP_LESSON_WORK_DIR задаёт
-каталог внутри build/. Не подставляйте в упражнениях реальные документы вместо
-контрольных файлов. Симлинки в уроке [«010. Составное присваивание»](../../basics/lesson-010-compound-assignment/README.md) могут быть недоступны на Windows без
-соответствующих прав: пример явно сообщает это, остальные операции проверяются.
+Файловые примеры с [`LessonWorkspace`](common/workspace.hpp) создают уникальную
+временную папку и удаляют только её. `CPP_LESSON_WORK_DIR` задаёт родительский
+каталог; проверочный скрипт выбирает каталог внутри `build/`.
+[Явный бинарный формат](02-portable-binary/README.md) создаёт `point-v1.bin`
+в рабочей папке программы.
+
+Симлинки в [операциях с файлами и каталогами](10-filesystem-operations/README.md)
+могут быть недоступны на Windows без соответствующих прав: пример выводит
+`symlink unavailable`, остальные операции продолжаются.
 
 [К урокам](README.md)

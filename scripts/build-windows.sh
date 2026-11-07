@@ -39,4 +39,4 @@ else
 fi
 
 exec "$compiler" "-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g \
-    -Wall -Wextra -Wpedantic -pthread "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"
+    -Wall -Wextra -Wpedantic -pthread "${library_options[@]}" "${includes[@]}" "${sources[@]}" -o "$output" "${link_libraries[@]}"

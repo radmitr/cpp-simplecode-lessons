@@ -64,6 +64,9 @@ CXX=g++ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 Скрипт использует `-O1` `-g` `-fsanitize=thread` -fno-omit-frame-pointer `-pthread`.
 `-g` помогает показать имена файлов и строки, `-fsanitize=thread` включает
 инструментирование и подключает библиотеку диагностики.
+При динамическом подключении `libtsan` скрипт находит её через выбранный
+компилятор, разрешает символические ссылки и добавляет `rpath` к каталогу
+конкретного выпуска, в том числе для отдельной установки GCC.
 Результаты находятся в `build/multithreading/bonus/26-thread-sanitizer/`
 под именами `main-tsan` и `main2-tsan`. Обычные бинарники не перезаписываются.
 

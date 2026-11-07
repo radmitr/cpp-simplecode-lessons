@@ -28,6 +28,25 @@ def pair(lesson, expected, *, server_args=(), client_args=()):
     return server
 
 
+def ipv6_checks():
+    lesson = "lesson-12-ipv6"
+    expected = "IPv6 echo: Hello over IPv6"
+    # IPv6 loopback must work even when localhost has only an IPv4 hosts entry.
+    pair(lesson, expected, client_args=("::1",))
+    families = {item[0] for item in socket.getaddrinfo(
+        "localhost", 0, socket.AF_UNSPEC, socket.SOCK_STREAM)}
+    if socket.AF_INET6 in families:
+        listener = lesson
+    elif socket.AF_INET in families:
+        listener = "lesson-02-tcp-echo"
+    else:
+        raise RuntimeError("localhost has no IPv4 or IPv6 address")
+    with Server(listener) as server:
+        result = run(lesson, "client", server.port, "localhost")
+        assert expected in result.stdout, result.stdout
+    print("PASS: IPv6 loopback and hostname resolution with available address families", flush=True)
+
+
 def unused_port():
     with socket.socket() as reservation:
         reservation.bind(("127.0.0.1", 0))
@@ -154,8 +173,7 @@ def main():
     parser.add_argument("--skip-services", action="store_true",
                         help="explicitly skip MQTT and successful HTTP/2 + HTTP/3 transfers")
     args = parser.parse_args()
-    pair("lesson-12-ipv6", "IPv6 echo: Hello over IPv6")
-    pair("lesson-12-ipv6", "IPv6 echo: Hello over IPv6", client_args=("::1",))
+    ipv6_checks()
 
     port = unused_port()
     with Server("lesson-13-reconnect", port=port, wait_ready=False):

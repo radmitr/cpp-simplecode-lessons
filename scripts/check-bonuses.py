@@ -26,7 +26,7 @@ def text(value):
 
 def compiler(modern):
     default = "C:/msys64/mingw64/bin/g++.exe" if WINDOWS else (
-        "/opt/gcc-16/bin/g++" if modern else "/usr/bin/g++")
+        "/opt/gcc/16/bin/g++" if modern else "/usr/bin/g++")
     return os.environ.get("CXX_MODERN", os.environ.get("CXX", default)) if modern else os.environ.get("CXX", default)
 
 

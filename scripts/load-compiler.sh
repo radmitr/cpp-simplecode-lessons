@@ -46,7 +46,7 @@ select_lesson_compiler() {
         modern_compiler=$default_compiler
     else
         default_compiler=/usr/bin/g++
-        modern_compiler=/opt/gcc-16/bin/g++
+        modern_compiler=/opt/gcc/16/bin/g++
     fi
     if (( minimum_gcc >= 13 )); then
         printf '%s' "${CXX_MODERN:-${CXX:-$modern_compiler}}"

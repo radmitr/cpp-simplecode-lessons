@@ -28,7 +28,7 @@
 - [examples/](examples/README.md) — дополнительные примеры строк и владения памятью.
 - [Шаблон урока](_template/README.md) — заготовка в `_template/`.
 - [common/](common/README.md) — общая настройка кодировки консоли.
-- [docs/](docs/README.md) — версии C++, источники и результаты проверок.
+- [docs/](docs/README.md) — версии C++, источники и устройство проекта.
 - `scripts/` — общие скрипты сборки для Windows и Linux.
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
@@ -85,10 +85,9 @@ C++23. [Краткий указатель версий](docs/cpp-versions.md) о
 задаёт минимальную версию GCC. Бонусы основ и IO в основном рассчитаны на GCC 11
 и C++17/20. Современный IO-урок format/print требует GCC 14+, рефлексия C++26 —
 GCC 16+ и `-freflection`. Для них на Linux используется `CXX_MODERN`, по умолчанию
-/opt/gcc-16/bin/g++; остальные уроки используют /usr/bin/g++ (или `CXX`).
-Подготовка отдельного GCC в /home с установкой в /opt описана в
-[инструкции Linux](bonus/reflection/linux-setup.md). Linux-проверка новых бонусов
-ещё предстоит пользователю; настройки Windows/Linux подготовлены. CMake не настроен.
+`/opt/gcc/16/bin/g++`; остальные уроки используют `/usr/bin/g++` (или `CXX`).
+Подготовка отдельного GCC в `/home` с установкой в `/opt/gcc/<версия>` описана в
+[инструкции Linux](bonus/reflection/linux-setup.md). CMake не настроен.
 
 В [бонусе про ThreadSanitizer](multithreading/bonus/26-thread-sanitizer/)
 диагностика гонки данных запускается отдельным скриптом на Linux/WSL

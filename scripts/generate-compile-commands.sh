@@ -12,11 +12,13 @@ if [[ $platform == windows ]]; then
     native_repo=$(/usr/bin/cygpath -m -- "$repo_dir")
 fi
 source "$repo_dir/scripts/load-compiler.sh"
+source "$repo_dir/scripts/load-link-libraries.sh"
 
 load_compiler_options() {
     load_language_settings
+    load_link_libraries "$source_dir" "$platform"
     compiler=$(select_lesson_compiler "$platform")
-    compiler_options=("-std=$standard" "${language_options[@]}" -fdiagnostics-color=always -O0 -g
+    compiler_options=("-std=$standard" "${language_options[@]}" "${library_options[@]}" -fdiagnostics-color=always -O0 -g
         -Wall -Wextra -Wpedantic -pthread)
     includes=()
     if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
