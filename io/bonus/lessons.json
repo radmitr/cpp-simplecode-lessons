@@ -164,7 +164,41 @@
     "folder": "io/bonus/21-format-and-print",
     "title": "std::format и std::print",
     "standard": "c++23",
-    "minimum_gcc": 14,
+    "minimum_gcc": 16,
     "dependency": null
+  },
+  {
+    "number": 22,
+    "folder": "io/bonus/22-spanstream",
+    "title": "Потоки над готовым буфером",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 23,
+    "folder": "io/bonus/23-embed",
+    "title": "Включение файла через embed",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 24,
+    "folder": "io/bonus/24-stacktrace",
+    "title": "Получение стека вызовов",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true
+  },
+  {
+    "number": 25,
+    "folder": "io/bonus/25-debugging",
+    "title": "Взаимодействие с отладчиком",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true
   }
 ]

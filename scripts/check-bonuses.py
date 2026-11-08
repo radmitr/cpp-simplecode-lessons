@@ -11,7 +11,9 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SECTIONS = ("basics/bonus", "templates/bonus", "exceptions/bonus", "io/bonus", "bonus/reflection")
+SECTIONS = ("basics/bonus", "templates/bonus", "exceptions/bonus", "io/bonus",
+            "stl/bonus", "oop/bonus", "bonus/reflection", "bonus/coroutines",
+            "bonus/contracts", "bonus/execution")
 WINDOWS = os.name == "nt"
 
 
@@ -35,6 +37,8 @@ def main():
     parser.add_argument("--section", choices=(*SECTIONS, "all"), default="all")
     parser.add_argument("--portable-only", action="store_true", help="Skip lessons requiring GCC newer than 11")
     parser.add_argument("--jobs", type=int, choices=range(1, 5), default=2)
+    parser.add_argument("--require-features", action="store_true",
+                        help="Fail instead of skipping unavailable optional standard library features")
     arguments = parser.parse_args()
     sections = SECTIONS if arguments.section == "all" else (arguments.section,)
     bash = "C:/msys64/usr/bin/bash.exe" if WINDOWS else shutil.which("bash")
@@ -86,11 +90,17 @@ def main():
             if item["folder"].endswith("01-stream-state") and source.name == "main2.cpp":
                 data = b"bad\n-1\n3\nthree items\n"
             result = execute([str(binary)], cwd=directory, data=data, timeout=20, environment=environment)
+            if (result.returncode == 77 and item.get("optional_feature")
+                    and text(result.stdout).startswith("UNAVAILABLE:") and not arguments.require_features):
+                return {"source": name, "ok": True, "skipped": True,
+                        "reason": text(result.stdout).strip(), "warnings": build_warnings}
             if result.returncode:
                 raise RuntimeError(f"exit {result.returncode}:\n{text(result.stderr)}\n{text(result.stdout)}")
             output = text(result.stdout)
-            if item["number"] > 2 or item["folder"].startswith("bonus/reflection/"):
-                if "OK " not in output:
+            marker = item.get("success_marker", "OK " if item["number"] > 2
+                              or item["folder"].startswith("bonus/reflection/") else None)
+            if marker:
+                if marker not in output:
                     raise RuntimeError("success marker missing:\n" + output)
             if item["folder"].endswith("01-constexpr-consteval") and source.name == "main2.cpp":
                 if "runtime square: 49" not in output:
@@ -134,7 +144,8 @@ def main():
     with ThreadPoolExecutor(max_workers=arguments.jobs) as pool:
         for result in pool.map(check_one, records):
             results.append(result)
-            print(("PASS " if result["ok"] else "FAIL ") + result["source"], flush=True)
+            print(("SKIP " if result.get("skipped") else "PASS " if result["ok"] else "FAIL ")
+                  + result["source"], flush=True)
             if not result["ok"]:
                 print(result["error"], flush=True)
 
@@ -147,11 +158,12 @@ def main():
             ok = result.returncode != 0 and any(word in text(result.stderr).lower() for word in case["diagnostic_words"])
             results.append({"source": "negative/" + case["name"], "ok": ok, "error": "" if ok else text(result.stderr)})
             print(("PASS " if ok else "FAIL ") + "negative/" + case["name"], flush=True)
-    report = {"platform": sys.platform, "passed": sum(r["ok"] for r in results),
+    skipped.extend(r["source"] for r in results if r.get("skipped"))
+    report = {"platform": sys.platform, "passed": sum(r["ok"] and not r.get("skipped") for r in results),
               "failed": sum(not r["ok"] for r in results), "skipped": skipped, "results": results}
     report_path = work / "report.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Passed: {report['passed']}; failed: {report['failed']}; skipped lessons: {len(skipped)}")
+    print(f"Passed: {report['passed']}; failed: {report['failed']}; skipped entries: {len(skipped)}")
     print(f"Report: {report_path}")
     return 1 if report["failed"] else 0
 

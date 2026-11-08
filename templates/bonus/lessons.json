@@ -46,5 +46,21 @@
     "standard": "c++20",
     "minimum_gcc": 0,
     "dependency": null
+  },
+  {
+    "number": 22,
+    "folder": "templates/bonus/22-pack-indexing",
+    "title": "Индексирование пакета параметров",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 23,
+    "folder": "templates/bonus/23-forward-like",
+    "title": "Перенос квалификаторов через forward_like",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
   }
 ]

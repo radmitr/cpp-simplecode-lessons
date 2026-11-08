@@ -1,0 +1,36 @@
+[
+  {
+    "number": 1,
+    "folder": "oop/bonus/01-decrement-operators",
+    "title": "Префиксный и постфиксный operator--",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 2,
+    "folder": "oop/bonus/02-composition-aggregation",
+    "title": "Композиция и невладеющая связь",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 3,
+    "folder": "oop/bonus/03-explicit-object",
+    "title": "Явный параметр объекта",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 4,
+    "folder": "oop/bonus/04-call-and-subscript",
+    "title": "Многомерный индекс и статические операторы",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  }
+]

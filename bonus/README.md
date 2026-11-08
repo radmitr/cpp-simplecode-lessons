@@ -10,6 +10,10 @@
   с heartbeat и переподключением.
 - [Базы данных — PostgreSQL](databases/postgresql/README.md): 20 уроков от
   подключения и CRUD до транзакций, индексов, блокировок и резервных копий.
+- [Корутины и генераторы](coroutines/README.md): владение кадром, приостановка,
+  исключения и `std::generator`.
+- [Контракты](contracts/README.md): предусловия, постусловия и обработка нарушений.
+- [Execution](execution/README.md): senders/receivers, исходы операции и планировщик.
 
 Дополнения к существующему разделу многопоточности остаются в
 [multithreading/bonus](../multithreading/bonus/README.md).

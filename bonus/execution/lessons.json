@@ -1,0 +1,20 @@
+[
+  {
+    "number": 1,
+    "folder": "bonus/execution/01-senders",
+    "title": "Описание работы через senders и receivers",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true
+  },
+  {
+    "number": 2,
+    "folder": "bonus/execution/02-schedulers",
+    "title": "Планировщик и время жизни операции",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true
+  }
+]

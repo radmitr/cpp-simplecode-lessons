@@ -426,3 +426,39 @@
 - [lesson-18-row-locks — Блокировки строк и таймаут](bonus/databases/postgresql/lesson-18-row-locks/)
 - [lesson-19-copy — Массовая загрузка и выгрузка COPY](bonus/databases/postgresql/lesson-19-copy/)
 - [lesson-20-backup-restore — Резервная копия и проверка восстановления](bonus/databases/postgresql/lesson-20-backup-restore/)
+
+## Современные дополнения C++20–26
+
+[Порядок изучения, требования и покрытие тем](docs/modern-cpp.md).
+
+- [if consteval и явное копирование auto](basics/bonus/35-consteval-and-auto-copy/README.md) — `c++23`.
+- [Перечисления и порядок байтов](basics/bonus/36-enums-and-bytes/README.md) — `c++23`.
+- [Предположения оптимизатору и недостижимый код](basics/bonus/37-assume-and-unreachable/README.md) — `c++23`.
+- [Вычисляемые сообщения и удалённые функции](basics/bonus/38-compile-time-diagnostics/README.md) — `c++26`.
+- [Пакеты структурированных привязок](basics/bonus/39-structured-bindings-packs/README.md) — `c++26`.
+- [Явный параметр объекта](oop/bonus/03-explicit-object/README.md) — `c++23`.
+- [Многомерный индекс и статические операторы](oop/bonus/04-call-and-subscript/README.md) — `c++23`.
+- [Индексирование пакета параметров](templates/bonus/22-pack-indexing/README.md) — `c++26`.
+- [Перенос квалификаторов через forward_like](templates/bonus/23-forward-like/README.md) — `c++23`.
+- [Диапазоны, представления и время жизни](stl/bonus/06-ranges-and-views/README.md) — `c++20`.
+- [Адаптеры и алгоритмы диапазонов](stl/bonus/07-ranges-adaptors/README.md) — `c++23`.
+- [flat_map и flat_set](stl/bonus/08-flat-containers/README.md) — `c++23`.
+- [Многомерное представление mdspan](stl/bonus/09-mdspan/README.md) — `c++23`.
+- [Вызываемые объекты без копирования](stl/bonus/10-move-only-function/README.md) — `c++23`.
+- [Поиск подстроки и заполнение строки](stl/bonus/16-string-operations/README.md) — `c++23`.
+- [Вектор с фиксированной вместимостью](stl/bonus/11-inplace-vector/README.md) — `c++26`.
+- [Блочный контейнер hive](stl/bonus/12-hive/README.md) — `c++26`.
+- [Владение с копированием значения](stl/bonus/13-value-wrappers/README.md) — `c++26`.
+- [Ссылка на функцию и копируемая обёртка](stl/bonus/14-function-wrappers/README.md) — `c++26`.
+- [optional со ссылкой и обход optional](stl/bonus/15-optional-reference/README.md) — `c++26`.
+- [Поэлементные вычисления SIMD](stl/bonus/17-simd/README.md) — `c++26`.
+- [Линейная алгебра поверх mdspan](stl/bonus/18-linalg/README.md) — `c++26`.
+- [Потоки над готовым буфером](io/bonus/22-spanstream/README.md) — `c++23`.
+- [Включение файла через embed](io/bonus/23-embed/README.md) — `c++26`.
+- [Получение стека вызовов](io/bonus/24-stacktrace/README.md) — `c++23`.
+- [Взаимодействие с отладчиком](io/bonus/25-debugging/README.md) — `c++26`.
+- [Корутина, приостановка и владение кадром](bonus/coroutines/01-coroutine-lifetime/README.md) — `c++20`.
+- [Стандартный генератор последовательности](bonus/coroutines/02-standard-generator/README.md) — `c++23`.
+- [Предусловия, постусловия и проверки контракта](bonus/contracts/01-contract-checks/README.md) — `c++26`.
+- [Описание работы через senders и receivers](bonus/execution/01-senders/README.md) — `c++26`.
+- [Планировщик и время жизни операции](bonus/execution/02-schedulers/README.md) — `c++26`.

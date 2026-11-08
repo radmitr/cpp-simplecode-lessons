@@ -191,5 +191,45 @@
     "standard": "c++17",
     "minimum_gcc": 0,
     "dependency": null
+  },
+  {
+    "number": 35,
+    "folder": "basics/bonus/35-consteval-and-auto-copy",
+    "title": "if consteval и явное копирование auto",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 36,
+    "folder": "basics/bonus/36-enums-and-bytes",
+    "title": "Перечисления и порядок байтов",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 37,
+    "folder": "basics/bonus/37-assume-and-unreachable",
+    "title": "Предположения оптимизатору и недостижимый код",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 38,
+    "folder": "basics/bonus/38-compile-time-diagnostics",
+    "title": "Вычисляемые сообщения и удалённые функции",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
+  },
+  {
+    "number": 39,
+    "folder": "basics/bonus/39-structured-bindings-packs",
+    "title": "Пакеты структурированных привязок",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null
   }
 ]

@@ -11,9 +11,23 @@ load_language_settings() {
     fi
     case $standard in
         c++17|c++20|c++23) ;;
-        c++26) minimum_gcc=16; language_options+=(-freflection) ;;
+        c++26)
+            minimum_gcc=16
+            # Reflection is a feature of these lessons, not of every C++26 file.
+            if [[ $source_dir == "$repo_dir/bonus/reflection/"* ]]; then
+                language_options+=(-freflection)
+            fi ;;
         *) printf 'Unsupported C++ standard: %s\n' "$standard" >&2; return 2 ;;
     esac
+    if [[ -f $source_dir/language-feature.txt ]]; then
+        local feature
+        feature=$(<"$source_dir/language-feature.txt")
+        feature=${feature//$'\r'/}
+        case $feature in
+            contracts) language_options+=(-fcontracts) ;;
+            *) printf 'Unsupported language feature: %s\n' "$feature" >&2; return 2 ;;
+        esac
+    fi
     if [[ -f $source_dir/gcc-min-version.txt ]]; then
         local requested
         requested=$(<"$source_dir/gcc-min-version.txt")

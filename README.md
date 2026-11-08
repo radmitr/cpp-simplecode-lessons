@@ -83,9 +83,11 @@ C++23. [Краткий указатель версий](docs/cpp-versions.md) о
 На Windows и Linux по умолчанию используется C++17. `cxx-standard.txt` рядом
 с исходником выбирает C++17/20/23/26; `gcc-min-version.txt` при необходимости
 задаёт минимальную версию GCC. Бонусы основ и IO в основном рассчитаны на GCC 11
-и C++17/20. Современный IO-урок format/print требует GCC 14+, рефлексия C++26 —
-GCC 16+ и `-freflection`. Для них на Linux используется `CXX_MODERN`, по умолчанию
-`/opt/gcc/16/bin/g++`; остальные уроки используют `/usr/bin/g++` (или `CXX`).
+и C++17/20. Современный IO-урок format/print с расширенными примерами требует GCC 16+,
+рефлексия C++26 — GCC 16+ и `-freflection`. Уроки с минимумом GCC 13+ используют
+на Linux `CXX_MODERN`, по умолчанию `/opt/gcc/16/bin/g++`; это относится и к новым
+[современным дополнениям](docs/modern-cpp.md). Остальные уроки используют
+`/usr/bin/g++` (или `CXX`).
 Подготовка отдельного GCC в `/home` с установкой в `/opt/gcc/<версия>` описана в
 [инструкции Linux](bonus/reflection/linux-setup.md). CMake не настроен.
 
@@ -227,3 +229,5 @@ bash scripts/build-windows.sh oop/lesson-113-oop-interfaces/main.cpp
 - `multithreading/lesson-02-thread-param/main.cpp` содержит бесконечный цикл.
 
 В старых примерах используются устаревшие `auto_ptr`, `random_shuffle` и `codecvt`; их доступность зависит от компилятора и стандартной библиотеки.
+
+[Современные дополнения C++20–26: возможности, порядок изучения и доступность](docs/modern-cpp.md).

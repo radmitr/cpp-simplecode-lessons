@@ -13,6 +13,7 @@
 ## Краткий указатель
 
 Ниже перечислены используемые здесь возможности, а не все изменения стандартов.
+Подробный порядок изучения C++20–26: [современные дополнения](modern-cpp.md).
 
 - **C++98**: основные типы, функции, классы, доступ, конструкторы/деструкторы,
   перегрузки, шаблоны, обычные ссылки, пространства имён, `try/throw/catch`,
@@ -39,14 +40,28 @@
 - **C++20**: concepts и `requires`, `consteval` и `constinit`, `span`, ranges,
   `bit_cast/endian`, `format`, `jthread` и совместная остановка,
   `counting_semaphore/binary_semaphore`, `latch/barrier`, `osyncstream`,
-  `atomic::wait/notify_one/notify_all`.
+  `atomic::wait/notify_one/notify_all`,
+  [корутины](../bonus/coroutines/01-coroutine-lifetime/README.md).
 - **C++23**: `print/println`, `expected`, `std::to_underlying`,
-  `if consteval` и другие новые API. Наличие GCC с C++23 не гарантирует
-  поддержку всех функций его библиотекой.
+  `if consteval`, [явный параметр объекта](../oop/bonus/03-explicit-object/README.md),
+  [новые адаптеры диапазонов](../stl/bonus/07-ranges-adaptors/README.md),
+  [плоские контейнеры](../stl/bonus/08-flat-containers/README.md),
+  [`mdspan`](../stl/bonus/09-mdspan/README.md),
+  [`generator`](../bonus/coroutines/02-standard-generator/README.md),
+  [`spanstream`](../io/bonus/22-spanstream/README.md) и
+  [`stacktrace`](../io/bonus/24-stacktrace/README.md).
+  Наличие GCC с C++23 не гарантирует поддержку всех функций его библиотекой.
 - **C++26, экспериментально в этом проекте**: статическая рефлексия,
   `^^`, `std::meta::info` и связанные операции. Здесь используется конкретная
   реализация GCC с `-freflection`; требования и статус приведены в
   [разделе рефлексии](../bonus/reflection/README.md).
+  Отдельно добавлены [контракты](../bonus/contracts/README.md),
+  [индексирование пакетов](../templates/bonus/22-pack-indexing/README.md),
+  [`#embed`](../io/bonus/23-embed/README.md),
+  [`inplace_vector`](../stl/bonus/11-inplace-vector/README.md),
+  [SIMD](../stl/bonus/17-simd/README.md) и
+  [senders/receivers](../bonus/execution/README.md); полная карта находится в
+  [современных дополнениях](modern-cpp.md).
   Не переносите эти примеры в обычную сборку C++17/20 без изменений.
 
 Функция `acquire()` семафора — C++20, а имя порядка атомарной памяти

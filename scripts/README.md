@@ -76,7 +76,7 @@ SDK вызывает ошибку до компиляции. Версия libcur
 - `link-libraries.txt`: библиотеки из разрешённого списка, подключаемые после исходников.
 
 Сохраняется обработка CRLF у маркеров Windows. Произвольные shell-команды или
-строки флагов не исполняются. Для `c++26` автоматически добавляется `-freflection`
+строки флагов не исполняются. Для `c++26` в разделе `bonus/reflection/` добавляется `-freflection`
 и требуется GCC 16+. Уроки с минимумом GCC 13+ выбирают `CXX_MODERN`; остальные — `CXX`.
 
 По умолчанию `CXX_MODERN` на Linux — `/opt/gcc/16/bin/g++`, на Windows — тот же MinGW64.
@@ -92,7 +92,7 @@ SDK вызывает ошибку до компиляции. Версия libcur
 |---|---|---|
 | Обычные уроки | C++17/C++20 | `/usr/bin/g++` |
 | [`std::expected`](../stl/bonus/04-expected/README.md), минимум GCC 13 | C++23 | `/opt/gcc/16/bin/g++` |
-| [`std::format` и `std::print`](../io/bonus/21-format-and-print/README.md), минимум GCC 14 | C++23 | `/opt/gcc/16/bin/g++` |
+| [`std::format` и `std::print`](../io/bonus/21-format-and-print/README.md), учебная конфигурация GCC 16 | C++23 | `/opt/gcc/16/bin/g++` |
 | [Рефлексия, начиная с проверки компилятора](../bonus/reflection/06-toolchain/README.md) | C++26 и `-freflection` | `/opt/gcc/16/bin/g++` |
 
 Не найденный компилятор или слишком старая версия дают понятную ошибку до сборки.
@@ -263,3 +263,14 @@ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 (Linux: `python3`). Они воспроизводят ошибочный переход от JSON к `do-while`,
 проверяют несовпадения номеров и названий и разрешённые переходы между темами.
 Временные документы создаются внутри `build/` и удаляются после запуска.
+
+Для дополнительных возможностей компилятора есть маркер `language-feature.txt`:
+значение `contracts` включает `-fcontracts`. Сам режим C++26 не включает рефлексию
+автоматически; `-freflection` добавляется для исходников `bonus/reflection/`.
+Эти параметры одинаковы в сборке и `compile_commands.json`.
+
+`check-bonuses.py` также проверяет STL, ООП, корутины, контракты и execution.
+Для урока с `optional_feature` в `lessons.json` код `77` и строка `UNAVAILABLE:`
+означают явный `SKIP`, который не входит в число успешно выполненных примеров.
+`--require-features` превращает такой пропуск в ошибку. Некорректная программа
+или другая ошибка сборки всегда остаётся ошибкой.
