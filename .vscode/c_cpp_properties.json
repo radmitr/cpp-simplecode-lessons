@@ -2,7 +2,6 @@
     "configurations": [
         {
             "name": "Linux",
-            "compilerPath": "/usr/bin/g++",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": [
@@ -11,7 +10,6 @@
         },
         {
             "name": "Win32",
-            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64",
             "compileCommands": [

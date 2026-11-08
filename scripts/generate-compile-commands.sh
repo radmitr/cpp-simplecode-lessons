@@ -59,7 +59,6 @@ generate_workspace_configuration() {
     local workspace_dir=$1
     local source_dir=$workspace_dir standard
     local first_line='' checksum='' relative_workspace database_path content=''
-    local linux_compiler windows_compiler
     local previous='' body=''
     output="$workspace_dir/.vscode/c_cpp_properties.json"
     if [[ -e $output || -L $output ]]; then
@@ -78,9 +77,7 @@ generate_workspace_configuration() {
     if [[ -f $workspace_dir/src/main.cpp && -d $workspace_dir/include ]]; then
         source_dir=$workspace_dir/src
     fi
-    load_compiler_options
-    json_escape "$(select_lesson_compiler linux)"; linux_compiler=$REPLY
-    json_escape "$(select_lesson_compiler windows)"; windows_compiler=$REPLY
+    load_language_settings
     relative_workspace=${workspace_dir#"$repo_dir/"}
     database_path=../build/compile_commands.json
     while [[ $relative_workspace == */* ]]; do
@@ -89,19 +86,18 @@ generate_workspace_configuration() {
     done
     json_escape "\${workspaceFolder}/$database_path"
     database_path=$REPLY
+    # An explicit compilerPath would override per-file compilers in the database.
     IFS= read -r -d '' content <<EOF || true
 {
     "configurations": [
         {
             "name": "Linux",
-            "compilerPath": $linux_compiler,
             "cppStandard": "$standard",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": [$database_path]
         },
         {
             "name": "Win32",
-            "compilerPath": $windows_compiler,
             "cppStandard": "$standard",
             "intelliSenseMode": "windows-gcc-x64",
             "compileCommands": [$database_path]
