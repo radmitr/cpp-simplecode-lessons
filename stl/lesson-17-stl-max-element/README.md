@@ -27,8 +27,7 @@
 `main.cpp` находит 43 в `vector`, 55 в `list` и 77 в обычном массиве.
 
 ~~~cpp
-auto it = std::max_element(values.begin(), values.end());
-if (it != values.end()) std::cout << *it;
+auto result = max_element(vector1.begin(), vector1.end());
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

@@ -14,6 +14,7 @@
   исключения и `std::generator`.
 - [Контракты](contracts/README.md): предусловия, постусловия и обработка нарушений.
 - [Execution](execution/README.md): senders/receivers, исходы операции и планировщик.
+- [Модули](modules/README.md): интерфейс, реализация и порядок компиляции C++20.
 
 Дополнения к существующему разделу многопоточности остаются в
 [multithreading/bonus](../multithreading/bonus/README.md).

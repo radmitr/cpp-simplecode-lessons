@@ -74,6 +74,18 @@ SDK вызывает ошибку до компиляции. Версия libcur
 - `gcc-min-version.txt`: минимальная основная версия GCC целым числом, например 14.
 - `include-library.txt`: поддерживается nlohmann-json для JSON-уроков.
 - `link-libraries.txt`: библиотеки из разрешённого списка, подключаемые после исходников.
+- `language-feature.txt`: `contracts` или `modules`, чтобы включить соответствующее расширение GCC.
+- `module-units.txt`: имена единиц модуля в порядке компиляции, интерфейс перед реализацией.
+
+Для [модульного урока](../bonus/modules/01-interface-and-implementation/README.md)
+общие скрипты сборки вызывают `build-module-lesson.sh`. Кэш CMI и объектные файлы
+сохраняются в `build/<путь урока>/module-build/`; каталог исходников не становится
+кэшем компилятора. Генератор IntelliSense указывает эту же рабочую папку для единиц модуля.
+
+Маркер `parallel-backend` в `link-libraries.txt` запрашивает выбранный GCC:
+если его libstdc++ использует TBB, подключается `-ltbb`, иначе остаётся последовательный
+backend. Заголовки TBB и библиотека должны принадлежать совместимому тулчейну.
+Пример: [политики алгоритмов](../stl/bonus/25-parallel-algorithms/README.md).
 
 Сохраняется обработка CRLF у маркеров Windows. Произвольные shell-команды или
 строки флагов не исполняются. Для `c++26` в разделе `bonus/reflection/` добавляется `-freflection`
@@ -116,7 +128,7 @@ Linux-сборка определяет каталог `libstdc++.so.6` чере
 `build/dependencies/include/nlohmann/json.hpp` также поддерживается; его каталог
 добавляется как system include только урокам с соответствующим маркером.
 После изменения зависимости обновите IntelliSense. [Зависимости](../io/bonus/dependencies.md).
-Урок `std::print` подключает stdc++exp, требуемую MinGW-реализацией.
+Урок `std::print` подключает `stdc++exp`, требуемую MinGW-реализацией.
 
 ## Проверка бонусов
 
@@ -154,7 +166,7 @@ Ctrl+Shift+B, F5 и Ctrl+F5 вызывают сборку без генерац�
 bash scripts/generate-compile-commands.sh
 ~~~
 
-Генератор записывает `build/compile_commands.json` для всех .cpp из каталогов
+Генератор записывает `build/compile_commands.json` для `.cpp` и `.cppm` из каталогов
 basics/, templates/, exceptions/, io/, oop/, stl/, multithreading/, глобального bonus/, примеров и шаблона, включая вспомогательные исходники. Каждая запись
 описывает компиляцию одного исходника; для уроков [«139. Многофайловая программа»](../basics/lesson-139-multi-file-project/README.md) — [«140. Защита заголовков от повторного включения»](../basics/lesson-140-multi-file-project-include-guard/README.md) добавлен include/.
 Стандарт выбирается из `cxx-standard.txt` рядом с исходником.
@@ -265,7 +277,7 @@ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 Временные документы создаются внутри `build/` и удаляются после запуска.
 
 Для дополнительных возможностей компилятора есть маркер `language-feature.txt`:
-значение `contracts` включает `-fcontracts`. Сам режим C++26 не включает рефлексию
+значение `contracts` включает `-fcontracts`, `modules` — `-fmodules`. Сам режим C++26 не включает рефлексию
 автоматически; `-freflection` добавляется для исходников `bonus/reflection/`.
 Эти параметры одинаковы в сборке и `compile_commands.json`.
 

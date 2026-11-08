@@ -57,6 +57,16 @@ load_link_libraries() {
             ssl|crypto) link_libraries+=("-l$library") ;;
             pq) link_libraries+=(-lpq) ;;
             stdc++exp) link_libraries+=(-lstdc++exp) ;;
+            parallel-backend)
+                # libstdc++ selects TBB when its headers are visible; otherwise it
+                # can use a serial backend. Ask the compiler used by this lesson.
+                local query_compiler macros
+                query_compiler=$(select_lesson_compiler "$library_platform")
+                macros=$("$query_compiler" -std=c++17 -dM -E -x c++ - <<< '#include <execution>') || return $?
+                if [[ $macros == *'#define _PSTL_PAR_BACKEND_TBB'* ]]; then
+                    link_libraries+=(-ltbb)
+                fi
+                ;;
             *) printf 'Unsupported link library: %s\n' "$library" >&2; return 2 ;;
         esac
     done < "$library_dir/link-libraries.txt"

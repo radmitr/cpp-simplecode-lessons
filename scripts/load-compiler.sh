@@ -25,6 +25,7 @@ load_language_settings() {
         feature=${feature//$'\r'/}
         case $feature in
             contracts) language_options+=(-fcontracts) ;;
+            modules) language_options+=(-fmodules) ;;
             *) printf 'Unsupported language feature: %s\n' "$feature" >&2; return 2 ;;
         esac
     fi

@@ -26,16 +26,16 @@
 
 ## Как это работает
 
-Предварительно: Функции, переменные и темы предыдущих уроков раздела.
-Каждый исходник здесь — самостоятельный исполняемый пример.
+Нужны ссылки, `const`, выражения и возвращаемые значения функций.
 
 `auto copy = values[0]` создаёт самостоятельный `int`, `auto& reference` —
 псевдоним существующего элемента. После `copy = 9` и `reference = 7`
 первый элемент `vector` равен 7.
 
 ~~~cpp
-decltype(value) first = 0;       // int
-decltype(auto) alias = (value); // int&
+static_assert(std::is_same_v<decltype(value), int>);
+static_assert(std::is_same_v<decltype((value)), int&>);
+decltype(auto) result = (value);
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).
@@ -69,11 +69,13 @@ bash scripts/build-linux.sh basics/bonus/06-auto-and-decltype/main.cpp
 После показанных в коде значений последняя строка — `OK 06-auto-and-decltype`.
 Проверки `check(...)` выбрасывают исключение при нарушении ожидаемого результата;
 в таком случае программа печатает причину и возвращает 1. Они работают и с `NDEBUG`.
-Адреса, диагностические имена типов, размеры и время могут отличаться между системами.
+
 Проверка всего раздела: `python scripts/check-bonuses.py --section basics/bonus`
 (на Linux команда Python обычно называется python3).
 
 ## Типичные ошибки
+
+`auto` без `&` обычно создаёт копию. Для имени `value` выражения `decltype(value)` и `decltype((value))` дают разные типы. Не возвращайте через `decltype(auto)` ссылку на уничтожаемый локальный объект.
 
 ### Самостоятельно
 

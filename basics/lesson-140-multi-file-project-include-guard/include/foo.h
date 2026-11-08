@@ -1,8 +1,8 @@
 // C++98 — защита заголовков от повторного включения.
 #pragma once
 
-#ifndef _FOO_H_
-#define _FOO_H_
+#ifndef CPP_SIMPLECODE_FOO_H
+#define CPP_SIMPLECODE_FOO_H
 
 #include <iostream>
 
@@ -11,4 +11,4 @@
 void foo();
 void foo2();
 
-#endif // !_FOO_H_
+#endif // !CPP_SIMPLECODE_FOO_H

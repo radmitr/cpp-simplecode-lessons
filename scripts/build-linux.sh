@@ -33,6 +33,12 @@ includes=()
 source "$repo_dir/scripts/load-link-libraries.sh"
 load_link_libraries "$source_dir" linux
 
+if [[ -f $source_dir/module-units.txt ]]; then
+    source "$repo_dir/scripts/build-module-lesson.sh"
+    build_module_lesson
+    exit $?
+fi
+
 # Lessons 139 and 140 keep their sources and headers in separate directories.
 if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
     sources=("$source_dir"/*.cpp)

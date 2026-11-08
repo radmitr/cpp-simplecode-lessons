@@ -24,15 +24,16 @@
 элементы с истинным предикатом. Исходный people в `main` не изменяется.
 
 ~~~cpp
-std::vector<Person> selected;
-std::copy_if(people.begin(), people.end(), std::back_inserter(selected),
-             [](const Person& p) { return p.getName() == "Иван"; });
+std::vector<Person> result2;
+copy_if(people.begin(), people.end(), std::back_inserter(result2), [](const Person& person) {
+    return person.getName() == "Иван";
+});
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).
 
-back_inserter преобразует запись через выходной итератор в `push_back`.
-Поэтому selected можно оставить пустым: он будет расти по мере копирования.
+`back_inserter` преобразует запись через выходной итератор в `push_back`.
+Поэтому `result2` можно оставить пустым: он будет расти по мере копирования.
 
 ### Что отбирает программа
 

@@ -462,3 +462,22 @@
 - [Предусловия, постусловия и проверки контракта](bonus/contracts/01-contract-checks/README.md) — `c++26`.
 - [Описание работы через senders и receivers](bonus/execution/01-senders/README.md) — `c++26`.
 - [Планировщик и время жизни операции](bonus/execution/02-schedulers/README.md) — `c++26`.
+
+## Основные средства языка и библиотеки: продолжение
+
+[Учебный маршрут](docs/learning-path.md) · [Указатель версий](docs/cpp-versions.md) · [Карта покрытия](docs/cpp-coverage.md).
+
+- [Необязательное значение optional](stl/bonus/19-optional/README.md) — `c++17`.
+- [Значение одного из типов variant](stl/bonus/20-variant/README.md) — `c++17`.
+- [Хранение значения неизвестного типа any](stl/bonus/21-any/README.md) — `c++17`.
+- [Строковое представление string_view](stl/bonus/22-string-view/README.md) — `c++17`.
+- [Перенос узлов контейнера](stl/bonus/23-node-handles/README.md) — `c++17`.
+- [Ресурсы памяти pmr](stl/bonus/24-memory-resources/README.md) — `c++17`.
+- [Политики выполнения алгоритмов](stl/bonus/25-parallel-algorithms/README.md) — `c++20`.
+- [Трёхстороннее сравнение](basics/bonus/40-three-way-comparison/README.md) — `c++20`.
+- [Место вызова source_location](basics/bonus/41-source-location/README.md) — `c++20`.
+- [Пользовательские литералы](basics/bonus/42-user-defined-literals/README.md) — `c++17`.
+- [Именованная инициализация агрегата](basics/bonus/43-designated-initializers/README.md) — `c++20`.
+- [Календарные даты и время суток](basics/bonus/44-calendar/README.md) — `c++20`.
+- [Часовые пояса и местное время](basics/bonus/45-time-zones/README.md) — `c++20`.
+- [Интерфейс и реализация модуля](bonus/modules/01-interface-and-implementation/README.md) — `c++20`.

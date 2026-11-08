@@ -25,14 +25,17 @@ Windows: MinGW64; Linux: POSIX. Нужна libcurl с заголовками.
 ## Как это работает
 
 libcurl выполняет установку TCP/TLS-соединения, проверку цепочки сертификатов
-и соответствия имени из URL сертификату. В `common/curl_client.hpp` явно включены:
+и соответствия имени из URL сертификату. В [curl_client.hpp](../common/curl_client.hpp)
+явно включены:
 
 ~~~cpp
-curl_easy_setopt(handle, CURLOPT_SSL_VERIFYPEER, 1L);
-curl_easy_setopt(handle, CURLOPT_SSL_VERIFYHOST, 2L);
+option(handle.get(), CURLOPT_SSL_VERIFYPEER, 1L);
+option(handle.get(), CURLOPT_SSL_VERIFYHOST, 2L);
 ~~~
 
-Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).
+Сокращённый фрагмент общего клиента: [curl_client.hpp](../common/curl_client.hpp).
+Обёртка `option` проверяет результат `curl_easy_setopt` и сообщает об ошибке исключением.
+Сам запрос запускается из [main.cpp](main.cpp).
 
 HTTPS шифрует обмен и позволяет проверить сторону соединения.
 Отключать проверку ради исчезновения ошибки сертификата не нужно:

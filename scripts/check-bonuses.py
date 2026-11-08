@@ -13,7 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SECTIONS = ("basics/bonus", "templates/bonus", "exceptions/bonus", "io/bonus",
             "stl/bonus", "oop/bonus", "bonus/reflection", "bonus/coroutines",
-            "bonus/contracts", "bonus/execution")
+            "bonus/contracts", "bonus/execution", "bonus/modules")
 WINDOWS = os.name == "nt"
 
 

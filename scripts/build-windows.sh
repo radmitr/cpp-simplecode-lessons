@@ -27,6 +27,13 @@ includes=()
 source "$repo_dir/scripts/load-link-libraries.sh"
 load_link_libraries "$source_dir" windows
 
+if [[ -f $source_dir/module-units.txt ]]; then
+    runtime_options=()
+    source "$repo_dir/scripts/build-module-lesson.sh"
+    build_module_lesson
+    exit $?
+fi
+
 if [[ $source_dir == */src && -f $source_dir/main.cpp && -d $source_dir/../include ]]; then
     sources=("$source_dir"/*.cpp)
     includes=(-I "$source_dir/../include")

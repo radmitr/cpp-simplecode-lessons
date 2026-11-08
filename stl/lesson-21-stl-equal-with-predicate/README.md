@@ -23,8 +23,8 @@
 У `Point` нет `operator==`. Лямбда передаёт `equal` правило сравнения:
 
 ~~~cpp
-[](const Point& a, const Point& b) {
-    return a.getX() == b.getX() && a.getY() == b.getY();
+[](const Point& p1, const Point& p2) {
+    return p1.getX() == p2.getX() && p1.getY() == p2.getY();
 }
 ~~~
 

@@ -77,6 +77,21 @@ Describe reused techniques generically without references to unrelated projects.
 Treat this repository as a self-contained learning and reference project.
 Write lesson explanations in clear Russian for a reader learning the topic.
 
+- Treat each README as both a lesson and a concise reference. Use plain,
+  precise language without sacrificing contracts, important variants or limits.
+  Concise means removing repetition and filler, not omitting necessary details.
+- Make the scope explicit: distinguish demonstrated behavior, additional
+  possibilities, invalid operations and implementation-dependent results.
+  Avoid absolute claims such as "always", "safe" or "all" without conditions.
+- Define unfamiliar terms on first use. Explain what an operation changes,
+  what it returns, who owns the data and how long references remain valid.
+  State relevant preconditions and failure behavior beside the operation.
+- Prefer a concrete example and its result to vague advice such as "use
+  carefully". Do not replace a substantive explanation with a list of API names.
+- When reviewing READMEs, inspect their runnable sources, variants, local links,
+  commands and expected results together. Preserve correct explanations and fix
+  actual gaps; do not impose boilerplate sections or pad a short document.
+
 - Provide a README for every lesson and standalone example; section READMEs
   should give a learning order and links, rather than replace lesson explanations.
 - Inspect the actual source and every independent main variant before documenting

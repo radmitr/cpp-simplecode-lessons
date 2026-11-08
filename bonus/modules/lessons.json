@@ -1,0 +1,10 @@
+[
+  {
+    "number": 1,
+    "folder": "bonus/modules/01-interface-and-implementation",
+    "title": "Интерфейс и реализация модуля",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null
+  }
+]

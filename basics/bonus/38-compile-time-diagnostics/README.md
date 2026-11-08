@@ -10,7 +10,7 @@
 
 ## Примеры
 
-- [main.cpp](main.cpp) — успешные static_assert и разрешённая перегрузка; вывод `report.txt`.
+- [main.cpp](main.cpp) — успешные `static_assert` и разрешённая перегрузка; вывод `report.txt`.
 
 ## Как это работает
 

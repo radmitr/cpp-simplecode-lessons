@@ -154,5 +154,61 @@
     "minimum_gcc": 16,
     "dependency": null,
     "optional_feature": true
+  },
+  {
+    "number": 19,
+    "folder": "stl/bonus/19-optional",
+    "title": "Необязательное значение optional",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 20,
+    "folder": "stl/bonus/20-variant",
+    "title": "Значение одного из типов variant",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 21,
+    "folder": "stl/bonus/21-any",
+    "title": "Хранение значения неизвестного типа any",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 22,
+    "folder": "stl/bonus/22-string-view",
+    "title": "Строковое представление string_view",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 23,
+    "folder": "stl/bonus/23-node-handles",
+    "title": "Перенос узлов контейнера",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 24,
+    "folder": "stl/bonus/24-memory-resources",
+    "title": "Ресурсы памяти pmr",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 25,
+    "folder": "stl/bonus/25-parallel-algorithms",
+    "title": "Политики выполнения алгоритмов",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
   }
 ]

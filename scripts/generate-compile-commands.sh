@@ -150,9 +150,15 @@ first=true
     while IFS= read -r -d '' source_file; do
         source_dir=${source_file%/*}
         load_compiler_options
+        command_dir=$source_dir
+        if [[ -f $source_dir/module-units.txt ]]; then
+            command_dir="$repo_dir/build/${source_dir#"$repo_dir/"}/module-build"
+            /usr/bin/mkdir -p -- "$command_dir"
+        fi
+        if [[ $source_file == *.cppm ]]; then compiler_options+=(-x c++); fi
         if $first; then first=false; else printf ',\n'; fi
         printf '  {"directory": '
-        json_string "$native_repo${source_dir#"$repo_dir"}"
+        json_string "$native_repo${command_dir#"$repo_dir"}"
         printf ', "file": '
         json_string "$native_repo${source_file#"$repo_dir"}"
         printf ', "arguments": ['
@@ -167,7 +173,7 @@ first=true
         printf ']}'
     done < <(/usr/bin/find "$repo_dir/basics" "$repo_dir/templates" "$repo_dir/exceptions" "$repo_dir/io" "$repo_dir/oop" "$repo_dir/stl" \
         "$repo_dir/multithreading" "$repo_dir/bonus" "$repo_dir/examples" "$repo_dir/_template" \
-        -type f -name '*.cpp' -print0 | /usr/bin/sort -z)
+        -type f \( -name '*.cpp' -o -name '*.cppm' \) -print0 | /usr/bin/sort -z)
     printf '\n]\n'
 } > "$temporary"
 replace_if_changed

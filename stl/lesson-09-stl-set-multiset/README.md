@@ -25,8 +25,7 @@
 5, 23, 76, 11; повторная вставка 2 не создаёт дополнительные элементы.
 
 ~~~cpp
-auto result = values.insert(6);
-// result.first — позиция; result.second — был ли создан новый элемент.
+auto resultPair = set1.insert(6);
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

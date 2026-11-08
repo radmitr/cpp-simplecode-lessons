@@ -34,8 +34,8 @@
 к началу и возвращает **новый логический конец**.
 
 ~~~cpp
-auto newEnd = std::remove(v.begin(), v.end(), 9);
-v.erase(newEnd, v.end());
+auto result = remove(v.begin(), v.end(), 9);
+v.erase(result, v.end());
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

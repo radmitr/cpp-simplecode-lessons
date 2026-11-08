@@ -26,7 +26,7 @@
 у которого есть ещё седьмой элемент.
 
 ~~~cpp
-std::equal(a.begin(), a.end(), b.begin(), b.end());
+bool result2 = std::equal(std::begin(arr), std::end(arr), std::begin(arr2), std::end(arr2));
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

@@ -231,5 +231,53 @@
     "standard": "c++26",
     "minimum_gcc": 16,
     "dependency": null
+  },
+  {
+    "number": 40,
+    "folder": "basics/bonus/40-three-way-comparison",
+    "title": "Трёхстороннее сравнение",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 41,
+    "folder": "basics/bonus/41-source-location",
+    "title": "Место вызова source_location",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 42,
+    "folder": "basics/bonus/42-user-defined-literals",
+    "title": "Пользовательские литералы",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 43,
+    "folder": "basics/bonus/43-designated-initializers",
+    "title": "Именованная инициализация агрегата",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 44,
+    "folder": "basics/bonus/44-calendar",
+    "title": "Календарные даты и время суток",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null
+  },
+  {
+    "number": 45,
+    "folder": "basics/bonus/45-time-zones",
+    "title": "Часовые пояса и местное время",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null
   }
 ]

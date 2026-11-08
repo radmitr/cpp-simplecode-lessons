@@ -1,4 +1,4 @@
-// C++11 — std::chrono; C++17 — [[maybe_unused]].
+// C++11 — std::chrono; C++14 — литералы длительностей; C++17 — [[maybe_unused]].
 #include <chrono>
 #include <exception>
 #include <iostream>

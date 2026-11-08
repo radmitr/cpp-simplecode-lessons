@@ -28,8 +28,8 @@ it передвигается с 15 на 10. `insert_after(it, 999)` встав�
 `before_begin()` позволяет вставить 1111 перед первым элементом.
 
 ~~~cpp
-auto before = values.before_begin();
-values.insert_after(before, 1111);
+std::forward_list<int>::iterator it2 = fl.before_begin();
+fl.insert_after(it2, 1111);
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

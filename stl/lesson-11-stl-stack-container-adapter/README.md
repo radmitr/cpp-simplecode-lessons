@@ -29,9 +29,10 @@
 Все три варианта выполняют один стековый алгоритм.
 
 ~~~cpp
-while (!values.empty()) {
-    std::cout << values.top();
-    values.pop();
+while (!stack1.empty())
+{
+    std::cout << stack1.top() << std::endl;
+    stack1.pop();
 }
 ~~~
 

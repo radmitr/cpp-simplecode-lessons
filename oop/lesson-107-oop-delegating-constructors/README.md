@@ -22,8 +22,10 @@
 Перегрузки `Human` вызывают друг друга, чтобы не повторять общую инициализацию.
 
 ~~~cpp
-Human(std::string name, int age) : Human(name) {
-    // После завершения Human(name) задаётся возраст.
+Human(string Name, int Age) : Human(Name)
+{
+    this->Age = Age;
+    cout << "Обновлён возраст: " << Age << endl;
 }
 ~~~
 

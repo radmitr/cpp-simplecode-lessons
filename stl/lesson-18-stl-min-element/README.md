@@ -26,10 +26,7 @@
 `minmax_element` делает один проход и возвращает пару позиций:
 
 ~~~cpp
-auto bounds = std::minmax_element(v.begin(), v.end());
-if (bounds.first != v.end()) {
-    std::cout << *bounds.first << ' ' << *bounds.second;
-}
+auto result4 = minmax_element(vector2.begin(), vector2.end());
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

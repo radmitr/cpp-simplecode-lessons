@@ -35,8 +35,9 @@ const_iterator позволяет обход без изменения чере�
 После показанных вставки и удалений остаются 46, 999, 4.
 
 ~~~cpp
-auto it = values.begin();
-std::advance(it, 3);
+std::vector<int>::iterator it;
+it = vector1.begin();
+*it = 1000;
 ~~~
 
 Сокращённый фрагмент; полный пример: [main.cpp](main.cpp).

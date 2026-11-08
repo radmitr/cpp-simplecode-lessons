@@ -1,4 +1,4 @@
-# 35. if consteval и явное копирование auto
+# 35. if `consteval` и явное копирование auto
 
 ## Версия C++
 
