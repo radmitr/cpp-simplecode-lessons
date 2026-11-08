@@ -1,0 +1,65 @@
+[
+  {
+    "number": 1,
+    "folder": "additions/coroutines/01-coroutine-lifetime",
+    "title": "Корутина, приостановка и владение кадром",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 2,
+    "folder": "additions/coroutines/02-standard-generator",
+    "title": "Стандартный генератор последовательности",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "folder": "additions/coroutines/03-await-protocol",
+    "title": "Протокол co_await и собственный awaiter",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 3
+  },
+  {
+    "folder": "additions/coroutines/04-task-result",
+    "title": "Результат задачи и распространение исключений",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 4
+  },
+  {
+    "folder": "additions/coroutines/05-parameters-and-captures",
+    "title": "Время жизни параметров и захватов корутины",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 5
+  },
+  {
+    "folder": "additions/coroutines/06-cooperative-cancellation",
+    "title": "Кооперативная отмена корутины",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 6
+  },
+  {
+    "folder": "additions/coroutines/07-thread-handoff",
+    "title": "Безопасная передача возобновления другому потоку",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 7
+  }
+]

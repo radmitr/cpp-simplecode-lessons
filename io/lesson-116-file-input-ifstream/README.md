@@ -63,7 +63,7 @@ bash scripts/build-windows.sh "io/lesson-116-file-input-ifstream/main.cpp"
 
 ## Типичные ошибки
 
-В `main2.cpp/main3.cpp` проверяется `eof()` до чтения: возможна лишняя итерация, а `failbit` без EOF может привести к зацикливанию. Предпочтительны `while` (fin >> word) и `while` (`getline(fin, line)`); см. [Состояния потока и восстановление ввода](../bonus/01-stream-state/README.md). Строка длиннее буфера `main4.cpp` устанавливает `failbit` и останавливает цикл.
+В `main2.cpp/main3.cpp` проверяется `eof()` до чтения: возможна лишняя итерация, а `failbit` без EOF может привести к зацикливанию. Предпочтительны `while` (fin >> word) и `while` (`getline(fin, line)`); см. [Состояния потока и восстановление ввода](../additions/01-stream-state/README.md). Строка длиннее буфера `main4.cpp` устанавливает `failbit` и останавливает цикл.
 
 [Раздел](../README.md) · [Все уроки](../../LESSONS.md)
 

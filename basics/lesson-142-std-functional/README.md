@@ -60,6 +60,6 @@ bash scripts/build-windows.sh "basics/lesson-142-std-functional/main.cpp"
 
 ### Дополнительные API в коде
 
-- [Исключения библиотечных объектов](../../exceptions/bonus/01-exception-types/README.md): [полный пример](../../exceptions/bonus/01-exception-types/main2.cpp).
+- [Исключения библиотечных объектов](../../exceptions/additions/01-exception-types/README.md): [полный пример](../../exceptions/additions/01-exception-types/main2.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

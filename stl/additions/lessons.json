@@ -1,0 +1,234 @@
+[
+  {
+    "number": 1,
+    "folder": "stl/additions/01-vector-initialization",
+    "title": "std::vector: круглые и фигурные скобки",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 2,
+    "folder": "stl/additions/02-array-initialization",
+    "title": "std::array: инициализация, копия и нулевой размер",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 3,
+    "folder": "stl/additions/03-accumulator-type",
+    "title": "std::accumulate: тип начального значения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 4,
+    "folder": "stl/additions/04-string-view",
+    "title": "Строковое представление string_view",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 5,
+    "folder": "stl/additions/05-span",
+    "title": "Представление массива: std::span",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 6,
+    "folder": "stl/additions/06-optional",
+    "title": "Необязательное значение optional",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 7,
+    "folder": "stl/additions/07-expected",
+    "title": "Результат или ошибка: std::expected",
+    "standard": "c++23",
+    "minimum_gcc": 13,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 8,
+    "folder": "stl/additions/08-variant",
+    "title": "Значение одного из типов variant",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 9,
+    "folder": "stl/additions/09-any",
+    "title": "Хранение значения неизвестного типа any",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 10,
+    "folder": "stl/additions/10-optional-reference",
+    "title": "optional со ссылкой и обход optional",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 11,
+    "folder": "stl/additions/11-ranges-and-views",
+    "title": "Диапазоны, представления и время жизни",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 12,
+    "folder": "stl/additions/12-ranges-adaptors",
+    "title": "Адаптеры и алгоритмы диапазонов",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 13,
+    "folder": "stl/additions/13-string-operations",
+    "title": "Поиск подстроки и заполнение строки",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 14,
+    "folder": "stl/additions/14-node-handles",
+    "title": "Перенос узлов контейнера",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 15,
+    "folder": "stl/additions/15-flat-containers",
+    "title": "flat_map и flat_set",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 16,
+    "folder": "stl/additions/16-inplace-vector",
+    "title": "Вектор с фиксированной вместимостью",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 17,
+    "folder": "stl/additions/17-move-only-function",
+    "title": "Вызываемые объекты без копирования",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 18,
+    "folder": "stl/additions/18-function-wrappers",
+    "title": "Ссылка на функцию и копируемая обёртка",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 19,
+    "folder": "stl/additions/19-value-wrappers",
+    "title": "Владение с копированием значения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 20,
+    "folder": "stl/additions/20-memory-resources",
+    "title": "Ресурсы памяти pmr",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 21,
+    "folder": "stl/additions/21-parallel-algorithms",
+    "title": "Политики выполнения алгоритмов",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 22,
+    "folder": "stl/additions/22-mdspan",
+    "title": "Многомерное представление mdspan",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 23,
+    "folder": "stl/additions/23-simd",
+    "title": "Поэлементные вычисления SIMD",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 24,
+    "folder": "stl/additions/24-linalg",
+    "title": "Линейная алгебра поверх mdspan",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 25,
+    "folder": "stl/additions/25-hive",
+    "title": "Блочный контейнер hive",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  }
+]

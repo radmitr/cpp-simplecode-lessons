@@ -2,7 +2,7 @@
 
 Исключение передаёт управление от места ошибки к подходящему обработчику.
 Сначала изучите функции, области видимости, классы и деструкторы.
-[RAII](../basics/bonus/09-raii/README.md) объясняет, как освобождать ресурсы
+[RAII](../basics/additions/09-raii/README.md) объясняет, как освобождать ресурсы
 при обычном выходе и при передаче исключения.
 
 ## Уроки курса
@@ -18,23 +18,23 @@
 
 ## Дополнения и порядок
 
-После курса: [типы исключений](bonus/01-exception-types/README.md) →
-[повторное выбрасывание и вложенные причины](bonus/02-rethrow-and-nested/README.md) →
-[noexcept](bonus/03-noexcept/README.md) →
-[гарантии безопасности](bonus/04-exception-guarantees/README.md).
+После курса: [типы исключений](additions/01-exception-types/README.md) →
+[повторное выбрасывание и вложенные причины](additions/02-rethrow-and-nested/README.md) →
+[noexcept](additions/03-noexcept/README.md) →
+[гарантии безопасности](additions/04-exception-guarantees/README.md).
 
-Дополнительно: [ошибки через future/promise](../multithreading/bonus/11-promise-future/README.md)
-и [результат или ошибка: expected](../stl/bonus/07-expected/README.md).
+Дополнительно: [ошибки через future/promise](../multithreading/additions/11-promise-future/README.md)
+и [результат или ошибка: expected](../stl/additions/07-expected/README.md).
 `expected` не создаёт поток; `future` не является общей заменой `join()`.
-[Все бонусы исключений](bonus/README.md).
+[Все дополнения исключений](additions/README.md).
 
 ## Сборка и запуск
 
 [Запуск в VS Code](../README.md#сборка-и-запуск-в-vs-code) ·
 [Команды терминала](../README.md#сборка-из-терминала).
-Бонусы собираются как C++17; сами исключения языка — C++98,
+Дополнения собираются как C++17; сами исключения языка — C++98,
 `noexcept` и вложенные исключения — C++11.
 
-Из корня: `python scripts/check-bonuses.py --section exceptions/bonus`
+Из корня: `python scripts/check-additions.py --section exceptions/additions`
 (Linux: `python3`). Эта команда не запускает аварийные примеры курса.
 [Версии C++](../docs/cpp-versions.md) · [Каталог](../LESSONS.md).

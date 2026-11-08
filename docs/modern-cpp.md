@@ -22,51 +22,69 @@
 
 | Тема | Версия | Требования |
 |---|---|---|
-| [if consteval и явное копирование auto](../basics/bonus/20-consteval-and-auto-copy/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Перечисления и порядок байтов](../basics/bonus/25-enums-and-bytes/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Предположения оптимизатору и недостижимый код](../basics/bonus/33-assume-and-unreachable/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вычисляемые сообщения и удалённые функции](../basics/bonus/34-compile-time-diagnostics/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Пакеты структурированных привязок](../basics/bonus/35-structured-bindings-packs/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Предусловия, постусловия и проверки контракта](../bonus/contracts/01-contract-checks/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Корутина, приостановка и владение кадром](../bonus/coroutines/01-coroutine-lifetime/README.md) | C++20 | Учебная конфигурация GCC 16+ |
-| [Стандартный генератор последовательности](../bonus/coroutines/02-standard-generator/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Описание работы через senders и receivers](../bonus/execution/01-senders/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Планировщик и время жизни операции](../bonus/execution/02-schedulers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Потоки над готовым буфером](../io/bonus/08-spanstream/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Включение файла через embed](../io/bonus/25-embed/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Получение стека вызовов](../io/bonus/23-stacktrace/README.md) | C++23 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Взаимодействие с отладчиком](../io/bonus/24-debugging/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Явный параметр объекта](../oop/bonus/03-explicit-object/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Многомерный индекс и статические операторы](../oop/bonus/04-call-and-subscript/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Диапазоны, представления и время жизни](../stl/bonus/11-ranges-and-views/README.md) | C++20 | Учебная конфигурация GCC 16+ |
-| [Адаптеры и алгоритмы диапазонов](../stl/bonus/12-ranges-adaptors/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [flat_map и flat_set](../stl/bonus/15-flat-containers/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Многомерное представление mdspan](../stl/bonus/22-mdspan/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вызываемые объекты без копирования](../stl/bonus/17-move-only-function/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вектор с фиксированной вместимостью](../stl/bonus/16-inplace-vector/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Блочный контейнер hive](../stl/bonus/25-hive/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Владение с копированием значения](../stl/bonus/19-value-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Ссылка на функцию и копируемая обёртка](../stl/bonus/18-function-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [optional со ссылкой и обход optional](../stl/bonus/10-optional-reference/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Поиск подстроки и заполнение строки](../stl/bonus/13-string-operations/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Поэлементные вычисления SIMD](../stl/bonus/23-simd/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Линейная алгебра поверх mdspan](../stl/bonus/24-linalg/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Индексирование пакета параметров](../templates/bonus/08-pack-indexing/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Перенос квалификаторов через forward_like](../templates/bonus/07-forward-like/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [if consteval и явное копирование auto](../basics/additions/20-consteval-and-auto-copy/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Перечисления и порядок байтов](../basics/additions/25-enums-and-bytes/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Предположения оптимизатору и недостижимый код](../basics/additions/33-assume-and-unreachable/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вычисляемые сообщения и удалённые функции](../basics/additions/34-compile-time-diagnostics/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Пакеты структурированных привязок](../basics/additions/35-structured-bindings-packs/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Предусловия, постусловия и проверки контракта](../additions/contracts/01-contract-checks/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Корутина, приостановка и владение кадром](../additions/coroutines/01-coroutine-lifetime/README.md) | C++20 | Учебная конфигурация GCC 16+ |
+| [Стандартный генератор последовательности](../additions/coroutines/02-standard-generator/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Описание работы через senders и receivers](../additions/execution/01-senders/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Планировщик и время жизни операции](../additions/execution/05-schedulers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Потоки над готовым буфером](../io/additions/08-spanstream/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Включение файла через embed](../io/additions/25-embed/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Получение стека вызовов](../io/additions/23-stacktrace/README.md) | C++23 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Взаимодействие с отладчиком](../io/additions/24-debugging/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Явный параметр объекта](../oop/additions/03-explicit-object/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Многомерный индекс и статические операторы](../oop/additions/04-call-and-subscript/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Диапазоны, представления и время жизни](../stl/additions/11-ranges-and-views/README.md) | C++20 | Учебная конфигурация GCC 16+ |
+| [Адаптеры и алгоритмы диапазонов](../stl/additions/12-ranges-adaptors/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [flat_map и flat_set](../stl/additions/15-flat-containers/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Многомерное представление mdspan](../stl/additions/22-mdspan/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вызываемые объекты без копирования](../stl/additions/17-move-only-function/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вектор с фиксированной вместимостью](../stl/additions/16-inplace-vector/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Блочный контейнер hive](../stl/additions/25-hive/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Владение с копированием значения](../stl/additions/19-value-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Ссылка на функцию и копируемая обёртка](../stl/additions/18-function-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [optional со ссылкой и обход optional](../stl/additions/10-optional-reference/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Поиск подстроки и заполнение строки](../stl/additions/13-string-operations/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Поэлементные вычисления SIMD](../stl/additions/23-simd/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Линейная алгебра поверх mdspan](../stl/additions/24-linalg/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Индексирование пакета параметров](../templates/additions/08-pack-indexing/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Перенос квалификаторов через forward_like](../templates/additions/07-forward-like/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+
+| [Режимы проверки и обработчик нарушения](../additions/contracts/02-evaluation-modes/README.md) | C++26 | GCC 16+; `-fcontracts` |
+| [Порядок проверок и выход по исключению](../additions/contracts/03-order-and-exceptions/README.md) | C++26 | GCC 16+; `-fcontracts` |
+| [Инварианты класса и внешний ввод](../additions/contracts/04-invariants-and-input/README.md) | C++26 | GCC 16+; `-fcontracts` |
+| [Протокол co_await и собственный awaiter](../additions/coroutines/03-await-protocol/README.md) | C++20 | GCC 16+ |
+| [Результат задачи и распространение исключений](../additions/coroutines/04-task-result/README.md) | C++20 | GCC 16+ |
+| [Время жизни параметров и захватов корутины](../additions/coroutines/05-parameters-and-captures/README.md) | C++20 | GCC 16+ |
+| [Кооперативная отмена корутины](../additions/coroutines/06-cooperative-cancellation/README.md) | C++20 | GCC 16+ |
+| [Безопасная передача возобновления другому потоку](../additions/coroutines/07-thread-handoff/README.md) | C++20 | GCC 16+ |
+| [Несколько модулей, повторный экспорт и шаблоны](../additions/modules/02-reexport-and-templates/README.md) | C++20 | GCC 16+; module helper |
+| [Разделы модуля и global module fragment](../additions/modules/03-partitions-and-global-fragment/README.md) | C++20 | GCC 16+; module helper |
+| [Header units и макросы](../additions/modules/04-header-units/README.md) | C++20 | GCC 16+; module helper |
+| [Стандартный модуль и пересоздание CMI](../additions/modules/05-import-std/README.md) | C++23 | GCC 16+; module helper |
+| [connect, start и собственный receiver](../additions/execution/02-operation-state/README.md) | C++26 | Стандартный API или явный stdexec |
+| [Значение, ошибка и остановка](../additions/execution/03-completion-channels/README.md) | C++26 | Стандартный API или явный stdexec |
+| [Объединение операций и зависимые шаги](../additions/execution/04-composition/README.md) | C++26 | Стандартный API или явный stdexec |
+| [Переключение планировщика](../additions/execution/06-scheduler-transfer/README.md) | C++26 | Стандартный API или явный stdexec |
+| [Senders внутри корутины](../additions/execution/07-coroutine-interop/README.md) | C++26 | Стандартный API или явный stdexec |
 
 Также расширены существующие уроки:
 
-- [Результат или ошибка](../stl/bonus/07-expected/README.md): цепочки `expected`,
+- [Результат или ошибка](../stl/additions/07-expected/README.md): цепочки `expected`,
   обработка ошибки, `expected<void,E>` и сравнение с цепочками `optional`.
-- [Форматирование и печать](../io/bonus/05-format-and-print/README.md): диапазоны,
+- [Форматирование и печать](../io/additions/05-format-and-print/README.md): диапазоны,
   tuple, прямые вызовы `print`/`println` и formatter пользовательского типа.
-- [Рефлексия](../bonus/reflection/README.md) уже демонстрирует `^^`, splicing,
+- [Рефлексия](../additions/reflection/README.md) уже демонстрирует `^^`, splicing,
   `template for`, аннотации, создание агрегатов и обработку ошибки метафункции
   при константном вычислении. Эти примеры не дублируются.
 
 ## Поддержка и запуск
 
-[Настройка GCC](../bonus/reflection/linux-setup.md) и
+[Настройка GCC](../additions/reflection/linux-setup.md) и
 [сборка и запуск в VS Code](../README.md#сборка-и-запуск-в-vs-code).
 После добавления исходников выполните `C/C++: Update IntelliSense`.
 Сборка нового урока требует GCC 16+ через `CXX_MODERN`, даже если отдельная
@@ -82,8 +100,10 @@ IntelliSense может отставать от GCC и ошибочно подч
 senders/receivers из C++26. Их исходники содержат стандартные вызовы под
 условием feature-test macro; при отсутствии поддержки программа возвращает
 `77` с сообщением `UNAVAILABLE`. Такая ветка не подтверждает работоспособность
-основного примера. Для её проверки понадобится реализующая API библиотека;
-автоматической подмены другим контейнером или ручным алгоритмом нет.
+основного примера. Для практического изучения добавлен явный
+[внешний профиль](../additions/execution/reference-libraries.md) с закреплёнными
+stdexec, stdBLAS/mdspan и plf::hive. Его успешные результаты относятся к этим
+реализациям; стандартный профиль по-прежнему отдельно сообщает об отсутствии API.
 Наличие `<execution>` с политиками C++17 не включает senders C++26.
 
 Интерфейсы экспериментальных реализаций меняются. Например, текущий `<simd>`
@@ -91,10 +111,10 @@ senders/receivers из C++26. Их исходники содержат стан�
 возвращает `optional<T&>` вместо указателя. Сверяйте feature-test macros и
 контракт своей версии библиотеки; один `-std=c++26` не гарантирует всё API.
 
-Проверка существующих и новых бонусов из корня:
+Проверка существующих и новых дополнений из корня:
 
 ```bash
-python3 scripts/check-bonuses.py --section all
+python3 scripts/check-additions.py --section all
 ```
 
 `SKIP` для отсутствующей возможности показывается отдельно и не считается

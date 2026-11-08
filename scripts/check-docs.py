@@ -62,11 +62,11 @@ def links(text):
 def numbered_title(text):
     quoted = re.search(r"«([^»]+)»", text)
     title = (quoted[1] if quoted else text).replace("`", "")
-    match = re.match(r"(?:(?:урок|бонус)\s+)?(\d+)\.\s*(.+)", title, re.I)
+    match = re.match(r"(?:(?:урок|бонус|дополнение)\s+)?(\d+)\.\s*(.+)", title, re.I)
     if not match:
         return None
     qualifier = text[:quoted.start()].strip(" :—-").casefold() if quoted else ""
-    qualified = qualifier not in ("", "урок", "уроки", "бонус", "бонусы")
+    qualified = qualifier not in ("", "урок", "уроки", "бонус", "бонусы", "дополнение", "дополнения")
     normalized = re.sub(r"\s+", " ", match[2]).strip().casefold()
     return int(match[1]), normalized, qualified
 
@@ -79,8 +79,8 @@ def lesson_catalog(markdown):
         if path.name != "README.md" or not match:
             continue
         scope = path.parent.parent
-        # Course lessons and their bonuses share a topic; each topic has its own numbers.
-        topic = scope.parent if scope.name == "bonus" else scope
+        # Course lessons and additions share a topic; each topic has its own numbers.
+        topic = scope.parent if scope.name == "additions" else scope
         number = int(match[1])
         text = path.read_text(encoding="utf-8-sig")
         heading = re.search(r"^#\s+(.+)$", prose(text), re.M)
@@ -116,7 +116,7 @@ def author_order_errors(catalog):
     """Check the declared learning sequence; original course IDs are independent."""
     sections = {}
     for folder in catalog:
-        if "bonus" in folder.parent.relative_to(ROOT).parts:
+        if "additions" in folder.parent.relative_to(ROOT).parts:
             sections.setdefault(folder.parent, []).append(folder)
     errors = []
     for section, folders in sections.items():

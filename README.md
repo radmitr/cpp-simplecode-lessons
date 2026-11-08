@@ -7,7 +7,7 @@
 Это не официальный репозиторий автора курса.
 
 Исходные темы и номера курса сохранены. В проект добавлены подробные объяснения,
-сборка и запуск на Windows/Linux, проверки результатов и самостоятельные бонусы:
+сборка и запуск на Windows/Linux, проверки результатов и самостоятельные дополнения:
 современный C++, многопоточность, сети, PostgreSQL и экспериментальная рефлексия.
 [Уроки курса и самостоятельные дополнения](docs/course-sources.md) разделены;
 особенности реализации объясняются в README каждого урока.
@@ -15,16 +15,16 @@
 
 ## Структура
 
-- [basics/](basics/README.md) — основы языка и [бонусы](basics/bonus/README.md).
-- [templates/](templates/README.md) — шаблоны функций и классов, современные [бонусы](templates/bonus/README.md).
-- [exceptions/](exceptions/README.md) — исключения и [бонусы по обработке ошибок](exceptions/bonus/README.md).
-- [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки [«115. Запись в файл: `ofstream`»](io/lesson-115-file-output-ofstream/README.md) — [«119. Потоковые операторы для своего типа»](io/lesson-119-stream-io-operator-overloading/README.md) и [бонусы](io/bonus/README.md).
-- [oop/](oop/README.md) — копирование, перегрузки, наследование и полиморфизм; [бонусы](oop/bonus/README.md).
-- [stl/](stl/README.md) — контейнеры, итераторы и алгоритмы; [бонусы](stl/bonus/README.md).
+- [basics/](basics/README.md) — основы языка и [дополнения](basics/additions/README.md).
+- [templates/](templates/README.md) — шаблоны функций и классов, современные [дополнения](templates/additions/README.md).
+- [exceptions/](exceptions/README.md) — исключения и [дополнения по обработке ошибок](exceptions/additions/README.md).
+- [io/](io/README.md) — ввод-вывод, потоки и файлы; уроки [«115. Запись в файл: `ofstream`»](io/lesson-115-file-output-ofstream/README.md) — [«119. Потоковые операторы для своего типа»](io/lesson-119-stream-io-operator-overloading/README.md) и [дополнения](io/additions/README.md).
+- [oop/](oop/README.md) — копирование, перегрузки, наследование и полиморфизм; [дополнения](oop/additions/README.md).
+- [stl/](stl/README.md) — контейнеры, итераторы и алгоритмы; [дополнения](stl/additions/README.md).
 - [multithreading/](multithreading/README.md) — потоки, синхронизация и результаты задач.
-- `bonus/` — дополнительные направления вне курса: [рефлексия](bonus/reflection/README.md), [сети на Windows/Linux](bonus/networking/README.md).
-- `bonus/databases/postgresql/` — [20 уроков PostgreSQL из C++](bonus/databases/postgresql/README.md), Windows/MinGW64 и Linux.
-- `multithreading/bonus/` — дополнительные темы по многопоточности после уроков [«Запуск потоков»](multithreading/lesson-01-thread/README.md) — [«`std::unique_lock`: отложенный и повторный захват»](multithreading/lesson-10-unique-lock/README.md).
+- `additions/` — дополнительные направления вне курса: [рефлексия](additions/reflection/README.md), [сети на Windows/Linux](additions/networking/README.md).
+- `additions/databases/postgresql/` — [20 уроков PostgreSQL из C++](additions/databases/postgresql/README.md), Windows/MinGW64 и Linux.
+- `multithreading/additions/` — дополнительные темы по многопоточности после уроков [«Запуск потоков»](multithreading/lesson-01-thread/README.md) — [«`std::unique_lock`: отложенный и повторный захват»](multithreading/lesson-10-unique-lock/README.md).
 - [examples/](examples/README.md) — дополнительные примеры строк и владения памятью.
 - [Шаблон урока](_template/README.md) — заготовка в `_template/`.
 - [common/](common/README.md) — общая настройка кодировки консоли.
@@ -33,18 +33,22 @@
 
 Ссылки на все уроки по разделам собраны в [LESSONS.md](LESSONS.md).
 Каталоги исходных уроков сохраняют примеры курса SimpleCode.
-Новые учебные сценарии размещаются в `bonus` соответствующего раздела;
+Новые учебные сценарии размещаются в `additions` соответствующего раздела;
 в исходных уроках остаются пояснения, исправления и ссылки на дополнения.
 Пояснения к основам: [basics/README.md](basics/README.md); к потокам и файлам: [io/README.md](io/README.md).
 Пояснения к урокам многопоточности: [multithreading/README.md](multithreading/README.md).
 Устройство сборки и выбор стандарта: [scripts/README.md](scripts/README.md).
+
+`additions` означает авторские дополнения: внутри тематического раздела — развитие
+его материала, в корне — самостоятельные направления. Название не задаёт уровень
+сложности и не означает, что материал появился только в последней версии C++.
 
 ## Как пользоваться справочником
 
 Для последовательного чтения есть [учебный маршрут](docs/learning-path.md),
 для поиска по редакции языка — [указатель версий](docs/cpp-versions.md),
 для различения полного, частичного и отсутствующего разбора — [карта покрытия](docs/cpp-coverage.md).
-Номера исходного курса сохранены. Авторские бонусы внутри каждого раздела
+Номера исходного курса сохранены. Авторские дополнения внутри каждого раздела
 пронумерованы с `01` по порядку изучения: сначала необходимые знания, затем
 связанные применения и сложные дополнения. Версия C++ служит дополнительным ориентиром.
 
@@ -55,7 +59,7 @@ README раздела задаёт порядок изучения, README ко�
 ссылками на полные примеры. Для самостоятельного запуска откройте указанный
 исходник; несколько вариантов с `main()` не объединяют в одну программу.
 
-Например, [future/async](multithreading/bonus/12-future-async/README.md)
+Например, [future/async](multithreading/additions/12-future-async/README.md)
 разбирает отличие результата от потока, `get()` от `wait()`, отложенный запуск,
 исключения и время жизни задачи. В [ООП](oop/README.md) можно найти правила
 копирования и уничтожения, в [STL](stl/README.md) — границы диапазонов,
@@ -89,26 +93,26 @@ C++23. [Краткий указатель версий](docs/cpp-versions.md) о
 
 На Windows и Linux по умолчанию используется C++17. `cxx-standard.txt` рядом
 с исходником выбирает C++17/20/23/26; `gcc-min-version.txt` при необходимости
-задаёт минимальную версию GCC. Бонусы основ и IO в основном рассчитаны на GCC 11
+задаёт минимальную версию GCC. Дополнения основ и IO в основном рассчитаны на GCC 11
 и C++17/20. Современный IO-урок format/print с расширенными примерами требует GCC 16+,
 рефлексия C++26 — GCC 16+ и `-freflection`. Уроки с минимумом GCC 13+ используют
 на Linux `CXX_MODERN`, по умолчанию `/opt/gcc/16/bin/g++`; это относится и к новым
 [современным дополнениям](docs/modern-cpp.md). Остальные уроки используют
 `/usr/bin/g++` (или `CXX`).
 Подготовка отдельного GCC в `/home` с установкой в `/opt/gcc/<версия>` описана в
-[инструкции Linux](bonus/reflection/linux-setup.md). CMake не настроен.
+[инструкции Linux](additions/reflection/linux-setup.md). CMake не настроен.
 
-В [бонусе про ThreadSanitizer](multithreading/bonus/27-thread-sanitizer/)
+В [дополнении про ThreadSanitizer](multithreading/additions/27-thread-sanitizer/)
 диагностика гонки данных запускается отдельным скриптом на Linux/WSL
 с компилятором и библиотекой TSan. Обычная сборка F5/Ctrl+F5 её не включает.
 
-[Сетевые уроки](bonus/networking/README.md) используют WinSock на Windows
+[Сетевые уроки](additions/networking/README.md) используют WinSock на Windows
 и POSIX-сокеты на Linux. Для HTTP/HTTPS нужна libcurl; зависимости и запуск
 клиента с сервером описаны в README раздела.
 Для примеров `Boost.Asio` и WebSocket нужны также заголовки Boost;
 уроки включают локальные проверки IPv6, повторов, файлов и асинхронных операций.
 
-[Уроки PostgreSQL](bonus/databases/postgresql/README.md) используют libpq и C++17.
+[Уроки PostgreSQL](additions/databases/postgresql/README.md) используют libpq и C++17.
 В разделе описаны зависимости для MinGW64/Linux и запуск отдельного учебного
 сервера на порту 55432; основной PostgreSQL компьютера можно оставить работающим.
 

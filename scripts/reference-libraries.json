@@ -1,0 +1,30 @@
+[
+  {
+    "name": "stdexec",
+    "repository": "NVIDIA/stdexec",
+    "revision": "4d0d52d9e716dd2d54f2f6400ad0f511d055ca48",
+    "url": "https://codeload.github.com/NVIDIA/stdexec/tar.gz/4d0d52d9e716dd2d54f2f6400ad0f511d055ca48",
+    "sha256": "3ba98f8752ff33caf0fe6002e658799561636aa0803e8b7bdca0bfeeab2271db"
+  },
+  {
+    "name": "stdblas",
+    "repository": "kokkos/stdBLAS",
+    "revision": "146f4743a953e51d7319156f50d932bca7a6507f",
+    "url": "https://codeload.github.com/kokkos/stdBLAS/tar.gz/146f4743a953e51d7319156f50d932bca7a6507f",
+    "sha256": "edf9df2be1ea20d42232bdacb28f960b9d3a8cba456d56b2c6bfc2eeaf5e0bba"
+  },
+  {
+    "name": "mdspan",
+    "repository": "kokkos/mdspan",
+    "revision": "a32a23b523953f9c4ce0efccd56b7563bf6d83db",
+    "url": "https://codeload.github.com/kokkos/mdspan/tar.gz/a32a23b523953f9c4ce0efccd56b7563bf6d83db",
+    "sha256": "b0337b157d717c78bc93358c266cf8db12a002cde6595983075e68ddbbf8e37b"
+  },
+  {
+    "name": "plf-hive",
+    "repository": "mattreecebentley/plf_hive",
+    "revision": "cb5527fe43ff0d34aa69e4a7a069f0f49b1438c7",
+    "url": "https://codeload.github.com/mattreecebentley/plf_hive/tar.gz/cb5527fe43ff0d34aa69e4a7a069f0f49b1438c7",
+    "sha256": "aa354ffeffe656298fddd12f329b9764b809c8508af3ef9755e84fb057da6017"
+  }
+]

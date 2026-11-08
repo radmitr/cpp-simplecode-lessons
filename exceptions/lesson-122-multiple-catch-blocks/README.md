@@ -59,6 +59,6 @@ bash scripts/build-windows.sh "exceptions/lesson-122-multiple-catch-blocks/main.
 
 ### Дополнительные API в коде
 
-- [Учебные режимы terminate](../../multithreading/bonus/12-future-async/README.md): [полный пример](../../multithreading/bonus/12-future-async/main8.cpp).
+- [Учебные режимы terminate](../../multithreading/additions/12-future-async/README.md): [полный пример](../../multithreading/additions/12-future-async/main8.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

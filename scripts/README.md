@@ -38,10 +38,10 @@ ws2_32
 curl
 ~~~
 
-Это используется в [сетевых уроках](../bonus/networking/README.md).
+Это используется в [сетевых уроках](../additions/networking/README.md).
 Флаги -lws2_32/-lcurl идут после исходников. Библиотека и её заголовки
 должны быть установлены для выбранного компилятора.
-В [уроках PostgreSQL](../bonus/databases/postgresql/README.md) строка pq
+В [уроках PostgreSQL](../additions/databases/postgresql/README.md) строка pq
 добавляет -lpq; общий заголовок учитывает расположение `libpq-fe.h` в MinGW64
 и подкаталог postgresql на Debian/Ubuntu. Другие пути установки требуют
 настройки поиска заголовков и библиотек для выбранного компилятора.
@@ -58,7 +58,7 @@ SDK вызывает ошибку до компиляции. Версия libcur
 и `rpath`; заголовки этого же выпуска входят в базу IntelliSense.
 Так сборка не смешивает новые заголовки со старой библиотекой.
 Выбор `CURL_PREFIX` применяется только к урокам с маркером `curl` и не требует
-обёрток над `g++`. [Установка и переключение curl](../bonus/networking/linux-curl.md).
+обёрток над `g++`. [Установка и переключение curl](../additions/networking/linux-curl.md).
 
 Результат сохраняется в build/ с тем же относительным путём, что у исходника.
 `main.cpp` и `main2.cpp` собираются отдельно. Если рядом есть `SimpleTimer.cpp`
@@ -77,7 +77,7 @@ SDK вызывает ошибку до компиляции. Версия libcur
 - `language-feature.txt`: `contracts` или `modules`, чтобы включить соответствующее расширение GCC.
 - `module-units.txt`: имена единиц модуля в порядке компиляции, интерфейс перед реализацией.
 
-Для [модульного урока](../bonus/modules/01-interface-and-implementation/README.md)
+Для [модульного урока](../additions/modules/01-interface-and-implementation/README.md)
 общие скрипты сборки вызывают `build-module-lesson.sh`. Кэш CMI и объектные файлы
 сохраняются в `build/<путь урока>/module-build/`; каталог исходников не становится
 кэшем компилятора. Генератор IntelliSense указывает эту же рабочую папку для единиц модуля.
@@ -85,15 +85,15 @@ SDK вызывает ошибку до компиляции. Версия libcur
 Маркер `parallel-backend` в `link-libraries.txt` запрашивает выбранный GCC:
 если его libstdc++ использует TBB, подключается `-ltbb`, иначе остаётся последовательный
 backend. Заголовки TBB и библиотека должны принадлежать совместимому тулчейну.
-Пример: [политики алгоритмов](../stl/bonus/21-parallel-algorithms/README.md).
+Пример: [политики алгоритмов](../stl/additions/21-parallel-algorithms/README.md).
 
 Сохраняется обработка CRLF у маркеров Windows. Произвольные shell-команды или
-строки флагов не исполняются. Для `c++26` в разделе `bonus/reflection/` добавляется `-freflection`
+строки флагов не исполняются. Для `c++26` в разделе `additions/reflection/` добавляется `-freflection`
 и требуется GCC 16+. Уроки с минимумом GCC 13+ выбирают `CXX_MODERN`; остальные — `CXX`.
 
 По умолчанию `CXX_MODERN` на Linux — `/opt/gcc/16/bin/g++`, на Windows — тот же MinGW64.
 На Linux `16` — символическая ссылка на установленный выпуск, например
-`/opt/gcc/16.2.0`. [Схема каталогов и команды переключения GCC](../bonus/reflection/linux-setup.md#выбор-и-переключение-версий)
+`/opt/gcc/16.2.0`. [Схема каталогов и команды переключения GCC](../additions/reflection/linux-setup.md#выбор-и-переключение-версий)
 поясняют различие путей через полный номер, ветку `16` и `current`.
 Если `CXX_MODERN` не задан, явно заданный `CXX` также используется как запасной выбор.
 Проект использует ссылку ветки `16`; смена `/opt/gcc/current` сама его
@@ -103,16 +103,16 @@ backend. Заголовки TBB и библиотека должны прина�
 | Примеры | Режим языка | GCC на Linux по умолчанию |
 |---|---|---|
 | Обычные уроки | C++17/C++20 | `/usr/bin/g++` |
-| [`std::expected`](../stl/bonus/07-expected/README.md), минимум GCC 13 | C++23 | `/opt/gcc/16/bin/g++` |
-| [`std::format` и `std::print`](../io/bonus/05-format-and-print/README.md), учебная конфигурация GCC 16 | C++23 | `/opt/gcc/16/bin/g++` |
-| [Рефлексия, начиная с проверки компилятора](../bonus/reflection/06-toolchain/README.md) | C++26 и `-freflection` | `/opt/gcc/16/bin/g++` |
+| [`std::expected`](../stl/additions/07-expected/README.md), минимум GCC 13 | C++23 | `/opt/gcc/16/bin/g++` |
+| [`std::format` и `std::print`](../io/additions/05-format-and-print/README.md), учебная конфигурация GCC 16 | C++23 | `/opt/gcc/16/bin/g++` |
+| [Рефлексия, начиная с проверки компилятора](../additions/reflection/06-toolchain/README.md) | C++26 и `-freflection` | `/opt/gcc/16/bin/g++` |
 
 Не найденный компилятор или слишком старая версия дают понятную ошибку до сборки.
 Генератор может создать настройки даже на Linux до установки нового компилятора;
 это не означает, что программы уже можно собирать.
 
 ```bash
-CXX_MODERN=/opt/gcc/16/bin/g++ bash scripts/build-linux.sh bonus/reflection/06-toolchain/main.cpp
+CXX_MODERN=/opt/gcc/16/bin/g++ bash scripts/build-linux.sh additions/reflection/06-toolchain/main.cpp
 CXX_MODERN=/opt/gcc/16/bin/g++ bash scripts/generate-compile-commands.sh
 ```
 
@@ -122,29 +122,30 @@ Linux-сборка определяет каталог `libstdc++.so.6` чере
 или `current`. Сохраняйте каталог выпуска, пока его библиотеки нужны готовым
 программам. Системные библиотеки при этом заменять не требуется.
 Сборка самого GCC в /home и установка в /opt описаны в
-[инструкции Linux](../bonus/reflection/linux-setup.md).
+[инструкции Linux](../additions/reflection/linux-setup.md).
 
 Для JSON по возможности используется системный nlohmann/json. Локальный
 `build/dependencies/include/nlohmann/json.hpp` также поддерживается; его каталог
 добавляется как system include только урокам с соответствующим маркером.
-После изменения зависимости обновите IntelliSense. [Зависимости](../io/bonus/dependencies.md).
+После изменения зависимости обновите IntelliSense. [Зависимости](../io/additions/dependencies.md).
 Урок `std::print` подключает `stdc++exp`, требуемую MinGW-реализацией.
 
-## Проверка бонусов
+## Проверка дополнений
 
 ```bash
-python3 scripts/check-bonuses.py
-python3 scripts/check-bonuses.py --section templates/bonus
-python3 scripts/check-bonuses.py --section exceptions/bonus
-python3 scripts/check-bonuses.py --section bonus/reflection
-python3 scripts/check-bonuses.py --portable-only
+python3 scripts/check-additions.py
+python3 scripts/check-additions.py --section templates/additions
+python3 scripts/check-additions.py --section exceptions/additions
+python3 scripts/check-additions.py --section additions/reflection
+python3 scripts/check-additions.py --portable-only
 ```
 
 На Windows можно использовать python вместо python3. --portable-only явно
 пропускает уроки, требующие GCC новее 11, и не считается проверкой C++26.
 Скрипт собирает каждый `main*.cpp`, выполняет встроенные проверки, проверяет
 ошибки ввода, повреждённые бинарные данные и ожидаемые ошибки компиляции.
-Рабочие данные и JSON-отчёт находятся в build/bonus-checks. --jobs задаёт
+Рабочие данные и JSON-отчёт находятся в `build/additions-checks/standard`
+или `build/additions-checks/reference`, в зависимости от выбранного профиля. --jobs задаёт
 1–4 независимых процесса, по умолчанию 2. Зависимости не устанавливаются автоматически.
 
 ## Связь с VS Code
@@ -167,7 +168,7 @@ bash scripts/generate-compile-commands.sh
 ~~~
 
 Генератор записывает `build/compile_commands.json` для `.cpp` и `.cppm` из каталогов
-basics/, templates/, exceptions/, io/, oop/, stl/, multithreading/, глобального bonus/, примеров и шаблона, включая вспомогательные исходники. Каждая запись
+basics/, templates/, exceptions/, io/, oop/, stl/, multithreading/, глобального additions/, примеров и шаблона, включая вспомогательные исходники. Каждая запись
 описывает компиляцию одного исходника; для уроков [«139. Многофайловая программа»](../basics/lesson-139-multi-file-project/README.md) — [«140. Защита заголовков от повторного включения»](../basics/lesson-140-multi-file-project-include-guard/README.md) добавлен include/.
 Стандарт выбирается из `cxx-standard.txt` рядом с исходником.
 База используется корневой `.vscode/c_cpp_properties.json` и сгенерированными
@@ -209,12 +210,12 @@ C/C++: Update IntelliSense.
 
 ## ThreadSanitizer
 
-В [Поиск гонки данных с ThreadSanitizer](../multithreading/bonus/27-thread-sanitizer/) есть отдельный
+В [Поиск гонки данных с ThreadSanitizer](../multithreading/additions/27-thread-sanitizer/) есть отдельный
 `run-tsan.sh` для диагностики гонки данных на Linux/WSL:
 
 ~~~bash
-bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main.cpp
-bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main2.cpp
+bash multithreading/additions/27-thread-sanitizer/run-tsan.sh main.cpp
+bash multithreading/additions/27-thread-sanitizer/run-tsan.sh main2.cpp
 ~~~
 
 Он выбирает clang++ (либо компилятор из `CXX`), добавляет `-fsanitize=thread`,
@@ -271,7 +272,7 @@ bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main2.cpp
 начальные нули номера и оформление обратными кавычками могут отличаться.
 Короткие описательные подписи без номера также допустимы.
 Если тот же номер есть в текущей теме, переход в другой раздел нужно пояснить
-в подписи, например `Основы C++: «015. Цикл do-while»`. Уроки курса и бонусы
+в подписи, например `Основы C++: «015. Цикл do-while»`. Уроки курса и дополнения
 одного раздела относятся к одной теме; поиск номеров охватывает все разделы.
 
 Регрессионные проверки самого скрипта: `python scripts/test-check-docs.py`
@@ -282,10 +283,10 @@ bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main2.cpp
 
 Для дополнительных возможностей компилятора есть маркер `language-feature.txt`:
 значение `contracts` включает `-fcontracts`, `modules` — `-fmodules`. Сам режим C++26 не включает рефлексию
-автоматически; `-freflection` добавляется для исходников `bonus/reflection/`.
+автоматически; `-freflection` добавляется для исходников `additions/reflection/`.
 Эти параметры одинаковы в сборке и `compile_commands.json`.
 
-`check-bonuses.py` также проверяет STL, ООП, корутины, контракты и execution.
+`check-additions.py` также проверяет STL, ООП, корутины, контракты и execution.
 Поле `success_marker` в `lessons.json` явно задаёт проверяемую строку вывода;
 `null` отключает только поиск строки, сохраняя проверку кода завершения.
 Проверка результата не зависит от номера урока.
@@ -293,3 +294,28 @@ bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main2.cpp
 означают явный `SKIP`, который не входит в число успешно выполненных примеров.
 `--require-features` превращает такой пропуск в ошибку. Некорректная программа
 или другая ошибка сборки всегда остаётся ошибкой.
+
+
+## Контракты, модули и внешние реализации
+
+- `CONTRACT_SEMANTIC=ignore|observe|enforce|quick_enforce` задаёт режим контрактов
+  для сборки. Без переменной можно задать `contract-semantic.txt` рядом с исходником.
+  `python3 scripts/check-contracts.py` проверяет все четыре режима, включая
+  намеренное завершение в дочернем процессе без core dump на Linux.
+- `python3 scripts/check-modules.py` проверяет порядок зависимостей, удаление
+  устаревшего CMI и отклонение путей за пределами урока.
+- `python3 scripts/test-reference-libraries.py` выполняет автономные регрессионные
+  проверки SHA-256, распаковки и сохранения существующей установки.
+- `module-units.txt` перечисляет единицы в порядке зависимостей; `header-units.txt` —
+  локальные `.h`/`.hpp`; `standard-module.txt` со значением `std` включает
+  подготовку стандартного модуля драйвером GCC. Helper очищает только приватный
+  `gcm.cache` урока и выполняет полный rebuild.
+- `python3 scripts/prepare-reference-libraries.py` загружает версии из
+  [manifest](reference-libraries.json), проверяет SHA-256 и готовит зависимости
+  под `build`, без системной установки. `REFERENCE_LIBRARIES=1` включает их
+  только для уроков с соответствующим `include-library.txt`.
+- `check-additions.py --profile standard|reference` всегда явно выбирает профиль.
+  `--require-features` превращает пропуски в ошибки.
+  [Различия API и команды](../additions/execution/reference-libraries.md).
+- `python3 additions/networking/tests/check-reference.py` собирает и проверяет
+  новые сетевые примеры на loopback; нужны Python stdlib и `openssl`.

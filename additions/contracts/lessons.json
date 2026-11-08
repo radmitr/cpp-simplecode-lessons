@@ -1,0 +1,38 @@
+[
+  {
+    "number": 1,
+    "folder": "additions/contracts/01-contract-checks",
+    "title": "Предусловия, постусловия и проверки контракта",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "folder": "additions/contracts/02-evaluation-modes",
+    "title": "Режимы проверки и обработчик нарушения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 2
+  },
+  {
+    "folder": "additions/contracts/03-order-and-exceptions",
+    "title": "Порядок проверок и выход по исключению",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 3
+  },
+  {
+    "folder": "additions/contracts/04-invariants-and-input",
+    "title": "Инварианты класса и внешний ввод",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 4
+  }
+]

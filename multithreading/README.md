@@ -1,6 +1,6 @@
 # Многопоточность
 
-Начните с уроков [«01. Запуск потоков»](lesson-01-thread/README.md) — [«10. `std::unique_lock`: отложенный и повторный захват»](lesson-10-unique-lock/README.md), затем переходите к [бонусам](bonus/README.md).
+Начните с уроков [«01. Запуск потоков»](lesson-01-thread/README.md) — [«10. `std::unique_lock`: отложенный и повторный захват»](lesson-10-unique-lock/README.md), затем переходите к [дополнениям](additions/README.md).
 В каждой папке есть README с пояснением текущего кода.
 
 ## Основные уроки
@@ -16,9 +16,9 @@
 9. [recursive_mutex](lesson-09-recursive-mutex/) — повторный захват тем же потоком.
 10. [unique_lock](lesson-10-unique-lock/) — отложенный захват и ручное освобождение.
 
-## Бонусы
+## Дополнения
 
-[Полная последовательность авторских уроков](bonus/README.md) совпадает с номерами папок.
+[Полная последовательность авторских уроков](additions/README.md) совпадает с номерами папок.
 Сначала изучите передачу объектов и владение захватом, затем ожидание и результаты,
 остановку, координацию и атомики. Версии C++ и специальные варианты запуска указаны в уроках.
 
@@ -28,13 +28,13 @@
 нужный `main*.cpp`. **F5** запускает с отладчиком, **Ctrl+F5** — без отладчика.
 `main.cpp`, `main2.cpp` и другие
 варианты — самостоятельные программы; вместе их собирать не нужно.
-Сами папки multithreading/ и bonus/ конфигураций VS Code не содержат.
+Сами папки multithreading/ и additions/ конфигураций VS Code не содержат.
 
-По умолчанию используется C++17. Бонусы `jthread`, semaphore, barrier, osyncstream,
+По умолчанию используется C++17. Дополнения `jthread`, semaphore, barrier, osyncstream,
 `atomic::wait`, latch и ожидание с `stop_token` используют C++20.
 Подробные команды: [общий README](../README.md) и [скрипты сборки](../scripts/README.md).
 
-Для диагностики ThreadSanitizer в [Поиск гонки данных с ThreadSanitizer](bonus/27-thread-sanitizer/README.md) нужен отдельный запуск на Linux/WSL;
+Для диагностики ThreadSanitizer в [Поиск гонки данных с ThreadSanitizer](additions/27-thread-sanitizer/README.md) нужен отдельный запуск на Linux/WSL;
 обычная сборка F5/Ctrl+F5 инструментирование не включает.
 
 Урок [«02. Аргументы потока»](lesson-02-thread-param/README.md) намеренно не завершается из-за бесконечного цикла; остановите его

@@ -1,0 +1,47 @@
+[
+  {
+    "number": 1,
+    "folder": "additions/modules/01-interface-and-implementation",
+    "title": "Интерфейс и реализация модуля",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "folder": "additions/modules/02-reexport-and-templates",
+    "title": "Несколько модулей, повторный экспорт и шаблоны",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 2
+  },
+  {
+    "folder": "additions/modules/03-partitions-and-global-fragment",
+    "title": "Разделы модуля и global module fragment",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 3
+  },
+  {
+    "folder": "additions/modules/04-header-units",
+    "title": "Header units и макросы",
+    "standard": "c++20",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 4
+  },
+  {
+    "folder": "additions/modules/05-import-std",
+    "title": "Стандартный модуль и пересоздание CMI",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK reference-example",
+    "number": 5
+  }
+]

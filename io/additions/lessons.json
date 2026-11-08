@@ -1,0 +1,229 @@
+[
+  {
+    "number": 1,
+    "folder": "io/additions/01-stream-state",
+    "title": "Состояния потоков и восстановление ввода",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 2,
+    "folder": "io/additions/02-string-streams",
+    "title": "Строковые потоки и разбор записей",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 3,
+    "folder": "io/additions/03-charconv",
+    "title": "Строгое преобразование чисел",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 4,
+    "folder": "io/additions/04-iomanip",
+    "title": "Форматирование и состояние потока",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 5,
+    "folder": "io/additions/05-format-and-print",
+    "title": "std::format и std::print",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 6,
+    "folder": "io/additions/06-stream-interfaces",
+    "title": "Общие интерфейсы istream и ostream",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 7,
+    "folder": "io/additions/07-buffering",
+    "title": "Буферизация, endl и flush",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 8,
+    "folder": "io/additions/08-spanstream",
+    "title": "Потоки над готовым буфером",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 9,
+    "folder": "io/additions/09-open-modes",
+    "title": "Создание, перезапись, app, ate и binary",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 10,
+    "folder": "io/additions/10-io-errors",
+    "title": "Ошибки записи, исключения и закрытие",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 11,
+    "folder": "io/additions/11-positions",
+    "title": "Позиции чтения и записи",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 12,
+    "folder": "io/additions/12-block-copy",
+    "title": "Блочная обработка и неполный последний блок",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 13,
+    "folder": "io/additions/13-filesystem-path",
+    "title": "Пути, cwd и имена Unicode",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 14,
+    "folder": "io/additions/14-filesystem-operations",
+    "title": "Каталоги, файлы, симлинки и error_code",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 15,
+    "folder": "io/additions/15-utf8",
+    "title": "UTF-8, BOM, переводы строк и char8_t",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 16,
+    "folder": "io/additions/16-csv",
+    "title": "CSV с кавычками и многострочными полями",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 17,
+    "folder": "io/additions/17-json",
+    "title": "JSON: библиотека, типы и обязательные поля",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": "nlohmann-json",
+    "success_marker": "OK "
+  },
+  {
+    "number": 18,
+    "folder": "io/additions/18-portable-binary",
+    "title": "Явный бинарный формат",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": null
+  },
+  {
+    "number": 19,
+    "folder": "io/additions/19-versioned-records",
+    "title": "Записи, длины, версии и контрольная сумма",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 20,
+    "folder": "io/additions/20-temporary-save",
+    "title": "Сохранение через временный файл",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 21,
+    "folder": "io/additions/21-console-tool",
+    "title": "Аргументы, stdin/stdout/stderr и коды завершения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 22,
+    "folder": "io/additions/22-file-logger",
+    "title": "Файловый журнал и ограничение размера",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 23,
+    "folder": "io/additions/23-stacktrace",
+    "title": "Получение стека вызовов",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 24,
+    "folder": "io/additions/24-debugging",
+    "title": "Взаимодействие с отладчиком",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": "OK "
+  },
+  {
+    "number": 25,
+    "folder": "io/additions/25-embed",
+    "title": "Включение файла через embed",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  }
+]

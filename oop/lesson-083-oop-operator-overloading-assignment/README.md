@@ -52,7 +52,7 @@ MyClass& operator=(const MyClass& other);
 
 Другой способ — `copy-and-swap`. Для класса с `std::vector` ресурсами управляют
 его специальные функции: это правило нуля.
-[Гарантии исключений](../../exceptions/bonus/04-exception-guarantees/README.md).
+[Гарантии исключений](../../exceptions/additions/04-exception-guarantees/README.md).
 
 ## Сборка и запуск
 

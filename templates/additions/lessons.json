@@ -1,0 +1,74 @@
+[
+  {
+    "number": 1,
+    "folder": "templates/additions/01-function-templates",
+    "title": "Шаблоны функций и вывод параметров",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 2,
+    "folder": "templates/additions/02-template-parameters",
+    "title": "Параметры шаблонов, специализация и CTAD",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 3,
+    "folder": "templates/additions/03-traits-if-constexpr",
+    "title": "type_traits, if constexpr и enable_if",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 4,
+    "folder": "templates/additions/04-parameter-packs",
+    "title": "Пакеты параметров и fold expressions",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 5,
+    "folder": "templates/additions/05-perfect-forwarding",
+    "title": "Forwarding references и std::forward",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 6,
+    "folder": "templates/additions/06-concepts",
+    "title": "Concepts и requires",
+    "standard": "c++20",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 7,
+    "folder": "templates/additions/07-forward-like",
+    "title": "Перенос квалификаторов через forward_like",
+    "standard": "c++23",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 8,
+    "folder": "templates/additions/08-pack-indexing",
+    "title": "Индексирование пакета параметров",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  }
+]

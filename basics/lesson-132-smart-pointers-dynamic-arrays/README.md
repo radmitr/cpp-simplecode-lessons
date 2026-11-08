@@ -60,7 +60,7 @@ bash scripts/build-windows.sh "basics/lesson-132-smart-pointers-dynamic-arrays/m
 
 ### Дополнительные API в коде
 
-- [Исключительное владение unique_ptr](../bonus/12-unique-ptr/README.md): [полный пример](../bonus/12-unique-ptr/main.cpp).
+- [Исключительное владение unique_ptr](../additions/12-unique-ptr/README.md): [полный пример](../additions/12-unique-ptr/main.cpp).
 - [Размер и ёмкость vector](../../stl/lesson-01-stl-vector/README.md): [полный пример](../../stl/lesson-01-stl-vector/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

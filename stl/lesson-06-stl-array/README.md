@@ -47,6 +47,6 @@ at выбрасывает `out_of_range` при неверном индексе;
 ## Связанные темы и источники
 
 Инициализация нулями, независимость копии и `std::array<int, 0>`
-разобраны в [бонусе об инициализации array](../bonus/02-array-initialization/README.md).
+разобраны в [дополнении об инициализации array](../additions/02-array-initialization/README.md).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

@@ -1,0 +1,72 @@
+[
+  {
+    "number": 1,
+    "folder": "additions/execution/01-senders",
+    "title": "Описание работы через senders и receivers",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": null
+  },
+  {
+    "folder": "additions/execution/02-operation-state",
+    "title": "connect, start и собственный receiver",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "reference-execution",
+    "success_marker": "OK reference-example",
+    "optional_feature": true,
+    "number": 2
+  },
+  {
+    "folder": "additions/execution/03-completion-channels",
+    "title": "Значение, ошибка и остановка",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "reference-execution",
+    "success_marker": "OK reference-example",
+    "optional_feature": true,
+    "number": 3
+  },
+  {
+    "folder": "additions/execution/04-composition",
+    "title": "Объединение операций и зависимые шаги",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "reference-execution",
+    "success_marker": "OK reference-example",
+    "optional_feature": true,
+    "number": 4
+  },
+  {
+    "number": 5,
+    "folder": "additions/execution/05-schedulers",
+    "title": "Планировщик и время жизни операции",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "optional_feature": true,
+    "success_marker": null
+  },
+  {
+    "folder": "additions/execution/06-scheduler-transfer",
+    "title": "Переключение планировщика",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "reference-execution",
+    "success_marker": "OK reference-example",
+    "optional_feature": true,
+    "number": 6
+  },
+  {
+    "folder": "additions/execution/07-coroutine-interop",
+    "title": "Senders внутри корутины",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "reference-execution",
+    "success_marker": "OK reference-example",
+    "optional_feature": true,
+    "number": 7
+  }
+]

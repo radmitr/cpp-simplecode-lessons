@@ -58,9 +58,9 @@
 
 ### Дополнительные API в коде
 
-- [Совместное владение и слабая ссылка](../../basics/bonus/13-shared-weak-ptr/README.md): [полный пример](../../basics/bonus/13-shared-weak-ptr/main.cpp).
+- [Совместное владение и слабая ссылка](../../basics/additions/13-shared-weak-ptr/README.md): [полный пример](../../basics/additions/13-shared-weak-ptr/main.cpp).
 
-[Сравнение копии, std::ref и лямбды по счётчику](../bonus/01-class-method-arguments/README.md)
+[Сравнение копии, std::ref и лямбды по счётчику](../additions/01-class-method-arguments/README.md)
 показывает результаты `0`, `123` и `246` в отдельной программе.
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

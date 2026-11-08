@@ -1,0 +1,273 @@
+[
+  {
+    "number": 1,
+    "folder": "additions/reflection/01-introspection-overview",
+    "title": "Интроспекция, метаданные и время выполнения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 2,
+    "folder": "additions/reflection/02-typeid-type-index",
+    "title": "RTTI: typeid, type_info и type_index",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 3,
+    "folder": "additions/reflection/03-dynamic-cast",
+    "title": "Проверяемые преобразования dynamic_cast",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 4,
+    "folder": "additions/reflection/04-traits-and-detection",
+    "title": "decltype, type_traits и обнаружение операций",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 5,
+    "folder": "additions/reflection/05-manual-descriptors",
+    "title": "Ручные описатели и указатели на члены",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 6,
+    "folder": "additions/reflection/06-toolchain",
+    "title": "Компилятор, заголовок meta и проверка возможностей",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 7,
+    "folder": "additions/reflection/07-reflection-info",
+    "title": "Оператор ^^ и std::meta::info",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 8,
+    "folder": "additions/reflection/08-names-and-origins",
+    "title": "Имена, псевдонимы, родитель и исходник",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 9,
+    "folder": "additions/reflection/09-static-storage",
+    "title": "Статическое хранение вычисленных данных",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 10,
+    "folder": "additions/reflection/10-splicing",
+    "title": "Splicing: переход от метаданных к программе",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 11,
+    "folder": "additions/reflection/11-access-control",
+    "title": "Контекст доступа и инкапсуляция",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 12,
+    "folder": "additions/reflection/12-data-members",
+    "title": "Поля, типы и фильтрация членов",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 13,
+    "folder": "additions/reflection/13-expansion-statements",
+    "title": "Развёртывание обхода и runtime-значения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 14,
+    "folder": "additions/reflection/14-enumerators",
+    "title": "Перечисления и совпадающие значения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 15,
+    "folder": "additions/reflection/15-enum-conversion",
+    "title": "Практика: enum в строку и обратно",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 16,
+    "folder": "additions/reflection/16-base-subobjects",
+    "title": "Базовые классы и подобъекты",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 17,
+    "folder": "additions/reflection/17-functions-and-parameters",
+    "title": "Функции, параметры и вызовы",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 18,
+    "folder": "additions/reflection/18-templates",
+    "title": "Отражение шаблонов и подстановка",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 19,
+    "folder": "additions/reflection/19-layout",
+    "title": "Размеры, выравнивание и смещения",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 20,
+    "folder": "additions/reflection/20-annotations",
+    "title": "Пользовательские аннотации",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 21,
+    "folder": "additions/reflection/21-define-aggregate",
+    "title": "Создание агрегатного типа",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 22,
+    "folder": "additions/reflection/22-diagnostics",
+    "title": "Защитные запросы и ошибки метафункций",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 23,
+    "folder": "additions/reflection/23-odr-and-headers",
+    "title": "Заголовки и несколько единиц трансляции",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "source": "additions/reflection/23-odr-and-headers/src/main.cpp",
+    "success_marker": "OK "
+  },
+  {
+    "number": 24,
+    "folder": "additions/reflection/24-recursive-print",
+    "title": "Практика: вывод вложенных структур",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 25,
+    "folder": "additions/reflection/25-memberwise-operations",
+    "title": "Практика: сравнение, копирование и хеширование",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 26,
+    "folder": "additions/reflection/26-struct-to-tuple",
+    "title": "Практика: структура и tuple ссылок",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 27,
+    "folder": "additions/reflection/27-cli-configuration",
+    "title": "Практика: имена полей и проверка конфигурации",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 28,
+    "folder": "additions/reflection/28-json-serialization",
+    "title": "Практика: JSON без ручного списка полей",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "nlohmann-json",
+    "success_marker": "OK "
+  },
+  {
+    "number": 29,
+    "folder": "additions/reflection/29-settings-project",
+    "title": "Итог: загрузка, проверка и сохранение настроек",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": "nlohmann-json",
+    "success_marker": "OK "
+  },
+  {
+    "number": 30,
+    "folder": "additions/reflection/30-limits-and-cost",
+    "title": "Границы, переносимость и стоимость",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
+  }
+]

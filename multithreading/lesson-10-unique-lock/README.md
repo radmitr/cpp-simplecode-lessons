@@ -54,10 +54,10 @@
 
 ## Связанные темы и источники
 
-- [Владение `std::unique_lock`: перемещение и освобождение](../bonus/03-unique-lock-move/README.md): перемещение владения,
+- [Владение `std::unique_lock`: перемещение и освобождение](../additions/03-unique-lock-move/README.md): перемещение владения,
   различие `unlock()` и `release()`, сравнение четырёх моментов захвата.
-- [`std::mutex::try_lock`](../bonus/04-try-lock/README.md): попытка захвата с `try_to_lock`.
-- [condition_variable](../bonus/09-condition-variable/README.md):
+- [`std::mutex::try_lock`](../additions/04-try-lock/README.md): попытка захвата с `try_to_lock`.
+- [condition_variable](../additions/09-condition-variable/README.md):
   ожидание с освобождением мьютекса и повторным захватом.
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

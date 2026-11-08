@@ -32,7 +32,7 @@
 Обычный `auto` может сделать копию там, где выражение возвращает ссылку.
 Для изменения исходного элемента используют `auto&`, для чтения — `const auto&`.
 Подробное различие `auto`, `decltype` и `decltype(auto)` показано
-в [`auto`, ссылки и `decltype(auto)`](../bonus/05-auto-and-decltype/README.md).
+в [`auto`, ссылки и `decltype(auto)`](../additions/05-auto-and-decltype/README.md).
 
 ## Сборка и запуск
 

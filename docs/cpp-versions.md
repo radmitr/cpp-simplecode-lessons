@@ -54,26 +54,27 @@
   `bit_cast/endian`, `format`, `jthread` и совместная остановка,
   `counting_semaphore/binary_semaphore`, `latch/barrier`, `osyncstream`,
   `atomic::wait/notify_one/notify_all`,
-  [корутины](../bonus/coroutines/01-coroutine-lifetime/README.md).
+  [корутины](../additions/coroutines/01-coroutine-lifetime/README.md).
 - **C++23**: `print/println`, `expected`, `std::to_underlying`,
-  `if consteval`, [явный параметр объекта](../oop/bonus/03-explicit-object/README.md),
-  [новые адаптеры диапазонов](../stl/bonus/12-ranges-adaptors/README.md),
-  [плоские контейнеры](../stl/bonus/15-flat-containers/README.md),
-  [`mdspan`](../stl/bonus/22-mdspan/README.md),
-  [`generator`](../bonus/coroutines/02-standard-generator/README.md),
-  [`spanstream`](../io/bonus/08-spanstream/README.md) и
-  [`stacktrace`](../io/bonus/23-stacktrace/README.md).
+  `if consteval`, [явный параметр объекта](../oop/additions/03-explicit-object/README.md),
+  [новые адаптеры диапазонов](../stl/additions/12-ranges-adaptors/README.md),
+  [плоские контейнеры](../stl/additions/15-flat-containers/README.md),
+  [`mdspan`](../stl/additions/22-mdspan/README.md),
+  [`generator`](../additions/coroutines/02-standard-generator/README.md),
+  [`import std`](../additions/modules/05-import-std/README.md),
+  [`spanstream`](../io/additions/08-spanstream/README.md) и
+  [`stacktrace`](../io/additions/23-stacktrace/README.md).
   Наличие GCC с C++23 не гарантирует поддержку всех функций его библиотекой.
 - **C++26, экспериментально в этом проекте**: статическая рефлексия,
   `^^`, `std::meta::info` и связанные операции. Здесь используется конкретная
   реализация GCC с `-freflection`; требования и статус приведены в
-  [разделе рефлексии](../bonus/reflection/README.md).
-  Отдельно добавлены [контракты](../bonus/contracts/README.md),
-  [индексирование пакетов](../templates/bonus/08-pack-indexing/README.md),
-  [`#embed`](../io/bonus/25-embed/README.md),
-  [`inplace_vector`](../stl/bonus/16-inplace-vector/README.md),
-  [SIMD](../stl/bonus/23-simd/README.md) и
-  [senders/receivers](../bonus/execution/README.md); полная карта находится в
+  [разделе рефлексии](../additions/reflection/README.md).
+  Отдельно добавлены [контракты](../additions/contracts/README.md),
+  [индексирование пакетов](../templates/additions/08-pack-indexing/README.md),
+  [`#embed`](../io/additions/25-embed/README.md),
+  [`inplace_vector`](../stl/additions/16-inplace-vector/README.md),
+  [SIMD](../stl/additions/23-simd/README.md) и
+  [senders/receivers](../additions/execution/README.md); полная карта находится в
   [современных дополнениях](modern-cpp.md).
   Не переносите эти примеры в обычную сборку C++17/20 без изменений.
 

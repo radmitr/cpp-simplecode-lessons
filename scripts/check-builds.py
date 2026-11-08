@@ -13,7 +13,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 TOPS = ("basics", "templates", "exceptions", "io", "oop", "stl",
-        "multithreading", "bonus", "examples", "_template")
+        "multithreading", "additions", "examples", "_template")
 LITERALS_AND_COMMENTS = re.compile(
     r'R"(?P<delimiter>[^\s()\\]{0,16})\(.*?\)(?P=delimiter)"'
     r'|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*.*?\*/', re.S)

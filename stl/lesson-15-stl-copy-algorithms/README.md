@@ -67,6 +67,6 @@ copy_if(people.begin(), people.end(), std::back_inserter(result2), [](const Pers
 
 ### Дополнительные API в коде
 
-- [Исключительное владение unique_ptr](../../basics/bonus/12-unique-ptr/README.md): [полный пример](../../basics/bonus/12-unique-ptr/main.cpp).
+- [Исключительное владение unique_ptr](../../basics/additions/12-unique-ptr/README.md): [полный пример](../../basics/additions/12-unique-ptr/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

@@ -29,19 +29,19 @@ STL связывает контейнеры и алгоритмы через и�
 Урок `09/main.cpp` ждёт ввод целого числа; урок `24/main.cpp` содержит
 `random_shuffle`, удалённый из C++17. Современная альтернатива — `shuffle`.
 
-Далее изучайте [строковое представление](bonus/04-string-view/README.md),
-[представление массива](bonus/05-span/README.md),
-[необязательное значение](bonus/06-optional/README.md),
-[альтернативы типов](bonus/08-variant/README.md) и
-[диапазоны](bonus/11-ranges-and-views/README.md).
+Далее изучайте [строковое представление](additions/04-string-view/README.md),
+[представление массива](additions/05-span/README.md),
+[необязательное значение](additions/06-optional/README.md),
+[альтернативы типов](additions/08-variant/README.md) и
+[диапазоны](additions/11-ranges-and-views/README.md).
 Их время жизни, правила доступа и ограничения объясняются в отдельных уроках.
 
 ## Дополнения вне курса
 
-[Бонусы по STL](bonus/README.md): создание `vector` и `array`, тип аккумулятора,
+[Дополнения по STL](additions/README.md): создание `vector` и `array`, тип аккумулятора,
 представления, результаты операций, диапазоны и управление памятью.
 Порядок списка совпадает с нумерацией авторских папок.
-Новые самостоятельные примеры находятся в `stl/bonus/`.
+Новые самостоятельные примеры находятся в `stl/additions/`.
 
 ## Карта уроков
 
@@ -100,5 +100,5 @@ Windows, PowerShell:
 [STL: vector, урок 1 и плейлист](https://www.youtube.com/watch?v=1cKvMZOJeeE&list=PLQOaTSbfxUtDWAtIYme5MLZ1l0GTyUYkB).
 [Версии C++](../docs/cpp-versions.md) · [Справочники](../docs/references.md).
 
-[Результат или ошибка: `std::expected`, C++23](bonus/07-expected/README.md)
+[Результат или ошибка: `std::expected`, C++23](additions/07-expected/README.md)
 дополняет работу с типами результатов и исключениями.

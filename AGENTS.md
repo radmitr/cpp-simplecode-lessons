@@ -112,7 +112,7 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   links and commands against the source and current build scripts. Never claim
   execution or platform verification that was not performed.
 
-## SimpleCode course material and bonus additions
+## SimpleCode course material and author additions
 
 - Keep author-created lessons in thematic sections and number each section
   consecutively from `01` without gaps. The number is the recommended learning
@@ -121,20 +121,20 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   secondary ordering criterion; do not split a coherent topic by release year.
 - Keep directory order, section README catalogs, `LESSONS.md`, build metadata
   and the main learning route consistent. The version index is an alternative
-  view of the same lessons. When renumbering bonuses, update paths, numbered
+  view of the same lessons. When renumbering additions, update paths, numbered
   labels, launch files, examples and checks together. Preserve the original
-  course's names, numbers and order when rearranging author-created bonuses.
+  course's names, numbers and order when rearranging author-created additions.
 - Keep SimpleCode course examples with their original lesson directory names,
   numbering and variants. An explicitly requested thematic reorganization may
   move a whole lesson to another section; update all links and build metadata.
   A file name such as main2.cpp does
   not establish whether a program belongs to the course; inspect its origin.
 - Place all new educational examples and scenarios outside the course in the
-  relevant section's bonus directory, even when they extend an existing topic.
+  relevant section's additions directory, even when they extend an existing topic.
   This includes additional main*.cpp files and new demonstration blocks in a
-  course main.cpp. Entire new subject areas belong under the root bonus/.
+  course main.cpp. Entire new subject areas belong under the root additions/.
 - Course lesson directories may contain documentation clarifications,
-  correctness/build/portability fixes and links to bonus examples. Do not mix
+  correctness/build/portability fixes and links to additions examples. Do not mix
   new teaching scenarios into their source files just to avoid a new directory.
 - When importing missing course examples, inspect the actual referenced code
   and pin its commit. Preserve its demonstrations, values and call order; do
@@ -142,10 +142,10 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   source material. Document concrete correctness/portability changes in each
   README and keep a reviewable comparison with the source. If extracting a
   combined file, state which fragment is used and which parts are omitted.
-- Reuse an existing bonus lesson when the topic fits; otherwise create a
-  numbered bonus lesson without renumbering the original course. Add its README,
+- Reuse an existing additions lesson when the topic fits; otherwise create a
+  numbered additions lesson without renumbering the original course. Add its README,
   Windows/Linux VS Code configurations, catalog links and required build markers.
-- The bonus placement rule takes precedence over the preference for runnable
+- The additions placement rule takes precedence over the preference for runnable
   documentation snippets. Link to existing code before adding a duplicate.
 
 ## Proofreading and shared console setup
@@ -198,9 +198,9 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   before introducing abstract terminology. Define terms such as shared state,
   ownership and readiness; do not replace an explanation with a dense summary.
 - For every substantive API example, link to existing runnable code or provide
-  a runnable source in the appropriate bonus lesson (main2.cpp, main3.cpp, etc.).
+  a runnable source in the appropriate additions lesson (main2.cpp, main3.cpp, etc.).
   Prefer a separate focused program for a distinct behavior, subject to the
-  course/bonus separation rule above.
+  course/additions separation rule above.
 - Link C++ snippets to their full source. Label omitted surrounding code,
   deliberately invalid examples and pseudocode explicitly. Keep snippets and
   the actual source consistent; do not add duplicate programs just for renaming.
@@ -224,7 +224,7 @@ Write lesson explanations in clear Russian for a reader learning the topic.
   example. Merely naming an API in a README does not demonstrate it in code.
   Audit prose as well as fenced snippets, and inspect all main variants and
   relevant helper headers before claiming coverage.
-- For a distinct mechanism, add main2.cpp/main3.cpp in the appropriate bonus,
+- For a distinct mechanism, add main2.cpp/main3.cpp in the appropriate additions,
   or link to an existing example. A short cross-reference may point to another
   lesson without duplicating its program. Deliberately invalid operations must
   be labelled; never execute UB just to tick a coverage box.
