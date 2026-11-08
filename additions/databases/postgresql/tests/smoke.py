@@ -55,7 +55,7 @@ def main():
         call([BASH, ROOT / f"scripts/build-{'windows' if WINDOWS else 'linux'}.sh", source])
         output = ROOT / "build" / source.relative_to(ROOT).with_suffix(".exe" if WINDOWS else "")
         result = call([output], timeout=15)
-        number = source.parent.name.split("-")[1]
+        number = source.parent.name.split("-", 1)[0]
         for expected in EXPECTED[number]:
             assert expected in result.stdout, (number, expected, result.stdout, result.stderr)
         executables.append(output)

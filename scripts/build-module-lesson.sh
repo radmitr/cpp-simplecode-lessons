@@ -3,11 +3,12 @@
 
 build_module_lesson() {
     local module_work unit index=0
-    module_work="$(dirname -- "$output")/module-build"
-    mkdir -p -- "$module_work"
+    # PowerShell can launch MSYS2 Bash without /usr/bin on PATH.
+    module_work="$(/usr/bin/dirname -- "$output")/module-build"
+    /usr/bin/mkdir -p -- "$module_work"
     cd -- "$module_work"
     # This helper performs a full lesson rebuild; incompatible CMIs never survive.
-    rm -rf -- "$module_work/gcm.cache"
+    /usr/bin/rm -rf -- "$module_work/gcm.cache"
     local objects=() common_options=("-std=$standard" "${language_options[@]}"
         -fdiagnostics-color=always -O0 -g -Wall -Wextra -Wpedantic -pthread)
     local header header_count=0 standard_module=''
