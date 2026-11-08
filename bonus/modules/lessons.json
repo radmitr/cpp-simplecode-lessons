@@ -5,6 +5,7 @@
     "title": "Интерфейс и реализация модуля",
     "standard": "c++20",
     "minimum_gcc": 16,
-    "dependency": null
+    "dependency": null,
+    "success_marker": null
   }
 ]

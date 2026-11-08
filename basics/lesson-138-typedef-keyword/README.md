@@ -30,7 +30,7 @@ typedef std::vector<float> float_vector;
 
 Обе строки из исходника объявляют псевдонимы, а не новые несовместимые классы.
 Альтернативная запись C++11 через `using` показана в
-[бонусе параметров шаблонов](../../templates/bonus/17-template-parameters/README.md).
+[бонусе параметров шаблонов](../../templates/bonus/02-template-parameters/README.md).
 Поэтому `vector<int>` и int_vector можно использовать там, где ожидается один тип.
 У `using` обычно проще читать сложные типы и объявлять alias templates.
 

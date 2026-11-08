@@ -1,13 +1,13 @@
 # Зависимости бонусов по вводу-выводу
 
 Большинство уроков используют стандартную библиотеку C++17 и требуют GCC 11+.
-В [работе с UTF-8 и `char8_t`](13-utf8/README.md) используется C++20.
-Дополнительные требования есть у [JSON](15-json/README.md) и
-[форматирования и печати](21-format-and-print/README.md).
+В [работе с UTF-8 и `char8_t`](15-utf8/README.md) используется C++20.
+Дополнительные требования есть у [JSON](17-json/README.md) и
+[форматирования и печати](05-format-and-print/README.md).
 
 ## JSON
 
-Уроку [JSON: библиотека, типы и обязательные поля](15-json/README.md)
+Уроку [JSON: библиотека, типы и обязательные поля](17-json/README.md)
 нужен `nlohmann/json`.
 
 Ubuntu:
@@ -28,7 +28,7 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 
 ## Современные format/print
 
-Урок [`std::format` и `std::print`](21-format-and-print/README.md)
+Урок [`std::format` и `std::print`](05-format-and-print/README.md)
 собирается как C++23 и требует GCC/libstdc++ 14+.
 На Linux общий скрипт использует `CXX_MODERN`, по умолчанию
 `/opt/gcc/16/bin/g++`. Обычные уроки продолжают использовать системный `g++`.
@@ -40,10 +40,10 @@ pacman -S mingw-w64-x86_64-nlohmann-json
 Файловые примеры с [`LessonWorkspace`](common/workspace.hpp) создают уникальную
 временную папку и удаляют только её. `CPP_LESSON_WORK_DIR` задаёт родительский
 каталог; проверочный скрипт выбирает каталог внутри `build/`.
-[Явный бинарный формат](02-portable-binary/README.md) создаёт `point-v1.bin`
+[Явный бинарный формат](18-portable-binary/README.md) создаёт `point-v1.bin`
 в рабочей папке программы.
 
-Симлинки в [операциях с файлами и каталогами](10-filesystem-operations/README.md)
+Симлинки в [операциях с файлами и каталогами](14-filesystem-operations/README.md)
 могут быть недоступны на Windows без соответствующих прав: пример выводит
 `symlink unavailable`, остальные операции продолжаются.
 

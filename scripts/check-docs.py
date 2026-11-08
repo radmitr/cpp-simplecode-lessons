@@ -112,11 +112,65 @@ def lesson_link_errors(path, label, destination, catalog, topics):
     return errors
 
 
+def author_order_errors(catalog):
+    """Check the declared learning sequence; original course IDs are independent."""
+    sections = {}
+    for folder in catalog:
+        if "bonus" in folder.parent.relative_to(ROOT).parts:
+            sections.setdefault(folder.parent, []).append(folder)
+    errors = []
+    for section, folders in sections.items():
+        guide = section / "README.md"
+        visible = prose(guide.read_text(encoding="utf-8-sig")) if guide.is_file() else ""
+        # A link-only reference need not declare a section catalog. Runnable
+        # lessons, or an explicitly declared index, require the full sequence.
+        has_sources = any(list(folder.glob("*.cpp")) + list((folder / "src").glob("*.cpp"))
+                          for folder in folders)
+        declared = re.search(r"^## Уроки\s*$", visible, re.M)
+        if not has_sources and not declared:
+            continue
+        ordered = sorted(folders, key=lambda folder: catalog[folder][1])
+        numbers = [catalog[folder][1] for folder in ordered]
+        if numbers != list(range(1, len(ordered) + 1)):
+            errors.append(f"{section.relative_to(ROOT)}: author lesson numbers must be consecutive from 01")
+        if any(not re.fullmatch(fr"{catalog[folder][1]:02}-.+", folder.name) for folder in folders):
+            errors.append(f"{section.relative_to(ROOT)}: author directory names must use NN-topic")
+        if not declared:
+            errors.append(f"{guide.relative_to(ROOT)}: missing ordered Уроки catalog")
+        else:
+            body = re.split(r"^## ", visible[declared.end():], maxsplit=1, flags=re.M)[0]
+            targets = []
+            for _, target in links(body):
+                parsed = urlsplit(target)
+                if parsed.scheme:
+                    continue
+                destination = (section / unquote(parsed.path)).resolve()
+                folder = destination.parent if destination.name == "README.md" else destination
+                if folder in folders:
+                    targets.append(folder)
+            if targets != ordered:
+                errors.append(f"{guide.relative_to(ROOT)}: lesson catalog must match directory order exactly")
+        metadata = section / "lessons.json"
+        if metadata.exists():
+            try:
+                items = json.loads(metadata.read_text(encoding="utf-8-sig"))
+                expected = [folder.relative_to(ROOT).as_posix() for folder in ordered]
+                if [item["folder"] for item in items] != expected:
+                    errors.append(f"{metadata.relative_to(ROOT)}: metadata must match directory order exactly")
+                for item in items:
+                    folder = ROOT / item["folder"]
+                    if folder in catalog and item["number"] != catalog[folder][1]:
+                        errors.append(f"{metadata.relative_to(ROOT)}: wrong number for {item['folder']}")
+            except (ValueError, KeyError, TypeError) as error:
+                errors.append(f"{metadata.relative_to(ROOT)}: invalid lesson metadata: {error}")
+    return errors
+
+
 def main():
     paths = list(files())
     markdown = [p for p in paths if p.suffix == ".md"]
     catalog, topics = lesson_catalog(markdown)
-    errors = []
+    errors = author_order_errors(catalog)
     for folder, (_, number, title) in catalog.items():
         if title and title[0] != number:
             errors.append(f"{(folder / 'README.md').relative_to(ROOT)}: "

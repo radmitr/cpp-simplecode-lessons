@@ -85,9 +85,9 @@ def main():
             build_warnings = text(result.stderr)
             binary = ROOT / "build" / relative.with_suffix(".exe" if WINDOWS else "")
             data = None
-            if item["folder"].endswith("01-constexpr-consteval") and source.name == "main2.cpp":
+            if item["folder"].endswith("-constexpr-consteval") and source.name == "main2.cpp":
                 data = b"7\n"
-            if item["folder"].endswith("01-stream-state") and source.name == "main2.cpp":
+            if item["folder"].endswith("-stream-state") and source.name == "main2.cpp":
                 data = b"bad\n-1\n3\nthree items\n"
             result = execute([str(binary)], cwd=directory, data=data, timeout=20, environment=environment)
             if (result.returncode == 77 and item.get("optional_feature")
@@ -97,25 +97,24 @@ def main():
             if result.returncode:
                 raise RuntimeError(f"exit {result.returncode}:\n{text(result.stderr)}\n{text(result.stdout)}")
             output = text(result.stdout)
-            marker = item.get("success_marker", "OK " if item["number"] > 2
-                              or item["folder"].startswith("bonus/reflection/") else None)
+            marker = item.get("success_marker")
             if marker:
                 if marker not in output:
                     raise RuntimeError("success marker missing:\n" + output)
-            if item["folder"].endswith("01-constexpr-consteval") and source.name == "main2.cpp":
+            if item["folder"].endswith("-constexpr-consteval") and source.name == "main2.cpp":
                 if "runtime square: 49" not in output:
                     raise RuntimeError("runtime constexpr result mismatch")
                 for bad in (b"bad\n", b"101\n", b""):
                     invalid = execute([str(binary)], cwd=directory, data=bad, environment=environment)
                     if invalid.returncode != 1:
                         raise RuntimeError("invalid constexpr input was accepted")
-            if item["folder"].endswith("01-stream-state") and source.name == "main2.cpp":
+            if item["folder"].endswith("-stream-state") and source.name == "main2.cpp":
                 if "count: 3, label: three items" not in output:
                     raise RuntimeError("input recovery failed")
                 for bad in (b"", b"bad", b"3\n"):
                     if execute([str(binary)], cwd=directory, data=bad, environment=environment).returncode != 1:
                         raise RuntimeError("missing stream input was accepted")
-            if item["folder"].endswith("02-portable-binary"):
+            if item["folder"].endswith("-portable-binary"):
                 expected = bytes.fromhex("50543031e7010000d4000000b2030000")
                 if (directory / "point-v1.bin").read_bytes() != expected:
                     raise RuntimeError("binary format bytes mismatch")
@@ -125,7 +124,7 @@ def main():
                     invalid = execute([str(binary), "--read", filename], cwd=directory, environment=environment)
                     if invalid.returncode != 1:
                         raise RuntimeError(f"corrupted binary accepted: {filename}")
-            if item["folder"].endswith("19-console-tool"):
+            if item["folder"].endswith("-console-tool"):
                 cli = execute([str(binary), "--scale", "2"], cwd=directory, data=b"1 2 3\n", environment=environment)
                 if cli.returncode or text(cli.stdout) != "12\n" or cli.stderr:
                     raise RuntimeError("CLI stdout/stderr protocol failed")

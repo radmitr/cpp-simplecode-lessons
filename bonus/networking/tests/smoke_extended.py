@@ -1,4 +1,4 @@
-"""Local integration checks for lessons 12-24. Build the sources first.
+"""Local integration checks for IPv6, reconnect and advanced protocols. Build the sources first.
 
 python bonus/networking/tests/smoke_extended.py [--multicast]
 The optional multicast check explicitly uses the loopback interface.
@@ -29,7 +29,7 @@ def pair(lesson, expected, *, server_args=(), client_args=()):
 
 
 def ipv6_checks():
-    lesson = "lesson-12-ipv6"
+    lesson = "06-ipv6"
     expected = "IPv6 echo: Hello over IPv6"
     # IPv6 loopback must work even when localhost has only an IPv4 hosts entry.
     pair(lesson, expected, client_args=("::1",))
@@ -38,7 +38,7 @@ def ipv6_checks():
     if socket.AF_INET6 in families:
         listener = lesson
     elif socket.AF_INET in families:
-        listener = "lesson-02-tcp-echo"
+        listener = "02-tcp-echo"
     else:
         raise RuntimeError("localhost has no IPv4 or IPv6 address")
     with Server(listener) as server:
@@ -58,7 +58,7 @@ def send_frame(connection, body):
 
 
 def transfer_checks():
-    lesson = "lesson-16-file-transfer"
+    lesson = "12-file-transfer"
     with tempfile.TemporaryDirectory(prefix="transfer-test-", dir=BIN) as temporary:
         root = Path(temporary)
         target = root / "default"
@@ -109,7 +109,7 @@ def discovery_nonce_check():
 
         with ThreadPoolExecutor(max_workers=1) as executor:
             task = executor.submit(respond)
-            result = run("lesson-17-udp-discovery", "client", receiver.getsockname()[1])
+            result = run("13-udp-discovery", "client", receiver.getsockname()[1])
             task.result(timeout=5)
         assert "Found good" in result.stdout and "Found wrong" not in result.stdout
         assert "Discovered devices: 1" in result.stdout
@@ -118,7 +118,7 @@ def discovery_nonce_check():
 
 def websocket_interop():
     # Независимый минимальный клиент проверяет handshake и framing сервера Beast.
-    with Server("lesson-19-websocket") as server:
+    with Server("20-websocket") as server:
         with socket.create_connection(("127.0.0.1", server.port), timeout=3) as connection:
             connection.settimeout(3)
             request = (
@@ -176,32 +176,32 @@ def main():
     ipv6_checks()
 
     port = unused_port()
-    with Server("lesson-13-reconnect", port=port, wait_ready=False):
-        result = run("lesson-13-reconnect", "client", port)
+    with Server("09-reconnect", port=port, wait_ready=False):
+        result = run("09-reconnect", "client", port)
         assert "Connected after retry" in result.stdout
     with socket.socket() as reservation:
         reservation.bind(("127.0.0.1", 0))
         port = reservation.getsockname()[1]
-        exhausted = run("lesson-13-reconnect", "client", port, success=False)
+        exhausted = run("09-reconnect", "client", port, success=False)
         assert "Attempt 6" in exhausted.stdout
-        cancelled = run("lesson-13-reconnect", "client", port, "--cancel")
+        cancelled = run("09-reconnect", "client", port, "--cancel")
         assert "Retry cancelled" in cancelled.stdout
     print("PASS: reconnect success, bounded exhaustion and cancellation", flush=True)
 
-    pair("lesson-14-heartbeat", "Heartbeat timeout:")
-    ack = pair("lesson-15-request-ack", "ERROR req-1 conflict")
+    pair("10-heartbeat", "Heartbeat timeout:")
+    ack = pair("11-request-ack", "ERROR req-1 conflict")
     assert "Applications: 1" in "".join(ack.lines) and "Total: 5" in "".join(ack.lines)
     transfer_checks()
-    pair("lesson-17-udp-discovery", "Discovered devices: 1")
+    pair("13-udp-discovery", "Discovered devices: 1")
     discovery_nonce_check()
     if args.multicast:
-        pair("lesson-17-udp-discovery", "Discovered devices: 1",
+        pair("13-udp-discovery", "Discovered devices: 1",
              server_args=("multicast", "127.0.0.1"), client_args=("multicast", "127.0.0.1"))
     else:
         print("SKIP: optional loopback multicast (--multicast)", flush=True)
 
-    pair("lesson-18-asio", "Async echo verified: 3 clients")
-    with Server("lesson-18-asio", expected=1) as server:
+    pair("19-asio", "Async echo verified: 3 clients")
+    with Server("19-asio", expected=1) as server:
         connections = [socket.create_connection(("127.0.0.1", server.port), timeout=3) for _ in range(3)]
         try:
             server.process.wait(timeout=5)  # Ничего не посылаем: три таймера завершат сессии.
@@ -210,9 +210,9 @@ def main():
                 connection.close()
     assert "".join(server.lines).count("Session:") == 3
     print("PASS: asynchronous session read timeouts", flush=True)
-    pair("lesson-19-websocket", "WebSocket complete: 3 events")
+    pair("20-websocket", "WebSocket complete: 3 events")
     websocket_interop()
-    with Server("lesson-19-websocket", expected=1) as server:
+    with Server("20-websocket", expected=1) as server:
         with socket.create_connection(("127.0.0.1", server.port), timeout=3):
             server.process.wait(timeout=4)  # Нет HTTP Upgrade: истечёт handshake timeout.
     print("PASS: WebSocket handshake timeout", flush=True)

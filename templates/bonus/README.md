@@ -1,28 +1,28 @@
 # Бонусы по шаблонам
 
-Дополнения к [урокам курса](../README.md). Прежние номера бонусов сохранены,
-поэтому список начинается с 16. Исходным бонусам нужен C++17, concepts — C++20; новые дополнения используют C++23/26.
+После [шаблонов курса](../README.md) нужны функции, ссылки и классы. Порядок: вывод параметров → специализация и CTAD → свойства типов → пакеты → пробрасывание аргументов → ограничения → современные дополнения.
 
-1. [16. Шаблоны функций и вывод параметров](16-function-templates/README.md).
-2. [17. Параметры шаблонов, специализация и CTAD](17-template-parameters/README.md).
-3. [18. type_traits, `if constexpr` и enable_if](18-traits-if-constexpr/README.md).
-4. [19. Пакеты параметров и fold expressions](19-parameter-packs/README.md).
-5. [20. Forwarding references и std::forward](20-perfect-forwarding/README.md).
-6. [21. Concepts и requires](21-concepts/README.md).
+Номера папок задают порядок изучения внутри раздела. Уроки SimpleCode сохраняют исходную нумерацию.
 
-Сначала нужны функции, ссылки, классы и шаблоны курса. Перемещение разобрано
-в [бонусе основ](../../basics/bonus/09-move-semantics/README.md).
-Для более сложного исследования типов есть
-[рефлексия](../../bonus/reflection/README.md).
+## Уроки
 
-[Общий запуск Windows/Linux](../../README.md#сборка-и-запуск-в-vs-code).
-Ввод, результат и ограничения каждого варианта описаны в его README.
-Проверка из корня: `python scripts/check-bonuses.py --section templates/bonus`
-(Linux: `python3`). [Каталог уроков](../../LESSONS.md).
+- [01. Шаблоны функций и вывод параметров](01-function-templates/README.md) — `c++17`.
+- [02. Параметры шаблонов, специализация и CTAD](02-template-parameters/README.md) — `c++17`.
+- [03. `type_traits`, `if constexpr` и `enable_if`](03-traits-if-constexpr/README.md) — `c++17`.
+- [04. Пакеты параметров и fold expressions](04-parameter-packs/README.md) — `c++17`.
+- [05. Forwarding references и `std::forward`](05-perfect-forwarding/README.md) — `c++17`.
+- [06. Concepts и `requires`](06-concepts/README.md) — `c++20`.
+- [07. Перенос квалификаторов через forward_like](07-forward-like/README.md) — `c++23`.
+- [08. Индексирование пакета параметров](08-pack-indexing/README.md) — `c++26`.
 
-## Дополнения современных стандартов
+## Как работать
 
-- [Индексирование пакета параметров](22-pack-indexing/README.md) — `c++26`.
-- [Перенос квалификаторов через forward_like](23-forward-like/README.md) — `c++23`.
+Откройте корень проекта или папку урока и выберите нужный исходник.
+[F5, Ctrl+F5 и команды терминала](../../README.md#сборка-и-запуск-в-vs-code).
+В каждом README указаны ввод, результат, ошибки, зависимости и ограничения.
+В списке выше дан **режим сборки**; даты появления отдельных возможностей объясняются в уроках.
 
-[Порядок изучения и карта тем](../../docs/modern-cpp.md). Требования и команды находятся в README каждого урока.
+[Учебный маршрут](../../docs/learning-path.md) · [Версии C++](../../docs/cpp-versions.md) · [Все уроки](../../LESSONS.md).
+
+Проверка из корня проекта: `python3 scripts/check-bonuses.py --section templates/bonus`.
+На Windows имя команды Python может быть `python`.

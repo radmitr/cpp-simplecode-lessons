@@ -58,7 +58,7 @@ Pixel p3 = {25, 127, 229};       // Инициализация через кон
 
 ### Дополнительные API в коде
 
-- [Инициализация и копирование array](../../stl/bonus/01-array-initialization/README.md): [полный пример](../../stl/bonus/01-array-initialization/main.cpp).
+- [Инициализация и копирование array](../../stl/bonus/02-array-initialization/README.md): [полный пример](../../stl/bonus/02-array-initialization/main.cpp).
 - [Размер и ёмкость vector](../../stl/lesson-01-stl-vector/README.md): [полный пример](../../stl/lesson-01-stl-vector/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

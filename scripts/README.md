@@ -85,7 +85,7 @@ SDK вызывает ошибку до компиляции. Версия libcur
 Маркер `parallel-backend` в `link-libraries.txt` запрашивает выбранный GCC:
 если его libstdc++ использует TBB, подключается `-ltbb`, иначе остаётся последовательный
 backend. Заголовки TBB и библиотека должны принадлежать совместимому тулчейну.
-Пример: [политики алгоритмов](../stl/bonus/25-parallel-algorithms/README.md).
+Пример: [политики алгоритмов](../stl/bonus/21-parallel-algorithms/README.md).
 
 Сохраняется обработка CRLF у маркеров Windows. Произвольные shell-команды или
 строки флагов не исполняются. Для `c++26` в разделе `bonus/reflection/` добавляется `-freflection`
@@ -103,8 +103,8 @@ backend. Заголовки TBB и библиотека должны прина�
 | Примеры | Режим языка | GCC на Linux по умолчанию |
 |---|---|---|
 | Обычные уроки | C++17/C++20 | `/usr/bin/g++` |
-| [`std::expected`](../stl/bonus/04-expected/README.md), минимум GCC 13 | C++23 | `/opt/gcc/16/bin/g++` |
-| [`std::format` и `std::print`](../io/bonus/21-format-and-print/README.md), учебная конфигурация GCC 16 | C++23 | `/opt/gcc/16/bin/g++` |
+| [`std::expected`](../stl/bonus/07-expected/README.md), минимум GCC 13 | C++23 | `/opt/gcc/16/bin/g++` |
+| [`std::format` и `std::print`](../io/bonus/05-format-and-print/README.md), учебная конфигурация GCC 16 | C++23 | `/opt/gcc/16/bin/g++` |
 | [Рефлексия, начиная с проверки компилятора](../bonus/reflection/06-toolchain/README.md) | C++26 и `-freflection` | `/opt/gcc/16/bin/g++` |
 
 Не найденный компилятор или слишком старая версия дают понятную ошибку до сборки.
@@ -209,12 +209,12 @@ C/C++: Update IntelliSense.
 
 ## ThreadSanitizer
 
-В [Поиск гонки данных с ThreadSanitizer](../multithreading/bonus/26-thread-sanitizer/) есть отдельный
+В [Поиск гонки данных с ThreadSanitizer](../multithreading/bonus/27-thread-sanitizer/) есть отдельный
 `run-tsan.sh` для диагностики гонки данных на Linux/WSL:
 
 ~~~bash
-bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main.cpp
-bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
+bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main.cpp
+bash multithreading/bonus/27-thread-sanitizer/run-tsan.sh main2.cpp
 ~~~
 
 Он выбирает clang++ (либо компилятор из `CXX`), добавляет `-fsanitize=thread`,
@@ -263,6 +263,9 @@ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 Проверка документации также контролирует ссылки на полные исходники каждого
 варианта, пути к общим скриптам и каталогам сборки в VS Code. Подпись «команды»
 не должна вести к якорю требований; служебные webview-адреса не допускаются.
+Для авторских разделов проверяются номера папок с `01` без пропусков,
+полный список `## Уроки` в том же порядке и соответствие `lessons.json`.
+Номера и пропуски исходного курса SimpleCode эта проверка не меняет.
 
 В номерной подписи ссылки повторяйте название из заголовка целевого урока;
 начальные нули номера и оформление обратными кавычками могут отличаться.
@@ -273,7 +276,8 @@ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 
 Регрессионные проверки самого скрипта: `python scripts/test-check-docs.py`
 (Linux: `python3`). Они воспроизводят ошибочный переход от JSON к `do-while`,
-проверяют несовпадения номеров и названий и разрешённые переходы между темами.
+проверяют несовпадения номеров и названий, разрешённые переходы между темами,
+пропуски в авторской нумерации и рассогласование каталога с метаданными.
 Временные документы создаются внутри `build/` и удаляются после запуска.
 
 Для дополнительных возможностей компилятора есть маркер `language-feature.txt`:
@@ -282,6 +286,9 @@ bash multithreading/bonus/26-thread-sanitizer/run-tsan.sh main2.cpp
 Эти параметры одинаковы в сборке и `compile_commands.json`.
 
 `check-bonuses.py` также проверяет STL, ООП, корутины, контракты и execution.
+Поле `success_marker` в `lessons.json` явно задаёт проверяемую строку вывода;
+`null` отключает только поиск строки, сохраняя проверку кода завершения.
+Проверка результата не зависит от номера урока.
 Для урока с `optional_feature` в `lessons.json` код `77` и строка `UNAVAILABLE:`
 означают явный `SKIP`, который не входит в число успешно выполненных примеров.
 `--require-features` превращает такой пропуск в ошибку. Некорректная программа

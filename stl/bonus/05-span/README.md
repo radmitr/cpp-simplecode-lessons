@@ -10,7 +10,7 @@
 Функции часто нужны адрес и число элементов, но не владение массивом.
 `span` объединяет эти два свойства в одном объекте.
 Предварительно: [указатели и массивы](../../../basics/lesson-047-pointer-arithmetic/README.md),
-[std::array](../01-array-initialization/README.md).
+[std::array](../02-array-initialization/README.md).
 
 ## Примеры
 
@@ -68,7 +68,7 @@ Tail size: 2; read only: 99
 ## Связанные темы и источники
 
 - [Передача массива в функцию](../../../basics/lesson-035-array-function-parameters/README.md).
-- [Владение и время жизни](../../../basics/bonus/03-references-and-lifetime/README.md).
+- [Владение и время жизни](../../../basics/bonus/04-references-and-lifetime/README.md).
 - [Контракт span](https://eel.is/c++draft/views.span).
 - [Версии C++](../../../docs/cpp-versions.md) · [Справочники](../../../docs/references.md).
 - [Бонусы STL](../README.md).

@@ -1,39 +1,35 @@
 # Сети на C++: Windows и Linux
 
 Дополнительное направление вне исходного курса. Все уроки используют C++17.
-Начните с основ языка, RAII и обработки исключений. Для уроков [«09. Параллельная обработка нескольких клиентов»](lesson-09-multi-client/README.md) — [«10. Фоновая отправка последнего значения»](lesson-10-background-sender/README.md) полезны
+Начните с основ языка, RAII и обработки исключений. Для уроков [«07. Параллельная обработка нескольких клиентов»](07-multi-client/README.md) — [«08. Фоновая отправка последнего значения»](08-background-sender/README.md) полезны
 [многопоточность](../../multithreading/README.md) и `condition_variable`.
 
-## Порядок изучения
+## Уроки
 
-1. [Адреса и порты](lesson-01-addresses/) — localhost, IPv4/IPv6, getaddrinfo и порядок байтов.
-2. [TCP echo](lesson-02-tcp-echo/) — клиент, сервер, connect, bind, listen и accept.
-3. [Границы TCP-сообщений](lesson-03-tcp-framing/) — префикс длины, частичные send/recv и двоичные данные.
-4. [UDP echo](lesson-04-udp-echo/) — sendto/recvfrom и отдельные датаграммы.
-5. [Таймауты и ошибки](lesson-05-timeouts/) — неблокирующий сокет, select, SO_ERROR и закрытие соединения.
-6. [HTTP GET](lesson-06-http-get/) — строка запроса, заголовки, тело и статус.
-7. [HTTP POST и JSON](lesson-07-http-post-json/) — передача настроек, Content-Type и проверка тела.
-8. [API в стиле REST](lesson-08-rest-api/) — `POST`, `GET`, `PUT` и `DELETE` и жизненный цикл ресурса.
-9. [Несколько клиентов](lesson-09-multi-client/) — независимые соединения и параллельные обработчики.
-10. [Фоновая отправка](lesson-10-background-sender/) — latest `value`, `mutex`, `condition_variable` и завершение.
-11. [HTTPS](lesson-11-https/) — TLS, доверенный CA и проверка имени сервера через libcurl.
-12. [IPv6](lesson-12-ipv6/) — соединение через ::1 и выбор кандидата из `getaddrinfo()`.
-13. [Переподключение](lesson-13-reconnect/) — ограниченные повторы, backoff и отмена.
-14. [Heartbeat](lesson-14-heartbeat/) — прикладные PING/PONG и таймаут ответа.
-15. [ACK и request_id](lesson-15-request-ack/) — потерянный ответ, повтор команды и кэш результата.
-16. [Передача файла](lesson-16-file-transfer/) — блоки, прогресс, CRC32 и подтверждение записи.
-17. [UDP discovery](lesson-17-udp-discovery/) — unicast, broadcast, multicast и фильтрация повторов.
-18. [Boost.Asio](lesson-18-asio/) — асинхронные операции, буферы и таймеры сессий.
-19. [WebSocket](lesson-19-websocket/) — серверные события и двусторонний обмен с `Boost.Beast`.
-20. [WSS](lesson-20-wss/) — WebSocket поверх TLS, сертификат и проверка имени.
-21. [Многопоточный Asio и `strand`](lesson-21-asio-strand/) — пул потоков и согласованная работа сессий.
-22. [MQTT](lesson-22-mqtt/) — публикация и подписка на сообщения через брокер.
-23. [HTTP/2 и HTTP/3](lesson-23-http-versions/) — выбор версии и проверка результата через `libcurl`.
-24. [Итоговый чат](lesson-24-chat/) — несколько клиентов, heartbeat, восстановление соединения и выход.
-
-Уроки используют самостоятельные примеры: echo, передачу сообщений,
-HTTP API и фоновую отправку данных. Чат завершает маршрут; MQTT и HTTP/2–3
-изучаются как отдельные модели и протоколы и не добавляются в чат механически.
+- [01. Адреса, DNS и порядок байтов](01-addresses/README.md) — `c++17`.
+- [02. TCP echo: клиент и сервер](02-tcp-echo/README.md) — `c++17`.
+- [03. Границы сообщений в TCP](03-tcp-framing/README.md) — `c++17`.
+- [04. UDP echo и датаграммы](04-udp-echo/README.md) — `c++17`.
+- [05. Неблокирующие сокеты, таймауты и ошибки](05-timeouts/README.md) — `c++17`.
+- [06. IPv6-клиент и сервер](06-ipv6/README.md) — `c++17`.
+- [07. Параллельная обработка нескольких клиентов](07-multi-client/README.md) — `c++17`.
+- [08. Фоновая отправка последнего значения](08-background-sender/README.md) — `c++17`.
+- [09. Переподключение, backoff и отмена](09-reconnect/README.md) — `c++17`.
+- [10. Heartbeat: PING/PONG](10-heartbeat/README.md) — `c++17`.
+- [11. ACK, request_id и защита от повторного выполнения](11-request-ack/README.md) — `c++17`.
+- [12. Передача файла блоками и CRC32](12-file-transfer/README.md) — `c++17`.
+- [13. Обнаружение устройств через UDP](13-udp-discovery/README.md) — `c++17`.
+- [14. HTTP GET и ответ сервера](14-http-get/README.md) — `c++17`.
+- [15. HTTP POST с JSON](15-http-post-json/README.md) — `c++17`.
+- [16. Ресурсный HTTP API](16-rest-api/README.md) — `c++17`.
+- [17. HTTPS и проверка сертификата](17-https/README.md) — `c++17`.
+- [18. HTTP/2 и HTTP/3 через libcurl](18-http-versions/README.md) — `c++17`.
+- [19. Асинхронный TCP-сервер с `Boost.Asio`](19-asio/README.md) — `c++17`.
+- [20. WebSocket: сообщения от сервера](20-websocket/README.md) — `c++17`.
+- [21. WSS: WebSocket поверх TLS](21-wss/README.md) — `c++17`.
+- [22. Многопоточный Asio и strand](22-asio-strand/README.md) — `c++17`.
+- [23. MQTT: публикация и подписка через брокер](23-mqtt/README.md) — `c++17`.
+- [24. Итоговый проект: чат с переподключением и heartbeat](24-chat/README.md) — `c++17`.
 
 ## Что относится к какому уровню
 
@@ -41,13 +37,13 @@ IP задаёт адресацию; TCP передаёт упорядоченн�
 Сокет — программный интерфейс работы с сетью.
 HTTP описывает запросы и ответы, в том числе методы GET, POST, PUT и `DELETE`.
 REST — архитектурный стиль; использование GET и POST само по себе ещё не означает
-выполнение всех ограничений REST. Урок [«08. Ресурсный HTTP API»](lesson-08-rest-api/README.md) демонстрирует ресурсный HTTP API,
+выполнение всех ограничений REST. Урок [«16. Ресурсный HTTP API»](16-rest-api/README.md) демонстрирует ресурсный HTTP API,
 без полного набора механизмов REST, например гипермедиа.
 HTTPS использует HTTP поверх защищённого соединения TLS.
 
-По умолчанию примеры слушают loopback 127.0.0.1, а урок [«12. IPv6-клиент и сервер»](lesson-12-ipv6/README.md) — IPv6 ::1.
+По умолчанию примеры слушают loopback 127.0.0.1, а урок [«06. IPv6-клиент и сервер»](06-ipv6/README.md) — IPv6 ::1.
 Loopback не открывает сервер другим компьютерам.
-В уроке [«17. Обнаружение устройств через UDP»](lesson-17-udp-discovery/README.md) broadcast/multicast включаются отдельными аргументами;
+В уроке [«13. Обнаружение устройств через UDP»](13-udp-discovery/README.md) broadcast/multicast включаются отдельными аргументами;
 эти режимы могут использовать локальную сеть и слушать 0.0.0.0.
 Для HTTP-клиентов можно явно передать URL, для HTTPS по умолчанию используется
 https://example.com/; остальные стандартные запуски не требуют Интернета.
@@ -70,9 +66,9 @@ C:/msys64/mingw64/bin должен быть в `PATH` для загрузки DL
 Не смешивайте библиотеки MinGW64 и UCRT64.
 [Пакет libcurl в MSYS2](https://packages.msys2.org/packages/mingw-w64-x86_64-curl).
 
-Уроки [«Асинхронный TCP-сервер»](lesson-18-asio/README.md),
-[«WebSocket»](lesson-19-websocket/README.md), [«WSS»](lesson-20-wss/README.md),
-[«Asio и strand»](lesson-21-asio-strand/README.md) и [«Итоговый чат»](lesson-24-chat/README.md)
+Уроки [«Асинхронный TCP-сервер»](19-asio/README.md),
+[«WebSocket»](20-websocket/README.md), [«WSS»](21-wss/README.md),
+[«Asio и strand»](22-asio-strand/README.md) и [«Итоговый чат»](24-chat/README.md)
 дополнительно требуют заголовки Boost (`Boost.Asio`, а для WebSocket — `Boost.Beast`):
 
 ~~~bash
@@ -82,13 +78,13 @@ pacman -S --needed mingw-w64-x86_64-boost
 [Пакет Boost в MSYS2](https://packages.msys2.org/packages/mingw-w64-x86_64-boost).
 Отдельная standalone Asio не нужна: эти уроки используют `Boost.Asio`.
 
-[WSS](lesson-20-wss/README.md) дополнительно использует OpenSSL напрямую:
+[WSS](21-wss/README.md) дополнительно использует OpenSSL напрямую:
 
 ~~~bash
 pacman -S --needed mingw-w64-x86_64-openssl
 ~~~
 
-[HTTP/2–3](lesson-23-http-versions/README.md) требует `libcurl >= 7.88`;
+[HTTP/2–3](18-http-versions/README.md) требует `libcurl >= 7.88`;
 программа с `--features` показывает доступные протоколы загруженной библиотеки.
 
 ## Linux
@@ -102,17 +98,17 @@ sudo apt-get install g++ gdb libcurl4-openssl-dev python3 openssl
 
 libcurl требуется для HTTP/HTTPS-клиентов. Python и OpenSSL нужны
 для локальных интеграционных проверок, но не для обычного запуска TCP/UDP.
-Для [асинхронного сервера](lesson-18-asio/README.md),
-[WebSocket](lesson-19-websocket/README.md), [WSS](lesson-20-wss/README.md),
-[пула Asio](lesson-21-asio-strand/README.md) и [чата](lesson-24-chat/README.md)
+Для [асинхронного сервера](19-asio/README.md),
+[WebSocket](20-websocket/README.md), [WSS](21-wss/README.md),
+[пула Asio](22-asio-strand/README.md) и [чата](24-chat/README.md)
 установите также `libboost-dev`:
 
 ~~~bash
 sudo apt-get install libboost-dev
 ~~~
 
-Для [WSS](lesson-20-wss/README.md) нужен также пакет `libssl-dev`.
-[HTTP/2–3](lesson-23-http-versions/README.md) требует `libcurl >= 7.88` с
+Для [WSS](21-wss/README.md) нужен также пакет `libssl-dev`.
+[HTTP/2–3](18-http-versions/README.md) требует `libcurl >= 7.88` с
 соответствующими транспортами; обычная системная сборка может не иметь HTTP/3.
 [Отдельная установка curl с HTTP/2 и HTTP/3](linux-curl.md) описывает сборку
 в `/home`, размещение выпусков в `/opt/curl`, переключение ссылок и `CURL_PREFIX`.
@@ -126,58 +122,58 @@ sudo apt-get install libboost-dev
 Пример на Linux:
 
 ~~~bash
-bash scripts/build-linux.sh bonus/networking/lesson-02-tcp-echo/server.cpp
-bash scripts/build-linux.sh bonus/networking/lesson-02-tcp-echo/client.cpp
+bash scripts/build-linux.sh bonus/networking/02-tcp-echo/server.cpp
+bash scripts/build-linux.sh bonus/networking/02-tcp-echo/client.cpp
 ~~~
 
 В первом терминале:
 
 ~~~bash
-./build/bonus/networking/lesson-02-tcp-echo/server
+./build/bonus/networking/02-tcp-echo/server
 ~~~
 
 После строки Listening во втором терминале:
 
 ~~~bash
-./build/bonus/networking/lesson-02-tcp-echo/client
+./build/bonus/networking/02-tcp-echo/client
 ~~~
 
 Windows, PowerShell:
 
 ~~~powershell
-& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh bonus/networking/lesson-02-tcp-echo/server.cpp
-& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh bonus/networking/lesson-02-tcp-echo/client.cpp
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh bonus/networking/02-tcp-echo/server.cpp
+& C:\msys64\usr\bin\bash.exe scripts/build-windows.sh bonus/networking/02-tcp-echo/client.cpp
 ~~~
 
 В первом терминале:
 
 ~~~powershell
-& .\build\bonus\networking\lesson-02-tcp-echo\server.exe
+& .\build\bonus\networking\02-tcp-echo\server.exe
 ~~~
 
 После строки Listening во втором терминале:
 
 ~~~powershell
-& .\build\bonus\networking\lesson-02-tcp-echo\client.exe
+& .\build\bonus\networking\02-tcp-echo\client.exe
 ~~~
 
 В README каждого урока приведены его команды.
-Серверы уроков от [TCP echo](lesson-02-tcp-echo/README.md) до
-[WebSocket](lesson-19-websocket/README.md) конечны: обычно один клиент/запрос; у API пять запросов,
+Серверы уроков от [TCP echo](02-tcp-echo/README.md) до
+[WebSocket](20-websocket/README.md) конечны: обычно один клиент/запрос; у API пять запросов,
 у многопользовательского примера и Asio три клиента. Ожидание подключения
 ограничено 15 секундами: при таймауте перезапустите сервер.
-Урок [«13. Переподключение, backoff и отмена»](lesson-13-reconnect/README.md) дополнительно показывает запуск клиента раньше готовности сервера.
-[Итоговый чат](lesson-24-chat/README.md) работает до `/quit` или EOF консоли;
+Урок [«09. Переподключение, backoff и отмена»](09-reconnect/README.md) дополнительно показывает запуск клиента раньше готовности сервера.
+[Итоговый чат](24-chat/README.md) работает до `/quit` или EOF консоли;
 его клиенты восстанавливают соединение после перезапуска сервера.
-[WSS](lesson-20-wss/README.md) принимает одного клиента и требует сертификат
-и ключ в аргументах; [пул Asio](lesson-21-asio-strand/README.md) — три клиента.
-[MQTT](lesson-22-mqtt/README.md) требует заранее запущенный локальный брокер,
-а [HTTP/2–3](lesson-23-http-versions/README.md) — совместимую службу для выбранного режима.
+[WSS](21-wss/README.md) принимает одного клиента и требует сертификат
+и ключ в аргументах; [пул Asio](22-asio-strand/README.md) — три клиента.
+[MQTT](23-mqtt/README.md) требует заранее запущенный локальный брокер,
+а [HTTP/2–3](18-http-versions/README.md) — совместимую службу для выбранного режима.
 
 Для TCP/UDP можно передать порт первым аргументом обеим программам.
 Порт 0 у сервера выбирает свободный порт автоматически и печатает его.
 HTTP-клиентам передаётся целый URL, API-клиенту — базовый URL без завершающего /.
-В уроке [«12. IPv6-клиент и сервер»](lesson-12-ipv6/README.md) клиент принимает имя после порта, а discovery — режим и интерфейс.
+В уроке [«06. IPv6-клиент и сервер»](06-ipv6/README.md) клиент принимает имя после порта, а discovery — режим и интерфейс.
 В остальных нативных TCP-примерах адрес сервера остаётся loopback.
 
 ## VS Code
@@ -227,14 +223,14 @@ JSON-парсер понимает только объект с одним це�
 Сначала соберите все .cpp. На Linux из корня:
 
 ~~~bash
-for source in bonus/networking/lesson-*/*.cpp; do bash scripts/build-linux.sh "$source" || break; done
+for source in bonus/networking/[0-9][0-9]-*/*.cpp; do bash scripts/build-linux.sh "$source" || break; done
 python3 bonus/networking/tests/smoke.py
 ~~~
 
 На Windows из PowerShell:
 
 ~~~powershell
-Get-ChildItem bonus\networking\lesson-*\*.cpp | ForEach-Object {
+Get-ChildItem bonus\networking\[0-9][0-9]-*\*.cpp | ForEach-Object {
     & C:\msys64\usr\bin\bash.exe scripts/build-windows.sh $_.FullName
     if ($LASTEXITCODE -ne 0) { throw "Build failed" }
 }
@@ -247,8 +243,8 @@ python bonus/networking/tests/smoke.py
 отсутствие доверия и несовпадение имени. Нужен openssl в `PATH`.
 Явный параметр --skip-tls пропускает только эти проверки.
 
-После сборки уроков от [IPv6](lesson-12-ipv6/README.md) до
-[итогового чата](lesson-24-chat/README.md) выполните расширенную проверку:
+После сборки уроков от [IPv6](06-ipv6/README.md) до
+[итогового чата](24-chat/README.md) выполните расширенную проверку:
 
 ~~~bash
 build/networking-checks-venv/bin/python -B bonus/networking/tests/smoke_extended.py
@@ -281,7 +277,7 @@ build/networking-checks-venv/bin/python -B bonus/networking/tests/smoke_extended
 ~~~
 
 LAN broadcast эти тесты не отправляют. Он проверяется вручную
-только при явном выборе соответствующего режима в уроке [«17. Обнаружение устройств через UDP»](lesson-17-udp-discovery/README.md).
+только при явном выборе соответствующего режима в уроке [«13. Обнаружение устройств через UDP»](13-udp-discovery/README.md).
 
 ## Справочные материалы
 

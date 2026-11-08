@@ -60,6 +60,6 @@ int& operator[](size_t index) {
 
 ### Дополнительные API в коде
 
-- [Инициализация и копирование array](../../stl/bonus/01-array-initialization/README.md): [полный пример](../../stl/bonus/01-array-initialization/main.cpp).
+- [Инициализация и копирование array](../../stl/bonus/02-array-initialization/README.md): [полный пример](../../stl/bonus/02-array-initialization/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

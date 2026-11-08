@@ -1,4 +1,4 @@
-"""Loopback checks for lessons 20-23. Install tests/requirements.txt first.
+"""Loopback checks for WSS, strand, MQTT and HTTP versions. Install tests/requirements.txt first.
 
 --skip-services explicitly omits MQTT and successful HTTP/2 + HTTP/3 transfers.
 WSS, strand and HTTPS fallback checks still run.
@@ -89,7 +89,7 @@ def certificate(directory):
 
 
 def wss_checks(cert, key):
-    lesson = "lesson-20-wss"
+    lesson = "21-wss"
     with Server(lesson, args=(cert, key)) as server:
         good = run(lesson, "client", server.port, cert)
         assert "WSS complete: 3 events" in good.stdout
@@ -104,7 +104,7 @@ def wss_checks(cert, key):
 
 
 def strand_checks():
-    lesson = "lesson-21-asio-strand"
+    lesson = "22-asio-strand"
     with Server(lesson) as server:
         good = run(lesson, "client", server.port)
         assert "9 ordered replies" in good.stdout
@@ -120,7 +120,7 @@ def strand_checks():
 
 
 def mqtt_checks():
-    lesson = "lesson-22-mqtt"
+    lesson = "23-mqtt"
     with service("mqtt") as port:
         with Captured([executable(lesson, "subscriber"), port]) as subscriber:
             subscriber.expect("Subscribed: lesson/temperature")
@@ -132,7 +132,7 @@ def mqtt_checks():
 
 
 def http_checks(cert, key, skip_services):
-    lesson = "lesson-23-http-versions"
+    lesson = "18-http-versions"
     features = run(lesson, "main", "--features").stdout
     with service("h1", cert, key) as port:
         url = "https://localhost:" + str(port) + "/"

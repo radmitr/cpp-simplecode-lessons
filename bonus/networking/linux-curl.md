@@ -208,10 +208,10 @@ readlink -f /opt/curl/current
 системную библиотеку. Примеры из корня репозитория:
 
 ```bash
-bash scripts/build-linux.sh bonus/networking/lesson-23-http-versions/main.cpp
-./build/bonus/networking/lesson-23-http-versions/main --features
-CURL_PREFIX=/opt/curl/8.23.0 bash scripts/build-linux.sh bonus/networking/lesson-23-http-versions/main.cpp
-CURL_PREFIX=system bash scripts/build-linux.sh bonus/networking/lesson-06-http-get/client.cpp
+bash scripts/build-linux.sh bonus/networking/18-http-versions/main.cpp
+./build/bonus/networking/18-http-versions/main --features
+CURL_PREFIX=/opt/curl/8.23.0 bash scripts/build-linux.sh bonus/networking/18-http-versions/main.cpp
+CURL_PREFIX=system bash scripts/build-linux.sh bonus/networking/14-http-get/client.cpp
 bash scripts/generate-compile-commands.sh
 ```
 
@@ -220,7 +220,7 @@ bash scripts/generate-compile-commands.sh
 независим от `CXX`/`CXX_MODERN`; компилятор и библиотека выбираются отдельно.
 Проект по умолчанию использует ветку `8`, а не `current`.
 
-Пример [HTTP/2 и HTTP/3](lesson-23-http-versions/README.md) с `--features`
+Пример [HTTP/2 и HTTP/3](18-http-versions/README.md) с `--features`
 должен показать `libcurl 8.23.0; HTTP2=1; HTTP3=1` и завершиться с `0`.
 Для реальных обменов подготовьте [Python-окружение и локальные службы](tests/README.md#зависимости-python)
 и выполните расширенную проверку из [инструкции тестов](tests/README.md).

@@ -67,6 +67,6 @@ RAII связывает ресурс с объектом: при выходе и
 
 ### Дополнительные API в коде
 
-- [Передача уже захваченного мьютекса через adopt_lock](../bonus/02-try-lock/README.md): [полный пример](../bonus/02-try-lock/main.cpp).
+- [Передача уже захваченного мьютекса через adopt_lock](../bonus/04-try-lock/README.md): [полный пример](../bonus/04-try-lock/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

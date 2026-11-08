@@ -82,6 +82,6 @@ bash scripts/build-linux.sh bonus/reflection/27-cli-configuration/main.cpp
 
 ### Дополнительные API в коде
 
-- [Преобразование чисел через charconv](../../../io/bonus/04-charconv/README.md): [полный пример](../../../io/bonus/04-charconv/main.cpp).
+- [Преобразование чисел через charconv](../../../io/bonus/03-charconv/README.md): [полный пример](../../../io/bonus/03-charconv/main.cpp).
 
 [Версии C++](../../../docs/cpp-versions.md) · [Как читать справочники](../../../docs/references.md).

@@ -154,26 +154,26 @@ bash bonus/databases/postgresql/scripts/lab.sh stop
 
 ## Уроки
 
-1. [Подключение и первый SELECT](lesson-01-connect/README.md).
-2. [Таблицы, столбцы и типы](lesson-02-tables-types/README.md).
-3. [INSERT и RETURNING](lesson-03-insert/README.md).
-4. [SELECT, фильтрация и сортировка](lesson-04-select/README.md).
-5. [UPDATE и DELETE](lesson-05-update-delete/README.md).
-6. [Параметры и защита от SQL-инъекции](lesson-06-parameters/README.md).
-7. [Подготовленные запросы](lesson-07-prepared-statements/README.md).
-8. [NULL и пустая строка](lesson-08-null-values/README.md).
-9. [Ограничения и SQLSTATE](lesson-09-constraints/README.md).
-10. [Связи и JOIN](lesson-10-joins/README.md).
-11. [Группировка и агрегатные функции](lesson-11-aggregation/README.md).
-12. [Транзакции: COMMIT и ROLLBACK](lesson-12-transactions/README.md).
-13. [Точки сохранения](lesson-13-savepoints/README.md).
-14. [INSERT ON CONFLICT](lesson-14-upsert/README.md).
-15. [Индексы и EXPLAIN](lesson-15-indexes/README.md).
-16. [JSONB](lesson-16-jsonb/README.md).
-17. [Изоляция и снимки данных](lesson-17-isolation/README.md).
-18. [Блокировки строк и таймаут](lesson-18-row-locks/README.md).
-19. [Массовая загрузка и выгрузка COPY](lesson-19-copy/README.md).
-20. [Резервная копия и проверка восстановления](lesson-20-backup-restore/README.md).
+- [01. Подключение и первый `SELECT`](01-connect/README.md) — `c++17`.
+- [02. Таблицы, столбцы и типы](02-tables-types/README.md) — `c++17`.
+- [03. `INSERT` и `RETURNING`](03-insert/README.md) — `c++17`.
+- [04. `SELECT`, фильтрация и сортировка](04-select/README.md) — `c++17`.
+- [05. `UPDATE` и `DELETE`](05-update-delete/README.md) — `c++17`.
+- [06. Параметры и защита от SQL-инъекции](06-parameters/README.md) — `c++17`.
+- [07. Подготовленные запросы](07-prepared-statements/README.md) — `c++17`.
+- [08. `NULL` и пустая строка](08-null-values/README.md) — `c++17`.
+- [09. Ограничения и SQLSTATE](09-constraints/README.md) — `c++17`.
+- [10. Связи и `JOIN`](10-joins/README.md) — `c++17`.
+- [11. Группировка и агрегатные функции](11-aggregation/README.md) — `c++17`.
+- [12. Транзакции: `COMMIT` и `ROLLBACK`](12-transactions/README.md) — `c++17`.
+- [13. Точки сохранения](13-savepoints/README.md) — `c++17`.
+- [14. `INSERT` ON CONFLICT](14-upsert/README.md) — `c++17`.
+- [15. Индексы и `EXPLAIN`](15-indexes/README.md) — `c++17`.
+- [16. `JSONB`](16-jsonb/README.md) — `c++17`.
+- [17. Изоляция и снимки данных](17-isolation/README.md) — `c++17`.
+- [18. Блокировки строк и таймаут](18-row-locks/README.md) — `c++17`.
+- [19. Массовая загрузка и выгрузка `COPY`](19-copy/README.md) — `c++17`.
+- [20. Резервная копия и проверка восстановления](20-backup-restore/README.md) — `c++17`.
 
 ## Как устроен код и запуск
 
@@ -182,13 +182,13 @@ SQL внутри R"(...)" выполняется сервером. C++ упра�
 [их устройство](common/README.md) объясняет `PGconn`, `PGresult`, SQLSTATE и транзакции.
 Используется libpq, поэтому отдельная C++-библиотека libpqxx не нужна.
 
-В уроках от [таблиц и типов](lesson-02-tables-types/README.md) до
-[JSONB](lesson-16-jsonb/README.md), а также в [COPY](lesson-19-copy/README.md)
+В уроках от [таблиц и типов](02-tables-types/README.md) до
+[JSONB](16-jsonb/README.md), а также в [COPY](19-copy/README.md)
 таблицы временные: закрытие соединения удаляет их.
-В [изоляции транзакций](lesson-17-isolation/README.md) и
-[блокировках строк](lesson-18-row-locks/README.md) нужна общая таблица
+В [изоляции транзакций](17-isolation/README.md) и
+[блокировках строк](18-row-locks/README.md) нужна общая таблица
 для двух соединений; она создаётся в отдельной схеме и убирается при обычном выходе.
-В [резервном копировании](lesson-20-backup-restore/README.md) схема backup_demo
+В [резервном копировании](20-backup-restore/README.md) схема backup_demo
 постоянная для pg_dump.
 Примеры не требуют результатов предыдущих уроков.
 

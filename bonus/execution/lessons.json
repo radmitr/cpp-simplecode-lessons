@@ -6,7 +6,8 @@
     "standard": "c++26",
     "minimum_gcc": 16,
     "dependency": null,
-    "optional_feature": true
+    "optional_feature": true,
+    "success_marker": null
   },
   {
     "number": 2,
@@ -15,6 +16,7 @@
     "standard": "c++26",
     "minimum_gcc": 16,
     "dependency": null,
-    "optional_feature": true
+    "optional_feature": true,
+    "success_marker": null
   }
 ]

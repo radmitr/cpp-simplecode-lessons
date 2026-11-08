@@ -50,7 +50,7 @@ bash scripts/build-windows.sh "basics/lesson-130-smart-pointers/main.cpp"
 
 ## Типичные ошибки
 
-Это ограниченный учебный владелец одного объекта: нет полной семантики `std::unique_ptr`, поддержки массивов и перемещения. Основной принцип объясняет [RAII: ресурс связан со временем жизни объекта](../bonus/02-raii/README.md).
+Это ограниченный учебный владелец одного объекта: нет полной семантики `std::unique_ptr`, поддержки массивов и перемещения. Основной принцип объясняет [RAII: ресурс связан со временем жизни объекта](../bonus/09-raii/README.md).
 
 [Раздел](../README.md) · [Все уроки](../../LESSONS.md)
 
@@ -58,6 +58,6 @@ bash scripts/build-windows.sh "basics/lesson-130-smart-pointers/main.cpp"
 
 ### Дополнительные API в коде
 
-- [Исключительное владение unique_ptr](../bonus/11-unique-ptr/README.md): [полный пример](../bonus/11-unique-ptr/main.cpp).
+- [Исключительное владение unique_ptr](../bonus/12-unique-ptr/README.md): [полный пример](../bonus/12-unique-ptr/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

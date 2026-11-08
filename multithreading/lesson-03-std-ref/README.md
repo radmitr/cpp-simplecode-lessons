@@ -64,6 +64,6 @@ std::thread th(doWork, std::ref(q));
 
 ### Дополнительные API в коде
 
-- [Константная ссылка для потока](../bonus/27-class-method-arguments/README.md): [полный пример](../bonus/27-class-method-arguments/main2.cpp).
+- [Константная ссылка для потока](../bonus/01-class-method-arguments/README.md): [полный пример](../bonus/01-class-method-arguments/main2.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

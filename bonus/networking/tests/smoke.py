@@ -155,17 +155,17 @@ def tls_checks():
             try:
                 port = server.server_port
                 url = "https://localhost:" + str(port) + "/"
-                good = run("lesson-11-https", "main", url, cert)
+                good = run("17-https", "main", url, cert)
                 assert "HTTPS status: 200" in good.stdout, good.stdout
                 # Без доверенного CA сертификат должен быть отвергнут.
-                run("lesson-11-https", "main", url, success=False)
+                run("17-https", "main", url, success=False)
                 # Даже с доверенным CA имя 127.0.0.1 не совпадает с DNS:localhost.
-                run("lesson-11-https", "main", "https://127.0.0.1:" + str(port) + "/",
+                run("17-https", "main", "https://127.0.0.1:" + str(port) + "/",
                     cert, success=False)
             finally:
                 server.shutdown()
                 worker.join(timeout=5)
-    print("PASS: lesson-11-https (trusted CA, untrusted CA, hostname mismatch)", flush=True)
+    print("PASS: 17-https (trusted CA, untrusted CA, hostname mismatch)", flush=True)
 
 
 def main():
@@ -174,28 +174,28 @@ def main():
                         help="explicitly skip HTTPS checks when openssl is unavailable")
     args = parser.parse_args()
 
-    addresses = run("lesson-01-addresses", "main")
+    addresses = run("01-addresses", "main")
     assert "IPv4:" in addresses.stdout or "IPv6:" in addresses.stdout
     assert "Port 80 -> network byte order -> 80" in addresses.stdout
-    print("PASS: lesson-01-addresses", flush=True)
-    pair("lesson-02-tcp-echo", "Echo: Hello over TCP")
-    pair("lesson-03-tcp-framing", "Verified frame: 3 bytes")
-    pair("lesson-04-udp-echo", "Datagram echo: Hello over UDP")
-    pair("lesson-05-timeouts", "Expected timeout:")
-    pair("lesson-06-http-get", "HTTP status: 200", "/hello")
-    pair("lesson-07-http-post-json", '{"accepted":true,"value":42}', "/config")
-    pair("lesson-08-rest-api", "DELETE /items/1 -> 204", "")
-    pair("lesson-09-multi-client", "Verified: client 3")
-    pair("lesson-10-background-sender", "Sender finished;")
+    print("PASS: 01-addresses", flush=True)
+    pair("02-tcp-echo", "Echo: Hello over TCP")
+    pair("03-tcp-framing", "Verified frame: 3 bytes")
+    pair("04-udp-echo", "Datagram echo: Hello over UDP")
+    pair("05-timeouts", "Expected timeout:")
+    pair("14-http-get", "HTTP status: 200", "/hello")
+    pair("15-http-post-json", '{"accepted":true,"value":42}', "/config")
+    pair("16-rest-api", "DELETE /items/1 -> 204", "")
+    pair("07-multi-client", "Verified: client 3")
+    pair("08-background-sender", "Sender finished;")
 
-    with Server("lesson-04-udp-echo") as server:
+    with Server("04-udp-echo") as server:
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as client:
             client.settimeout(3)
             client.sendto(b"", ("127.0.0.1", server.port))
             assert client.recvfrom(1024)[0] == b""
     print("PASS: empty UDP datagram is not TCP EOF", flush=True)
 
-    with Server("lesson-03-tcp-framing", expected=1) as server:
+    with Server("03-tcp-framing", expected=1) as server:
         with socket.create_connection(("127.0.0.1", server.port), timeout=3) as client:
             client.sendall(struct.pack("!I", 65537))
     assert "frame is too large" in "".join(server.lines)
@@ -203,12 +203,12 @@ def main():
 
     with socket.socket() as not_listening:
         not_listening.bind(("127.0.0.1", 0))
-        result = run("lesson-02-tcp-echo", "client",
+        result = run("02-tcp-echo", "client",
                      not_listening.getsockname()[1], success=False)
         assert "connect" in result.stderr or "deadline expired" in result.stderr, result.stderr
     print("PASS: unavailable port reported (refusal or connection timeout)", flush=True)
 
-    with Server("lesson-06-http-get") as server:
+    with Server("14-http-get") as server:
         connection = http.client.HTTPConnection("127.0.0.1", server.port, timeout=3)
         try:
             connection.request("GET", "/missing")
@@ -219,7 +219,7 @@ def main():
             connection.close()
     print("PASS: HTTP 404", flush=True)
 
-    with Server("lesson-07-http-post-json") as server:
+    with Server("15-http-post-json") as server:
         connection = http.client.HTTPConnection("127.0.0.1", server.port, timeout=3)
         try:
             connection.request("POST", "/config", '{"value":01}',

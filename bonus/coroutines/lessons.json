@@ -5,7 +5,8 @@
     "title": "Корутина, приостановка и владение кадром",
     "standard": "c++20",
     "minimum_gcc": 16,
-    "dependency": null
+    "dependency": null,
+    "success_marker": null
   },
   {
     "number": 2,
@@ -13,6 +14,7 @@
     "title": "Стандартный генератор последовательности",
     "standard": "c++23",
     "minimum_gcc": 16,
-    "dependency": null
+    "dependency": null,
+    "success_marker": null
   }
 ]

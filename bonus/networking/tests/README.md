@@ -69,7 +69,7 @@ openssl req -x509 -newkey rsa:2048 -nodes -days 1 -subj /CN=localhost -addext su
 `mqtt`, `h1`, `h2` или `h3`. Они конечны: по умолчанию 60 секунд, время задаётся
 `--seconds`. Это вспомогательные службы для уроков, не полноценные HTTP-серверы.
 
-Linux, брокер для [урока MQTT](../lesson-22-mqtt/README.md):
+Linux, брокер для [урока MQTT](../23-mqtt/README.md):
 
 ```bash
 build/networking-checks-venv/bin/python -B bonus/networking/tests/local_services.py mqtt --port 1883 --seconds 120

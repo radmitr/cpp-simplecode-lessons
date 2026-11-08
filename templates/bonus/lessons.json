@@ -1,66 +1,74 @@
 [
   {
-    "number": 16,
-    "folder": "templates/bonus/16-function-templates",
+    "number": 1,
+    "folder": "templates/bonus/01-function-templates",
     "title": "Шаблоны функций и вывод параметров",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 17,
-    "folder": "templates/bonus/17-template-parameters",
+    "number": 2,
+    "folder": "templates/bonus/02-template-parameters",
     "title": "Параметры шаблонов, специализация и CTAD",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 18,
-    "folder": "templates/bonus/18-traits-if-constexpr",
+    "number": 3,
+    "folder": "templates/bonus/03-traits-if-constexpr",
     "title": "type_traits, if constexpr и enable_if",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 19,
-    "folder": "templates/bonus/19-parameter-packs",
+    "number": 4,
+    "folder": "templates/bonus/04-parameter-packs",
     "title": "Пакеты параметров и fold expressions",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 20,
-    "folder": "templates/bonus/20-perfect-forwarding",
+    "number": 5,
+    "folder": "templates/bonus/05-perfect-forwarding",
     "title": "Forwarding references и std::forward",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 21,
-    "folder": "templates/bonus/21-concepts",
+    "number": 6,
+    "folder": "templates/bonus/06-concepts",
     "title": "Concepts и requires",
     "standard": "c++20",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
   },
   {
-    "number": 22,
-    "folder": "templates/bonus/22-pack-indexing",
-    "title": "Индексирование пакета параметров",
-    "standard": "c++26",
-    "minimum_gcc": 16,
-    "dependency": null
-  },
-  {
-    "number": 23,
-    "folder": "templates/bonus/23-forward-like",
+    "number": 7,
+    "folder": "templates/bonus/07-forward-like",
     "title": "Перенос квалификаторов через forward_like",
     "standard": "c++23",
     "minimum_gcc": 16,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 8,
+    "folder": "templates/bonus/08-pack-indexing",
+    "title": "Индексирование пакета параметров",
+    "standard": "c++26",
+    "minimum_gcc": 16,
+    "dependency": null,
+    "success_marker": "OK "
   }
 ]

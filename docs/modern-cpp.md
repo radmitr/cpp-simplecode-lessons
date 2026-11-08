@@ -1,13 +1,13 @@
 # Современные дополнения C++20–26
 
-Это карта добавленных тем и порядок изучения, а не заявление о покрытии всего C++.
+Это тематический указатель современных дополнений, а не заявление о покрытии всего C++.
 Для всех редакций есть [указатель версий](cpp-versions.md),
 [учебный маршрут](learning-path.md) и [карта покрытия](cpp-coverage.md).
 Каждый урок содержит исходники, проверки результатов, требования и отдельные
 конфигурации запуска Linux/Windows. Варианты `main.cpp`, `main2.cpp` и далее
 запускаются независимо. Примеры курса SimpleCode сохраняют исходные папки и номера.
 
-## Порядок изучения
+## Связи тем
 
 1. После функций, ссылок и RAII изучите явный параметр объекта, `if consteval`,
    новые операторы и утилиты перечислений/байтов.
@@ -22,43 +22,43 @@
 
 | Тема | Версия | Требования |
 |---|---|---|
-| [if consteval и явное копирование auto](../basics/bonus/35-consteval-and-auto-copy/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Перечисления и порядок байтов](../basics/bonus/36-enums-and-bytes/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Предположения оптимизатору и недостижимый код](../basics/bonus/37-assume-and-unreachable/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вычисляемые сообщения и удалённые функции](../basics/bonus/38-compile-time-diagnostics/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Пакеты структурированных привязок](../basics/bonus/39-structured-bindings-packs/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [if consteval и явное копирование auto](../basics/bonus/20-consteval-and-auto-copy/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Перечисления и порядок байтов](../basics/bonus/25-enums-and-bytes/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Предположения оптимизатору и недостижимый код](../basics/bonus/33-assume-and-unreachable/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вычисляемые сообщения и удалённые функции](../basics/bonus/34-compile-time-diagnostics/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Пакеты структурированных привязок](../basics/bonus/35-structured-bindings-packs/README.md) | C++26 | Учебная конфигурация GCC 16+ |
 | [Предусловия, постусловия и проверки контракта](../bonus/contracts/01-contract-checks/README.md) | C++26 | Учебная конфигурация GCC 16+ |
 | [Корутина, приостановка и владение кадром](../bonus/coroutines/01-coroutine-lifetime/README.md) | C++20 | Учебная конфигурация GCC 16+ |
 | [Стандартный генератор последовательности](../bonus/coroutines/02-standard-generator/README.md) | C++23 | Учебная конфигурация GCC 16+ |
 | [Описание работы через senders и receivers](../bonus/execution/01-senders/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
 | [Планировщик и время жизни операции](../bonus/execution/02-schedulers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Потоки над готовым буфером](../io/bonus/22-spanstream/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Включение файла через embed](../io/bonus/23-embed/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Получение стека вызовов](../io/bonus/24-stacktrace/README.md) | C++23 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Взаимодействие с отладчиком](../io/bonus/25-debugging/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Потоки над готовым буфером](../io/bonus/08-spanstream/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Включение файла через embed](../io/bonus/25-embed/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Получение стека вызовов](../io/bonus/23-stacktrace/README.md) | C++23 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Взаимодействие с отладчиком](../io/bonus/24-debugging/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
 | [Явный параметр объекта](../oop/bonus/03-explicit-object/README.md) | C++23 | Учебная конфигурация GCC 16+ |
 | [Многомерный индекс и статические операторы](../oop/bonus/04-call-and-subscript/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Диапазоны, представления и время жизни](../stl/bonus/06-ranges-and-views/README.md) | C++20 | Учебная конфигурация GCC 16+ |
-| [Адаптеры и алгоритмы диапазонов](../stl/bonus/07-ranges-adaptors/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [flat_map и flat_set](../stl/bonus/08-flat-containers/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Многомерное представление mdspan](../stl/bonus/09-mdspan/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вызываемые объекты без копирования](../stl/bonus/10-move-only-function/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Вектор с фиксированной вместимостью](../stl/bonus/11-inplace-vector/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Блочный контейнер hive](../stl/bonus/12-hive/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Владение с копированием значения](../stl/bonus/13-value-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Ссылка на функцию и копируемая обёртка](../stl/bonus/14-function-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [optional со ссылкой и обход optional](../stl/bonus/15-optional-reference/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Поиск подстроки и заполнение строки](../stl/bonus/16-string-operations/README.md) | C++23 | Учебная конфигурация GCC 16+ |
-| [Поэлементные вычисления SIMD](../stl/bonus/17-simd/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Линейная алгебра поверх mdspan](../stl/bonus/18-linalg/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
-| [Индексирование пакета параметров](../templates/bonus/22-pack-indexing/README.md) | C++26 | Учебная конфигурация GCC 16+ |
-| [Перенос квалификаторов через forward_like](../templates/bonus/23-forward-like/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Диапазоны, представления и время жизни](../stl/bonus/11-ranges-and-views/README.md) | C++20 | Учебная конфигурация GCC 16+ |
+| [Адаптеры и алгоритмы диапазонов](../stl/bonus/12-ranges-adaptors/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [flat_map и flat_set](../stl/bonus/15-flat-containers/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Многомерное представление mdspan](../stl/bonus/22-mdspan/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вызываемые объекты без копирования](../stl/bonus/17-move-only-function/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Вектор с фиксированной вместимостью](../stl/bonus/16-inplace-vector/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Блочный контейнер hive](../stl/bonus/25-hive/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Владение с копированием значения](../stl/bonus/19-value-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Ссылка на функцию и копируемая обёртка](../stl/bonus/18-function-wrappers/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [optional со ссылкой и обход optional](../stl/bonus/10-optional-reference/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Поиск подстроки и заполнение строки](../stl/bonus/13-string-operations/README.md) | C++23 | Учебная конфигурация GCC 16+ |
+| [Поэлементные вычисления SIMD](../stl/bonus/23-simd/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Линейная алгебра поверх mdspan](../stl/bonus/24-linalg/README.md) | C++26 | Feature-test macro; возможен `UNAVAILABLE` |
+| [Индексирование пакета параметров](../templates/bonus/08-pack-indexing/README.md) | C++26 | Учебная конфигурация GCC 16+ |
+| [Перенос квалификаторов через forward_like](../templates/bonus/07-forward-like/README.md) | C++23 | Учебная конфигурация GCC 16+ |
 
 Также расширены существующие уроки:
 
-- [Результат или ошибка](../stl/bonus/04-expected/README.md): цепочки `expected`,
+- [Результат или ошибка](../stl/bonus/07-expected/README.md): цепочки `expected`,
   обработка ошибки, `expected<void,E>` и сравнение с цепочками `optional`.
-- [Форматирование и печать](../io/bonus/21-format-and-print/README.md): диапазоны,
+- [Форматирование и печать](../io/bonus/05-format-and-print/README.md): диапазоны,
   tuple, прямые вызовы `print`/`println` и formatter пользовательского типа.
 - [Рефлексия](../bonus/reflection/README.md) уже демонстрирует `^^`, splicing,
   `template for`, аннотации, создание агрегатов и обработку ошибки метафункции

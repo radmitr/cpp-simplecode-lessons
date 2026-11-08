@@ -23,9 +23,9 @@
 В 97 Cap по значению тоже является композицией. Комментарии 99 не везде
 соответствуют фактическому `private`-наследованию. Эти нюансы разобраны
 в локальных README; исходные варианты сохранены.
-Продолжение владения ресурсами — [RAII](../basics/bonus/02-raii/README.md),
-[правило нуля, трёх и пяти](../basics/bonus/10-rule-of-zero-five/README.md)
-и [гарантии исключений](../exceptions/bonus/15-exception-guarantees/README.md).
+Продолжение владения ресурсами — [RAII](../basics/bonus/09-raii/README.md),
+[правило нуля, трёх и пяти](../basics/bonus/11-rule-of-zero-five/README.md)
+и [гарантии исключений](../exceptions/bonus/04-exception-guarantees/README.md).
 
 ## Дополнения вне курса
 

@@ -1,4 +1,4 @@
-"""Integration checks for lesson-24-chat; build server.cpp and client.cpp first.
+"""Integration checks for 24-chat; build server.cpp and client.cpp first.
 
 python bonus/networking/tests/smoke_chat.py
 Only loopback connections, no external services or scheduling sleeps.
@@ -15,7 +15,7 @@ import time
 sys.dont_write_bytecode = True
 from smoke import executable
 
-LESSON = "lesson-24-chat"
+LESSON = "24-chat"
 
 
 class Program:

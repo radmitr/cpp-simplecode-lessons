@@ -63,6 +63,6 @@ bash scripts/build-windows.sh "templates/lesson-128-class-templates-specializati
 
 ### Дополнительные API в коде
 
-- [Вычисления constexpr и consteval](../../basics/bonus/01-constexpr-consteval/README.md): [полный пример](../../basics/bonus/01-constexpr-consteval/main.cpp).
+- [Вычисления constexpr и consteval](../../basics/bonus/19-constexpr-consteval/README.md): [полный пример](../../basics/bonus/19-constexpr-consteval/main.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

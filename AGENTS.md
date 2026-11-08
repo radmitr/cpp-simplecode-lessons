@@ -114,6 +114,16 @@ Write lesson explanations in clear Russian for a reader learning the topic.
 
 ## SimpleCode course material and bonus additions
 
+- Keep author-created lessons in thematic sections and number each section
+  consecutively from `01` without gaps. The number is the recommended learning
+  position: prerequisites first, related common uses next, advanced or
+  experimental extensions after their foundations. Standard version is a
+  secondary ordering criterion; do not split a coherent topic by release year.
+- Keep directory order, section README catalogs, `LESSONS.md`, build metadata
+  and the main learning route consistent. The version index is an alternative
+  view of the same lessons. When renumbering bonuses, update paths, numbered
+  labels, launch files, examples and checks together. Preserve the original
+  course's names, numbers and order when rearranging author-created bonuses.
 - Keep SimpleCode course examples with their original lesson directory names,
   numbering and variants. An explicitly requested thematic reorganization may
   move a whole lesson to another section; update all links and build metadata.

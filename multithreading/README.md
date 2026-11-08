@@ -18,33 +18,9 @@
 
 ## Бонусы
 
-1. [atomic](bonus/01-atomic/) — общий счётчик и гонка данных.
-2. [try_lock](bonus/02-try-lock/) — попытка захвата без ожидания, `adopt_lock` и вариант с `try_to_lock`.
-3. [scoped_lock](bonus/03-scoped-lock/) — захват пары мьютексов.
-4. [condition_variable](bonus/04-condition-variable/) — `wait`, `wait_for`, `wait_until`, `notify_one` и `notify_all`.
-5. [future и async](bonus/05-future-async/) — результат и исключение из задачи.
-6. [jthread и stop_token](bonus/06-jthread-stop-token/) — остановка потока, C++20.
-7. [semaphore](bonus/07-semaphore/) — `acquire`, `release` и ограничение числа одновременных пользователей, C++20.
-8. [shared_mutex](bonus/08-shared-mutex/) — несколько читателей и исключительный доступ писателя.
-9. [promise и future](bonus/09-promise-future/) — явная передача результата и исключения из `std::thread`.
-10. [producer–consumer](bonus/10-producer-consumer/) — очередь заданий и корректное завершение потребителей.
-11. [пул потоков](bonus/11-thread-pool/) — постоянные работники, очередь и `future` для каждой задачи.
-12. [barrier](bonus/12-barrier/) — согласование повторяющихся этапов вычисления, C++20.
-13. [timed_mutex](bonus/13-timed-mutex/) — захват мьютекса с таймаутом.
-14. [thread_local](bonus/14-thread-local/) — личная переменная каждого потока.
-15. [osyncstream](bonus/15-osyncstream/) — цельные сообщения из нескольких потоков, C++20.
-16. [atomic::wait](bonus/16-atomic-wait/) — ожидание атомарного значения и уведомления, C++20.
-17. [memory_order](bonus/17-memory-order/) — `relaxed` и публикация данных через `acquire`/`release`.
-18. [параллельное суммирование](bonus/18-parallel-sum/) — проверка результата и сравнение времени для разного числа потоков.
-19. [перемещение unique_lock](bonus/19-unique-lock-move/) — передача владения захватом между функциями.
-20. [call_once](bonus/20-call-once/) — однократная инициализация, включая повтор после исключения.
-21. [latch](bonus/21-latch/) — одноразовый отсчёт готовности результатов, C++20.
-22. [shared_future](bonus/22-shared-future/) — общий результат или исключение для нескольких потоков.
-23. [ожидание с остановкой](bonus/23-stop-aware-wait/) — `condition_variable_any` и `stop_token`, C++20.
-24. [compare_exchange](bonus/24-compare-exchange/) — атомарная проверка и замена, strong и weak.
-25. [false sharing](bonus/25-false-sharing/) — влияние размещения счётчиков в памяти на скорость.
-26. [ThreadSanitizer](bonus/26-thread-sanitizer/) — диагностика гонки данных на Linux/WSL.
-27. [Объект в потоке](bonus/27-class-method-arguments/) — сравнение копии, `std::ref`/`std::cref`, лямбды и `shared_ptr`; после урока [«05. Методы класса в потоке»](lesson-05-class-methods/README.md).
+[Полная последовательность авторских уроков](bonus/README.md) совпадает с номерами папок.
+Сначала изучите передачу объектов и владение захватом, затем ожидание и результаты,
+остановку, координацию и атомики. Версии C++ и специальные варианты запуска указаны в уроках.
 
 ## Сборка и особенности
 
@@ -58,7 +34,7 @@
 `atomic::wait`, latch и ожидание с `stop_token` используют C++20.
 Подробные команды: [общий README](../README.md) и [скрипты сборки](../scripts/README.md).
 
-Для диагностики ThreadSanitizer в [Поиск гонки данных с ThreadSanitizer](bonus/26-thread-sanitizer/README.md) нужен отдельный запуск на Linux/WSL;
+Для диагностики ThreadSanitizer в [Поиск гонки данных с ThreadSanitizer](bonus/27-thread-sanitizer/README.md) нужен отдельный запуск на Linux/WSL;
 обычная сборка F5/Ctrl+F5 инструментирование не включает.
 
 Урок [«02. Аргументы потока»](lesson-02-thread-param/README.md) намеренно не завершается из-за бесконечного цикла; остановите его

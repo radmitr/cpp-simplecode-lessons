@@ -59,6 +59,6 @@ bash scripts/build-windows.sh "basics/lesson-141-union/main.cpp"
 
 ### Дополнительные API в коде
 
-- [Проверка наличия значения и подходящего типа](../../exceptions/bonus/30-exception-types/README.md): [полный пример](../../exceptions/bonus/30-exception-types/main6.cpp).
+- [Проверка наличия значения и подходящего типа](../../exceptions/bonus/01-exception-types/README.md): [полный пример](../../exceptions/bonus/01-exception-types/main6.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

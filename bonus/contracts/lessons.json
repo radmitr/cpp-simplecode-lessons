@@ -5,6 +5,7 @@
     "title": "Предусловия, постусловия и проверки контракта",
     "standard": "c++26",
     "minimum_gcc": 16,
-    "dependency": null
+    "dependency": null,
+    "success_marker": null
   }
 ]

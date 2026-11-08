@@ -72,7 +72,7 @@
 
 Эти свойства видны в исходнике и не являются рекомендацией проектировать
 прикладную строку таким способом. Для обычной работы есть `std::string`,
-а для продолжения — [гарантии исключений](../../exceptions/bonus/15-exception-guarantees/README.md).
+а для продолжения — [гарантии исключений](../../exceptions/bonus/04-exception-guarantees/README.md).
 
 ### Сборка
 
@@ -100,6 +100,6 @@ Windows: используйте `build-windows.sh` и результат `main.e
 
 ### Дополнительные API в коде
 
-- [Учебные режимы terminate](../../multithreading/bonus/05-future-async/README.md): [полный пример](../../multithreading/bonus/05-future-async/main8.cpp).
+- [Учебные режимы terminate](../../multithreading/bonus/12-future-async/README.md): [полный пример](../../multithreading/bonus/12-future-async/main8.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).

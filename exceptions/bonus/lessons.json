@@ -1,34 +1,38 @@
 [
   {
-    "number": 13,
-    "folder": "exceptions/bonus/13-rethrow-and-nested",
-    "title": "Повторное выбрасывание и вложенные исключения",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 14,
-    "folder": "exceptions/bonus/14-noexcept",
-    "title": "noexcept, деструкторы и перемещение",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 15,
-    "folder": "exceptions/bonus/15-exception-guarantees",
-    "title": "Гарантии безопасности исключений",
-    "standard": "c++17",
-    "minimum_gcc": 0,
-    "dependency": null
-  },
-  {
-    "number": 30,
-    "folder": "exceptions/bonus/30-exception-types",
+    "number": 1,
+    "folder": "exceptions/bonus/01-exception-types",
     "title": "Стандартные и собственные типы исключений",
     "standard": "c++17",
     "minimum_gcc": 0,
-    "dependency": null
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 2,
+    "folder": "exceptions/bonus/02-rethrow-and-nested",
+    "title": "Повторное выбрасывание и вложенные исключения",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 3,
+    "folder": "exceptions/bonus/03-noexcept",
+    "title": "noexcept, деструкторы и перемещение",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
+  },
+  {
+    "number": 4,
+    "folder": "exceptions/bonus/04-exception-guarantees",
+    "title": "Гарантии безопасности исключений",
+    "standard": "c++17",
+    "minimum_gcc": 0,
+    "dependency": null,
+    "success_marker": "OK "
   }
 ]

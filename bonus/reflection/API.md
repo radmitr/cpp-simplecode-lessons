@@ -6,16 +6,16 @@
 
 ## Отражение и возврат к сущности
 
-- Уроки [«07. Оператор ^^ и `std::meta::info`»](07-reflection-info/README.md), [«09. Splicing: переход от метаданных к программе»](09-splicing/README.md): ^^, std::meta::info, сплайсеры [:...:] и object.[:member:].
+- Уроки [«07. Оператор ^^ и `std::meta::info`»](07-reflection-info/README.md), [«10. Splicing: переход от метаданных к программе»](10-splicing/README.md): ^^, std::meta::info, сплайсеры [:...:] и object.[:member:].
 - В контексте объявления типа вне type-only-позиции нужен typename [:type:].
 - reflect_constant отражает значение; extract<T> извлекает поддерживаемую константу.
 - reflect_object и reflect_function отражают подходящие объекты/функции.
-  Они дополнительно показаны в main2.cpp урока [«09. Splicing: переход от метаданных к программе»](09-splicing/README.md).
+  Они дополнительно показаны в main2.cpp урока [«10. Splicing: переход от метаданных к программе»](10-splicing/README.md).
 - Метаданные — данные константных вычислений, а не произвольный runtime-вариант.
 
 ## Категории, имена и происхождение
 
-- Уроки [«07. Оператор ^^ и `std::meta::info`»](07-reflection-info/README.md), [«08. Имена, псевдонимы, родитель и исходник»](08-names-and-origins/README.md), [«11. Поля, типы и фильтрация членов»](11-data-members/README.md): is_type, is_function, is_nonstatic_data_member, is_static_member;
+- Уроки [«07. Оператор ^^ и `std::meta::info`»](07-reflection-info/README.md), [«08. Имена, псевдонимы, родитель и исходник»](08-names-and-origins/README.md), [«12. Поля, типы и фильтрация членов»](12-data-members/README.md): is_type, is_function, is_nonstatic_data_member, is_static_member;
   другие предикаты библиотеки описывают категории деклараций, типы и квалификаторы.
 - has_identifier перед identifier_of; display_string_of предназначен для отображения.
 - type_of, parent_of, dealias, source_location_of; стандартный source_location
@@ -25,21 +25,21 @@
 
 ## Списки и доступ
 
-- Уроки [«10. Перечисления и совпадающие значения»](10-enumerators/README.md) — [«15. Функции, параметры и вызовы»](15-functions-and-parameters/README.md): enumerators_of, members_of, nonstatic_data_members_of,
+- Уроки [«14. Перечисления и совпадающие значения»](14-enumerators/README.md) — [«17. Функции, параметры и вызовы»](17-functions-and-parameters/README.md): enumerators_of, members_of, nonstatic_data_members_of,
   static_data_members_of, bases_of, subobjects_of, parameters_of.
 - access_context::current, unprivileged, unchecked; is_accessible и предикаты
   public/protected/private. Прямое именование проверяет доступ; сплайсинг уже
   полученного отражения его не проверяет. unchecked намеренно позволяет обойти
   фильтрацию, поэтому публичный helper выбирает unprivileged явно.
 - return_type_of, is_noexcept, has_default_argument и квалификаторы методов.
-  Конкретная перегрузка выбирается отдельно: main2.cpp урока [«15. Функции, параметры и вызовы»](15-functions-and-parameters/README.md).
+  Конкретная перегрузка выбирается отдельно: main2.cpp урока [«17. Функции, параметры и вызовы»](17-functions-and-parameters/README.md).
 - template for разворачивает неоднородные операции; обычный runtime-for
   не превращает свою переменную в допустимое отражение для сплайсера.
 
 ## Шаблоны и размещение
 
-- Урок [«16. Отражение шаблонов и подстановка»](16-templates/README.md): template_of, template_arguments_of, can_substitute, substitute.
-- Урок [«17. Размеры, выравнивание и смещения»](17-layout/README.md): size_of, alignment_of, offset_of (байты и биты), bit_size_of.
+- Урок [«18. Отражение шаблонов и подстановка»](18-templates/README.md): template_of, template_arguments_of, can_substitute, substitute.
+- Урок [«19. Размеры, выравнивание и смещения»](19-layout/README.md): size_of, alignment_of, offset_of (байты и биты), bit_size_of.
 - Размер/смещение зависят от реализации и ABI. Битовые поля, виртуальные базы,
   неполные типы и нестандартное размещение имеют дополнительные ограничения.
 - Унаследованные поля нельзя считать собственными полями без выбранной политики
@@ -47,19 +47,19 @@
 
 ## Аннотации и создание данных/типов
 
-- Урок [«18. Пользовательские аннотации»](18-annotations/README.md): [[=...]], annotations_of, annotations_of_with_type, extract.
+- Урок [«20. Пользовательские аннотации»](20-annotations/README.md): [[=...]], annotations_of, annotations_of_with_type, extract.
   main2.cpp извлекает строковую метку из параметризованной аннотации.
-- Урок [«19. Статическое хранение вычисленных данных»](19-static-storage/README.md): std::define_static_string, define_static_array, define_static_object.
+- Урок [«09. Статическое хранение вычисленных данных»](09-static-storage/README.md): std::define_static_string, define_static_array, define_static_object.
   Временный буфер нельзя просто вернуть как string_view на уничтоженные данные.
-- Урок [«20. Создание агрегатного типа»](20-define-aggregate/README.md): data_member_options, data_member_spec, define_aggregate.
+- Урок [«21. Создание агрегатного типа»](21-define-aggregate/README.md): data_member_options, data_member_spec, define_aggregate.
   Определение агрегата выполняется в consteval-блоке. Уже определённый класс
   нельзя повторно завершить, произвольные методы/код из строк здесь не создаются.
-- Урок [«21. Защитные запросы и ошибки метафункций»](21-diagnostics/README.md): meta::exception и обработка некорректных запросов при константном вычислении.
+- Урок [«22. Защитные запросы и ошибки метафункций»](22-diagnostics/README.md): meta::exception и обработка некорректных запросов при константном вычислении.
   Обычные защитные предикаты часто лучше исключений для ожидаемого выбора ветви.
 
 ## Практические политики
 
-Уроки [«23. Практика: `enum` в строку и обратно»](23-enum-conversion/README.md) — [«29. Итог: загрузка, проверка и сохранение настроек»](29-settings-project/README.md) показывают преобразование enum, рекурсивный вывод, операции по полям,
+Уроки [«15. Практика: `enum` в строку и обратно»](15-enum-conversion/README.md) — [«29. Итог: загрузка, проверка и сохранение настроек»](29-settings-project/README.md) показывают преобразование enum, рекурсивный вывод, операции по полям,
 tuple ссылок, ключи конфигурации, JSON и валидацию настроек. Общий helper
 поддерживает открытые обычные нестатические поля. Для private-полей, битовых
 полей, контейнеров, указателей и графов объектов требуется отдельная политика.
@@ -72,7 +72,7 @@ tuple ссылок, ключи конфигурации, JSON и валидац�
 
 ## Переносимость и стоимость
 
-Уроки [«22. Заголовки и несколько единиц трансляции»](22-odr-and-headers/README.md), [«30. Границы, переносимость и стоимость»](30-limits-and-cost/README.md): ODR, доступность определений, единицы трансляции, время компиляции,
+Уроки [«23. Заголовки и несколько единиц трансляции»](23-odr-and-headers/README.md), [«30. Границы, переносимость и стоимость»](30-limits-and-cost/README.md): ODR, доступность определений, единицы трансляции, время компиляции,
 размер кода и стоимость реально сгенерированного алгоритма. Рефлексия не является
 обещанием ускорения и не предоставляет динамическую загрузку произвольных C++-типов.
 Используйте feature-test macro и проверку конкретного toolchain. Неподдерживаемые

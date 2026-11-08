@@ -97,32 +97,43 @@
 
 ### Бонусы по основам
 
-[Обзор и запуск](basics/bonus/README.md).
+[Порядок изучения и запуск](basics/bonus/README.md).
 
-- [01-constexpr-consteval — constexpr и consteval](basics/bonus/01-constexpr-consteval/README.md).
-- [02-raii — RAII и время жизни ресурсов](basics/bonus/02-raii/README.md).
-- [03-references-and-lifetime — Ссылки, const и время жизни](basics/bonus/03-references-and-lifetime/README.md).
-- [04-initialization — Инициализация и initializer_list](basics/bonus/04-initialization/README.md).
-- [05-numeric-conversions — Числа, диапазоны и преобразования](basics/bonus/05-numeric-conversions/README.md).
-- [06-auto-and-decltype — auto, ссылки и decltype(auto)](basics/bonus/06-auto-and-decltype/README.md).
-- [07-enum-class — enum class и битовые флаги](basics/bonus/07-enum-class/README.md).
-- [08-structured-bindings — Структурированные привязки и псевдонимы](basics/bonus/08-structured-bindings/README.md).
-- [09-move-semantics — Перемещение и std::move](basics/bonus/09-move-semantics/README.md).
-- [10-rule-of-zero-five — Правило нуля, специальные функции и возврат](basics/bonus/10-rule-of-zero-five/README.md).
-- [11-unique-ptr — unique_ptr: фабрики, массивы и deleter](basics/bonus/11-unique-ptr/README.md).
-- [12-shared-weak-ptr — shared_ptr, weak_ptr и циклы владения](basics/bonus/12-shared-weak-ptr/README.md).
-- [22-lambda-lifetime — Лямбды: время жизни и захват перемещением](basics/bonus/22-lambda-lifetime/README.md).
-- [23-callables-and-invoke — Вызываемые объекты, invoke и reference_wrapper](basics/bonus/23-callables-and-invoke/README.md).
-- [24-odr-and-linkage — ODR, inline и связывание](basics/bonus/24-odr-and-linkage/README.md).
-- [25-static-initialization — Статические объекты и constinit](basics/bonus/25-static-initialization/README.md).
-- [26-bits-and-representation — Биты, endian и bit_cast](basics/bonus/26-bits-and-representation/README.md).
-- [27-chrono — chrono: длительности и монотонные часы](basics/bonus/27-chrono/README.md).
-- [28-random — Генераторы, распределения и воспроизводимость](basics/bonus/28-random/README.md).
-- [29-diagnostics — Диагностика, assert и санитайзеры](basics/bonus/29-diagnostics/README.md).
-- [31. Основные типы и `sizeof` на практике](basics/bonus/31-fundamental-types/README.md).
-- [32. Трассировка стека вызовов](basics/bonus/32-call-stack-trace/README.md).
-- [33. Хранение C-строк и управляющие символы](basics/bonus/33-c-strings-and-escapes/README.md).
-- [34. Скобки в функциональном макросе](basics/bonus/34-macro-parentheses/README.md).
+- [01. Основные типы и sizeof на практике](basics/bonus/01-fundamental-types/README.md) — `c++17`.
+- [02. Инициализация и `initializer_list`](basics/bonus/02-initialization/README.md) — `c++17`.
+- [03. Числа, диапазоны и преобразования](basics/bonus/03-numeric-conversions/README.md) — `c++17`.
+- [04. Ссылки, `const` и время жизни](basics/bonus/04-references-and-lifetime/README.md) — `c++17`.
+- [05. `auto`, ссылки и `decltype(auto)`](basics/bonus/05-auto-and-decltype/README.md) — `c++17`.
+- [06. Структурированные привязки и псевдонимы](basics/bonus/06-structured-bindings/README.md) — `c++17`.
+- [07. `enum class` и битовые флаги](basics/bonus/07-enum-class/README.md) — `c++17`.
+- [08. Хранение C-строк и управляющие символы](basics/bonus/08-c-strings-and-escapes/README.md) — `c++17`.
+- [09. RAII: ресурс связан со временем жизни объекта](basics/bonus/09-raii/README.md) — `c++17`.
+- [10. Перемещение и `std::move`](basics/bonus/10-move-semantics/README.md) — `c++17`.
+- [11. Правило нуля, трёх и пяти](basics/bonus/11-rule-of-zero-five/README.md) — `c++17`.
+- [12. `unique_ptr`: фабрики, массивы и deleter](basics/bonus/12-unique-ptr/README.md) — `c++17`.
+- [13. `shared_ptr`, `weak_ptr` и циклы владения](basics/bonus/13-shared-weak-ptr/README.md) — `c++17`.
+- [14. Лямбды: время жизни и захват перемещением](basics/bonus/14-lambda-lifetime/README.md) — `c++17`.
+- [15. Вызываемые объекты, `invoke` и `reference_wrapper`](basics/bonus/15-callables-and-invoke/README.md) — `c++17`.
+- [16. Пользовательские литералы](basics/bonus/16-user-defined-literals/README.md) — `c++17`.
+- [17. Именованная инициализация агрегата](basics/bonus/17-designated-initializers/README.md) — `c++20`.
+- [18. Трёхстороннее сравнение](basics/bonus/18-three-way-comparison/README.md) — `c++20`.
+- [19. Вычисления во время компиляции: `constexpr` и `consteval`](basics/bonus/19-constexpr-consteval/README.md) — `c++20`.
+- [20. if `consteval` и явное копирование auto](basics/bonus/20-consteval-and-auto-copy/README.md) — `c++23`.
+- [21. ODR, `inline` и связывание](basics/bonus/21-odr-and-linkage/README.md) — `c++17`.
+- [22. Статические объекты и `constinit`](basics/bonus/22-static-initialization/README.md) — `c++20`.
+- [23. Скобки в функциональном макросе](basics/bonus/23-macro-parentheses/README.md) — `c++17`.
+- [24. Биты, `endian` и `bit_cast`](basics/bonus/24-bits-and-representation/README.md) — `c++20`.
+- [25. Перечисления и порядок байтов](basics/bonus/25-enums-and-bytes/README.md) — `c++23`.
+- [26. `chrono`: длительности и монотонные часы](basics/bonus/26-chrono/README.md) — `c++17`.
+- [27. Календарные даты и время суток](basics/bonus/27-calendar/README.md) — `c++20`.
+- [28. Часовые пояса и местное время](basics/bonus/28-time-zones/README.md) — `c++20`.
+- [29. Генераторы, распределения и воспроизводимость](basics/bonus/29-random/README.md) — `c++17`.
+- [30. Диагностика, `assert` и санитайзеры](basics/bonus/30-diagnostics/README.md) — `c++17`.
+- [31. Место вызова `source_location`](basics/bonus/31-source-location/README.md) — `c++20`.
+- [32. Трассировка стека вызовов](basics/bonus/32-call-stack-trace/README.md) — `c++17`.
+- [33. Предположения оптимизатору и недостижимый код](basics/bonus/33-assume-and-unreachable/README.md) — `c++23`.
+- [34. Вычисляемые сообщения и удалённые функции](basics/bonus/34-compile-time-diagnostics/README.md) — `c++26`.
+- [35. Пакеты структурированных привязок](basics/bonus/35-structured-bindings-packs/README.md) — `c++26`.
 
 ## Шаблоны
 
@@ -135,12 +146,16 @@
 
 ### Бонусы: шаблоны
 
-- [16-function-templates — Шаблоны функций и вывод параметров](templates/bonus/16-function-templates/README.md).
-- [17-template-parameters — Параметры шаблонов, специализация и CTAD](templates/bonus/17-template-parameters/README.md).
-- [18-traits-if-constexpr — type_traits, if constexpr и enable_if](templates/bonus/18-traits-if-constexpr/README.md).
-- [19-parameter-packs — Пакеты параметров и fold expressions](templates/bonus/19-parameter-packs/README.md).
-- [20-perfect-forwarding — Forwarding references и std::forward](templates/bonus/20-perfect-forwarding/README.md).
-- [21-concepts — Concepts и requires](templates/bonus/21-concepts/README.md).
+[Порядок изучения и запуск](templates/bonus/README.md).
+
+- [01. Шаблоны функций и вывод параметров](templates/bonus/01-function-templates/README.md) — `c++17`.
+- [02. Параметры шаблонов, специализация и CTAD](templates/bonus/02-template-parameters/README.md) — `c++17`.
+- [03. `type_traits`, `if constexpr` и `enable_if`](templates/bonus/03-traits-if-constexpr/README.md) — `c++17`.
+- [04. Пакеты параметров и fold expressions](templates/bonus/04-parameter-packs/README.md) — `c++17`.
+- [05. Forwarding references и `std::forward`](templates/bonus/05-perfect-forwarding/README.md) — `c++17`.
+- [06. Concepts и `requires`](templates/bonus/06-concepts/README.md) — `c++20`.
+- [07. Перенос квалификаторов через forward_like](templates/bonus/07-forward-like/README.md) — `c++23`.
+- [08. Индексирование пакета параметров](templates/bonus/08-pack-indexing/README.md) — `c++26`.
 
 ## Исключения
 
@@ -153,10 +168,12 @@
 
 ### Бонусы: исключения
 
-- [13-rethrow-and-nested — Повторное выбрасывание и вложенные исключения](exceptions/bonus/13-rethrow-and-nested/README.md).
-- [14-noexcept — noexcept, деструкторы и перемещение](exceptions/bonus/14-noexcept/README.md).
-- [15-exception-guarantees — Гарантии безопасности исключений](exceptions/bonus/15-exception-guarantees/README.md).
-- [«30. Стандартные и собственные типы исключений»](exceptions/bonus/30-exception-types)
+[Порядок изучения и запуск](exceptions/bonus/README.md).
+
+- [01. Стандартные и собственные типы исключений](exceptions/bonus/01-exception-types/README.md) — `c++17`.
+- [02. Повторное выбрасывание и вложенные исключения](exceptions/bonus/02-rethrow-and-nested/README.md) — `c++17`.
+- [03. `noexcept`, деструкторы и перемещение](exceptions/bonus/03-noexcept/README.md) — `c++17`.
+- [04. Гарантии безопасности исключений](exceptions/bonus/04-exception-guarantees/README.md) — `c++17`.
 
 ## Ввод-вывод
 
@@ -170,29 +187,33 @@
 
 ### Бонусы по вводу-выводу
 
-[Обзор и запуск](io/bonus/README.md).
+[Порядок изучения и запуск](io/bonus/README.md).
 
-- [01-stream-state — Состояния потоков и восстановление ввода](io/bonus/01-stream-state/README.md).
-- [02-portable-binary — Явный бинарный формат](io/bonus/02-portable-binary/README.md).
-- [03-string-streams — Строковые потоки и разбор записей](io/bonus/03-string-streams/README.md).
-- [04-charconv — Строгое преобразование чисел](io/bonus/04-charconv/README.md).
-- [05-iomanip — Форматирование и состояние потока](io/bonus/05-iomanip/README.md).
-- [06-open-modes — Создание, перезапись, app, ate и binary](io/bonus/06-open-modes/README.md).
-- [07-positions — Позиции чтения и записи](io/bonus/07-positions/README.md).
-- [08-block-copy — Блочная обработка и неполный последний блок](io/bonus/08-block-copy/README.md).
-- [09-filesystem-path — Пути, cwd и имена Unicode](io/bonus/09-filesystem-path/README.md).
-- [10-filesystem-operations — Каталоги, файлы, симлинки и error_code](io/bonus/10-filesystem-operations/README.md).
-- [11-io-errors — Ошибки записи, исключения и закрытие](io/bonus/11-io-errors/README.md).
-- [12-buffering — Буферизация, endl и flush](io/bonus/12-buffering/README.md).
-- [13-utf8 — UTF-8, BOM, переводы строк и char8_t](io/bonus/13-utf8/README.md).
-- [14-csv — CSV с кавычками и многострочными полями](io/bonus/14-csv/README.md).
-- [15-json — JSON: библиотека, типы и обязательные поля](io/bonus/15-json/README.md).
-- [16-versioned-records — Записи, длины, версии и контрольная сумма](io/bonus/16-versioned-records/README.md).
-- [17-temporary-save — Сохранение через временный файл](io/bonus/17-temporary-save/README.md).
-- [18-stream-interfaces — Общие интерфейсы istream и ostream](io/bonus/18-stream-interfaces/README.md).
-- [19-console-tool — Аргументы, stdin/stdout/stderr и коды завершения](io/bonus/19-console-tool/README.md).
-- [20-file-logger — Файловый журнал и ограничение размера](io/bonus/20-file-logger/README.md).
-- [21-format-and-print — std::format и std::print](io/bonus/21-format-and-print/README.md).
+- [01. Состояния потока и восстановление ввода](io/bonus/01-stream-state/README.md) — `c++17`.
+- [02. Строковые потоки и разбор записей](io/bonus/02-string-streams/README.md) — `c++17`.
+- [03. Строгое преобразование чисел](io/bonus/03-charconv/README.md) — `c++17`.
+- [04. Форматирование и состояние потока](io/bonus/04-iomanip/README.md) — `c++17`.
+- [05. `std::format` и `std::print`](io/bonus/05-format-and-print/README.md) — `c++23`.
+- [06. Общие интерфейсы `istream` и `ostream`](io/bonus/06-stream-interfaces/README.md) — `c++17`.
+- [07. Буферизация, `endl` и `flush`](io/bonus/07-buffering/README.md) — `c++17`.
+- [08. Потоки над готовым буфером](io/bonus/08-spanstream/README.md) — `c++23`.
+- [09. Создание, перезапись, app, ate и binary](io/bonus/09-open-modes/README.md) — `c++17`.
+- [10. Ошибки записи, исключения и закрытие](io/bonus/10-io-errors/README.md) — `c++17`.
+- [11. Позиции чтения и записи](io/bonus/11-positions/README.md) — `c++17`.
+- [12. Блочная обработка и неполный последний блок](io/bonus/12-block-copy/README.md) — `c++17`.
+- [13. Пути, cwd и имена Unicode](io/bonus/13-filesystem-path/README.md) — `c++17`.
+- [14. Каталоги, файлы, симлинки и `error_code`](io/bonus/14-filesystem-operations/README.md) — `c++17`.
+- [15. UTF-8, BOM, переводы строк и `char8_t`](io/bonus/15-utf8/README.md) — `c++20`.
+- [16. CSV с кавычками и многострочными полями](io/bonus/16-csv/README.md) — `c++17`.
+- [17. JSON: библиотека, типы и обязательные поля](io/bonus/17-json/README.md) — `c++17`.
+- [18. Явный бинарный формат вместо записи объекта целиком](io/bonus/18-portable-binary/README.md) — `c++17`.
+- [19. Записи, длины, версии и контрольная сумма](io/bonus/19-versioned-records/README.md) — `c++17`.
+- [20. Сохранение через временный файл](io/bonus/20-temporary-save/README.md) — `c++17`.
+- [21. Аргументы, `stdin`, `stdout`, `stderr` и коды завершения](io/bonus/21-console-tool/README.md) — `c++17`.
+- [22. Файловый журнал и ограничение размера](io/bonus/22-file-logger/README.md) — `c++17`.
+- [23. Получение стека вызовов](io/bonus/23-stacktrace/README.md) — `c++23`.
+- [24. Взаимодействие с отладчиком](io/bonus/24-debugging/README.md) — `c++26`.
+- [25. Включение файла через embed](io/bonus/25-embed/README.md) — `c++26`.
 
 ## ООП
 
@@ -245,8 +266,10 @@
 
 [Порядок изучения и запуск](oop/bonus/README.md).
 
-- [01-decrement-operators — Префиксный и постфиксный декремент](oop/bonus/01-decrement-operators/README.md).
-- [02-composition-aggregation — Собственный компонент и внешняя ссылка](oop/bonus/02-composition-aggregation/README.md).
+- [01. Композиция и невладеющая связь](oop/bonus/01-composition-aggregation/README.md) — `c++17`.
+- [02. Префиксный и постфиксный `operator--`](oop/bonus/02-decrement-operators/README.md) — `c++17`.
+- [03. Явный параметр объекта](oop/bonus/03-explicit-object/README.md) — `c++23`.
+- [04. Многомерный индекс и статические операторы](oop/bonus/04-call-and-subscript/README.md) — `c++23`.
 
 ## STL
 
@@ -281,13 +304,31 @@
 
 [Порядок изучения и запуск](stl/bonus/README.md).
 
-- [01-array-initialization — Нули, копия и пустой массив](stl/bonus/01-array-initialization/README.md).
-- [02-accumulator-type — Тип начального значения accumulate](stl/bonus/02-accumulator-type/README.md).
-- [03-vector-initialization — Круглые и фигурные скобки](stl/bonus/03-vector-initialization/README.md).
-
-- [«04. Результат или ошибка: `std::expected`»](stl/bonus/04-expected/)
-
-- [«05. Представление массива: `std::span`»](stl/bonus/05-span/)
+- [01. `std::vector`: круглые и фигурные скобки](stl/bonus/01-vector-initialization/README.md) — `c++17`.
+- [02. `std::array`: инициализация, копия и нулевой размер](stl/bonus/02-array-initialization/README.md) — `c++17`.
+- [03. `std::accumulate`: тип начального значения](stl/bonus/03-accumulator-type/README.md) — `c++17`.
+- [04. Строковое представление `string_view`](stl/bonus/04-string-view/README.md) — `c++17`.
+- [05. Представление массива: `std::span`](stl/bonus/05-span/README.md) — `c++20`.
+- [06. Необязательное значение `optional`](stl/bonus/06-optional/README.md) — `c++17`.
+- [07. Результат или ошибка: `std::expected`](stl/bonus/07-expected/README.md) — `c++23`.
+- [08. Значение одного из типов `variant`](stl/bonus/08-variant/README.md) — `c++17`.
+- [09. Хранение значения неизвестного типа `any`](stl/bonus/09-any/README.md) — `c++17`.
+- [10. `optional` со ссылкой и обход `optional`](stl/bonus/10-optional-reference/README.md) — `c++26`.
+- [11. Диапазоны, представления и время жизни](stl/bonus/11-ranges-and-views/README.md) — `c++20`.
+- [12. Адаптеры и алгоритмы диапазонов](stl/bonus/12-ranges-adaptors/README.md) — `c++23`.
+- [13. Поиск подстроки и заполнение строки](stl/bonus/13-string-operations/README.md) — `c++23`.
+- [14. Перенос узлов контейнера](stl/bonus/14-node-handles/README.md) — `c++17`.
+- [15. flat_map и flat_set](stl/bonus/15-flat-containers/README.md) — `c++23`.
+- [16. Вектор с фиксированной вместимостью](stl/bonus/16-inplace-vector/README.md) — `c++26`.
+- [17. Вызываемые объекты без копирования](stl/bonus/17-move-only-function/README.md) — `c++23`.
+- [18. Ссылка на функцию и копируемая обёртка](stl/bonus/18-function-wrappers/README.md) — `c++26`.
+- [19. Владение с копированием значения](stl/bonus/19-value-wrappers/README.md) — `c++26`.
+- [20. Ресурсы памяти `pmr`](stl/bonus/20-memory-resources/README.md) — `c++17`.
+- [21. Политики выполнения алгоритмов](stl/bonus/21-parallel-algorithms/README.md) — `c++20`.
+- [22. Многомерное представление mdspan](stl/bonus/22-mdspan/README.md) — `c++23`.
+- [23. Поэлементные вычисления SIMD](stl/bonus/23-simd/README.md) — `c++26`.
+- [24. Линейная алгебра поверх mdspan](stl/bonus/24-linalg/README.md) — `c++26`.
+- [25. Блочный контейнер hive](stl/bonus/25-hive/README.md) — `c++26`.
 
 ## Многопоточность
 
@@ -306,178 +347,151 @@
 
 ### Бонусы по многопоточности
 
-- [«01. Гонка данных и `std::atomic`»](multithreading/bonus/01-atomic/)
-- [«02. `std::mutex::try_lock`»](multithreading/bonus/02-try-lock/)
-- [«03. `std::scoped_lock`»](multithreading/bonus/03-scoped-lock/)
-- [«04. `std::condition_variable`»](multithreading/bonus/04-condition-variable/)
-- [«05. `std::future` и `std::async`: запуск, ожидание и исключения»](multithreading/bonus/05-future-async/)
-- [«06. `std::jthread` и `std::stop_token`»](multithreading/bonus/06-jthread-stop-token/)
-- [«07. Семафор: `std::counting_semaphore`»](multithreading/bonus/07-semaphore/)
-- [«08. `std::shared_mutex` и `std::shared_lock`»](multithreading/bonus/08-shared-mutex/)
-- [«09. `std::promise` и `std::future`»](multithreading/bonus/09-promise-future/)
-- [«10. Очередь `producer`–consumer»](multithreading/bonus/10-producer-consumer/)
-- [«11. Учебный пул потоков»](multithreading/bonus/11-thread-pool/)
-- [«12. `std::barrier`»](multithreading/bonus/12-barrier/)
-- [«13. `std::timed_mutex`»](multithreading/bonus/13-timed-mutex/)
-- [«14. `thread_local`»](multithreading/bonus/14-thread-local/)
-- [«15. `std::osyncstream`»](multithreading/bonus/15-osyncstream/)
-- [«16. `atomic::wait` и уведомления»](multithreading/bonus/16-atomic-wait/)
-- [«17. Порядки памяти: `relaxed`, `acquire` и `release`»](multithreading/bonus/17-memory-order/)
-- [«18. Число потоков и время вычисления»](multithreading/bonus/18-parallel-sum/)
-- [«19. Владение `std::unique_lock`: перемещение и освобождение»](multithreading/bonus/19-unique-lock-move/)
-- [«20. `std::call_once` и `std::once_flag`»](multithreading/bonus/20-call-once/)
-- [«21. `std::latch`»](multithreading/bonus/21-latch/)
-- [«22. `std::shared_future`»](multithreading/bonus/22-shared-future/)
-- [«23. Ожидание с поддержкой остановки»](multithreading/bonus/23-stop-aware-wait/)
-- [«24. compare_exchange: сравнить и заменить»](multithreading/bonus/24-compare-exchange/)
-- [«25. False sharing»](multithreading/bonus/25-false-sharing/)
-- [«26. Поиск гонки данных с ThreadSanitizer»](multithreading/bonus/26-thread-sanitizer/)
-- [«27. Копия объекта, `std::ref` и лямбда»](multithreading/bonus/27-class-method-arguments/)
+[Порядок изучения и запуск](multithreading/bonus/README.md).
+
+- [01. Копия объекта, `std::ref` и лямбда](multithreading/bonus/01-class-method-arguments/README.md) — `c++17`.
+- [02. `thread_local`](multithreading/bonus/02-thread-local/README.md) — `c++17`.
+- [03. Владение `std::unique_lock`: перемещение и освобождение](multithreading/bonus/03-unique-lock-move/README.md) — `c++17`.
+- [04. `std::mutex::try_lock`](multithreading/bonus/04-try-lock/README.md) — `c++17`.
+- [05. `std::timed_mutex`](multithreading/bonus/05-timed-mutex/README.md) — `c++17`.
+- [06. `std::scoped_lock`](multithreading/bonus/06-scoped-lock/README.md) — `c++17`.
+- [07. `std::shared_mutex` и `std::shared_lock`](multithreading/bonus/07-shared-mutex/README.md) — `c++17`.
+- [08. `std::call_once` и `std::once_flag`](multithreading/bonus/08-call-once/README.md) — `c++17`.
+- [09. `std::condition_variable`](multithreading/bonus/09-condition-variable/README.md) — `c++17`.
+- [10. Очередь `producer`–consumer](multithreading/bonus/10-producer-consumer/README.md) — `c++17`.
+- [11. `std::promise` и `std::future`](multithreading/bonus/11-promise-future/README.md) — `c++17`.
+- [12. `std::future` и `std::async`: запуск, ожидание и исключения](multithreading/bonus/12-future-async/README.md) — `c++17`.
+- [13. `std::shared_future`](multithreading/bonus/13-shared-future/README.md) — `c++17`.
+- [14. Учебный пул потоков](multithreading/bonus/14-thread-pool/README.md) — `c++17`.
+- [15. `std::jthread` и `std::stop_token`](multithreading/bonus/15-jthread-stop-token/README.md) — `c++20`.
+- [16. Ожидание с поддержкой остановки](multithreading/bonus/16-stop-aware-wait/README.md) — `c++20`.
+- [17. Семафор: `std::counting_semaphore`](multithreading/bonus/17-semaphore/README.md) — `c++20`.
+- [18. `std::latch`](multithreading/bonus/18-latch/README.md) — `c++20`.
+- [19. `std::barrier`](multithreading/bonus/19-barrier/README.md) — `c++20`.
+- [20. Гонка данных и `std::atomic`](multithreading/bonus/20-atomic/README.md) — `c++17`.
+- [21. Порядки памяти: `relaxed`, `acquire` и `release`](multithreading/bonus/21-memory-order/README.md) — `c++17`.
+- [22. compare_exchange: сравнить и заменить](multithreading/bonus/22-compare-exchange/README.md) — `c++17`.
+- [23. `atomic::wait` и уведомления](multithreading/bonus/23-atomic-wait/README.md) — `c++20`.
+- [24. `std::osyncstream`](multithreading/bonus/24-osyncstream/README.md) — `c++20`.
+- [25. Число потоков и время вычисления](multithreading/bonus/25-parallel-sum/README.md) — `c++17`.
+- [26. False sharing](multithreading/bonus/26-false-sharing/README.md) — `c++17`.
+- [27. Поиск гонки данных с ThreadSanitizer](multithreading/bonus/27-thread-sanitizer/README.md) — `c++17`.
 
 ## Дополнительные направления вне курса
 
-[Обзор бонусов](bonus/README.md).
+[Обзор](bonus/README.md) · [Учебный маршрут](docs/learning-path.md).
 
-### Рефлексия и исследование типов
+### Модули C++
 
-[30 уроков, подготовка Windows/Linux и карта API](bonus/reflection/README.md).
+[Порядок изучения и подготовка](bonus/modules/README.md).
 
-- [01-introspection-overview — Интроспекция, метаданные и время выполнения](bonus/reflection/01-introspection-overview/README.md).
-- [02-typeid-type-index — RTTI: typeid, type_info и type_index](bonus/reflection/02-typeid-type-index/README.md).
-- [03-dynamic-cast — Проверяемые преобразования dynamic_cast](bonus/reflection/03-dynamic-cast/README.md).
-- [04-traits-and-detection — decltype, type_traits и обнаружение операций](bonus/reflection/04-traits-and-detection/README.md).
-- [05-manual-descriptors — Ручные описатели и указатели на члены](bonus/reflection/05-manual-descriptors/README.md).
-- [06-toolchain — Компилятор, заголовок meta и проверка возможностей](bonus/reflection/06-toolchain/README.md).
-- [07-reflection-info — Оператор ^^ и std::meta::info](bonus/reflection/07-reflection-info/README.md).
-- [08-names-and-origins — Имена, псевдонимы, родитель и исходник](bonus/reflection/08-names-and-origins/README.md).
-- [09-splicing — Splicing: переход от метаданных к программе](bonus/reflection/09-splicing/README.md).
-- [10-enumerators — Перечисления и совпадающие значения](bonus/reflection/10-enumerators/README.md).
-- [11-data-members — Поля, типы и фильтрация членов](bonus/reflection/11-data-members/README.md).
-- [12-access-control — Контекст доступа и инкапсуляция](bonus/reflection/12-access-control/README.md).
-- [13-expansion-statements — Развёртывание обхода и runtime-значения](bonus/reflection/13-expansion-statements/README.md).
-- [14-base-subobjects — Базовые классы и подобъекты](bonus/reflection/14-base-subobjects/README.md).
-- [15-functions-and-parameters — Функции, параметры и вызовы](bonus/reflection/15-functions-and-parameters/README.md).
-- [16-templates — Отражение шаблонов и подстановка](bonus/reflection/16-templates/README.md).
-- [17-layout — Размеры, выравнивание и смещения](bonus/reflection/17-layout/README.md).
-- [18-annotations — Пользовательские аннотации](bonus/reflection/18-annotations/README.md).
-- [19-static-storage — Статическое хранение вычисленных данных](bonus/reflection/19-static-storage/README.md).
-- [20-define-aggregate — Создание агрегатного типа](bonus/reflection/20-define-aggregate/README.md).
-- [21-diagnostics — Защитные запросы и ошибки метафункций](bonus/reflection/21-diagnostics/README.md).
-- [22-odr-and-headers — Заголовки и несколько единиц трансляции](bonus/reflection/22-odr-and-headers/README.md).
-- [23-enum-conversion — Практика: enum в строку и обратно](bonus/reflection/23-enum-conversion/README.md).
-- [24-recursive-print — Практика: вывод вложенных структур](bonus/reflection/24-recursive-print/README.md).
-- [25-memberwise-operations — Практика: сравнение, копирование и хеширование](bonus/reflection/25-memberwise-operations/README.md).
-- [26-struct-to-tuple — Практика: структура и tuple ссылок](bonus/reflection/26-struct-to-tuple/README.md).
-- [27-cli-configuration — Практика: имена полей и проверка конфигурации](bonus/reflection/27-cli-configuration/README.md).
-- [28-json-serialization — Практика: JSON без ручного списка полей](bonus/reflection/28-json-serialization/README.md).
-- [29-settings-project — Итог: загрузка, проверка и сохранение настроек](bonus/reflection/29-settings-project/README.md).
-- [30-limits-and-cost — Границы, переносимость и стоимость](bonus/reflection/30-limits-and-cost/README.md).
+- [01. Интерфейс и реализация модуля](bonus/modules/01-interface-and-implementation/README.md) — `c++20`.
 
-### Сети — Windows и Linux
+### Корутины и генераторы
 
-[Порядок изучения и запуск](bonus/networking/README.md).
+[Порядок изучения и подготовка](bonus/coroutines/README.md).
 
-- [«01. Адреса, DNS и порядок байтов»](bonus/networking/lesson-01-addresses/)
-- [«02. TCP echo: клиент и сервер»](bonus/networking/lesson-02-tcp-echo/)
-- [«03. Границы сообщений в TCP»](bonus/networking/lesson-03-tcp-framing/)
-- [«04. UDP echo и датаграммы»](bonus/networking/lesson-04-udp-echo/)
-- [«05. Неблокирующие сокеты, таймауты и ошибки»](bonus/networking/lesson-05-timeouts/)
-- [«06. HTTP GET и ответ сервера»](bonus/networking/lesson-06-http-get/)
-- [«07. HTTP POST с JSON»](bonus/networking/lesson-07-http-post-json/)
-- [«08. Ресурсный HTTP API»](bonus/networking/lesson-08-rest-api/)
-- [«09. Параллельная обработка нескольких клиентов»](bonus/networking/lesson-09-multi-client/)
-- [«10. Фоновая отправка последнего значения»](bonus/networking/lesson-10-background-sender/)
-- [«11. HTTPS и проверка сертификата»](bonus/networking/lesson-11-https/)
-- [«12. IPv6-клиент и сервер»](bonus/networking/lesson-12-ipv6/)
-- [«13. Переподключение, backoff и отмена»](bonus/networking/lesson-13-reconnect/)
-- [«14. Heartbeat: PING/PONG»](bonus/networking/lesson-14-heartbeat/)
-- [«15. ACK, request_id и защита от повторного выполнения»](bonus/networking/lesson-15-request-ack/)
-- [«16. Передача файла блоками и CRC32»](bonus/networking/lesson-16-file-transfer/)
-- [«17. Обнаружение устройств через UDP»](bonus/networking/lesson-17-udp-discovery/)
-- [«18. Асинхронный TCP-сервер с `Boost.Asio`»](bonus/networking/lesson-18-asio/)
-- [«19. WebSocket: сообщения от сервера»](bonus/networking/lesson-19-websocket/)
-- [«20. WSS: WebSocket поверх TLS»](bonus/networking/lesson-20-wss/)
-- [«21. Многопоточный Asio и strand»](bonus/networking/lesson-21-asio-strand/)
-- [«22. MQTT: публикация и подписка через брокер»](bonus/networking/lesson-22-mqtt/)
-- [«23. HTTP/2 и HTTP/3 через libcurl»](bonus/networking/lesson-23-http-versions/)
-- [«24. Итоговый проект: чат с переподключением и heartbeat»](bonus/networking/lesson-24-chat/)
+- [01. Корутина, приостановка и владение кадром](bonus/coroutines/01-coroutine-lifetime/README.md) — `c++20`.
+- [02. Стандартный генератор последовательности](bonus/coroutines/02-standard-generator/README.md) — `c++23`.
 
-### Базы данных — PostgreSQL
+### Контракты функций
 
-[Подготовка Windows/Linux и общие пояснения](bonus/databases/postgresql/README.md).
+[Порядок изучения и подготовка](bonus/contracts/README.md).
 
-- [lesson-01-connect — Подключение и первый SELECT](bonus/databases/postgresql/lesson-01-connect/)
-- [lesson-02-tables-types — Таблицы, столбцы и типы](bonus/databases/postgresql/lesson-02-tables-types/)
-- [lesson-03-insert — INSERT и RETURNING](bonus/databases/postgresql/lesson-03-insert/)
-- [lesson-04-select — SELECT, фильтрация и сортировка](bonus/databases/postgresql/lesson-04-select/)
-- [lesson-05-update-delete — UPDATE и DELETE](bonus/databases/postgresql/lesson-05-update-delete/)
-- [lesson-06-parameters — Параметры и защита от SQL-инъекции](bonus/databases/postgresql/lesson-06-parameters/)
-- [lesson-07-prepared-statements — Подготовленные запросы](bonus/databases/postgresql/lesson-07-prepared-statements/)
-- [lesson-08-null-values — NULL и пустая строка](bonus/databases/postgresql/lesson-08-null-values/)
-- [lesson-09-constraints — Ограничения и SQLSTATE](bonus/databases/postgresql/lesson-09-constraints/)
-- [lesson-10-joins — Связи и JOIN](bonus/databases/postgresql/lesson-10-joins/)
-- [lesson-11-aggregation — Группировка и агрегатные функции](bonus/databases/postgresql/lesson-11-aggregation/)
-- [lesson-12-transactions — Транзакции: COMMIT и ROLLBACK](bonus/databases/postgresql/lesson-12-transactions/)
-- [lesson-13-savepoints — Точки сохранения](bonus/databases/postgresql/lesson-13-savepoints/)
-- [lesson-14-upsert — INSERT ON CONFLICT](bonus/databases/postgresql/lesson-14-upsert/)
-- [lesson-15-indexes — Индексы и EXPLAIN](bonus/databases/postgresql/lesson-15-indexes/)
-- [lesson-16-jsonb — JSONB](bonus/databases/postgresql/lesson-16-jsonb/)
-- [lesson-17-isolation — Изоляция и снимки данных](bonus/databases/postgresql/lesson-17-isolation/)
-- [lesson-18-row-locks — Блокировки строк и таймаут](bonus/databases/postgresql/lesson-18-row-locks/)
-- [lesson-19-copy — Массовая загрузка и выгрузка COPY](bonus/databases/postgresql/lesson-19-copy/)
-- [lesson-20-backup-restore — Резервная копия и проверка восстановления](bonus/databases/postgresql/lesson-20-backup-restore/)
+- [01. Предусловия, постусловия и проверки контракта](bonus/contracts/01-contract-checks/README.md) — `c++26`.
 
-## Современные дополнения C++20–26
+### Рефлексия и исследование типов в C++
 
-[Порядок изучения, требования и покрытие тем](docs/modern-cpp.md).
+[Порядок изучения и подготовка](bonus/reflection/README.md).
 
-- [if consteval и явное копирование auto](basics/bonus/35-consteval-and-auto-copy/README.md) — `c++23`.
-- [Перечисления и порядок байтов](basics/bonus/36-enums-and-bytes/README.md) — `c++23`.
-- [Предположения оптимизатору и недостижимый код](basics/bonus/37-assume-and-unreachable/README.md) — `c++23`.
-- [Вычисляемые сообщения и удалённые функции](basics/bonus/38-compile-time-diagnostics/README.md) — `c++26`.
-- [Пакеты структурированных привязок](basics/bonus/39-structured-bindings-packs/README.md) — `c++26`.
-- [Явный параметр объекта](oop/bonus/03-explicit-object/README.md) — `c++23`.
-- [Многомерный индекс и статические операторы](oop/bonus/04-call-and-subscript/README.md) — `c++23`.
-- [Индексирование пакета параметров](templates/bonus/22-pack-indexing/README.md) — `c++26`.
-- [Перенос квалификаторов через forward_like](templates/bonus/23-forward-like/README.md) — `c++23`.
-- [Диапазоны, представления и время жизни](stl/bonus/06-ranges-and-views/README.md) — `c++20`.
-- [Адаптеры и алгоритмы диапазонов](stl/bonus/07-ranges-adaptors/README.md) — `c++23`.
-- [flat_map и flat_set](stl/bonus/08-flat-containers/README.md) — `c++23`.
-- [Многомерное представление mdspan](stl/bonus/09-mdspan/README.md) — `c++23`.
-- [Вызываемые объекты без копирования](stl/bonus/10-move-only-function/README.md) — `c++23`.
-- [Поиск подстроки и заполнение строки](stl/bonus/16-string-operations/README.md) — `c++23`.
-- [Вектор с фиксированной вместимостью](stl/bonus/11-inplace-vector/README.md) — `c++26`.
-- [Блочный контейнер hive](stl/bonus/12-hive/README.md) — `c++26`.
-- [Владение с копированием значения](stl/bonus/13-value-wrappers/README.md) — `c++26`.
-- [Ссылка на функцию и копируемая обёртка](stl/bonus/14-function-wrappers/README.md) — `c++26`.
-- [optional со ссылкой и обход optional](stl/bonus/15-optional-reference/README.md) — `c++26`.
-- [Поэлементные вычисления SIMD](stl/bonus/17-simd/README.md) — `c++26`.
-- [Линейная алгебра поверх mdspan](stl/bonus/18-linalg/README.md) — `c++26`.
-- [Потоки над готовым буфером](io/bonus/22-spanstream/README.md) — `c++23`.
-- [Включение файла через embed](io/bonus/23-embed/README.md) — `c++26`.
-- [Получение стека вызовов](io/bonus/24-stacktrace/README.md) — `c++23`.
-- [Взаимодействие с отладчиком](io/bonus/25-debugging/README.md) — `c++26`.
-- [Корутина, приостановка и владение кадром](bonus/coroutines/01-coroutine-lifetime/README.md) — `c++20`.
-- [Стандартный генератор последовательности](bonus/coroutines/02-standard-generator/README.md) — `c++23`.
-- [Предусловия, постусловия и проверки контракта](bonus/contracts/01-contract-checks/README.md) — `c++26`.
-- [Описание работы через senders и receivers](bonus/execution/01-senders/README.md) — `c++26`.
-- [Планировщик и время жизни операции](bonus/execution/02-schedulers/README.md) — `c++26`.
+- [01. Интроспекция, метаданные и время выполнения](bonus/reflection/01-introspection-overview/README.md) — `c++17`.
+- [02. RTTI: `typeid`, `type_info` и `type_index`](bonus/reflection/02-typeid-type-index/README.md) — `c++17`.
+- [03. Проверяемые преобразования `dynamic_cast`](bonus/reflection/03-dynamic-cast/README.md) — `c++17`.
+- [04. `decltype`, `type_traits` и обнаружение операций](bonus/reflection/04-traits-and-detection/README.md) — `c++17`.
+- [05. Ручные описатели и указатели на члены](bonus/reflection/05-manual-descriptors/README.md) — `c++17`.
+- [06. Компилятор, заголовок meta и проверка возможностей](bonus/reflection/06-toolchain/README.md) — `c++26`.
+- [07. Оператор `^^` и `std::meta::info`](bonus/reflection/07-reflection-info/README.md) — `c++26`.
+- [08. Имена, псевдонимы, родитель и исходник](bonus/reflection/08-names-and-origins/README.md) — `c++26`.
+- [09. Статическое хранение вычисленных данных](bonus/reflection/09-static-storage/README.md) — `c++26`.
+- [10. Splicing: переход от метаданных к программе](bonus/reflection/10-splicing/README.md) — `c++26`.
+- [11. Контекст доступа и инкапсуляция](bonus/reflection/11-access-control/README.md) — `c++26`.
+- [12. Поля, типы и фильтрация членов](bonus/reflection/12-data-members/README.md) — `c++26`.
+- [13. Развёртывание обхода и runtime-значения](bonus/reflection/13-expansion-statements/README.md) — `c++26`.
+- [14. Перечисления и совпадающие значения](bonus/reflection/14-enumerators/README.md) — `c++26`.
+- [15. Практика: `enum` в строку и обратно](bonus/reflection/15-enum-conversion/README.md) — `c++26`.
+- [16. Базовые классы и подобъекты](bonus/reflection/16-base-subobjects/README.md) — `c++26`.
+- [17. Функции, параметры и вызовы](bonus/reflection/17-functions-and-parameters/README.md) — `c++26`.
+- [18. Отражение шаблонов и подстановка](bonus/reflection/18-templates/README.md) — `c++26`.
+- [19. Размеры, выравнивание и смещения](bonus/reflection/19-layout/README.md) — `c++26`.
+- [20. Пользовательские аннотации](bonus/reflection/20-annotations/README.md) — `c++26`.
+- [21. Создание агрегатного типа](bonus/reflection/21-define-aggregate/README.md) — `c++26`.
+- [22. Защитные запросы и ошибки метафункций](bonus/reflection/22-diagnostics/README.md) — `c++26`.
+- [23. Заголовки и несколько единиц трансляции](bonus/reflection/23-odr-and-headers/README.md) — `c++26`.
+- [24. Практика: вывод вложенных структур](bonus/reflection/24-recursive-print/README.md) — `c++26`.
+- [25. Практика: сравнение, копирование и хеширование](bonus/reflection/25-memberwise-operations/README.md) — `c++26`.
+- [26. Практика: структура и `tuple` ссылок](bonus/reflection/26-struct-to-tuple/README.md) — `c++26`.
+- [27. Практика: имена полей и проверка конфигурации](bonus/reflection/27-cli-configuration/README.md) — `c++26`.
+- [28. Практика: JSON без ручного списка полей](bonus/reflection/28-json-serialization/README.md) — `c++26`.
+- [29. Итог: загрузка, проверка и сохранение настроек](bonus/reflection/29-settings-project/README.md) — `c++26`.
+- [30. Границы, переносимость и стоимость](bonus/reflection/30-limits-and-cost/README.md) — `c++26`.
 
-## Основные средства языка и библиотеки: продолжение
+### Execution: senders и планировщики
 
-[Учебный маршрут](docs/learning-path.md) · [Указатель версий](docs/cpp-versions.md) · [Карта покрытия](docs/cpp-coverage.md).
+[Порядок изучения и подготовка](bonus/execution/README.md).
 
-- [Необязательное значение optional](stl/bonus/19-optional/README.md) — `c++17`.
-- [Значение одного из типов variant](stl/bonus/20-variant/README.md) — `c++17`.
-- [Хранение значения неизвестного типа any](stl/bonus/21-any/README.md) — `c++17`.
-- [Строковое представление string_view](stl/bonus/22-string-view/README.md) — `c++17`.
-- [Перенос узлов контейнера](stl/bonus/23-node-handles/README.md) — `c++17`.
-- [Ресурсы памяти pmr](stl/bonus/24-memory-resources/README.md) — `c++17`.
-- [Политики выполнения алгоритмов](stl/bonus/25-parallel-algorithms/README.md) — `c++20`.
-- [Трёхстороннее сравнение](basics/bonus/40-three-way-comparison/README.md) — `c++20`.
-- [Место вызова source_location](basics/bonus/41-source-location/README.md) — `c++20`.
-- [Пользовательские литералы](basics/bonus/42-user-defined-literals/README.md) — `c++17`.
-- [Именованная инициализация агрегата](basics/bonus/43-designated-initializers/README.md) — `c++20`.
-- [Календарные даты и время суток](basics/bonus/44-calendar/README.md) — `c++20`.
-- [Часовые пояса и местное время](basics/bonus/45-time-zones/README.md) — `c++20`.
-- [Интерфейс и реализация модуля](bonus/modules/01-interface-and-implementation/README.md) — `c++20`.
+- [01. Описание работы через senders и receivers](bonus/execution/01-senders/README.md) — `c++26`.
+- [02. Планировщик и время жизни операции](bonus/execution/02-schedulers/README.md) — `c++26`.
+
+### Сети на C++: Windows и Linux
+
+[Порядок изучения и подготовка](bonus/networking/README.md).
+
+- [01. Адреса, DNS и порядок байтов](bonus/networking/01-addresses/README.md) — `c++17`.
+- [02. TCP echo: клиент и сервер](bonus/networking/02-tcp-echo/README.md) — `c++17`.
+- [03. Границы сообщений в TCP](bonus/networking/03-tcp-framing/README.md) — `c++17`.
+- [04. UDP echo и датаграммы](bonus/networking/04-udp-echo/README.md) — `c++17`.
+- [05. Неблокирующие сокеты, таймауты и ошибки](bonus/networking/05-timeouts/README.md) — `c++17`.
+- [06. IPv6-клиент и сервер](bonus/networking/06-ipv6/README.md) — `c++17`.
+- [07. Параллельная обработка нескольких клиентов](bonus/networking/07-multi-client/README.md) — `c++17`.
+- [08. Фоновая отправка последнего значения](bonus/networking/08-background-sender/README.md) — `c++17`.
+- [09. Переподключение, backoff и отмена](bonus/networking/09-reconnect/README.md) — `c++17`.
+- [10. Heartbeat: PING/PONG](bonus/networking/10-heartbeat/README.md) — `c++17`.
+- [11. ACK, request_id и защита от повторного выполнения](bonus/networking/11-request-ack/README.md) — `c++17`.
+- [12. Передача файла блоками и CRC32](bonus/networking/12-file-transfer/README.md) — `c++17`.
+- [13. Обнаружение устройств через UDP](bonus/networking/13-udp-discovery/README.md) — `c++17`.
+- [14. HTTP GET и ответ сервера](bonus/networking/14-http-get/README.md) — `c++17`.
+- [15. HTTP POST с JSON](bonus/networking/15-http-post-json/README.md) — `c++17`.
+- [16. Ресурсный HTTP API](bonus/networking/16-rest-api/README.md) — `c++17`.
+- [17. HTTPS и проверка сертификата](bonus/networking/17-https/README.md) — `c++17`.
+- [18. HTTP/2 и HTTP/3 через libcurl](bonus/networking/18-http-versions/README.md) — `c++17`.
+- [19. Асинхронный TCP-сервер с `Boost.Asio`](bonus/networking/19-asio/README.md) — `c++17`.
+- [20. WebSocket: сообщения от сервера](bonus/networking/20-websocket/README.md) — `c++17`.
+- [21. WSS: WebSocket поверх TLS](bonus/networking/21-wss/README.md) — `c++17`.
+- [22. Многопоточный Asio и strand](bonus/networking/22-asio-strand/README.md) — `c++17`.
+- [23. MQTT: публикация и подписка через брокер](bonus/networking/23-mqtt/README.md) — `c++17`.
+- [24. Итоговый проект: чат с переподключением и heartbeat](bonus/networking/24-chat/README.md) — `c++17`.
+
+### PostgreSQL из C++: 20 уроков
+
+[Порядок изучения и подготовка](bonus/databases/postgresql/README.md).
+
+- [01. Подключение и первый `SELECT`](bonus/databases/postgresql/01-connect/README.md) — `c++17`.
+- [02. Таблицы, столбцы и типы](bonus/databases/postgresql/02-tables-types/README.md) — `c++17`.
+- [03. `INSERT` и `RETURNING`](bonus/databases/postgresql/03-insert/README.md) — `c++17`.
+- [04. `SELECT`, фильтрация и сортировка](bonus/databases/postgresql/04-select/README.md) — `c++17`.
+- [05. `UPDATE` и `DELETE`](bonus/databases/postgresql/05-update-delete/README.md) — `c++17`.
+- [06. Параметры и защита от SQL-инъекции](bonus/databases/postgresql/06-parameters/README.md) — `c++17`.
+- [07. Подготовленные запросы](bonus/databases/postgresql/07-prepared-statements/README.md) — `c++17`.
+- [08. `NULL` и пустая строка](bonus/databases/postgresql/08-null-values/README.md) — `c++17`.
+- [09. Ограничения и SQLSTATE](bonus/databases/postgresql/09-constraints/README.md) — `c++17`.
+- [10. Связи и `JOIN`](bonus/databases/postgresql/10-joins/README.md) — `c++17`.
+- [11. Группировка и агрегатные функции](bonus/databases/postgresql/11-aggregation/README.md) — `c++17`.
+- [12. Транзакции: `COMMIT` и `ROLLBACK`](bonus/databases/postgresql/12-transactions/README.md) — `c++17`.
+- [13. Точки сохранения](bonus/databases/postgresql/13-savepoints/README.md) — `c++17`.
+- [14. `INSERT` ON CONFLICT](bonus/databases/postgresql/14-upsert/README.md) — `c++17`.
+- [15. Индексы и `EXPLAIN`](bonus/databases/postgresql/15-indexes/README.md) — `c++17`.
+- [16. `JSONB`](bonus/databases/postgresql/16-jsonb/README.md) — `c++17`.
+- [17. Изоляция и снимки данных](bonus/databases/postgresql/17-isolation/README.md) — `c++17`.
+- [18. Блокировки строк и таймаут](bonus/databases/postgresql/18-row-locks/README.md) — `c++17`.
+- [19. Массовая загрузка и выгрузка `COPY`](bonus/databases/postgresql/19-copy/README.md) — `c++17`.
+- [20. Резервная копия и проверка восстановления](bonus/databases/postgresql/20-backup-restore/README.md) — `c++17`.

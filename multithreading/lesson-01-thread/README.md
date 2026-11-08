@@ -67,8 +67,8 @@ detach снимает связь с объектом `thread` и лишает в
 
 ### Дополнительные API в коде
 
-- [Автоматическая остановка jthread](../bonus/06-jthread-stop-token/README.md): [полный пример](../bonus/06-jthread-stop-token/main3.cpp).
-- [Учебные режимы terminate](../bonus/05-future-async/README.md): [полный пример](../bonus/05-future-async/main8.cpp).
+- [Автоматическая остановка jthread](../bonus/15-jthread-stop-token/README.md): [полный пример](../bonus/15-jthread-stop-token/main3.cpp).
+- [Учебные режимы terminate](../bonus/12-future-async/README.md): [полный пример](../bonus/12-future-async/main8.cpp).
 
 [Версии C++](../../docs/cpp-versions.md) · [Как читать справочники](../../docs/references.md).
 

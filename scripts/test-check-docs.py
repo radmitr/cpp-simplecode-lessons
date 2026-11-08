@@ -153,6 +153,36 @@ class LessonLinkTests(unittest.TestCase):
         })
         self.assertFalse(status, output)
 
+    def test_author_order_is_consecutive_and_matches_catalog(self):
+        status, output = self.check_documents({
+            "stl/bonus/01-first/README.md": "# 01. Первая тема\n",
+            "stl/bonus/02-second/README.md": "# 02. Вторая тема\n",
+            "stl/bonus/README.md": "## Уроки\n\n[Первая](01-first/)\n[Вторая](02-second/)\n",
+            "stl/lesson-019-course/README.md": "# 19. Урок курса\n",
+        })
+        self.assertFalse(status, output)
+
+    def test_author_order_rejects_gaps_and_reversed_catalog(self):
+        for number, links in ((3, "[Первая](01-first/)\n[Другая](03-second/)\n"),
+                              (2, "[Другая](02-second/)\n[Первая](01-first/)\n")):
+            with self.subTest(number=number):
+                status, output = self.check_documents({
+                    "stl/bonus/01-first/README.md": "# 01. Первая тема\n",
+                    f"stl/bonus/{number:02}-second/README.md": f"# {number:02}. Другая тема\n",
+                    "stl/bonus/README.md": "## Уроки\n\n" + links,
+                })
+                self.assertTrue(status, output)
+                self.assertIn("consecutive from 01" if number == 3 else "match directory order", output)
+
+    def test_author_order_rejects_stale_metadata(self):
+        status, output = self.check_documents({
+            "stl/bonus/01-first/README.md": "# 01. Первая тема\n",
+            "stl/bonus/README.md": "## Уроки\n\n[Первая](01-first/)\n",
+            "stl/bonus/lessons.json": '[{"folder":"stl/bonus/01-first","number":9}]',
+        })
+        self.assertTrue(status, output)
+        self.assertIn("wrong number", output)
+
 
 if __name__ == "__main__":
     unittest.main()

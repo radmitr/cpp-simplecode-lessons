@@ -48,7 +48,7 @@ def call(args, *, env=None, success=True, timeout=120):
 
 def main():
     call([BASH, BASE / "scripts/lab.sh", "status"])
-    sources = sorted(BASE.glob("lesson-*/main.cpp"))
+    sources = sorted(BASE.glob("[0-9][0-9]-*/main.cpp"))
     assert len(sources) == 20, f"Expected 20 lessons, found {len(sources)}"
     executables = []
     for source in sources:
